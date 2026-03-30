@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CubeBlocks>
+    <Definition>
+      <Id>
+        <TypeId>Conveyor</TypeId>
+        <SubtypeId>ConveyorTubeElbow</SubtypeId>
+      </Id>
+      <DisplayName>Conveyor Tube Elbow</DisplayName>
+      <Icon>Textures\GUI\Icons\Cubes\ConveyorTubeElbow.dds</Icon>
+      <Description>Description_ConveyorTube</Description>
+      <GuiVisible>false</GuiVisible>
+      <CubeSize>Large</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+      <Size x="1" y="1" z="1" />
+      <ModelOffset x="0" y="0" z="0" />
+      <Model>Models\Cubes\large\ConveyorTubeElbow.mwm</Model>
+      <Components>
+        <Component Subtype="InteriorPlate" Count="10" />
+        <Component Subtype="Construction" Count="24" />
+        <Component Subtype="SmallTube" Count="14" />
+        <Component Subtype="Motor" Count="6" />
+        <Component Subtype="InteriorPlate" Count="6" />
+      </Components>
+      <CriticalComponent Subtype="Motor" Index="0" />
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.50" File="Models\Cubes\large\ConveyorTubeElbow_BS1.mwm" />
+        <Model BuildPercentUpperBound="1.00" File="Models\Cubes\large\ConveyorTubeElbow_BS2.mwm" />
+      </BuildProgressModels>
+      <MountPoints>
+        <MountPoint Side="Bottom" StartX="0.2" StartY="0.2" EndX="0.8" EndY="0.8" Default="true"/>
+        <MountPoint Side="Back" StartX="0.2" StartY="0.2" EndX="0.8" EndY="0.8" />
+        <MountPoint Side="Right" StartX="0.2" StartY="0.2" EndX="0.8" EndY="0.8" />
+      </MountPoints>
+      <BlockPairName>ConveyorTubeElbow</BlockPairName>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>7</BuildTimeSeconds>
+      <MirroringY>Z</MirroringY>
+      <MirroringZ>Y</MirroringZ>
+      <EmissiveColorPreset>Default</EmissiveColorPreset>
+      <DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
+      <DamagedSound>ParticleHeavyMech</DamagedSound>
+      <DestroyEffect>BlockDestroyed_Large</DestroyEffect>
+      <DestroySound>PoofExplosionCat3</DestroySound>
+      <PCU>10</PCU>
+      <IsAirTight>false</IsAirTight>
+    </Definition>
+    <Definition>
+      <Id>
+        <TypeId>Conveyor</TypeId>
+        <SubtypeId>ConveyorTubeCross</SubtypeId>
+      </Id>
+      <DisplayName>Conveyor Tube Cross</DisplayName>
+      <Icon>Textures\GUI\Icons\Cubes\ConveyorTubeCross.dds</Icon>
+      <Description>Description_ConveyorTube</Description>
+      <GuiVisible>false</GuiVisible>
+      <CubeSize>Large</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+      <Size x="1" y="1" z="1" />
+      <ModelOffset x="0" y="0" z="0" />
+      <Model>Models\Cubes\large\ConveyorTubeCross.mwm</Model>
+      <Components>
+        <Component Subtype="InteriorPlate" Count="10" />
+        <Component Subtype="Construction" Count="24" />
+        <Component Subtype="SmallTube" Count="16" />
+        <Component Subtype="Motor" Count="6" />
+        <Component Subtype="InteriorPlate" Count="8" />
+      </Components>
+      <CriticalComponent Subtype="Motor" Index="0" />
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.50" File="Models\Cubes\large\ConveyorTubeCross_BS1.mwm" />
+        <Model BuildPercentUpperBound="1.00" File="Models\Cubes\large\ConveyorTubeCross_BS2.mwm" />
+      </BuildProgressModels>
+      <MountPoints>
+        <MountPoint Side="Bottom" StartX="0.2" StartY="0.2" EndX="0.8" EndY="0.8" Default="true"/>
+        <MountPoint Side="Top" StartX="0.2" StartY="0.2" EndX="0.8" EndY="0.8" />
+        <MountPoint Side="Left" StartX="0.2" StartY="0.2" EndX="0.8" EndY="0.8" />
+        <MountPoint Side="Right" StartX="0.2" StartY="0.2" EndX="0.8" EndY="0.8" />
+      </MountPoints>
+      <BlockPairName>ConveyorTubeCross</BlockPairName>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>7</BuildTimeSeconds>
+      <MirroringX>Y</MirroringX>
+      <EmissiveColorPreset>Default</EmissiveColorPreset>
+      <DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
+      <DamagedSound>ParticleHeavyMech</DamagedSound>
+      <DestroyEffect>BlockDestroyed_Large</DestroyEffect>
+      <DestroySound>PoofExplosionCat3</DestroySound>
+      <PCU>10</PCU>
+      <IsAirTight>false</IsAirTight>
+    </Definition>
+    <Definition>
+      <Id>
+        <TypeId>Conveyor</TypeId>
+        <SubtypeId>ConveyorTubeDuctElbow</SubtypeId>
+      </Id>
+      <DisplayName>Reinforced Conveyor Tube Elbow</DisplayName>
+      <Icon>Textures\GUI\Icons\Cubes\ConveyorDuctElbow.dds</Icon>
+      <Description>Description_ConveyorTube</Description>
+      <GuiVisible>true</GuiVisible>
+      <CubeSize>Large</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+      <Size x="1" y="1" z="1" />
+      <ModelOffset x="0" y="0" z="0" />
+      <Model>Models\Cubes\large\ConveyorDuctElbow.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="12" />
+        <Component Subtype="InteriorPlate" Count="10" />
+        <Component Subtype="Construction" Count="24" />
+        <Component Subtype="SmallTube" Count="14" />
+        <Component Subtype="Motor" Count="6" />
+        <Component Subtype="InteriorPlate" Count="6" />
+        <Component Subtype="SteelPlate" Count="10" />
+      </Components>
+      <CriticalComponent Subtype="Motor" Index="0" />
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\Cubes\large\ConveyorDuctElbow_BS1.mwm" />
+        <Model BuildPercentUpperBound="0.66" File="Models\Cubes\large\ConveyorDuctElbow_BS2.mwm" />
+        <Model BuildPercentUpperBound="1.00" File="Models\Cubes\large\ConveyorDuctElbow_BS3.mwm" />
+      </BuildProgressModels>
+      <BlockPairName>ConveyorTubeDuctElbow</BlockPairName>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>10</BuildTimeSeconds>
+      <MountPoints>
+        <MountPoint Side="Right" StartX="0.7" StartY="0" EndX="1" EndY="1.0" Default="true"/>
+        <MountPoint Side="Right" StartX="0" StartY="0" EndX="0.05" EndY="1.0" />
+        <MountPoint Side="Right" StartX="0.5" StartY="0" EndX="0.7" EndY="0.3" />
+        <MountPoint Side="Right" StartX="0.5" StartY="0.7" EndX="0.7" EndY="1" />
+        <MountPoint Side="Left" StartX="0" StartY="0" EndX="1" EndY="1" />
+        <MountPoint Side="Front" StartX="0" StartY="0" EndX="1" EndY="1" />
+        <MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" />
+        <MountPoint Side="Bottom" StartX="0" StartY="0" EndX="1" EndY="0.3" />
+        <MountPoint Side="Bottom" StartX="0" StartY="0.3" EndX="0.3" EndY="0.5" />
+        <MountPoint Side="Bottom" StartX="0.7" StartY="0.3" EndX="1" EndY="0.5" />
+        <MountPoint Side="Bottom" StartX="0" StartY="0.95" EndX="1" EndY="1.0" />
+        <MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="0.05" />
+        <MountPoint Side="Back" StartX="0" StartY="0.85" EndX="1" EndY="1.0" />
+        <MountPoint Side="Back" StartX="0.0" StartY="0.05" EndX="0.15" EndY="0.85" />
+        <MountPoint Side="Back" StartX="0.95" StartY="0.05" EndX="1" EndY="0.85" />
+      </MountPoints>
+      <MirroringY>Z</MirroringY>
+      <MirroringZ>Y</MirroringZ>
+      <EmissiveColorPreset>Default</EmissiveColorPreset>
+      <DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
+      <DamagedSound>ParticleHeavyMech</DamagedSound>
+      <DestroyEffect>BlockDestroyed_Large</DestroyEffect>
+      <DestroySound>PoofExplosionCat3</DestroySound>
+      <PCU>10</PCU>
+    </Definition>
+    <Definition>
+      <Id>
+        <TypeId>Conveyor</TypeId>
+        <SubtypeId>ConveyorTubeDuctCross</SubtypeId>
+      </Id>
+      <DisplayName>Reinforced Conveyor Tube Cross</DisplayName>
+      <Icon>Textures\GUI\Icons\Cubes\ConveyorDuctCross.dds</Icon>
+      <Description>Description_ConveyorTube</Description>
+      <GuiVisible>true</GuiVisible>
+      <CubeSize>Large</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+      <Size x="1" y="1" z="1" />
+      <ModelOffset x="0" y="0" z="0" />
+      <Model>Models\Cubes\large\ConveyorDuctCross.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="12" />
+        <Component Subtype="InteriorPlate" Count="10" />
+        <Component Subtype="Construction" Count="24" />
+        <Component Subtype="SmallTube" Count="16" />
+        <Component Subtype="Motor" Count="6" />
+        <Component Subtype="InteriorPlate" Count="8" />
+        <Component Subtype="SteelPlate" Count="10" />
+      </Components>
+      <CriticalComponent Subtype="Motor" Index="0" />
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\Cubes\large\ConveyorDuctCross_BS1.mwm" />
+        <Model BuildPercentUpperBound="0.66" File="Models\Cubes\large\ConveyorDuctCross_BS2.mwm" />
+        <Model BuildPercentUpperBound="1.00" File="Models\Cubes\large\ConveyorDuctCross_BS3.mwm" />
+      </BuildProgressModels>
+      <BlockPairName>ConveyorTubeDuctCross</BlockPairName>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>10</BuildTimeSeconds>
+      <MountPoints>
+        <MountPoint Side="Right" StartX="0.7" StartY="0" EndX="1" EndY="1.0" Default="true"/>
+        <MountPoint Side="Right" StartX="0" StartY="0" EndX="0.05" EndY="1.0" />
+        <MountPoint Side="Right" StartX="0.5" StartY="0" EndX="0.7" EndY="0.3" />
+        <MountPoint Side="Right" StartX="0.5" StartY="0.7" EndX="0.7" EndY="1" />
+        <MountPoint Side="Left" StartX="0" StartY="0" EndX="0.3" EndY="1.0" />
+        <MountPoint Side="Left" StartX="0.95" StartY="0" EndX="1" EndY="1.0" />
+        <MountPoint Side="Left" StartX="0.3" StartY="0" EndX="0.5" EndY="0.3" />
+        <MountPoint Side="Left" StartX="0.3" StartY="0.7" EndX="0.5" EndY="1" />
+        <MountPoint Side="Front" StartX="0" StartY="0" EndX="1" EndY="1" />
+        <MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" />
+        <MountPoint Side="Bottom" StartX="0" StartY="0" EndX="1" EndY="0.3" />
+        <MountPoint Side="Bottom" StartX="0" StartY="0.3" EndX="0.3" EndY="0.5" />
+        <MountPoint Side="Bottom" StartX="0.7" StartY="0.3" EndX="1" EndY="0.5" />
+        <MountPoint Side="Bottom" StartX="0" StartY="0.95" EndX="1" EndY="1.0" />
+        <MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="0.05" />
+        <MountPoint Side="Back" StartX="0" StartY="0.85" EndX="1" EndY="1.0" />
+        <MountPoint Side="Back" StartX="0.45" StartY="0.45" EndX="0.55" EndY="0.55" />
+      </MountPoints>
+      <MirroringY>Z</MirroringY>
+      <MirroringZ>Y</MirroringZ>
+      <EmissiveColorPreset>Default</EmissiveColorPreset>
+      <DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
+      <DamagedSound>ParticleHeavyMech</DamagedSound>
+      <DestroyEffect>BlockDestroyed_Large</DestroyEffect>
+      <DestroySound>PoofExplosionCat3</DestroySound>
+      <PCU>10</PCU>
+    </Definition>
+    <Definition>
+      <Id>
+        <TypeId>Conveyor</TypeId>
+        <SubtypeId>LargeBlockConveyorPipeElbow</SubtypeId>
+      </Id>
+      <DisplayName>Conveyor Pipe Elbow</DisplayName>
+      <Icon>Textures\GUI\Icons\Cubes\PipeElbow.dds</Icon>
+      <Description>Description_ConveyorTube</Description>
+      <GuiVisible>true</GuiVisible>
+      <CubeSize>Large</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+      <Size x="1" y="1" z="1" />
+      <ModelOffset x="0" y="0" z="0" />
+      <Model>Models\Cubes\large\PipeElbow.mwm</Model>
+      <Components>
+        <Component Subtype="InteriorPlate" Count="10" />
+        <Component Subtype="Construction" Count="24" />
+        <Component Subtype="SmallTube" Count="14" />
+        <Component Subtype="Motor" Count="6" />
+        <Component Subtype="InteriorPlate" Count="6" />
+      </Components>
+      <CriticalComponent Subtype="Motor" Index="0" />
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.50" File="Models\Cubes\large\PipeElbow_BS1.mwm" />
+        <Model BuildPercentUpperBound="1.00" File="Models\Cubes\large\PipeElbow_BS2.mwm" />
+      </BuildProgressModels>
+      <BlockPairName>PipeElbow</BlockPairName>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>10</BuildTimeSeconds>
+      <MountPoints>
+        <MountPoint Side="Bottom" StartX="0.2" StartY="0.2" EndX="0.8" EndY="0.8" Default="true"/>
+        <MountPoint Side="Back" StartX="0.2" StartY="0.2" EndX="0.8" EndY="0.8" />
+        <MountPoint Side="Right" StartX="0.2" StartY="0.2" EndX="0.8" EndY="0.8" />
+      </MountPoints>
+      <MirroringY>Z</MirroringY>
+      <MirroringZ>Y</MirroringZ>
+      <EmissiveColorPreset>Default</EmissiveColorPreset>
+      <DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
+      <DamagedSound>ParticleHeavyMech</DamagedSound>
+      <DestroyEffect>BlockDestroyed_Large</DestroyEffect>
+      <DestroySound>PoofExplosionCat3</DestroySound>
+      <IsAirTight>false</IsAirTight>
+      <PCU>10</PCU>
+      <DLC>HeavyIndustry</DLC>
+    </Definition>
+    <Definition>
+      <Id>
+        <TypeId>ConveyorConnector</TypeId>
+        <SubtypeId>ConveyorTubeTMedium</SubtypeId>
+      </Id>
+      <DisplayName>Medium Conveyor Tube T</DisplayName>
+      <Icon>Textures\GUI\Icons\Cubes\ConveyorTube.dds</Icon>
+      <Description>Description_ConveyorTube</Description>
+      <GuiVisible>false</GuiVisible>
+      <CubeSize>Small</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+      <Size x="3" y="3" z="3" />
+      <ModelOffset x="0" y="0" z="0" />
+      <Model>Models\Cubes\Small\ConveyorTubeTMedium.mwm</Model>
+      <Components>
+        <Component Subtype="InteriorPlate" Count="8" />
+        <Component Subtype="Construction" Count="20" />
+        <Component Subtype="SmallTube" Count="10" />
+        <Component Subtype="Motor" Count="6" />
+        <Component Subtype="InteriorPlate" Count="2" />
+      </Components>
+      <CriticalComponent Subtype="Motor" Index="0" />
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.50" File="Models\Cubes\Small\ConveyorTubeTMedium_BS1.mwm" />
+        <Model BuildPercentUpperBound="1.00" File="Models\Cubes\Small\ConveyorTubeTMedium_BS2.mwm" />
+      </BuildProgressModels>
+      <BlockPairName>ConveyorTube</BlockPairName>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>6</BuildTimeSeconds>
+      <MountPoints>
+        <MountPoint Side="Left" StartX="0.4" StartY="0.2" EndX="2.6" EndY="0.4" />
+        <MountPoint Side="Left" StartX="0.4" StartY="2.6" EndX="2.6" EndY="2.8" />
+        <MountPoint Side="Left" StartX="0.2" StartY="0.4" EndX="0.4" EndY="2.6" />
+        <MountPoint Side="Left" StartX="2.6" StartY="0.4" EndX="2.8" EndY="2.6" />
+        <MountPoint Side="Right" StartX="0.4" StartY="0.2" EndX="2.6" EndY="0.4" />
+        <MountPoint Side="Right" StartX="0.4" StartY="2.6" EndX="2.6" EndY="2.8" />
+        <MountPoint Side="Right" StartX="0.2" StartY="0.4" EndX="0.4" EndY="2.6" />
+        <MountPoint Side="Right" StartX="2.6" StartY="0.4" EndX="2.8" EndY="2.6" />
+      </MountPoints>
+      <AutorotateMode>OppositeDirections</AutorotateMode>
+      <MirroringY>Z</MirroringY>
+      <MirroringZ>Y</MirroringZ>
+      <EmissiveColorPreset>Default</EmissiveColorPreset>
+      <DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
+      <DamagedSound>ParticleHeavyMech</DamagedSound>
+      <DestroyEffect>BlockDestroyed_Medium</DestroyEffect>
+      <DestroySound>PoofExplosionCat2</DestroySound>
+      <PCU>10</PCU>
+      <IsAirTight>false</IsAirTight>
+    </Definition>
+  </CubeBlocks>
+</Definitions>

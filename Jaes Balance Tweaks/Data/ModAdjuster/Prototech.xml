@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <BlueprintClassEntries>
+        <!-- Prototech Assembler -->
+        <Entry Class="PrototechComponents" BlueprintSubtypeId="PrototechPanel"/>
+        <Entry Class="PrototechComponents" BlueprintSubtypeId="PrototechCapacitor"/>
+        <Entry Class="PrototechComponents" BlueprintSubtypeId="PrototechPropulsionUnit"/>
+        <Entry Class="PrototechComponents" BlueprintSubtypeId="PrototechMachinery"/>
+        <Entry Class="PrototechComponents" BlueprintSubtypeId="PrototechCircuitry"/>
+        <Entry Class="PrototechComponents" BlueprintSubtypeId="PrototechCoolingUnit"/>
+        <Entry Class="PrototechComponents" BlueprintSubtypeId="PrototechFrame"/>
+    </BlueprintClassEntries>
+    <CubeBlocks>
+        <Definition xsi:type="MyObjectBuilder_AssemblerDefinition">
+            <Id>
+                <TypeId>Assembler</TypeId>
+                <SubtypeId>LargePrototechAssembler</SubtypeId>
+            </Id>
+            <Components>
+                <Component Subtype="SteelPlate" Count="60" />
+                <Component Subtype="Thrust" Count="200" />
+                <Component Subtype="Reactor" Count="200" />
+                <Component Subtype="Explosives" Count="200" />
+                <Component Subtype="Superconductor" Count="200" />
+                <Component Subtype="SteelPlate" Count="240" />
+                <Component Subtype="Construction" Count="160" />
+                <Component Subtype="Motor" Count="40" />
+                <Component Subtype="Display" Count="20" />
+                <Component Subtype="MetalGrid" Count="60" />
+                <Component Subtype="Computer" Count="320" />
+                <Component Subtype="SteelPlate" Count="40" />
+            </Components>
+            <CriticalComponent Subtype="Computer" Index="0" />
+        </Definition>
+    </CubeBlocks>
+    <Blueprints>
+        <Blueprint>
+            <Id>
+                <TypeId>BlueprintDefinition</TypeId>
+                <SubtypeId>PrototechScrap</SubtypeId>
+            </Id>
+            <Prerequisites>
+                <Item Amount="5" TypeId="Ingot" SubtypeId="Iron" />
+                <Item Amount="5" TypeId="Ingot" SubtypeId="Nickel" />
+                <Item Amount="5" TypeId="Ingot" SubtypeId="Silicon" />
+                <Item Amount="5" TypeId="Ingot" SubtypeId="Cobalt" />
+                <Item Amount="5" TypeId="Ingot" SubtypeId="Silver" />
+                <Item Amount="5" TypeId="Ingot" SubtypeId="Gold" />
+                <Item Amount="5" TypeId="Ingot" SubtypeId="Platinum" />
+            </Prerequisites>
+        </Blueprint>
+        <Blueprint>
+            <Id>
+                <TypeId>BlueprintDefinition</TypeId>
+                <SubtypeId>PrototechFrame</SubtypeId>
+            </Id>
+            <Prerequisites>
+                <Item Amount="400" TypeId="Ingot" SubtypeId="Iron" />
+                <Item Amount="70" TypeId="Ingot" SubtypeId="Cobalt" />
+                <Item Amount="20" TypeId="Ingot" SubtypeId="Silver" />
+                <Item Amount="30" TypeId="Ingot" SubtypeId="Gold" />
+                <Item Amount="25" TypeId="Ingot" SubtypeId="Platinum" />
+            </Prerequisites>
+        </Blueprint>
+
+        <Blueprint>
+            <Id>
+                <TypeId>BlueprintDefinition</TypeId>
+                <SubtypeId>PrototechCapacitor</SubtypeId>
+            </Id>
+            <Prerequisites>
+                <Item Amount="12" TypeId="Ingot" SubtypeId="Iron" />
+                <Item Amount="4" TypeId="Ingot" SubtypeId="Silicon" />
+                <Item Amount="3" TypeId="Ingot" SubtypeId="Silver" />
+                <Item Amount="6" TypeId="Ingot" SubtypeId="Gold" />
+            </Prerequisites>
+        </Blueprint>
+
+        <Blueprint>
+            <Id>
+                <TypeId>BlueprintDefinition</TypeId>
+                <SubtypeId>PrototechPropulsionUnit</SubtypeId>
+            </Id>
+            <Prerequisites>
+                <Item Amount="60" TypeId="Ingot" SubtypeId="Iron" />
+                <Item Amount="24" TypeId="Ingot" SubtypeId="Cobalt" />
+                <Item Amount="6" TypeId="Ingot" SubtypeId="Gold" />
+                <Item Amount="3" TypeId="Ingot" SubtypeId="Platinum" />
+            </Prerequisites>
+        </Blueprint>
+
+        <Blueprint>
+            <Id>
+                <TypeId>BlueprintDefinition</TypeId>
+                <SubtypeId>PrototechMachinery</SubtypeId>
+            </Id>
+            <Prerequisites>
+                <Item Amount="45" TypeId="Ingot" SubtypeId="Iron" />
+                <Item Amount="12" TypeId="Ingot" SubtypeId="Nickel" />
+                <Item Amount="7" TypeId="Ingot" SubtypeId="Silicon" />
+                <Item Amount="3" TypeId="Ingot" SubtypeId="Gold" />
+            </Prerequisites>
+        </Blueprint>
+
+        <Blueprint>
+            <Id>
+                <TypeId>BlueprintDefinition</TypeId>
+                <SubtypeId>PrototechCircuitry</SubtypeId>
+            </Id>
+            <Prerequisites>
+                <Item Amount="5" TypeId="Ingot" SubtypeId="Iron" />
+                <Item Amount="8" TypeId="Ingot" SubtypeId="Silicon" />
+                <Item Amount="2" TypeId="Ingot" SubtypeId="Gold" />
+                <Item Amount="1.5" TypeId="Ingot" SubtypeId="Platinum" />
+            </Prerequisites>
+        </Blueprint>
+
+        <Blueprint>
+            <Id>
+                <TypeId>BlueprintDefinition</TypeId>
+                <SubtypeId>PrototechCoolingUnit</SubtypeId>
+            </Id>
+            <Prerequisites>
+                <Item Amount="80" TypeId="Ingot" SubtypeId="Iron" />
+                <Item Amount="12" TypeId="Ingot" SubtypeId="Gold" />
+                <Item Amount="3.25" TypeId="Ingot" SubtypeId="Platinum" />
+            </Prerequisites>
+        </Blueprint>
+    </Blueprints>
+</Definitions>
+

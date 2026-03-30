@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <BlockVariantGroups>
+    <BlockVariantGroup>
+      <Id Type="MyObjectBuilder_BlockVariantGroup" Subtype="ConveyorGroup" />
+      <Icon>Textures\GUI\Icons\Cubes\ConveyorTube.dds</Icon>
+      <DisplayName>DisplayName_Block_Conveyor</DisplayName>
+      <Description>Description_ConveyorTube</Description>
+      <Blocks>
+        <Block Type="MyObjectBuilder_ConveyorConnector" Subtype="ConveyorTube" />
+        <Block Type="MyObjectBuilder_ConveyorConnector" Subtype="ConveyorTubeCurved" />
+        <Block Type="MyObjectBuilder_Conveyor" Subtype="ConveyorTubeT" />
+        <Block Type="MyObjectBuilder_Conveyor" Subtype="ConveyorTubeElbow" />
+        <Block Type="MyObjectBuilder_Conveyor" Subtype="ConveyorTubeCross" />
+        <Block Type="MyObjectBuilder_Conveyor" Subtype="LargeBlockConveyor" />
+        <Block Type="MyObjectBuilder_ConveyorSorter" Subtype="LargeBlockConveyorSorter" />
+        <Block Type="MyObjectBuilder_CubeBlock" Subtype="LargeBlockConveyorCap" />
+
+        <Block Type="MyObjectBuilder_ConveyorConnector" Subtype="ConveyorTubeMedium" />
+        <Block Type="MyObjectBuilder_ConveyorConnector" Subtype="ConveyorTubeCurvedMedium" />
+        <Block Type="MyObjectBuilder_ConveyorConnector" Subtype="ConveyorTubeTMedium" />
+        <Block Type="MyObjectBuilder_Conveyor" Subtype="SmallShipConveyorHub" />
+        <Block Type="MyObjectBuilder_ConveyorConnector" Subtype="ConveyorFrameMedium" />
+        <Block Type="MyObjectBuilder_Conveyor" Subtype="SmallBlockConveyorConverter" />
+        <Block Type="MyObjectBuilder_ConveyorSorter" Subtype="MediumBlockConveyorSorter" />
+        <Block Type="MyObjectBuilder_CubeBlock" Subtype="SmallBlockConveyorCapMedium" />
+      </Blocks>
+    </BlockVariantGroup>
+
+    <BlockVariantGroup>
+      <Id Type="MyObjectBuilder_BlockVariantGroup" Subtype="ConveyorSmallGroup" />
+      <Icon>Textures\GUI\Icons\Cubes\ConveyorTubeSmall.dds</Icon>
+      <DisplayName>DisplayName_Block_ConveyorTubeSmall</DisplayName>
+      <Description>Description_ConveyorTube</Description>
+      <Blocks>
+        <Block Type="MyObjectBuilder_ConveyorConnector" Subtype="ConveyorTubeSmall" />
+        <Block Type="MyObjectBuilder_ConveyorConnector" Subtype="ConveyorTubeSmallCurved" />
+        <Block Type="MyObjectBuilder_Conveyor" Subtype="ConveyorTubeSmallT" />
+        <Block Type="MyObjectBuilder_Conveyor" Subtype="SmallBlockConveyor" />
+        <Block Type="MyObjectBuilder_ConveyorSorter" Subtype="SmallBlockConveyorSorter" />
+        <Block Type="MyObjectBuilder_CubeBlock" Subtype="SmallBlockConveyorCap" />
+      </Blocks>
+    </BlockVariantGroup>
+
+    <BlockVariantGroup>
+      <Id Type="MyObjectBuilder_BlockVariantGroup" Subtype="ConveyorReinforcedGroup" />
+      <Icon>Textures\GUI\Icons\Cubes\ConveyorDuct.dds</Icon>
+      <DisplayName>DisplayName_ConveyorTubeDuct</DisplayName>
+      <Description>Description_ConveyorTubeDuct</Description>
+      <Blocks>
+        <Block Type="MyObjectBuilder_ConveyorConnector" Subtype="ConveyorTubeDuct" />
+        <Block Type="MyObjectBuilder_ConveyorConnector" Subtype="ConveyorTubeDuctCurved" />
+        <Block Type="MyObjectBuilder_Conveyor" Subtype="ConveyorTubeDuctT" />
+        <Block Type="MyObjectBuilder_Conveyor" Subtype="ConveyorTubeDuctElbow" />
+        <Block Type="MyObjectBuilder_Conveyor" Subtype="ConveyorTubeDuctCross" />
+
+        <Block Type="MyObjectBuilder_ConveyorConnector" Subtype="ConveyorTubeDuctSmall" />
+        <Block Type="MyObjectBuilder_ConveyorConnector" Subtype="ConveyorTubeDuctSmallCurved" />
+        <Block Type="MyObjectBuilder_Conveyor" Subtype="ConveyorTubeDuctSmallT" />
+      </Blocks>
+    </BlockVariantGroup>
+
+    <BlockVariantGroup>
+      <Id Type="MyObjectBuilder_BlockVariantGroup" Subtype="ConveyorPipeGroup" />
+      <Icon>Textures\GUI\Icons\Cubes\PipeSeamless.dds</Icon>
+      <DisplayName>DisplayName_Block_ConveyorPipes</DisplayName>
+      <Description>Description_ConveyorTube</Description>
+      <Blocks>
+        <Block Type="MyObjectBuilder_ConveyorConnector" Subtype="LargeBlockConveyorPipeSeamless" />
+        <Block Type="MyObjectBuilder_ConveyorConnector" Subtype="LargeBlockConveyorPipeFlange" />
+        <Block Type="MyObjectBuilder_ConveyorConnector" Subtype="LargeBlockConveyorPipeEnd" />
+        <Block Type="MyObjectBuilder_ConveyorConnector" Subtype="LargeBlockConveyorPipeCorner" />
+        <Block Type="MyObjectBuilder_Conveyor" Subtype="LargeBlockConveyorPipeT" />
+        <Block Type="MyObjectBuilder_Conveyor" Subtype="LargeBlockConveyorPipeElbow" />
+        <Block Type="MyObjectBuilder_Conveyor" Subtype="LargeBlockConveyorPipeIntersection" />
+        <Block Type="MyObjectBuilder_Conveyor" Subtype="LargeBlockConveyorPipeJunction" />
+        <Block Type="MyObjectBuilder_ConveyorSorter" Subtype="LargeBlockConveyorSorterIndustrial" />
+        <Block Type="MyObjectBuilder_CubeBlock" Subtype="LargeBlockConveyorPipeCap" />
+      </Blocks>
+    </BlockVariantGroup>
+  </BlockVariantGroups>
+</Definitions>

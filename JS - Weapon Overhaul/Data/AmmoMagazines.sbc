@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <AmmoMagazines>
+        <AmmoMagazine>
+            <Id>
+                <TypeId>AmmoMagazine</TypeId>
+                <SubtypeId>TorpedoMag</SubtypeId>
+            </Id>
+            <DisplayName>Torpedo</DisplayName>
+            <Icon>Textures\GUI\Icons\Projectiles\Projectile_Torpedo.dds</Icon>
+            <Size>
+                <X>4</X>
+                <Y>1</Y>
+                <Z>1</Z>
+            </Size>
+            <Mass>250</Mass>
+            <Volume>5</Volume>
+            <Model>Models\Projectiles\Projectile_Torpedo.mwm</Model>
+            <PhysicalMaterial>Ammo</PhysicalMaterial>
+            <Capacity>1</Capacity>
+            <AmmoDefinitionId Subtype="Torpedo" />
+            <MinimumOfferAmount>50</MinimumOfferAmount>
+            <MaximumOfferAmount>500</MaximumOfferAmount>
+            <MinimumOrderAmount>100</MinimumOrderAmount>
+            <MaximumOrderAmount>2000</MaximumOrderAmount>
+            <CanPlayerOrder>true</CanPlayerOrder>
+        </AmmoMagazine>
+    </AmmoMagazines>
+</Definitions>
