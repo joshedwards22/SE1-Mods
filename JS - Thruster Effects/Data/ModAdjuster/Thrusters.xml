@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <CubeBlocks>
+        <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
+            <Id>
+                <TypeId>Thrust</TypeId>
+                <SubtypeId>LargeBlockLargeHydrogenThrust</SubtypeId>
+            </Id>
+            <FlameIdleColor>
+                <X>1</X>
+                <Y>0.75</Y>
+                <Z>0.35</Z>
+                <W>0.75</W>
+            </FlameIdleColor>
+            <FlameFullColor>
+                <X>1</X>
+                <Y>0.75</Y>
+                <Z>0.35</Z>
+                <W>0.75</W>
+            </FlameFullColor>
+            <FlameLengthMaterial>SciFiThrusterFlame</FlameLengthMaterial>
+        </Definition>
+
+        <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
+            <Id>
+                <TypeId>Thrust</TypeId>
+                <SubtypeId>LargeBlockLargeHydrogenThrustIndustrial</SubtypeId>
+            </Id>
+            <FlameIdleColor>
+                <X>1</X>
+                <Y>0.75</Y>
+                <Z>0.35</Z>
+                <W>0.75</W>
+            </FlameIdleColor>
+            <FlameFullColor>
+                <X>1</X>
+                <Y>0.75</Y>
+                <Z>0.35</Z>
+                <W>0.75</W>
+            </FlameFullColor>
+            <FlameLengthMaterial>SciFiThrusterFlame</FlameLengthMaterial>
+        </Definition>
+
+        <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
+            <Id>
+                <TypeId>Thrust</TypeId>
+                <SubtypeId>LargeBlockSmallHydrogenThrust</SubtypeId>
+            </Id>
+            <FlameIdleColor>
+                <X>1</X>
+                <Y>0.75</Y>
+                <Z>0.35</Z>
+                <W>0.75</W>
+            </FlameIdleColor>
+            <FlameFullColor>
+                <X>1</X>
+                <Y>0.75</Y>
+                <Z>0.35</Z>
+                <W>0.75</W>
+            </FlameFullColor>
+            <FlameLengthMaterial>SciFiThrusterFlame</FlameLengthMaterial>
+        </Definition>
+
+        <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
+            <Id>
+                <TypeId>Thrust</TypeId>
+                <SubtypeId>LargeBlockSmallHydrogenThrustIndustrial</SubtypeId>
+            </Id>
+            <FlameIdleColor>
+                <X>1</X>
+                <Y>0.75</Y>
+                <Z>0.35</Z>
+                <W>0.75</W>
+            </FlameIdleColor>
+            <FlameFullColor>
+                <X>1</X>
+                <Y>0.75</Y>
+                <Z>0.35</Z>
+                <W>0.75</W>
+            </FlameFullColor>
+            <FlameLengthMaterial>SciFiThrusterFlame</FlameLengthMaterial>
+        </Definition>
+
+        <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
+            <Id>
+                <TypeId>Thrust</TypeId>
+                <SubtypeId>SmallBlockLargeHydrogenThrust</SubtypeId>
+            </Id>
+            <FlameIdleColor>
+                <X>1</X>
+                <Y>0.75</Y>
+                <Z>0.35</Z>
+                <W>0.75</W>
+            </FlameIdleColor>
+            <FlameFullColor>
+                <X>1</X>
+                <Y>0.75</Y>
+                <Z>0.35</Z>
+                <W>0.75</W>
+            </FlameFullColor>
+            <FlameLengthMaterial>SciFiThrusterFlame</FlameLengthMaterial>
+        </Definition>
+
+        <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
+            <Id>
+                <TypeId>Thrust</TypeId>
+                <SubtypeId>SmallBlockLargeHydrogenThrustIndustrial</SubtypeId>
+            </Id>
+            <FlameIdleColor>
+                <X>1</X>
+                <Y>0.75</Y>
+                <Z>0.35</Z>
+                <W>0.75</W>
+            </FlameIdleColor>
+            <FlameFullColor>
+                <X>1</X>
+                <Y>0.75</Y>
+                <Z>0.35</Z>
+                <W>0.75</W>
+            </FlameFullColor>
+            <FlameLengthMaterial>SciFiThrusterFlame</FlameLengthMaterial>
+        </Definition>
+
+        <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
+            <Id>
+                <TypeId>Thrust</TypeId>
+                <SubtypeId>SmallBlockSmallHydrogenThrust</SubtypeId>
+            </Id>
+            <FlameIdleColor>
+                <X>1</X>
+                <Y>0.75</Y>
+                <Z>0.35</Z>
+                <W>0.75</W>
+            </FlameIdleColor>
+            <FlameFullColor>
+                <X>1</X>
+                <Y>0.75</Y>
+                <Z>0.35</Z>
+                <W>0.75</W>
+            </FlameFullColor>
+            <FlameLengthMaterial>SciFiThrusterFlame</FlameLengthMaterial>
+        </Definition>
+
+        <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
+            <Id>
+                <TypeId>Thrust</TypeId>
+                <SubtypeId>SmallBlockSmallHydrogenThrustIndustrial</SubtypeId>
+            </Id>
+            <FlameIdleColor>
+                <X>1</X>
+                <Y>0.75</Y>
+                <Z>0.35</Z>
+                <W>0.75</W>
+            </FlameIdleColor>
+            <FlameFullColor>
+                <X>1</X>
+                <Y>0.75</Y>
+                <Z>0.35</Z>
+                <W>0.75</W>
+            </FlameFullColor>
+            <FlameLengthMaterial>SciFiThrusterFlame</FlameLengthMaterial>
+        </Definition>
+
+        <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
+            <Id>
+                <TypeId>Thrust</TypeId>
+                <SubtypeId>LargeBlockLargeThrust</SubtypeId>
+            </Id>
+            <FlameLengthMaterial>SciFiEngineThrustMiddle</FlameLengthMaterial>
+        </Definition>
+
+        <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
+            <Id>
+                <TypeId>Thrust</TypeId>
+                <SubtypeId>LargeBlockSmallThrust</SubtypeId>
+            </Id>
+            <FlameLengthMaterial>SciFiEngineThrustMiddle</FlameLengthMaterial>
+        </Definition>
+
+        <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
+            <Id>
+                <TypeId>Thrust</TypeId>
+                <SubtypeId>LargeBlockSmallThrustSciFi</SubtypeId>
+            </Id>
+            <FlameLengthMaterial>SciFiEngineThrustMiddle</FlameLengthMaterial>
+        </Definition>
+
+        <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
+            <Id>
+                <TypeId>Thrust</TypeId>
+                <SubtypeId>LargeBlockSmallModularThruster</SubtypeId>
+            </Id>
+            <FlameLengthMaterial>SciFiEngineThrustMiddle</FlameLengthMaterial>
+        </Definition>
+
+        <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
+            <Id>
+                <TypeId>Thrust</TypeId>
+                <SubtypeId>SmallBlockLargeThrust</SubtypeId>
+            </Id>
+            <FlameLengthMaterial>SciFiEngineThrustMiddle</FlameLengthMaterial>
+        </Definition>
+
+        <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
+            <Id>
+                <TypeId>Thrust</TypeId>
+                <SubtypeId>SmallBlockLargeThrustSciFi</SubtypeId>
+            </Id>
+            <FlameLengthMaterial>SciFiEngineThrustMiddle</FlameLengthMaterial>
+        </Definition>
+
+        <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
+            <Id>
+                <TypeId>Thrust</TypeId>
+                <SubtypeId>SmallBlockLargeModularThruster</SubtypeId>
+            </Id>
+            <FlameLengthMaterial>SciFiEngineThrustMiddle</FlameLengthMaterial>
+        </Definition>
+
+        <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
+            <Id>
+                <TypeId>Thrust</TypeId>
+                <SubtypeId>SmallBlockSmallThrust</SubtypeId>
+            </Id>
+            <FlameLengthMaterial>SciFiEngineThrustMiddle</FlameLengthMaterial>
+        </Definition>
+
+        <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
+            <Id>
+                <TypeId>Thrust</TypeId>
+                <SubtypeId>SmallBlockSmallThrustSciFi</SubtypeId>
+            </Id>
+            <FlameLengthMaterial>SciFiEngineThrustMiddle</FlameLengthMaterial>
+        </Definition>
+
+        <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
+            <Id>
+                <TypeId>Thrust</TypeId>
+                <SubtypeId>SmallBlockSmallModularThruster</SubtypeId>
+            </Id>
+            <FlameLengthMaterial>SciFiEngineThrustMiddle</FlameLengthMaterial>
+        </Definition>
+    </CubeBlocks>
+</Definitions>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CubeBlocks>
+    <Definition xsi:type="MyObjectBuilder_RefineryDefinition">
+      <Id>
+        <TypeId>Refinery</TypeId>
+        <SubtypeId>StoneCrusher_LB</SubtypeId>
+      </Id>
+      <Description>Permanantly turns stone to dust</Description>
+      <MaterialEfficiency>0</MaterialEfficiency>
+    </Definition>
+    <Definition xsi:type="MyObjectBuilder_RefineryDefinition">
+      <Id>
+        <TypeId>Refinery</TypeId>
+        <SubtypeId>StoneCrusher_SB</SubtypeId>
+      </Id>
+      <Description>Permanantly turns stone to dust</Description>
+      <MaterialEfficiency>0</MaterialEfficiency>
+    </Definition>
+  </CubeBlocks>
+  <CategoryClasses>
+    <Category xsi:type="MyObjectBuilder_GuiBlockCategoryDefinition">
+      <Id>
+        <TypeId>GuiBlockCategoryDefinition</TypeId>
+        <SubtypeId/>
+      </Id>
+      <DisplayName>Archan's Utilities</DisplayName>
+      <Name>Archan</Name>
+      <StrictSearch>true</StrictSearch>
+      <ItemIds>
+      </ItemIds>
+    </Category>
+  </CategoryClasses>
+</Definitions>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <EntityComponents>
+        <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+            <Id>
+                <TypeId>Inventory</TypeId>
+                <SubtypeId>AmmoFilterTorpedo</SubtypeId>
+            </Id>
+            <Size x="0.4" y="0.6" z="1" />
+            <InputConstraint Whitelist="true" Description="Torpedos" Icon="Textures\GUI\Icons\FilterMissile.dds">
+                <Entry>
+                    <TypeId>AmmoMagazine</TypeId>
+                    <SubtypeId>TorpedoMag</SubtypeId>
+                </Entry>
+            </InputConstraint>
+        </EntityComponent>
+        <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+            <Id>
+                <TypeId>Inventory</TypeId>
+                <SubtypeId>AmmoFilterCoilgun</SubtypeId>
+            </Id>
+            <Size x="0.2" y="0.24" z="1" />
+            <InputConstraint Whitelist="true" Description="Coilgun Sabots" Icon="Textures\GUI\Icons\filter_railgun.dds">
+                <Entry>
+                    <TypeId>AmmoMagazine</TypeId>
+                    <SubtypeId>SmallRailgunAmmo</SubtypeId>
+                </Entry>
+            </InputConstraint>
+        </EntityComponent>
+        <EntityComponent xsi:type="MyObjectBuilder_EntityCapacitorComponentDefinition">
+            <Id>
+                <TypeId>EntityCapacitorComponent</TypeId>
+                <SubtypeId>LargeRailgun</SubtypeId>
+            </Id>
+            <Capacity>0.025</Capacity>
+            <RechargeDraw>16</RechargeDraw>
+            <ChargeMultiplier>1.0</ChargeMultiplier>
+        </EntityComponent>
+    </EntityComponents>
+</Definitions>

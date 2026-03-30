@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CategoryClasses>
+
+    <Category xsi:type="MyObjectBuilder_GuiBlockCategoryDefinition">
+      <Id>
+        <TypeId>GuiBlockCategoryDefinition</TypeId>
+        <SubtypeId/>
+      </Id>
+      <DisplayName>DisplayName_Category_LargeBlocks</DisplayName>
+      <Name>Section1_Position1_LargeBlocks</Name>
+      <StrictSearch>true</StrictSearch>
+      <ItemIds>
+        <string>ShipWelder/Aryx_Shiptool_MegaWelder</string>
+        <string>Refinery/StoneCrusher_LB</string>
+        <string>AdvancedDoor/LargeBlockSlideDoorDouble</string>
+        <string>AdvancedDoor/HatchDoorDouble</string>
+        <string>AdvancedDoor/RoundCorridorDoubleDoorAirlock</string>
+        <string>AdvancedDoor/NarrowDoorAirlock</string>
+        <string>AdvancedDoor/CentredDoubleDoorAirlock</string>
+        <string>AdvancedDoor/CentredDoubleDoorGlassAirlock</string>
+      </ItemIds>
+    </Category>
+
+    <Category xsi:type="MyObjectBuilder_GuiBlockCategoryDefinition">
+      <Id>
+        <TypeId>GuiBlockCategoryDefinition</TypeId>
+        <SubtypeId/>
+      </Id>
+      <DisplayName>DisplayName_Category_SmallBlocks</DisplayName>
+      <Name>Section1_Position1_SmallBlocks</Name>
+      <StrictSearch>true</StrictSearch>
+      <ItemIds>
+        <string>Refinery/StoneCrusher_SB</string>
+      </ItemIds>
+    </Category>
+
+    <Category xsi:type="MyObjectBuilder_GuiBlockCategoryDefinition">
+      <Id>
+        <TypeId>GuiBlockCategoryDefinition</TypeId>
+        <SubtypeId>Tools</SubtypeId>
+      </Id>
+      <DisplayName>DisplayName_Category_Tools</DisplayName>
+      <Name>Section1_Position3_ShipTools</Name>
+      <StrictSearch>true</StrictSearch>
+      <ItemIds>
+        <string>ShipWelder/Aryx_Shiptool_MegaWelder</string>
+      </ItemIds>
+    </Category>
+
+    <Category xsi:type="MyObjectBuilder_GuiBlockCategoryDefinition">
+      <Id>
+        <TypeId>GuiBlockCategoryDefinition</TypeId>
+        <SubtypeId>Utility</SubtypeId>
+      </Id>
+      <DisplayName>DisplayName_Category_Utility</DisplayName>
+      <Name>Section1_Position3_Utility</Name>
+      <StrictSearch>true</StrictSearch>
+      <ItemIds>
+        <string>Refinery/StoneCrusher_LB</string>
+        <string>Refinery/StoneCrusher_SB</string>
+      </ItemIds>
+    </Category>
+  </CategoryClasses>
+</Definitions>

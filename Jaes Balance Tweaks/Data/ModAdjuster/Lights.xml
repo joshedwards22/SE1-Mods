@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <CubeBlocks>
+        <Definition xsi:type="MyObjectBuilder_SearchlightDefinition">
+            <Id>
+                <TypeId>Searchlight</TypeId>
+                <SubtypeId>LargeSearchlight</SubtypeId>
+            </Id>
+            <LightReflectorRadius Min="10" Max="240" Default="240" />
+        </Definition>
+        <Definition xsi:type="MyObjectBuilder_SearchlightDefinition">
+            <Id>
+                <TypeId>Searchlight</TypeId>
+                <SubtypeId>SmallSearchlight</SubtypeId>
+            </Id>
+            <LightReflectorRadius Min="10" Max="180" Default="180" />
+        </Definition>
+        <Definition xsi:type="MyObjectBuilder_ReflectorBlockDefinition">
+            <Id>
+                <TypeId>ReflectorLight</TypeId>
+                <SubtypeId>LargeBlockFrontLight</SubtypeId>
+            </Id>
+            <ReflectorTexture>Textures\Lights\search_light.DDS</ReflectorTexture>
+            <LightReflectorRadius Min="10" Max="240" Default="240" />
+        </Definition>
+        <Definition xsi:type="MyObjectBuilder_ReflectorBlockDefinition">
+            <Id>
+                <TypeId>ReflectorLight</TypeId>
+                <SubtypeId>SmallBlockFrontLight</SubtypeId>
+            </Id>
+            <ReflectorTexture>Textures\Lights\search_light.DDS</ReflectorTexture>
+            <LightReflectorRadius Min="10" Max="180" Default="180" />
+        </Definition>
+        <Definition xsi:type="MyObjectBuilder_ReflectorBlockDefinition">
+            <Id>
+                <TypeId>ReflectorLight</TypeId>
+                <SubtypeId>LargeBlockFloodlight</SubtypeId>
+            </Id>
+            <LightReflectorRadius Min="10" Max="160" Default="160"></LightReflectorRadius>
+            <ReflectorConeDegrees>120</ReflectorConeDegrees>
+        </Definition>
+
+        <Definition xsi:type="MyObjectBuilder_ReflectorBlockDefinition">
+            <Id>
+                <TypeId>ReflectorLight</TypeId>
+                <SubtypeId>LargeBlockFloodlightAngled</SubtypeId>
+            </Id>
+            <LightReflectorRadius Min="10" Max="160" Default="160"></LightReflectorRadius>
+            <ReflectorConeDegrees>120</ReflectorConeDegrees>
+        </Definition>
+
+        <Definition xsi:type="MyObjectBuilder_ReflectorBlockDefinition">
+            <Id>
+                <TypeId>ReflectorLight</TypeId>
+                <SubtypeId>LargeBlockFloodlightCornerL</SubtypeId>
+            </Id>
+            <LightReflectorRadius Min="10" Max="160" Default="160"></LightReflectorRadius>
+            <ReflectorConeDegrees>120</ReflectorConeDegrees>
+        </Definition>
+
+        <Definition xsi:type="MyObjectBuilder_ReflectorBlockDefinition">
+            <Id>
+                <TypeId>ReflectorLight</TypeId>
+                <SubtypeId>LargeBlockFloodlightCornerR</SubtypeId>
+            </Id>
+            <LightReflectorRadius Min="10" Max="160" Default="160"></LightReflectorRadius>
+            <ReflectorConeDegrees>120</ReflectorConeDegrees>
+        </Definition>
+
+        <Definition xsi:type="MyObjectBuilder_ReflectorBlockDefinition">
+            <Id>
+                <TypeId>ReflectorLight</TypeId>
+                <SubtypeId>SmallBlockFloodlight</SubtypeId>
+            </Id>
+            <LightReflectorRadius Min="10" Max="120" Default="120"></LightReflectorRadius>
+            <ReflectorConeDegrees>120</ReflectorConeDegrees>
+        </Definition>
+
+        <Definition xsi:type="MyObjectBuilder_ReflectorBlockDefinition">
+            <Id>
+                <TypeId>ReflectorLight</TypeId>
+                <SubtypeId>SmallBlockFloodlightAngled</SubtypeId>
+            </Id>
+            <LightReflectorRadius Min="10" Max="120" Default="120"></LightReflectorRadius>
+            <ReflectorConeDegrees>120</ReflectorConeDegrees>
+        </Definition>
+
+        <Definition xsi:type="MyObjectBuilder_ReflectorBlockDefinition">
+            <Id>
+                <TypeId>ReflectorLight</TypeId>
+                <SubtypeId>SmallBlockFloodlightCornerL</SubtypeId>
+            </Id>
+            <LightReflectorRadius Min="10" Max="120" Default="120"></LightReflectorRadius>
+            <ReflectorConeDegrees>120</ReflectorConeDegrees>
+        </Definition>
+
+        <Definition xsi:type="MyObjectBuilder_ReflectorBlockDefinition">
+            <Id>
+                <TypeId>ReflectorLight</TypeId>
+                <SubtypeId>SmallBlockFloodlightCornerR</SubtypeId>
+            </Id>
+            <LightReflectorRadius Min="10" Max="120" Default="120"></LightReflectorRadius>
+            <ReflectorConeDegrees>120</ReflectorConeDegrees>
+        </Definition>
+
+        <Definition xsi:type="MyObjectBuilder_ReflectorBlockDefinition">
+            <Id>
+                <TypeId>ReflectorLight</TypeId>
+                <SubtypeId>SmallBlockFloodlightDown</SubtypeId>
+            </Id>
+            <LightReflectorRadius Min="10" Max="120" Default="120"></LightReflectorRadius>
+            <ReflectorConeDegrees>120</ReflectorConeDegrees>
+        </Definition>
+
+        <Definition xsi:type="MyObjectBuilder_ReflectorBlockDefinition">
+            <Id>
+                <TypeId>ReflectorLight</TypeId>
+                <SubtypeId>SmallBlockFloodlightAngledRotated</SubtypeId>
+            </Id>
+            <LightReflectorRadius Min="10" Max="120" Default="120"></LightReflectorRadius>
+            <ReflectorConeDegrees>120</ReflectorConeDegrees>
+        </Definition>
+    </CubeBlocks>
+</Definitions>

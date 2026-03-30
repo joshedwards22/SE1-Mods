@@ -1,0 +1,117 @@
+<?xml version="1.0" ?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<CubeBlocks>
+		<Definition>
+			<Id>
+				<TypeId>CubeBlock</TypeId>
+				<SubtypeId>JS_CorridorStairWindow</SubtypeId>
+			</Id>
+			<DisplayName>Corridor Stair Window</DisplayName>
+			<Icon>Textures\GUI\Icons\Cubes\CorridorStairWindow.dds</Icon>
+			<Description>Corridor with stairs and windows</Description>
+			<CubeSize>Large</CubeSize>
+			<BlockTopology>TriangleMesh</BlockTopology>
+			<Size x="1" y="2" z="1" />
+			<ModelOffset x="0" y="0" z="0" />
+			<Model>Models\Cubes\large\CorridorStair\CorridorStairWindow.mwm</Model>
+			<Components>
+				<Component Subtype="InteriorPlate" Count="160" />
+				<Component Subtype="Construction" Count="40" />
+				<Component Subtype="InteriorPlate" Count="40" />
+				<Component Subtype="SmallTube" Count="12" />
+				<Component Subtype="Construction" Count="20" />
+				<Component Subtype="BulletproofGlass" Count="12" />
+			</Components>
+			<CriticalComponent Subtype="BulletproofGlass" Index="0" />
+			<MountPoints>
+				<MountPoint Side="Front" StartX="0.00" StartY="0.00" EndX="1.00" EndY="0.04"/>
+				<MountPoint Side="Front" StartX="0.00" StartY="0.96" EndX="1.00" EndY="1.04"/>
+				<MountPoint Side="Front" StartX="0.00" StartY="1.96" EndX="1.00" EndY="2.00"/>
+				<MountPoint Side="Front" StartX="0.00" StartY="0.00" EndX="0.04" EndY="2.00"/>
+				<MountPoint Side="Front" StartX="0.96" StartY="0.00" EndX="1.00" EndY="2.00"/>
+				<MountPoint Side="Back" StartX="0.00" StartY="0.00" EndX="1.00" EndY="0.04"/>
+				<MountPoint Side="Back" StartX="0.00" StartY="1.96" EndX="1.00" EndY="2.00"/>
+				<MountPoint Side="Back" StartX="0.00" StartY="0.00" EndX="0.04" EndY="2.00"/>
+				<MountPoint Side="Back" StartX="0.96" StartY="0.00" EndX="1.00" EndY="2.00"/>
+				<MountPoint Side="Left" StartX="0.00" StartY="0.00" EndX="1.00" EndY="2.00"/>
+				<MountPoint Side="Right" StartX="0.00" StartY="0.00" EndX="1.00" EndY="2.00"/>
+				<MountPoint Side="Top" StartX="0.00" StartY="0.00" EndX="1.00" EndY="1.00"/>
+				<MountPoint Side="Bottom" StartX="0.00" StartY="0.00" EndX="1.00" EndY="1.00"/>
+			</MountPoints>
+			<BuildProgressModels>
+				<Model BuildPercentUpperBound="0.33" File="Models\Cubes\large\CorridorStair\CorridorStairWindow_BS1.mwm" />
+				<Model BuildPercentUpperBound="0.66" File="Models\Cubes\large\CorridorStair\CorridorStairWindow_BS2.mwm" />
+				<Model BuildPercentUpperBound="1.00" File="Models\Cubes\large\CorridorStair\CorridorStairWindow_BS3.mwm" />
+			</BuildProgressModels>
+			<BlockPairName>CorridorStairWindow</BlockPairName>
+			<MirroringZ>Y</MirroringZ>
+			<MirroringY>Z</MirroringY>
+			<EdgeType>Light</EdgeType>
+			<BuildTimeSeconds>16</BuildTimeSeconds>
+			<PCU>1</PCU>
+			<DLC>Signal</DLC>
+		</Definition>
+		<Definition xsi:type="MyObjectBuilder_LightingBlockDefinition">
+			<Id>
+				<TypeId>InteriorLight</TypeId>
+				<SubtypeId>JS_CorridorStair</SubtypeId>
+			</Id>
+			<DisplayName>Corridor Stair Light</DisplayName>
+			<Description>Corridor with stairs and a light</Description>
+			<Icon>Textures\GUI\Icons\Cubes\CorridorStairLight.dds</Icon>
+			<CubeSize>Large</CubeSize>
+			<BlockTopology>TriangleMesh</BlockTopology>
+			<Size x="1" y="2" z="1"/>
+			<ModelOffset x="0" y="0" z="0"/>
+			<Model>Models\Cubes\large\CorridorStair\CorridorStairLight.mwm</Model>
+			<Components>
+				<Component Subtype="InteriorPlate" Count="160" />
+				<Component Subtype="Construction" Count="40" />
+				<Component Subtype="InteriorPlate" Count="40" />
+				<Component Subtype="SmallTube" Count="12" />
+				<Component Subtype="Construction" Count="20" />
+			</Components>
+			<CriticalComponent Subtype="Construction" Index="0" />
+			<MountPoints>
+				<MountPoint Side="Front" StartX="0.00" StartY="0.00" EndX="1.00" EndY="0.04"/>
+				<MountPoint Side="Front" StartX="0.00" StartY="0.96" EndX="1.00" EndY="1.04"/>
+				<MountPoint Side="Front" StartX="0.00" StartY="1.96" EndX="1.00" EndY="2.00"/>
+				<MountPoint Side="Front" StartX="0.00" StartY="0.00" EndX="0.04" EndY="2.00"/>
+				<MountPoint Side="Front" StartX="0.96" StartY="0.00" EndX="1.00" EndY="2.00"/>
+				<MountPoint Side="Back" StartX="0.00" StartY="0.00" EndX="1.00" EndY="0.04"/>
+				<MountPoint Side="Back" StartX="0.00" StartY="1.96" EndX="1.00" EndY="2.00"/>
+				<MountPoint Side="Back" StartX="0.00" StartY="0.00" EndX="0.04" EndY="2.00"/>
+				<MountPoint Side="Back" StartX="0.96" StartY="0.00" EndX="1.00" EndY="2.00"/>
+				<MountPoint Side="Left" StartX="0.00" StartY="0.00" EndX="1.00" EndY="2.00"/>
+				<MountPoint Side="Right" StartX="0.00" StartY="0.00" EndX="1.00" EndY="2.00"/>
+				<MountPoint Side="Top" StartX="0.00" StartY="0.00" EndX="1.00" EndY="1.00"/>
+				<MountPoint Side="Bottom" StartX="0.00" StartY="0.00" EndX="1.00" EndY="1.00"/>
+			</MountPoints>
+			<BuildProgressModels>
+				<Model BuildPercentUpperBound="0.33" File="Models\Cubes\large\CorridorStair\CorridorStairLight_BS1.mwm"/>
+				<Model BuildPercentUpperBound="0.67" File="Models\Cubes\large\CorridorStair\CorridorStairLight_BS2.mwm"/>
+				<Model BuildPercentUpperBound="1.00" File="Models\Cubes\large\CorridorStair\CorridorStairLight_BS3.mwm"/>
+			</BuildProgressModels>
+			<BlockPairName>CorridorStairLight</BlockPairName>
+			<MirroringY>Z</MirroringY>
+			<MirroringZ>Y</MirroringZ>
+			<EdgeType>Light</EdgeType>
+			<Flare>InteriorLight</Flare>
+			<PointLightEmissiveMaterial>Emissive</PointLightEmissiveMaterial>
+			<SpotLightEmissiveMaterial>EmissiveSpotlight</SpotLightEmissiveMaterial>
+			<BuildTimeSeconds>14</BuildTimeSeconds>
+			<LightRadius Min="1" Max="20" Default="3.6"></LightRadius>
+			<LightFalloff Min="0" Max="3" Default="1.3"></LightFalloff>
+			<LightIntensity Min="0.5" Max="10" Default="5"></LightIntensity>
+			<ResourceSinkGroup>Utility</ResourceSinkGroup>
+			<RequiredPowerInput>0.00006</RequiredPowerInput>
+			<DamageEffectName>Damage_Electrical_Damaged</DamageEffectName>
+			<DamagedSound>ParticleElectrical</DamagedSound>
+			<DestroyEffect>BlockDestroyed_Small</DestroyEffect>
+			<DestroySound>PoofExplosionCat1</DestroySound>
+			<PCU>20</PCU>
+			<DLC>Signal</DLC>
+		</Definition>
+	</CubeBlocks>
+</Definitions>
