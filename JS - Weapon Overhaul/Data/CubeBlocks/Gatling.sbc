@@ -16,7 +16,7 @@ Rate of Fire: 1400 RPM</Description>
             <CubeSize>Large</CubeSize>
             <PlaceDecals>false</PlaceDecals>
             <BlockTopology>TriangleMesh</BlockTopology>
-            <Size x="1" y="3" z="1" />
+            <Size x="3" y="3" z="3" />
             <ModelOffset x="0" y="0" z="0" />
             <Model>Models\Cubes\large\GatlingTurret\LargeGatlingTurret.mwm</Model>
             <UseModelIntersection>true</UseModelIntersection>
@@ -67,8 +67,98 @@ Rate of Fire: 1400 RPM</Description>
             <MaxElevationDegrees>90</MaxElevationDegrees>
             <MinAzimuthDegrees>-180</MinAzimuthDegrees>
             <MaxAzimuthDegrees>180</MaxAzimuthDegrees>
-            <RotationSpeed>0.002</RotationSpeed>
-            <ElevationSpeed>0.002 </ElevationSpeed>
+            <RotationSpeed>0.003</RotationSpeed>
+            <ElevationSpeed>0.003 </ElevationSpeed>
+            <IdleRotation>false</IdleRotation>
+            <MaxRangeMeters>1000</MaxRangeMeters>
+            <MinFov>0.1</MinFov>
+            <MaxFov>1.04719755</MaxFov>
+            <EmissiveColorPreset>Default</EmissiveColorPreset>
+            <DestroyEffect>BlockDestroyedExplosion_Large</DestroyEffect>
+            <DestroySound>WepSmallWarheadExpl</DestroySound>
+            <PCU>225</PCU>
+            <IsAirTight>false</IsAirTight>
+            <AmmoPullAmountPerTick>3</AmmoPullAmountPerTick>
+            <InventoryFillFactorMin>.25</InventoryFillFactorMin>
+            <InventoryFillFactorMax>.5</InventoryFillFactorMax>
+            <TieredUpdateTimes>
+                <unsignedInt>10</unsignedInt>
+                <unsignedInt>0</unsignedInt>
+            </TieredUpdateTimes>
+            <TargetingGroups>
+                <string>Weapons</string>
+            </TargetingGroups>
+            <UpCameraOffset>0.5</UpCameraOffset>
+            <ForwardCameraOffset>0.4</ForwardCameraOffset>
+            <DLC>Contact</DLC>
+        </Definition>
+        <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+            <Id>
+                <TypeId>LargeGatlingTurret</TypeId>
+                <SubtypeId>LargeGatlingTurretCompact</SubtypeId>
+            </Id>
+            <DisplayName>Gatling Turret Compact</DisplayName>
+            <Icon>Textures\GUI\Icons\Cubes\LargeGatlingTurret.dds</Icon>
+            <Description>High rate of fire point defense cannon. Able to shred small targets and missiles.
+
+Range: 1000m
+Rate of Fire: 1400 RPM</Description>
+            <CubeSize>Large</CubeSize>
+            <PlaceDecals>false</PlaceDecals>
+            <BlockTopology>TriangleMesh</BlockTopology>
+            <Size x="1" y="3" z="1" />
+            <ModelOffset x="0" y="0" z="0" />
+            <Model>Models\Cubes\large\GatlingTurret\LargeGatlingTurret.mwm</Model>
+            <UseModelIntersection>true</UseModelIntersection>
+            <Components>
+                <Component Subtype="SteelPlate" Count="10" />
+                <Component Subtype="Construction" Count="30" />
+                <Component Subtype="MetalGrid" Count="15" />
+                <Component Subtype="SmallTube" Count="6" />
+                <Component Subtype="Motor" Count="8" />
+                <Component Subtype="Computer" Count="10" />
+                <Component Subtype="Construction" Count="10" />
+                <Component Subtype="SteelPlate" Count="30" />
+            </Components>
+            <CriticalComponent Subtype="Computer" Index="0" />
+            <MountPoints>
+                <MountPoint Side="Bottom" StartX="0" StartY="0" EndX="1" EndY="1" />
+            </MountPoints>
+            <BuildProgressModels>
+                <Model BuildPercentUpperBound="0.33" File="Models\Cubes\large\GatlingTurret\LargeGatlingTurret_BS1.mwm" />
+                <Model BuildPercentUpperBound="0.66" File="Models\Cubes\large\GatlingTurret\LargeGatlingTurret_BS2.mwm" />
+                <Model BuildPercentUpperBound="1.00" File="Models\Cubes\large\GatlingTurret\LargeGatlingTurret_BS3.mwm" />
+            </BuildProgressModels>
+            <VoxelPlacement>
+                <StaticMode>
+                    <PlacementMode>OutsideVoxel</PlacementMode>
+                    <MaxAllowed>0.2</MaxAllowed>
+                    <MinAllowed>0</MinAllowed>
+                </StaticMode>
+                <DynamicMode>
+                    <PlacementMode>OutsideVoxel</PlacementMode>
+                    <MaxAllowed>0.2</MaxAllowed>
+                    <MinAllowed>0.01</MinAllowed>
+                </DynamicMode>
+            </VoxelPlacement>
+            <BlockPairName>GatlingTurretCompact</BlockPairName>
+            <MirroringY>Z</MirroringY>
+            <MirroringZ>Y</MirroringZ>
+            <EdgeType>Light</EdgeType>
+            <BuildTimeSeconds>30</BuildTimeSeconds>
+            <OverlayTexture>Textures\GUI\Screens\turret_overlay.dds</OverlayTexture>
+            <WeaponDefinitionId Subtype="LargeGatlingTurret" />
+            <HiddenTargetingOptions>Friends</HiddenTargetingOptions>
+            <InventoryMaxVolume>0.384</InventoryMaxVolume>
+            <DamageEffectName>Damage_WeapExpl_Damaged</DamageEffectName>
+            <DamagedSound>ParticleWeapExpl</DamagedSound>
+            <ResourceSinkGroup>Defense</ResourceSinkGroup>
+            <MinElevationDegrees>-43</MinElevationDegrees>
+            <MaxElevationDegrees>90</MaxElevationDegrees>
+            <MinAzimuthDegrees>-180</MinAzimuthDegrees>
+            <MaxAzimuthDegrees>180</MaxAzimuthDegrees>
+            <RotationSpeed>0.003</RotationSpeed>
+            <ElevationSpeed>0.003</ElevationSpeed>
             <IdleRotation>false</IdleRotation>
             <MaxRangeMeters>1000</MaxRangeMeters>
             <MinFov>0.1</MinFov>
@@ -106,7 +196,7 @@ Rate of Fire: 1400 RPM</Description>
             <CubeSize>Large</CubeSize>
             <PlaceDecals>false</PlaceDecals>
             <BlockTopology>TriangleMesh</BlockTopology>
-            <Size x="1" y="3" z="1" />
+            <Size x="3" y="3" z="3" />
             <ModelOffset x="0" y="0" z="0" />
             <Model>Models\Cubes\Large\GatlingTurretReskin.mwm</Model>
             <UseModelIntersection>true</UseModelIntersection>
@@ -157,8 +247,98 @@ Rate of Fire: 1400 RPM</Description>
             <MaxElevationDegrees>90</MaxElevationDegrees>
             <MinAzimuthDegrees>-180</MinAzimuthDegrees>
             <MaxAzimuthDegrees>180</MaxAzimuthDegrees>
-            <RotationSpeed>0.002</RotationSpeed>
-            <ElevationSpeed>0.002 </ElevationSpeed>
+            <RotationSpeed>0.003</RotationSpeed>
+            <ElevationSpeed>0.003</ElevationSpeed>
+            <IdleRotation>false</IdleRotation>
+            <MaxRangeMeters>1000</MaxRangeMeters>
+            <MinFov>0.1</MinFov>
+            <MaxFov>1.04719755</MaxFov>
+            <EmissiveColorPreset>Default</EmissiveColorPreset>
+            <DestroyEffect>BlockDestroyedExplosion_Large</DestroyEffect>
+            <DestroySound>WepSmallWarheadExpl</DestroySound>
+            <PCU>225</PCU>
+            <IsAirTight>false</IsAirTight>
+            <AmmoPullAmountPerTick>3</AmmoPullAmountPerTick>
+            <InventoryFillFactorMin>.25</InventoryFillFactorMin>
+            <InventoryFillFactorMax>.5</InventoryFillFactorMax>
+            <TieredUpdateTimes>
+                <unsignedInt>10</unsignedInt>
+                <unsignedInt>0</unsignedInt>
+            </TieredUpdateTimes>
+            <TargetingGroups>
+                <string>Weapons</string>
+            </TargetingGroups>
+            <UpCameraOffset>0.5</UpCameraOffset>
+            <ForwardCameraOffset>0.4</ForwardCameraOffset>
+            <DLC>Contact</DLC>
+        </Definition>
+        <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+            <Id>
+                <TypeId>LargeGatlingTurret</TypeId>
+                <SubtypeId>LargeGatlingTurretReskinCompact</SubtypeId>
+            </Id>
+            <DisplayName>Large Gatling Turret Type II Compact</DisplayName>
+            <Icon>Textures\GUI\Icons\Cubes\GatlingTurretReskinLarge.dds</Icon>
+            <Description>High rate of fire point defense cannon. Able to shred small targets and missiles.
+            
+Range: 1000m
+Rate of Fire: 1400 RPM</Description>
+            <CubeSize>Large</CubeSize>
+            <PlaceDecals>false</PlaceDecals>
+            <BlockTopology>TriangleMesh</BlockTopology>
+            <Size x="1" y="3" z="1" />
+            <ModelOffset x="0" y="0" z="0" />
+            <Model>Models\Cubes\Large\GatlingTurretReskin.mwm</Model>
+            <UseModelIntersection>true</UseModelIntersection>
+            <Components>
+                <Component Subtype="SteelPlate" Count="10" />
+                <Component Subtype="Construction" Count="30" />
+                <Component Subtype="MetalGrid" Count="15" />
+                <Component Subtype="SmallTube" Count="6" />
+                <Component Subtype="Motor" Count="8" />
+                <Component Subtype="Computer" Count="10" />
+                <Component Subtype="Construction" Count="10" />
+                <Component Subtype="SteelPlate" Count="30" />
+            </Components>
+            <CriticalComponent Subtype="Computer" Index="0" />
+            <MountPoints>
+                <MountPoint Side="Bottom" StartX="0" StartY="0" EndX="1" EndY="1" />
+            </MountPoints>
+            <BuildProgressModels>
+                <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Large\GatlingTurretReskinConstruction1.mwm" />
+                <Model BuildPercentUpperBound="0.66" File="Models\Cubes\Large\GatlingTurretReskinConstruction2.mwm" />
+                <Model BuildPercentUpperBound="1.00" File="Models\Cubes\Large\GatlingTurretReskinConstruction3.mwm" />
+            </BuildProgressModels>
+            <VoxelPlacement>
+                <StaticMode>
+                    <PlacementMode>OutsideVoxel</PlacementMode>
+                    <MaxAllowed>0.2</MaxAllowed>
+                    <MinAllowed>0</MinAllowed>
+                </StaticMode>
+                <DynamicMode>
+                    <PlacementMode>OutsideVoxel</PlacementMode>
+                    <MaxAllowed>0.2</MaxAllowed>
+                    <MinAllowed>0.01</MinAllowed>
+                </DynamicMode>
+            </VoxelPlacement>
+            <BlockPairName>GatlingTurretReskinCompact</BlockPairName>
+            <MirroringY>Z</MirroringY>
+            <MirroringZ>Y</MirroringZ>
+            <EdgeType>Light</EdgeType>
+            <BuildTimeSeconds>30</BuildTimeSeconds>
+            <OverlayTexture>Textures\GUI\Screens\turret_overlay.dds</OverlayTexture>
+            <WeaponDefinitionId Subtype="LargeGatlingTurret" />
+            <HiddenTargetingOptions>Friends</HiddenTargetingOptions>
+            <InventoryMaxVolume>0.384</InventoryMaxVolume>
+            <DamageEffectName>Damage_WeapExpl_Damaged</DamageEffectName>
+            <DamagedSound>ParticleWeapExpl</DamagedSound>
+            <ResourceSinkGroup>Defense</ResourceSinkGroup>
+            <MinElevationDegrees>-43</MinElevationDegrees>
+            <MaxElevationDegrees>90</MaxElevationDegrees>
+            <MinAzimuthDegrees>-180</MinAzimuthDegrees>
+            <MaxAzimuthDegrees>180</MaxAzimuthDegrees>
+            <RotationSpeed>0.003</RotationSpeed>
+            <ElevationSpeed>0.003</ElevationSpeed>
             <IdleRotation>false</IdleRotation>
             <MaxRangeMeters>1000</MaxRangeMeters>
             <MinFov>0.1</MinFov>
@@ -251,8 +431,8 @@ Rate of Fire: 1400 RPM</Description>
             <MaxElevationDegrees>180</MaxElevationDegrees>
             <MinAzimuthDegrees>-180</MinAzimuthDegrees>
             <MaxAzimuthDegrees>180</MaxAzimuthDegrees>
-            <RotationSpeed>0.002</RotationSpeed>
-            <ElevationSpeed>0.002 </ElevationSpeed>
+            <RotationSpeed>0.003</RotationSpeed>
+            <ElevationSpeed>0.003</ElevationSpeed>
             <IdleRotation>false</IdleRotation>
             <MaxRangeMeters>1000</MaxRangeMeters>
             <MinFov>0.1</MinFov>
@@ -344,8 +524,8 @@ Rate of Fire: 1400 RPM</Description>
             <MaxElevationDegrees>180</MaxElevationDegrees>
             <MinAzimuthDegrees>-180</MinAzimuthDegrees>
             <MaxAzimuthDegrees>180</MaxAzimuthDegrees>
-            <RotationSpeed>0.002</RotationSpeed>
-            <ElevationSpeed>0.002 </ElevationSpeed>
+            <RotationSpeed>0.003</RotationSpeed>
+            <ElevationSpeed>0.003</ElevationSpeed>
             <IdleRotation>false</IdleRotation>
             <MaxRangeMeters>1000</MaxRangeMeters>
             <MinFov>0.1</MinFov>

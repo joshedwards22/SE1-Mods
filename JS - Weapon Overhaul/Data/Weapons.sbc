@@ -232,19 +232,38 @@
         <Weapon>
             <Id>
                 <TypeId>WeaponDefinition</TypeId>
-                <SubtypeId>Coilgun</SubtypeId>
+                <SubtypeId>LargeCoilgun</SubtypeId>
             </Id>
-            <MissileAmmoData RateOfFire="20" ShootSoundName="WepRailgunSmallShot" FlightSoundName="MediumShellFlightSound" ShotsInBurst="1" />
-            <ReloadTime>6000</ReloadTime>
+            <MissileAmmoData RateOfFire="20" ShootSoundName="WepRailgunLargeShot" PreShotSoundName="WepRailgunLargeCharge" FlightSoundName="HeavyShellFlightSound" ShotsInBurst="1" />
             <DeviateShotAngle>0</DeviateShotAngle>
+            <ShotDelay>2000</ShotDelay>
             <DeviateShotAngleAiming>0</DeviateShotAngleAiming>
             <NoAmmoSoundName>WepShipRailgunNoAmmo</NoAmmoSoundName>
+            <AmmoMagazines>
+                <AmmoMagazine Subtype="LargeRailgunAmmo" />
+            </AmmoMagazines>
+            <ReloadTime>12000</ReloadTime>
             <Effects>
-                <Effect Action="Shoot" Dummy="muzzle_missile_001" Particle="Muzzle_Flash_Coilgun" Loop="false" InstantStop="false" OffsetX="0" OffsetY="0" OffsetZ="-3.5"/>
+                <Effect Action="BeforeShoot" Dummy="barrel_001" Particle="Muzzle_Flash_RailgunLarge" Loop="false" InstantStop="false" OffsetX="0" OffsetY="0" OffsetZ="-9"/>
             </Effects>
+        </Weapon>
+        <Weapon>
+            <Id>
+                <TypeId>WeaponDefinition</TypeId>
+                <SubtypeId>SmallCoilgun</SubtypeId>
+            </Id>
+            <MissileAmmoData RateOfFire="20" ShootSoundName="WepRailgunSmallShot" PreShotSoundName="WepRailgunSmallCharge" FlightSoundName="MediumShellFlightSound" ShotsInBurst="1" />
+            <DeviateShotAngle>0</DeviateShotAngle>
+            <ShotDelay>500</ShotDelay>
+            <DeviateShotAngleAiming>0</DeviateShotAngleAiming>
+            <NoAmmoSoundName>WepShipRailgunNoAmmo</NoAmmoSoundName>
             <AmmoMagazines>
                 <AmmoMagazine Subtype="SmallRailgunAmmo" />
             </AmmoMagazines>
+            <ReloadTime>6000</ReloadTime>
+            <Effects>
+                <Effect Action="BeforeShoot" Dummy="barrel_001" Particle="Muzzle_Flash_RailgunSmall" Loop="false" InstantStop="false" OffsetX="0" OffsetY="0.1" OffsetZ="-1.8"/>
+            </Effects>
         </Weapon>
         <Weapon>
             <Id>

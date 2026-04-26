@@ -31,7 +31,7 @@
                 <TypeId>BlueprintDefinition</TypeId>
                 <SubtypeId>Position0130_SmallRailgunAmmo</SubtypeId>
             </Id>
-            <DisplayName>Coilgun Sabot</DisplayName>
+            <DisplayName>Small Kinetic Sabot</DisplayName>
             <Prerequisites>
                 <Item Amount="4" TypeId="Ingot" SubtypeId="Iron" />
                 <Item Amount="0.5" TypeId="Ingot" SubtypeId="Nickel" />
@@ -44,8 +44,9 @@
                 <TypeId>BlueprintDefinition</TypeId>
                 <SubtypeId>Position0140_LargeRailgunAmmo</SubtypeId>
             </Id>
+            <DisplayName>Large Kinetic Sabot</DisplayName>
             <Prerequisites>
-                <Item Amount="20" TypeId="Ingot" SubtypeId="Iron" />
+                <Item Amount="24" TypeId="Ingot" SubtypeId="Iron" />
                 <Item Amount="3" TypeId="Ingot" SubtypeId="Nickel" />
                 <Item Amount="30" TypeId="Ingot" SubtypeId="Silicon" />
             </Prerequisites>
@@ -177,9 +178,16 @@
         <AmmoMagazine>
             <Id>
                 <TypeId>AmmoMagazine</TypeId>
+                <SubtypeId>LargeRailgunAmmo</SubtypeId>
+            </Id>
+            <DisplayName>Large Kinetic Sabot</DisplayName>
+        </AmmoMagazine>
+        <AmmoMagazine>
+            <Id>
+                <TypeId>AmmoMagazine</TypeId>
                 <SubtypeId>SmallRailgunAmmo</SubtypeId>
             </Id>
-            <DisplayName>Coilgun Sabot</DisplayName>
+            <DisplayName>Small Kinetic Sabot</DisplayName>
         </AmmoMagazine>
     </AmmoMagazines>
 </Definitions>

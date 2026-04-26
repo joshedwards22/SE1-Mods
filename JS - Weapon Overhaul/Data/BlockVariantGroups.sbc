@@ -10,15 +10,16 @@
             <Blocks>
                 <Block Type="MyObjectBuilder_LargeGatlingTurret" Subtype="" />
                 <Block Type="MyObjectBuilder_LargeGatlingTurret" Subtype="SmallGatlingTurret" />
+                <Block Type="MyObjectBuilder_LargeGatlingTurret" Subtype="LargeGatlingTurretCompact" />
                 <Block Type="MyObjectBuilder_LargeGatlingTurret" Subtype="LargeGatlingTurretReskin" />
                 <Block Type="MyObjectBuilder_LargeGatlingTurret" Subtype="SmallGatlingTurretReskin" />
+                <Block Type="MyObjectBuilder_LargeGatlingTurret" Subtype="LargeGatlingTurretReskinCompact" />
                 <Block Type="MyObjectBuilder_LargeGatlingTurret" Subtype="LargeAutocannonTurret" />
                 <Block Type="MyObjectBuilder_LargeGatlingTurret" Subtype="AutoCannonTurret" />
                 <Block Type="MyObjectBuilder_LargeMissileTurret" Subtype="LargeBlockMediumCalibreTurret" />
                 <Block Type="MyObjectBuilder_LargeMissileTurret" Subtype="SmallBlockMediumCalibreTurret" />
                 <Block Type="MyObjectBuilder_LargeMissileTurret" Subtype="LargeCalibreTurret" />
                 <Block Type="MyObjectBuilder_LargeMissileTurret" Subtype="CoilgunTurret" />
-                <Block Type="MyObjectBuilder_LargeMissileTurret" Subtype="SmallCoilgunTurret" />
                 <Block Type="MyObjectBuilder_LargeMissileTurret" Subtype="RailgunTurret" />
                 <Block Type="MyObjectBuilder_LargeMissileTurret" Subtype="" />
                 <Block Type="MyObjectBuilder_LargeMissileTurret" Subtype="SmallMissileTurret" />
@@ -42,6 +43,7 @@
                 <Block Type="MyObjectBuilder_SmallMissileLauncherReload" Subtype="SmallBlockMediumCalibreGun" />
                 <Block Type="MyObjectBuilder_SmallMissileLauncher" Subtype="LargeBlockLargeCalibreGun" />
                 <Block Type="MyObjectBuilder_SmallMissileLauncherReload" Subtype="LargeRailgun" />
+                <Block Type="MyObjectBuilder_SmallMissileLauncherReload" Subtype="SmallRailgun" />
             </Blocks>
         </BlockVariantGroup>
     </BlockVariantGroups>

@@ -11,6 +11,8 @@
             <Name>Section1_Position1_LargeBlocks</Name>
             <StrictSearch>true</StrictSearch>
             <ItemIds>
+                <string>LargeGatlingTurret/LargeGatlingTurretCompact</string>
+                <string>LargeGatlingTurret/LargeGatlingTurretReskinCompact</string>
                 <string>LargeGatlingTurret/LargeAutocannonTurret</string>
                 <string>LargeMissileTurret/CoilgunTurret</string>
                 <string>LargeMissileTurret/RailgunTurret</string>
@@ -26,6 +28,8 @@
             <Name>Section1_Position3_Weapons</Name>
             <StrictSearch>true</StrictSearch>
             <ItemIds>
+                <string>LargeGatlingTurret/LargeGatlingTurretCompact</string>
+                <string>LargeGatlingTurret/LargeGatlingTurretReskinCompact</string>
                 <string>LargeGatlingTurret/LargeAutocannonTurret</string>
                 <string>LargeMissileTurret/CoilgunTurret</string>
                 <string>LargeMissileTurret/RailgunTurret</string>

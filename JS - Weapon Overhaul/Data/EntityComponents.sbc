@@ -33,7 +33,16 @@
                 <TypeId>EntityCapacitorComponent</TypeId>
                 <SubtypeId>LargeRailgun</SubtypeId>
             </Id>
-            <Capacity>0.025</Capacity>
+            <Capacity>0.16</Capacity>
+            <RechargeDraw>48</RechargeDraw>
+            <ChargeMultiplier>1.0</ChargeMultiplier>
+        </EntityComponent>
+        <EntityComponent xsi:type="MyObjectBuilder_EntityCapacitorComponentDefinition">
+            <Id>
+                <TypeId>EntityCapacitorComponent</TypeId>
+                <SubtypeId>SmallRailgun</SubtypeId>
+            </Id>
+            <Capacity>0.02667</Capacity>
             <RechargeDraw>16</RechargeDraw>
             <ChargeMultiplier>1.0</ChargeMultiplier>
         </EntityComponent>
