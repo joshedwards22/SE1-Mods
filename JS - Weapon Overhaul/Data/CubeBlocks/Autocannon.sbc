@@ -105,7 +105,7 @@ Rate of Fire: 193 RPM</Description>
             <CubeSize>Small</CubeSize>
             <PlaceDecals>false</PlaceDecals>
             <BlockTopology>TriangleMesh</BlockTopology>
-            <Size x="5" y="5" z="5" />
+            <Size x="5" y="4" z="5" />
             <ModelOffset x="0" y="0" z="0" />
             <Model>Models\Cubes\small\AutocannonTurret\AutocannonTurret.mwm</Model>
             <UseModelIntersection>true</UseModelIntersection>
