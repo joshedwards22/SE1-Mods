@@ -33,7 +33,7 @@
                 <TypeId>EntityCapacitorComponent</TypeId>
                 <SubtypeId>LargeRailgun</SubtypeId>
             </Id>
-            <Capacity>0.16</Capacity>
+            <Capacity>0.24</Capacity>
             <RechargeDraw>48</RechargeDraw>
             <ChargeMultiplier>1.0</ChargeMultiplier>
         </EntityComponent>
@@ -42,7 +42,7 @@
                 <TypeId>EntityCapacitorComponent</TypeId>
                 <SubtypeId>SmallRailgun</SubtypeId>
             </Id>
-            <Capacity>0.02667</Capacity>
+            <Capacity>0.04444</Capacity>
             <RechargeDraw>16</RechargeDraw>
             <ChargeMultiplier>1.0</ChargeMultiplier>
         </EntityComponent>

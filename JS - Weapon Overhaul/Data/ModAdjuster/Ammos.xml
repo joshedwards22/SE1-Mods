@@ -5,38 +5,9 @@
         <Blueprint>
             <Id>
                 <TypeId>BlueprintDefinition</TypeId>
-                <SubtypeId>Position0100_Missile200mm</SubtypeId>
-            </Id>
-            <Prerequisites>
-                <Item Amount="55" TypeId="Ingot" SubtypeId="Iron" />
-                <Item Amount="7" TypeId="Ingot" SubtypeId="Nickel" />
-                <Item Amount="0.2" TypeId="Ingot" SubtypeId="Silicon" />
-                <Item Amount="0.04" TypeId="Ingot" SubtypeId="Gold" />
-                <Item Amount="1.2" TypeId="Ingot" SubtypeId="Magnesium" />
-            </Prerequisites>
-        </Blueprint>
-        <Blueprint>
-            <Id>
-                <TypeId>BlueprintDefinition</TypeId>
-                <SubtypeId>Position0120_LargeCalibreAmmo</SubtypeId>
-            </Id>
-            <Prerequisites>
-                <Item Amount="60" TypeId="Ingot" SubtypeId="Iron" />
-                <Item Amount="8" TypeId="Ingot" SubtypeId="Nickel" />
-                <Item Amount="5" TypeId="Ingot" SubtypeId="Magnesium" />
-            </Prerequisites>
-        </Blueprint>
-        <Blueprint>
-            <Id>
-                <TypeId>BlueprintDefinition</TypeId>
                 <SubtypeId>Position0130_SmallRailgunAmmo</SubtypeId>
             </Id>
             <DisplayName>Small Kinetic Sabot</DisplayName>
-            <Prerequisites>
-                <Item Amount="4" TypeId="Ingot" SubtypeId="Iron" />
-                <Item Amount="0.5" TypeId="Ingot" SubtypeId="Nickel" />
-                <Item Amount="5" TypeId="Ingot" SubtypeId="Silicon" />
-            </Prerequisites>
         </Blueprint>
 
         <Blueprint>
@@ -45,135 +16,8 @@
                 <SubtypeId>Position0140_LargeRailgunAmmo</SubtypeId>
             </Id>
             <DisplayName>Large Kinetic Sabot</DisplayName>
-            <Prerequisites>
-                <Item Amount="24" TypeId="Ingot" SubtypeId="Iron" />
-                <Item Amount="3" TypeId="Ingot" SubtypeId="Nickel" />
-                <Item Amount="30" TypeId="Ingot" SubtypeId="Silicon" />
-            </Prerequisites>
         </Blueprint>
     </Blueprints>
-
-    <Ammos>
-        <Ammo xsi:type="MyObjectBuilder_ProjectileAmmoDefinition">
-            <Id>
-                <TypeId>AmmoDefinition</TypeId>
-                <SubtypeId>LargeCaliber</SubtypeId>
-            </Id>
-            <BasicProperties>
-                <MaxTrajectory>1000</MaxTrajectory>
-            </BasicProperties>
-            <ProjectileProperties>
-                <ProjectileTrailProbability>1</ProjectileTrailProbability>
-                <ProjectileMassDamage>50</ProjectileMassDamage>
-            </ProjectileProperties>
-        </Ammo>
-        <Ammo xsi:type="MyObjectBuilder_ProjectileAmmoDefinition">
-            <Id>
-                <TypeId>AmmoDefinition</TypeId>
-                <SubtypeId>AutocannonShell</SubtypeId>
-            </Id>
-            <BasicProperties>
-                <MaxTrajectory>1500</MaxTrajectory>
-            </BasicProperties>
-            <ProjectileProperties>
-                <ProjectileTrailProbability>1</ProjectileTrailProbability>
-                <ProjectileMassDamage>500</ProjectileMassDamage>
-            </ProjectileProperties>
-        </Ammo>
-        <Ammo xsi:type="MyObjectBuilder_MissileAmmoDefinition">
-            <Id>
-                <TypeId>AmmoDefinition</TypeId>
-                <SubtypeId>MediumCalibreShell</SubtypeId>
-            </Id>
-            <BasicProperties>
-                <MaxTrajectory>2000</MaxTrajectory>
-            </BasicProperties>
-            <MissileProperties>
-                <MissileExplosionRadius>1.5</MissileExplosionRadius>
-                <MissileExplosionDamage>200</MissileExplosionDamage>
-                <MissileHealthPool>2500</MissileHealthPool>
-                <MissileMinRicochetAngle>80</MissileMinRicochetAngle>
-                <MissileMaxRicochetAngle>89</MissileMaxRicochetAngle>
-                <MissileMinRicochetProbability>0.25</MissileMinRicochetProbability>
-                <MissileMaxRicochetProbability>0.85</MissileMaxRicochetProbability>
-                <MissileRicochetDamage>1</MissileRicochetDamage>
-            </MissileProperties>
-        </Ammo>
-        <Ammo xsi:type="MyObjectBuilder_MissileAmmoDefinition">
-            <Id>
-                <TypeId>AmmoDefinition</TypeId>
-                <SubtypeId>LargeCalibreShell</SubtypeId>
-            </Id>
-            <BasicProperties>
-                <MaxTrajectory>3000</MaxTrajectory>
-            </BasicProperties>
-            <MissileProperties>
-                <MissileExplosionRadius>1.5</MissileExplosionRadius>
-                <MissileExplosionDamage>2000</MissileExplosionDamage>
-                <MissileHealthPool>2500</MissileHealthPool>
-                <MissileMinRicochetAngle>80</MissileMinRicochetAngle>
-                <MissileMaxRicochetAngle>89</MissileMaxRicochetAngle>
-                <MissileMinRicochetProbability>0.25</MissileMinRicochetProbability>
-                <MissileMaxRicochetProbability>0.85</MissileMaxRicochetProbability>
-                <MissileRicochetDamage>1</MissileRicochetDamage>
-            </MissileProperties>
-        </Ammo>
-        <Ammo xsi:type="MyObjectBuilder_MissileAmmoDefinition">
-            <Id>
-                <TypeId>AmmoDefinition</TypeId>
-                <SubtypeId>LargeRailgunSlug</SubtypeId>
-            </Id>
-            <BasicProperties>
-                <MaxTrajectory>5000</MaxTrajectory>
-                <DesiredSpeed>2000</DesiredSpeed>
-            </BasicProperties>
-            <MissileProperties>
-                <MissileInitialSpeed>2000</MissileInitialSpeed>
-                <MissileHealthPool>50000</MissileHealthPool>
-                <MissileMinRicochetAngle>80</MissileMinRicochetAngle>
-                <MissileMaxRicochetAngle>89</MissileMaxRicochetAngle>
-                <MissileMinRicochetProbability>0.25</MissileMinRicochetProbability>
-                <MissileMaxRicochetProbability>0.85</MissileMaxRicochetProbability>
-                <MissileRicochetDamage>1</MissileRicochetDamage>
-            </MissileProperties>
-        </Ammo>
-        <Ammo xsi:type="MyObjectBuilder_MissileAmmoDefinition">
-            <Id>
-                <TypeId>AmmoDefinition</TypeId>
-                <SubtypeId>SmallRailgunSlug</SubtypeId>
-            </Id>
-            <BasicProperties>
-                <MaxTrajectory>3000</MaxTrajectory>
-                <DesiredSpeed>2000</DesiredSpeed>
-            </BasicProperties>
-            <MissileProperties>
-                <MissileInitialSpeed>2000</MissileInitialSpeed>
-                <MissileHealthPool>17000</MissileHealthPool>
-                <MissileMinRicochetAngle>80</MissileMinRicochetAngle>
-                <MissileMaxRicochetAngle>89</MissileMaxRicochetAngle>
-                <MissileMinRicochetProbability>0.25</MissileMinRicochetProbability>
-                <MissileMaxRicochetProbability>0.85</MissileMaxRicochetProbability>
-                <MissileRicochetDamage>1</MissileRicochetDamage>
-            </MissileProperties>
-        </Ammo>
-        <Ammo xsi:type="MyObjectBuilder_MissileAmmoDefinition">
-            <Id>
-                <TypeId>AmmoDefinition</TypeId>
-                <SubtypeId>Missile</SubtypeId>
-            </Id>
-            <BasicProperties>
-                <MaxTrajectory>2000</MaxTrajectory>
-            </BasicProperties>
-            <MissileProperties>
-                <MissileExplosionRadius>4</MissileExplosionRadius>
-                <MissileExplosionDamage>500</MissileExplosionDamage>
-                <MissileHealthPool>1</MissileHealthPool>
-                <MissileAcceleration>60</MissileAcceleration>
-                <MissileInitialSpeed>60</MissileInitialSpeed>
-            </MissileProperties>
-        </Ammo>
-    </Ammos>
-
     <AmmoMagazines>
         <AmmoMagazine>
             <Id>

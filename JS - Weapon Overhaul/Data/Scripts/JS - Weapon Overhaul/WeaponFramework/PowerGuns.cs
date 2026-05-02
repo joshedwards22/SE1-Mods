@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -53,13 +53,13 @@ namespace JSWeaponOverhaul /// Set namespace name to something else, preferably 
                     AG_AmmoDefinitionName = "null",
                     
                     // cost of each batch of ammo, in megawatt hours for power or liters for the gases
-                    AG_AmmoCost = (16f * 6f) / 3600f, // 1 / 3600 for 1 MW input power given the 1 second of generation time. 0.0002777777778f is the decimal way of writing this and is valid as well.
+                    AG_AmmoCost = (32f * 12f) / 3600f, // 1 / 3600 for 1 MW input power given the 1 second of generation time. 0.0002777777778f is the decimal way of writing this and is valid as well.
                     
                     // what resource is required. Valid types: POWER, HYDROGEN, OXYGEN
                     AG_FuelType = POWER,
                     
                     // how long it takes to generate each batch of ammo in seconds. Required input will be AG_AmmoCost / AG_GenerationTime
-                    AG_GenerationTime = 6,
+                    AG_GenerationTime = 12,
 
                     // how many ammo magazines is generated each batch
                     AG_NumberGenerated = 1,
@@ -81,13 +81,13 @@ namespace JSWeaponOverhaul /// Set namespace name to something else, preferably 
                     AG_AmmoDefinitionName = "null",
                     
                     // cost of each batch of ammo, in megawatt hours for power or liters for the gases
-                    AG_AmmoCost = (48f * 12f) / 3600f, // 1 / 3600 for 1 MW input power given the 1 second of generation time. 0.0002777777778f is the decimal way of writing this and is valid as well.
+                    AG_AmmoCost = (48f * 18f) / 3600f, // 1 / 3600 for 1 MW input power given the 1 second of generation time. 0.0002777777778f is the decimal way of writing this and is valid as well.
                     
                     // what resource is required. Valid types: POWER, HYDROGEN, OXYGEN
                     AG_FuelType = POWER,
                     
                     // how long it takes to generate each batch of ammo in seconds. Required input will be AG_AmmoCost / AG_GenerationTime
-                    AG_GenerationTime = 12,
+                    AG_GenerationTime = 18,
 
                     // how many ammo magazines is generated each batch
                     AG_NumberGenerated = 1,

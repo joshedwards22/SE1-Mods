@@ -24,7 +24,6 @@ namespace JSWeaponOverhaul /// Set namespace name to something else, preferably 
              * DON'T MODIFY ANYTHING ABOVE THIS LINE EXCEPT THE NAMESPACE & CLASS NAME
              */
 
-
             // 200mm Guided Missile
             new VPFAmmoDefinition
             { // if you are NOT using a logic type, SET IT TO NULL OR THE SCRIPT MAY NOT FUNCTION AS INTENDED

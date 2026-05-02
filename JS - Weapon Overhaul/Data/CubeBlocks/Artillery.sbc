@@ -11,8 +11,7 @@
             <Icon>Textures\GUI\Icons\Cubes\HeavyCalibreTurret.dds</Icon>
             <Description>Low rate of fire dual barrel cannon. Deals heavy explosive damage devastating to large ships.
             
-Range: 3000m
-Rate of Fire: 10 RPM</Description>
+Range: 3000m</Description>
             <CubeSize>Large</CubeSize>
             <GuiVisible>false</GuiVisible>
             <PlaceDecals>false</PlaceDecals>
@@ -92,8 +91,7 @@ Rate of Fire: 10 RPM</Description>
             <TargetingGroups>
                 <string>Weapons</string>
             </TargetingGroups>
-            <UpCameraOffset>1.0</UpCameraOffset>
-            <ForwardCameraOffset>0.5</ForwardCameraOffset>
+            <CameraDummyName>camera</CameraDummyName>
             <AimingOffset>
                 <X>0</X>
                 <Y>-2</Y>
@@ -109,8 +107,7 @@ Rate of Fire: 10 RPM</Description>
             <Icon>Textures\GUI\Icons\Cubes\HeavyCalibreGun.dds</Icon>
             <Description>Low rate of fire cannon. Deals heavy explosive damage devastating to large ships.
             
-Range: 3000m
-Rate of Fire: 10 RPM</Description>
+Range: 3000m</Description>
             <CubeSize>Large</CubeSize>
             <GuiVisible>false</GuiVisible>
             <BlockTopology>TriangleMesh</BlockTopology>
@@ -165,6 +162,61 @@ Rate of Fire: 10 RPM</Description>
                 <Y>0</Y>
                 <Z>4</Z>
             </DamageEffectOffset>
+        </Definition>
+        <Definition xsi:type="MyObjectBuilder_WeaponBlockDefinition">
+            <Id>
+                <TypeId>SmallMissileLauncherReload</TypeId>
+                <SubtypeId>SmallBlockLargeCalibreGun</SubtypeId>
+            </Id>
+            <DisplayName>DisplayName_Block_HeavyCalibreGun</DisplayName>
+            <Icon>Textures\GUI\Icons\Cubes\HeavyCalibreGun.dds</Icon>
+            <Description>Low rate of fire cannon. Deals heavy explosive damage devastating to large ships.
+            
+Range: 3000m</Description>
+            <CubeSize>Small</CubeSize>
+            <GuiVisible>false</GuiVisible>
+            <BlockTopology>TriangleMesh</BlockTopology>
+            <Size x="5" y="5" z="20" />
+            <ModelOffset x="0" y="0" z="0" />
+            <Model>Models\Cubes\small\Artillery\HeavyCalibreGun.mwm</Model>
+            <Components>
+                <Component Subtype="SteelPlate" Count="100" />
+                <Component Subtype="Construction" Count="20" />
+                <Component Subtype="MetalGrid" Count="20" />
+                <Component Subtype="LargeTube" Count="20" />
+                <Component Subtype="Computer" Count="5" />
+                <Component Subtype="SteelPlate" Count="150" />
+            </Components>
+            <CriticalComponent Subtype="Computer" Index="0" />
+            <MountPoints>
+                <MountPoint Side="Left" StartX="16" StartY="1" EndX="19" EndY="4" />
+                <MountPoint Side="Bottom" StartX="0" StartY="15" EndX="5" EndY="20" />
+                <MountPoint Side="Right" StartX="1" StartY="1" EndX="4" EndY="4" />
+                <MountPoint Side="Back" StartX="1" StartY="1" EndX="4" EndY="4" Default="true" />
+            </MountPoints>
+            <BuildProgressModels>
+                <Model BuildPercentUpperBound="0.33" File="Models\Cubes\small\Artillery\HeavyCalibreGun_BS1.mwm" />
+                <Model BuildPercentUpperBound="0.66" File="Models\Cubes\small\Artillery\HeavyCalibreGun_BS2.mwm" />
+                <Model BuildPercentUpperBound="1.00" File="Models\Cubes\small\Artillery\HeavyCalibreGun_BS3.mwm" />
+            </BuildProgressModels>
+            <MirroringY>Z</MirroringY>
+            <MirroringZ>Y</MirroringZ>
+            <BlockPairName>LargeCalibreGun</BlockPairName>
+            <Center x="2" y="0" z="17" />
+            <BuildTimeSeconds>60</BuildTimeSeconds>
+            <EdgeType>Light</EdgeType>
+            <WeaponDefinitionId Subtype="LargeCalibreGun" />
+            <ResourceSinkGroup>Defense</ResourceSinkGroup>
+            <InventoryMaxVolume>0.3</InventoryMaxVolume>
+            <DamageEffectName>Damage_WeapExpl_Damaged</DamageEffectName>
+            <DamagedSound>ParticleWeapExpl</DamagedSound>
+            <DestroyEffect>BlockDestroyedExplosion_Large</DestroyEffect>
+            <DestroySound>WepSmallWarheadExpl</DestroySound>
+            <PCU>80</PCU>
+            <IsAirTight>false</IsAirTight>
+            <TargetingGroups>
+                <string>Weapons</string>
+            </TargetingGroups>
         </Definition>
     </CubeBlocks>
 </Definitions>

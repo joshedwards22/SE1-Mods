@@ -11,8 +11,7 @@
             <Icon>Textures\GUI\Icons\Cubes\MediumCalibreTurretLarge.dds</Icon>
             <Description>Low rate of fire dual barrel cannon. Deals explosive damage devastating to small ships and effective against large ships.
             
-Range: 2000m
-Rate of Fire: 30 RPM</Description>
+Range: 2000m</Description>
             <CubeSize>Large</CubeSize>
             <GuiVisible>false</GuiVisible>
             <PlaceDecals>false</PlaceDecals>
@@ -92,8 +91,7 @@ Rate of Fire: 30 RPM</Description>
             <TargetingGroups>
                 <string>Weapons</string>
             </TargetingGroups>
-            <UpCameraOffset>1.0</UpCameraOffset>
-            <ForwardCameraOffset>0.5</ForwardCameraOffset>
+            <CameraDummyName>camera</CameraDummyName>
         </Definition>
         <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
             <Id>
@@ -104,8 +102,7 @@ Rate of Fire: 30 RPM</Description>
             <Icon>Textures\GUI\Icons\Cubes\MediumCalibreTurret.dds</Icon>
             <Description>Low rate of fire cannon. Deals explosive damage devastating to small ships and effective against large ships.
             
-Range: 2000m
-Rate of Fire: 20 RPM</Description>
+Range: 2000m</Description>
             <CubeSize>Small</CubeSize>
             <GuiVisible>false</GuiVisible>
             <PlaceDecals>false</PlaceDecals>
@@ -182,8 +179,7 @@ Rate of Fire: 20 RPM</Description>
             <TargetingGroups>
                 <string>Weapons</string>
             </TargetingGroups>
-            <UpCameraOffset>1.0</UpCameraOffset>
-            <ForwardCameraOffset>0.5</ForwardCameraOffset>
+            <CameraDummyName>camera</CameraDummyName>
             <DLC>Contact</DLC>
         </Definition>
         <Definition xsi:type="MyObjectBuilder_WeaponBlockDefinition">
@@ -195,8 +191,7 @@ Rate of Fire: 20 RPM</Description>
             <Icon>Textures\GUI\Icons\Cubes\MediumCaliberGun.dds</Icon>
             <Description>Low rate of fire cannon. Deals explosive damage devastating to small ships and effective against large ships.
             
-Range: 2000m
-Rate of Fire: 30 RPM</Description>
+Range: 2000m</Description>
             <CubeSize>Small</CubeSize>
             <GuiVisible>false</GuiVisible>
             <BlockTopology>TriangleMesh</BlockTopology>

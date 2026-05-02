@@ -11,8 +11,7 @@
 			<Icon>Textures\GUI\Icons\Cubes\TorpedoLauncher.dds</Icon>
 			<Description>Low rate of fire torpedo launcher. Deals massive explosive damage with target guidance tracking. PDCs are your only hope.
            
-Range: 5000m
-Rate of Fire: 4 RPM</Description>
+Range: 5000m</Description>
 			<CubeSize>Large</CubeSize>
 			<GuiVisible>false</GuiVisible>
 			<BlockTopology>TriangleMesh</BlockTopology>
