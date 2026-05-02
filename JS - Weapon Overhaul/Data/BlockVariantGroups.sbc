@@ -42,6 +42,7 @@
                 <Block Type="MyObjectBuilder_SmallGatlingGun" Subtype="SmallBlockAutocannon" />
                 <Block Type="MyObjectBuilder_SmallMissileLauncherReload" Subtype="SmallBlockMediumCalibreGun" />
                 <Block Type="MyObjectBuilder_SmallMissileLauncher" Subtype="LargeBlockLargeCalibreGun" />
+                <Block Type="MyObjectBuilder_SmallMissileLauncherReload" Subtype="SmallBlockLargeCalibreGun" />
                 <Block Type="MyObjectBuilder_SmallMissileLauncherReload" Subtype="LargeRailgun" />
                 <Block Type="MyObjectBuilder_SmallMissileLauncherReload" Subtype="SmallRailgun" />
             </Blocks>

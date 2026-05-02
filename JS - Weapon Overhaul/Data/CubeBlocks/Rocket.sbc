@@ -11,8 +11,7 @@
             <Icon>Textures\GUI\Icons\Cubes\LargeRocketTurret.dds</Icon>
             <Description>Low rate of fire rocket launcher. Deals explosive damage with target guidance tracking.
            
-Range: 2000m
-Rate of Fire: 32 RPM</Description>
+Range: 2000m</Description>
             <CubeSize>Large</CubeSize>
             <GuiVisible>false</GuiVisible>
             <PlaceDecals>false</PlaceDecals>
@@ -90,8 +89,7 @@ Rate of Fire: 32 RPM</Description>
             <TargetingGroups>
                 <string>Weapons</string>
             </TargetingGroups>
-            <UpCameraOffset>1.0</UpCameraOffset>
-            <ForwardCameraOffset>0.5</ForwardCameraOffset>
+            <CameraDummyName>camera</CameraDummyName>
             <DLC>Contact</DLC>
         </Definition>
         <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
@@ -103,8 +101,7 @@ Rate of Fire: 32 RPM</Description>
             <Icon>Textures\GUI\Icons\Cubes\RocketTurretReskinLarge.dds</Icon>
             <Description>Low rate of fire rocket launcher. Deals explosive damage with target guidance tracking.
            
-Range: 2000m
-Rate of Fire: 32 RPM</Description>
+Range: 2000m</Description>
             <CubeSize>Large</CubeSize>
             <GuiVisible>false</GuiVisible>
             <PlaceDecals>false</PlaceDecals>
@@ -182,8 +179,7 @@ Rate of Fire: 32 RPM</Description>
             <TargetingGroups>
                 <string>Weapons</string>
             </TargetingGroups>
-            <UpCameraOffset>1.0</UpCameraOffset>
-            <ForwardCameraOffset>0.5</ForwardCameraOffset>
+            <CameraDummyName>camera</CameraDummyName>
             <DLC>Contact</DLC>
         </Definition>
         <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
@@ -195,8 +191,7 @@ Rate of Fire: 32 RPM</Description>
             <Icon>Textures\GUI\Icons\Cubes\RocketTurret.dds</Icon>
             <Description>Low rate of fire rocket launcher. Deals explosive damage with target guidance tracking.
            
-Range: 2000m
-Rate of Fire: 32 RPM</Description>
+Range: 2000m</Description>
             <CubeSize>Small</CubeSize>
             <GuiVisible>false</GuiVisible>
             <PlaceDecals>false</PlaceDecals>
@@ -288,8 +283,7 @@ Rate of Fire: 32 RPM</Description>
             <Icon>Textures\GUI\Icons\Cubes\RocketTurretReskinSmall.dds</Icon>
             <Description>Low rate of fire rocket launcher. Deals explosive damage with target guidance tracking.
            
-Range: 2000m
-Rate of Fire: 32 RPM</Description>
+Range: 2000m</Description>
             <CubeSize>Small</CubeSize>
             <GuiVisible>false</GuiVisible>
             <PlaceDecals>false</PlaceDecals>
@@ -381,8 +375,7 @@ Rate of Fire: 32 RPM</Description>
             <Icon>Textures\GUI\Icons\Cubes\missile_launcher.dds</Icon>
             <Description>Low rate of fire rocket launcher. Deals explosive damage with target guidance tracking.
            
-Range: 2000m
-Rate of Fire: 32 RPM</Description>
+Range: 2000m</Description>
             <CubeSize>Large</CubeSize>
             <GuiVisible>false</GuiVisible>
             <BlockTopology>TriangleMesh</BlockTopology>
@@ -438,8 +431,7 @@ Rate of Fire: 32 RPM</Description>
             <Icon>Textures\GUI\Icons\Cubes\RocketLauncherReload.dds</Icon>
             <Description>Low rate of fire rocket launcher. Deals explosive damage with target guidance tracking.
            
-Range: 2000m
-Rate of Fire: 32 RPM</Description>
+Range: 2000m</Description>
             <CubeSize>Small</CubeSize>
             <GuiVisible>false</GuiVisible>
             <BlockTopology>TriangleMesh</BlockTopology>

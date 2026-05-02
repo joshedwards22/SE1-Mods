@@ -11,8 +11,7 @@
 			<Description>Low rate of fire extremely powerful electromagnetic mass driver. Capable of putting holes in literally anything.
 
 Charging: 48MW            
-Range: 5000m
-Rate of Fire: 5 RPM</Description>
+Range: 5000m</Description>
 			<Icon>Textures\GUI\Icons\Cubes\MonarchRailgunTurretBase.png</Icon>
 			<CubeSize>Large</CubeSize>
 			<GuiVisible>false</GuiVisible>

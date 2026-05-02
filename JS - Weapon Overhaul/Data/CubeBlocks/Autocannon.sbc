@@ -10,8 +10,7 @@
             <DisplayName>DisplayName_Block_AutoCannonTurret</DisplayName>
             <Description>Medium rate of fire auto loading cannon. Able to shred small targets and deal consistent damage to large targets.
             
-Range: 1500m
-Rate of Fire: 193 RPM</Description>
+Range: 1500m</Description>
             <Icon>Textures\GUI\Icons\Cubes\LargeAutocannonTurret.dds</Icon>
             <CubeSize>Large</CubeSize>
             <BlockTopology>TriangleMesh</BlockTopology>
@@ -87,8 +86,7 @@ Rate of Fire: 193 RPM</Description>
             <TargetingGroups>
                 <string>Weapons</string>
             </TargetingGroups>
-            <UpCameraOffset>0.5</UpCameraOffset>
-            <ForwardCameraOffset>0.75</ForwardCameraOffset>
+            <CameraDummyName>camera</CameraDummyName>
             <DLC>Contact</DLC>
         </Definition>
         <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
@@ -100,8 +98,7 @@ Rate of Fire: 193 RPM</Description>
             <Icon>Textures\GUI\Icons\Cubes\AutocannonTurret.dds</Icon>
             <Description>Medium rate of fire auto loading cannon. Able to shred small targets and deal consistent damage to large targets.
             
-Range: 1500m
-Rate of Fire: 193 RPM</Description>
+Range: 1500m</Description>
             <CubeSize>Small</CubeSize>
             <PlaceDecals>false</PlaceDecals>
             <BlockTopology>TriangleMesh</BlockTopology>
@@ -179,24 +176,7 @@ Rate of Fire: 193 RPM</Description>
             <TargetingGroups>
                 <string>Weapons</string>
             </TargetingGroups>
-            <SubpartPairing>
-                <dictionary>
-                    <item>
-                        <Key>Base1</Key>
-                        <Value>AutocannonTurret_Base1</Value>
-                    </item>
-                    <item>
-                        <Key>Base2</Key>
-                        <Value>AutocannonTurret_Base1/AutocannonTurret_Barrel</Value>
-                    </item>
-                    <item>
-                        <Key>Barrel</Key>
-                        <Value>AutocannonTurret_Base1/AutocannonTurret_Barrel</Value>
-                    </item>
-                </dictionary>
-            </SubpartPairing>
-            <UpCameraOffset>0.5</UpCameraOffset>
-            <ForwardCameraOffset>.1</ForwardCameraOffset>
+            <CameraDummyName>camera</CameraDummyName>
             <DLC>Contact</DLC>
         </Definition>
         <Definition xsi:type="MyObjectBuilder_WeaponBlockDefinition">
@@ -208,8 +188,7 @@ Rate of Fire: 193 RPM</Description>
             <Icon>Textures\GUI\Icons\Cubes\AutoCannon.dds</Icon>
             <Description>Medium rate of fire auto loading cannon. Able to shred small targets and deal consistent damage to large targets.
             
-Range: 1500m
-Rate of Fire: 120 RPM</Description>
+Range: 1500m</Description>
             <CubeSize>Small</CubeSize>
             <GuiVisible>false</GuiVisible>
             <BlockTopology>TriangleMesh</BlockTopology>

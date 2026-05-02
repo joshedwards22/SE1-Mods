@@ -17,6 +17,7 @@
                 <string>LargeMissileTurret/CoilgunTurret</string>
                 <string>LargeMissileTurret/RailgunTurret</string>
                 <string>SmallMissileLauncher/TorpedoLauncher</string>
+                <string>SmallMissileLauncherReload/SmallBlockLargeCalibreGun</string>
             </ItemIds>
         </Category>
         <Category xsi:type="MyObjectBuilder_GuiBlockCategoryDefinition">
@@ -34,6 +35,7 @@
                 <string>LargeMissileTurret/CoilgunTurret</string>
                 <string>LargeMissileTurret/RailgunTurret</string>
                 <string>SmallMissileLauncher/TorpedoLauncher</string>
+                <string>SmallMissileLauncherReload/SmallBlockLargeCalibreGun</string>
             </ItemIds>
         </Category>
     </CategoryClasses>

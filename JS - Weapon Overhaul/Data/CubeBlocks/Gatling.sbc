@@ -11,8 +11,7 @@
             <Icon>Textures\GUI\Icons\Cubes\LargeGatlingTurret.dds</Icon>
             <Description>High rate of fire point defense cannon. Able to shred small targets and missiles.
 
-Range: 1000m
-Rate of Fire: 1400 RPM</Description>
+Range: 1000m</Description>
             <CubeSize>Large</CubeSize>
             <PlaceDecals>false</PlaceDecals>
             <BlockTopology>TriangleMesh</BlockTopology>
@@ -101,8 +100,7 @@ Rate of Fire: 1400 RPM</Description>
             <Icon>Textures\GUI\Icons\Cubes\LargeGatlingTurret.dds</Icon>
             <Description>High rate of fire point defense cannon. Able to shred small targets and missiles.
 
-Range: 1000m
-Rate of Fire: 1400 RPM</Description>
+Range: 1000m</Description>
             <CubeSize>Large</CubeSize>
             <PlaceDecals>false</PlaceDecals>
             <BlockTopology>TriangleMesh</BlockTopology>
@@ -191,14 +189,13 @@ Rate of Fire: 1400 RPM</Description>
             <Icon>Textures\GUI\Icons\Cubes\GatlingTurretReskinLarge.dds</Icon>
             <Description>High rate of fire point defense cannon. Able to shred small targets and missiles.
             
-Range: 1000m
-Rate of Fire: 1400 RPM</Description>
+Range: 1000m</Description>
             <CubeSize>Large</CubeSize>
             <PlaceDecals>false</PlaceDecals>
             <BlockTopology>TriangleMesh</BlockTopology>
             <Size x="3" y="3" z="3" />
             <ModelOffset x="0" y="0" z="0" />
-            <Model>Models\Cubes\Large\GatlingTurretReskin.mwm</Model>
+            <Model>Models\Cubes\large\GatlingTurretReskin\GatlingTurretReskin.mwm</Model>
             <UseModelIntersection>true</UseModelIntersection>
             <Components>
                 <Component Subtype="SteelPlate" Count="10" />
@@ -215,9 +212,9 @@ Rate of Fire: 1400 RPM</Description>
                 <MountPoint Side="Bottom" StartX="0" StartY="0" EndX="1" EndY="1" />
             </MountPoints>
             <BuildProgressModels>
-                <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Large\GatlingTurretReskinConstruction1.mwm" />
-                <Model BuildPercentUpperBound="0.66" File="Models\Cubes\Large\GatlingTurretReskinConstruction2.mwm" />
-                <Model BuildPercentUpperBound="1.00" File="Models\Cubes\Large\GatlingTurretReskinConstruction3.mwm" />
+                <Model BuildPercentUpperBound="0.33" File="Models\Cubes\large\GatlingTurretReskin\GatlingTurretReskin_BS1.mwm" />
+                <Model BuildPercentUpperBound="0.66" File="Models\Cubes\large\GatlingTurretReskin\GatlingTurretReskin_BS2.mwm" />
+                <Model BuildPercentUpperBound="1.00" File="Models\Cubes\large\GatlingTurretReskin\GatlingTurretReskin_BS3.mwm" />
             </BuildProgressModels>
             <VoxelPlacement>
                 <StaticMode>
@@ -277,18 +274,17 @@ Rate of Fire: 1400 RPM</Description>
                 <TypeId>LargeGatlingTurret</TypeId>
                 <SubtypeId>LargeGatlingTurretReskinCompact</SubtypeId>
             </Id>
-            <DisplayName>Large Gatling Turret Type II Compact</DisplayName>
+            <DisplayName>Gatling Turret Type II Compact</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\GatlingTurretReskinLarge.dds</Icon>
             <Description>High rate of fire point defense cannon. Able to shred small targets and missiles.
             
-Range: 1000m
-Rate of Fire: 1400 RPM</Description>
+Range: 1000m</Description>
             <CubeSize>Large</CubeSize>
             <PlaceDecals>false</PlaceDecals>
             <BlockTopology>TriangleMesh</BlockTopology>
             <Size x="1" y="3" z="1" />
             <ModelOffset x="0" y="0" z="0" />
-            <Model>Models\Cubes\Large\GatlingTurretReskin.mwm</Model>
+            <Model>Models\Cubes\large\GatlingTurretReskin\GatlingTurretReskin.mwm</Model>
             <UseModelIntersection>true</UseModelIntersection>
             <Components>
                 <Component Subtype="SteelPlate" Count="10" />
@@ -305,9 +301,9 @@ Rate of Fire: 1400 RPM</Description>
                 <MountPoint Side="Bottom" StartX="0" StartY="0" EndX="1" EndY="1" />
             </MountPoints>
             <BuildProgressModels>
-                <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Large\GatlingTurretReskinConstruction1.mwm" />
-                <Model BuildPercentUpperBound="0.66" File="Models\Cubes\Large\GatlingTurretReskinConstruction2.mwm" />
-                <Model BuildPercentUpperBound="1.00" File="Models\Cubes\Large\GatlingTurretReskinConstruction3.mwm" />
+                <Model BuildPercentUpperBound="0.33" File="Models\Cubes\large\GatlingTurretReskin\GatlingTurretReskin_BS1.mwm" />
+                <Model BuildPercentUpperBound="0.66" File="Models\Cubes\large\GatlingTurretReskin\GatlingTurretReskin_BS2.mwm" />
+                <Model BuildPercentUpperBound="1.00" File="Models\Cubes\large\GatlingTurretReskin\GatlingTurretReskin_BS3.mwm" />
             </BuildProgressModels>
             <VoxelPlacement>
                 <StaticMode>
@@ -371,8 +367,7 @@ Rate of Fire: 1400 RPM</Description>
             <Icon>Textures\GUI\Icons\Cubes\GatlingTurret.dds</Icon>
             <Description>High rate of fire point defense cannon. Able to shred small targets and missiles.
             
-Range: 1000m
-Rate of Fire: 1400 RPM</Description>
+Range: 1000m</Description>
             <CubeSize>Small</CubeSize>
             <PlaceDecals>false</PlaceDecals>
             <BlockTopology>TriangleMesh</BlockTopology>
@@ -464,15 +459,14 @@ Rate of Fire: 1400 RPM</Description>
             <Icon>Textures\GUI\Icons\Cubes\GatlingTurretReskinSmall.dds</Icon>
             <Description>High rate of fire point defense cannon. Able to shred small targets and missiles.
             
-Range: 1000m
-Rate of Fire: 1400 RPM</Description>
+Range: 1000m</Description>
             <CubeSize>Small</CubeSize>
             <PlaceDecals>false</PlaceDecals>
             <BlockTopology>TriangleMesh</BlockTopology>
             <Size x="5" y="5" z="5" />
             <Center x="2" y="0" z="2" />
             <ModelOffset x="0" y="0" z="0" />
-            <Model>Models\Cubes\Small\GatlingTurretReskin.mwm</Model>
+            <Model>Models\Cubes\small\GatlingTurretReskin\GatlingTurretReskin.mwm</Model>
             <UseModelIntersection>true</UseModelIntersection>
             <Components>
                 <Component Subtype="SteelPlate" Count="5" />
@@ -493,8 +487,8 @@ Rate of Fire: 1400 RPM</Description>
                 <MountPoint Side="Front" StartX="1" StartY="0" EndX="4" EndY="1" />
             </MountPoints>
             <BuildProgressModels>
-                <Model BuildPercentUpperBound="0.43" File="Models\Cubes\Small\GatlingTurretReskinConstruction1.mwm" />
-                <Model BuildPercentUpperBound="1.0" File="Models\Cubes\Small\GatlingTurretReskinConstruction2.mwm" />
+                <Model BuildPercentUpperBound="0.43" File="Models\Cubes\small\GatlingTurretReskin\GatlingTurretReskin_BS1.mwm" />
+                <Model BuildPercentUpperBound="1.0" File="Models\Cubes\small\GatlingTurretReskin\GatlingTurretReskin_BS2.mwm" />
             </BuildProgressModels>
             <VoxelPlacement>
                 <StaticMode>
@@ -557,8 +551,7 @@ Rate of Fire: 1400 RPM</Description>
             <Icon>Textures\GUI\Icons\Cubes\gatling_gun.dds</Icon>
             <Description>High rate of fire point defense cannon. Able to shred small targets and missiles.
             
-Range: 1000m
-Rate of Fire: 900 RPM</Description>
+Range: 1000m</Description>
             <CubeSize>Small</CubeSize>
             <BlockTopology>TriangleMesh</BlockTopology>
             <Size x="1" y="1" z="4" />
@@ -613,8 +606,7 @@ Rate of Fire: 900 RPM</Description>
             <Icon>Textures\GUI\Icons\Cubes\gatlingGunReskin.dds</Icon>
             <Description>High rate of fire point defense cannon. Able to shred small targets and missiles.
             
-Range: 1000m
-Rate of Fire: 900 RPM</Description>
+Range: 1000m</Description>
             <CubeSize>Small</CubeSize>
             <BlockTopology>TriangleMesh</BlockTopology>
             <Size x="1" y="1" z="4" />

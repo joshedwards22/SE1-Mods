@@ -10,9 +10,8 @@
             <DisplayName>Coilgun Turret</DisplayName>
             <Description>Low rate of fire dual barrel electromagnetic mass driver. Capable of putting holes in the toughest ships.
 
-Charging: 16MW            
-Range: 3000m
-Rate of Fire: 10 RPM</Description>
+Charging: 32MW            
+Range: 3000m</Description>
             <Icon>Textures\GUI\Icons\Cubes\CoilgunTurret.dds</Icon>
             <CubeSize>Large</CubeSize>
             <GuiVisible>false</GuiVisible>
@@ -94,8 +93,7 @@ Rate of Fire: 10 RPM</Description>
             <TargetingGroups>
                 <string>Weapons</string>
             </TargetingGroups>
-            <UpCameraOffset>1.0</UpCameraOffset>
-            <ForwardCameraOffset>0.5</ForwardCameraOffset>
+            <CameraDummyName>camera</CameraDummyName>
             <AimingOffset>
                 <X>0</X>
                 <Y>-2</Y>
@@ -112,8 +110,7 @@ Rate of Fire: 10 RPM</Description>
             <Description>Low rate of fire extremely powerful electromagnetic mass driver. Capable of putting holes in literally anything.
 
 Charging: 48MW            
-Range: 5000m
-Rate of Fire: 5 RPM</Description>
+Range: 5000m</Description>
             <CubeSize>Large</CubeSize>
             <BlockTopology>TriangleMesh</BlockTopology>
             <Size x="1" y="2" z="8" />
@@ -176,8 +173,7 @@ Rate of Fire: 5 RPM</Description>
             <Description>Low rate of fire electromagnetic mass driver. Capable of putting holes in the toughest ships.
 
 Charging: 16MW            
-Range: 3000m
-Rate of Fire: 10 RPM</Description>
+Range: 3000m</Description>
             <CubeSize>Small</CubeSize>
             <BlockTopology>TriangleMesh</BlockTopology>
             <Size x="1" y="2" z="8" />
