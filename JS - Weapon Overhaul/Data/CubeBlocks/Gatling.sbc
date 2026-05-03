@@ -31,7 +31,7 @@ Range: 1000m</Description>
             </Components>
             <CriticalComponent Subtype="Computer" Index="0" />
             <MountPoints>
-                <MountPoint Side="Bottom" StartX="0" StartY="0" EndX="1" EndY="1" />
+                <MountPoint Side="Bottom" StartX="1" StartY="1" EndX="2" EndY="2" />
             </MountPoints>
             <BuildProgressModels>
                 <Model BuildPercentUpperBound="0.33" File="Models\Cubes\large\GatlingTurret\LargeGatlingTurret_BS1.mwm" />
@@ -209,7 +209,7 @@ Range: 1000m</Description>
             </Components>
             <CriticalComponent Subtype="Computer" Index="0" />
             <MountPoints>
-                <MountPoint Side="Bottom" StartX="0" StartY="0" EndX="1" EndY="1" />
+                <MountPoint Side="Bottom" StartX="1" StartY="1" EndX="2" EndY="2" />
             </MountPoints>
             <BuildProgressModels>
                 <Model BuildPercentUpperBound="0.33" File="Models\Cubes\large\GatlingTurretReskin\GatlingTurretReskin_BS1.mwm" />

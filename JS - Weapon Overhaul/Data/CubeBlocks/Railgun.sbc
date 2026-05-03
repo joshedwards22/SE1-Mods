@@ -33,6 +33,9 @@ Range: 5000m</Description>
 				<Component Subtype="SteelPlate" Count="500" />
 			</Components>
 			<CriticalComponent Subtype="Computer" Index="0" />
+			<MountPoints>
+				<MountPoint Side="Bottom" StartX="0" StartY="0" EndX="5" EndY="5" />
+			</MountPoints>
 			<BlockPairName>RailgunTurret</BlockPairName>
 			<EdgeType>Light</EdgeType>
 			<BuildTimeSeconds>80</BuildTimeSeconds>
