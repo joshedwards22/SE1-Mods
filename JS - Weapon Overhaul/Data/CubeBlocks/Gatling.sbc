@@ -265,6 +265,22 @@ Range: 1000m</Description>
             <TargetingGroups>
                 <string>Weapons</string>
             </TargetingGroups>
+            <SubpartPairing>
+                <dictionary>
+                    <item>
+                        <Key>Base1</Key>
+                        <Value>GatlingTurretBase1</Value>
+                    </item>
+                    <item>
+                        <Key>Base2</Key>
+                        <Value>GatlingTurretBase1/GatlingTurretBase2</Value>
+                    </item>
+                    <item>
+                        <Key>Barrel</Key>
+                        <Value>GatlingTurretBase1/GatlingTurretBase2/GatlingTurretReskinBarrel</Value>
+                    </item>
+                </dictionary>
+            </SubpartPairing>
             <UpCameraOffset>0.5</UpCameraOffset>
             <ForwardCameraOffset>0.4</ForwardCameraOffset>
             <DLC>Contact</DLC>
@@ -354,6 +370,22 @@ Range: 1000m</Description>
             <TargetingGroups>
                 <string>Weapons</string>
             </TargetingGroups>
+            <SubpartPairing>
+                <dictionary>
+                    <item>
+                        <Key>Base1</Key>
+                        <Value>GatlingTurretBase1</Value>
+                    </item>
+                    <item>
+                        <Key>Base2</Key>
+                        <Value>GatlingTurretBase1/GatlingTurretBase2</Value>
+                    </item>
+                    <item>
+                        <Key>Barrel</Key>
+                        <Value>GatlingTurretBase1/GatlingTurretBase2/GatlingTurretReskinBarrel</Value>
+                    </item>
+                </dictionary>
+            </SubpartPairing>
             <UpCameraOffset>0.5</UpCameraOffset>
             <ForwardCameraOffset>0.4</ForwardCameraOffset>
             <DLC>Contact</DLC>
@@ -538,6 +570,22 @@ Range: 1000m</Description>
             <TargetingGroups>
                 <string>Weapons</string>
             </TargetingGroups>
+            <SubpartPairing>
+                <dictionary>
+                    <item>
+                        <Key>Base1</Key>
+                        <Value>GatlingTurretBase1</Value>
+                    </item>
+                    <item>
+                        <Key>Base2</Key>
+                        <Value>GatlingTurretBase1/GatlingTurretBase2</Value>
+                    </item>
+                    <item>
+                        <Key>Barrel</Key>
+                        <Value>GatlingTurretBase1/GatlingTurretBase2/GatlingTurretBarrel</Value>
+                    </item>
+                </dictionary>
+            </SubpartPairing>
             <UpCameraOffset>0.3</UpCameraOffset>
             <ForwardCameraOffset>0.3</ForwardCameraOffset>
             <DLC>Contact</DLC>

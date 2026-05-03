@@ -176,6 +176,22 @@ Range: 1500m</Description>
             <TargetingGroups>
                 <string>Weapons</string>
             </TargetingGroups>
+            <SubpartPairing>
+                <dictionary>
+                    <item>
+                        <Key>Base1</Key>
+                        <Value>MissileTurretBase1</Value>
+                    </item>
+                    <item>
+                        <Key>Base2</Key>
+                        <Value>MissileTurretBase1/MissileTurretBarrels</Value>
+                    </item>
+                    <item>
+                        <Key>Barrel</Key>
+                        <Value>MissileTurretBase1/MissileTurretBarrels</Value>
+                    </item>
+                </dictionary>
+            </SubpartPairing>
             <CameraDummyName>camera</CameraDummyName>
             <DLC>Contact</DLC>
         </Definition>
