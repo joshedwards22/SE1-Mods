@@ -49,5 +49,18 @@
                 <Item Amount="30" TypeId="Ingot" SubtypeId="Silicon" />
             </Prerequisites>
         </Blueprint>
+        <Blueprint>
+            <Id>
+                <TypeId>BlueprintDefinition</TypeId>
+                <SubtypeId>Torpedo</SubtypeId>
+            </Id>
+            <Prerequisites>
+                <Item Amount="440" TypeId="Ingot" SubtypeId="Iron" />
+                <Item Amount="56" TypeId="Ingot" SubtypeId="Nickel" />
+                <Item Amount="1.6" TypeId="Ingot" SubtypeId="Silicon" />
+                <Item Amount="3.2" TypeId="Ingot" SubtypeId="Gold" />
+                <Item Amount="9.6" TypeId="Ingot" SubtypeId="Magnesium" />
+            </Prerequisites>
+        </Blueprint>
     </Blueprints>
 </Definitions>

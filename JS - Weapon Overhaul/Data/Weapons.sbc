@@ -181,7 +181,7 @@
                 <TypeId>WeaponDefinition</TypeId>
                 <SubtypeId>LargeCalibreTurret</SubtypeId>
             </Id>
-            <MissileAmmoData RateOfFire="80" ShootSoundName="WepLargeCalibreShot" FlightSoundName="HeavyShellFlightSound" RicochetSoundName="ImpMetalMetalCat3" ShotsInBurst="2" />
+            <MissileAmmoData RateOfFire="40" ShootSoundName="WepLargeCalibreShot" FlightSoundName="HeavyShellFlightSound" RicochetSoundName="ImpMetalMetalCat3" ShotsInBurst="2" />
             <ReloadTime>12000</ReloadTime>
             <DeviateShotAngle>0.3</DeviateShotAngle>
             <DeviateShotAngleAiming>0.3</DeviateShotAngleAiming>
@@ -199,7 +199,7 @@
                 <TypeId>WeaponDefinition</TypeId>
                 <SubtypeId>LargeCalibreGun</SubtypeId>
             </Id>
-            <MissileAmmoData RateOfFire="80" ShootSoundName="WepLargeCalibreShot" FlightSoundName="HeavyShellFlightSound" RicochetSoundName="ImpMetalMetalCat3" ShotsInBurst="1" />
+            <MissileAmmoData RateOfFire="40" ShootSoundName="WepLargeCalibreShot" FlightSoundName="HeavyShellFlightSound" RicochetSoundName="ImpMetalMetalCat3" ShotsInBurst="1" />
             <DeviateShotAngle>0.3</DeviateShotAngle>
             <DeviateShotAngleAiming>0.3</DeviateShotAngleAiming>
             <NoAmmoSoundName>WepPlayRifleNoAmmo</NoAmmoSoundName>
@@ -216,14 +216,14 @@
                 <TypeId>WeaponDefinition</TypeId>
                 <SubtypeId>CoilgunTurret</SubtypeId>
             </Id>
-            <MissileAmmoData RateOfFire="80" ShootSoundName="WepRailgunSmallShot" FlightSoundName="MediumShellFlightSound" ShotsInBurst="2" />
+            <MissileAmmoData RateOfFire="40" ShootSoundName="WepRailgunSmallShot" FlightSoundName="MediumShellFlightSound" ShotsInBurst="2" />
             <ReloadTime>12000</ReloadTime>
             <DeviateShotAngle>0</DeviateShotAngle>
             <DeviateShotAngleAiming>0</DeviateShotAngleAiming>
             <NoAmmoSoundName>WepShipRailgunNoAmmo</NoAmmoSoundName>
             <Effects>
-                <Effect Action="Shoot" Dummy="muzzle_missile_001" Particle="Muzzle_Flash_Coilgun" Loop="false" InstantStop="false" DisplayOnlyOnDummyFiring="true"/>
-                <Effect Action="Shoot" Dummy="muzzle_missile_002" Particle="Muzzle_Flash_Coilgun" Loop="false" InstantStop="false" DisplayOnlyOnDummyFiring="true"/>
+                <Effect Action="Shoot" Dummy="muzzle_missile_001" Particle="Muzzle_Flash_CoilgunTurret" Loop="false" InstantStop="false" DisplayOnlyOnDummyFiring="true"/>
+                <Effect Action="Shoot" Dummy="muzzle_missile_002" Particle="Muzzle_Flash_CoilgunTurret" Loop="false" InstantStop="false" DisplayOnlyOnDummyFiring="true"/>
             </Effects>
             <AmmoMagazines>
                 <AmmoMagazine Subtype="SmallRailgunAmmo" />
@@ -236,7 +236,6 @@
             </Id>
             <MissileAmmoData RateOfFire="20" ShootSoundName="WepRailgunLargeShot" PreShotSoundName="WepRailgunLargeCharge" FlightSoundName="HeavyShellFlightSound" ShotsInBurst="1" />
             <DeviateShotAngle>0</DeviateShotAngle>
-            <ShotDelay>2000</ShotDelay>
             <DeviateShotAngleAiming>0</DeviateShotAngleAiming>
             <NoAmmoSoundName>WepShipRailgunNoAmmo</NoAmmoSoundName>
             <AmmoMagazines>
@@ -244,7 +243,7 @@
             </AmmoMagazines>
             <ReloadTime>18000</ReloadTime>
             <Effects>
-                <Effect Action="BeforeShoot" Dummy="barrel_001" Particle="Muzzle_Flash_RailgunLarge" Loop="false" InstantStop="false" OffsetX="0" OffsetY="0" OffsetZ="-9"/>
+                <Effect Action="Shoot" Dummy="barrel_001" Particle="Muzzle_Flash_CoilgunLarge" Loop="false" InstantStop="false" OffsetX="0" OffsetY="0.2" OffsetZ="-9"/>
             </Effects>
         </Weapon>
         <Weapon>
@@ -254,7 +253,6 @@
             </Id>
             <MissileAmmoData RateOfFire="20" ShootSoundName="WepRailgunSmallShot" PreShotSoundName="WepRailgunSmallCharge" FlightSoundName="MediumShellFlightSound" ShotsInBurst="1" />
             <DeviateShotAngle>0</DeviateShotAngle>
-            <ShotDelay>500</ShotDelay>
             <DeviateShotAngleAiming>0</DeviateShotAngleAiming>
             <NoAmmoSoundName>WepShipRailgunNoAmmo</NoAmmoSoundName>
             <AmmoMagazines>
@@ -262,7 +260,7 @@
             </AmmoMagazines>
             <ReloadTime>10000</ReloadTime>
             <Effects>
-                <Effect Action="BeforeShoot" Dummy="barrel_001" Particle="Muzzle_Flash_RailgunSmall" Loop="false" InstantStop="false" OffsetX="0" OffsetY="0.1" OffsetZ="-1.8"/>
+                <Effect Action="Shoot" Dummy="barrel_001" Particle="Muzzle_Flash_CoilgunSmall" Loop="false" InstantStop="false" OffsetX="0" OffsetY="0.1" OffsetZ="-2"/>
             </Effects>
         </Weapon>
         <Weapon>
@@ -287,7 +285,7 @@
                 <TypeId>WeaponDefinition</TypeId>
                 <SubtypeId>TorpedoLauncher</SubtypeId>
             </Id>
-            <MissileAmmoData RateOfFire="90" ShootSoundName="WepShipSmallMissileShot" FlightSoundName="MissileFlightSound" ShotsInBurst="1" />
+            <MissileAmmoData RateOfFire="40" ShootSoundName="WepShipSmallMissileShot" FlightSoundName="MissileFlightSound" ShotsInBurst="1" />
             <ReloadTime>18000</ReloadTime>
             <DeviateShotAngle>0.1</DeviateShotAngle>
             <DeviateShotAngleAiming>0.1</DeviateShotAngleAiming>
