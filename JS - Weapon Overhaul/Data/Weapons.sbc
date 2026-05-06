@@ -7,7 +7,7 @@
                 <TypeId>WeaponDefinition</TypeId>
                 <SubtypeId>LargeGatlingTurret</SubtypeId>
             </Id>
-            <ProjectileAmmoData RateOfFire="1400" ShootSoundName="WepGatlingTurretShot" ShotsInBurst="140" />
+            <ProjectileAmmoData RateOfFire="1400" ShootSoundName="WepShipGatlingShot" ShotsInBurst="140" />
             <ReloadTime>2000</ReloadTime>
             <ReleaseTimeAfterFire>204</ReleaseTimeAfterFire>
             <DeviateShotAngle>0.1</DeviateShotAngle>
@@ -27,7 +27,7 @@
                 <TypeId>WeaponDefinition</TypeId>
                 <SubtypeId>SmallGatlingTurret</SubtypeId>
             </Id>
-            <ProjectileAmmoData RateOfFire="1400" ShootSoundName="WepGatlingTurretShot" ShotsInBurst="140" />
+            <ProjectileAmmoData RateOfFire="1400" ShootSoundName="WepShipGatlingShot" ShotsInBurst="140" />
             <ReloadTime>2000</ReloadTime>
             <ReleaseTimeAfterFire>204</ReleaseTimeAfterFire>
             <DeviateShotAngle>0.1</DeviateShotAngle>
@@ -129,7 +129,7 @@
                 <TypeId>WeaponDefinition</TypeId>
                 <SubtypeId>MediumCalibreTurret</SubtypeId>
             </Id>
-            <MissileAmmoData RateOfFire="180" ShootSoundName="WepMediumCalibreShot" FlightSoundName="MediumShellFlightSound" RicochetSoundName="ImpMetalMetalCat3" ShotsInBurst="2" />
+            <MissileAmmoData RateOfFire="180" ShootSoundName="WepMediumCalibreShot" FlightSoundName="HeavyShellFlightSound" RicochetSoundName="ImpMetalMetalCat3" ShotsInBurst="2" />
             <ReloadTime>4000</ReloadTime>
             <DeviateShotAngle>0.2</DeviateShotAngle>
             <DeviateShotAngleAiming>0.2</DeviateShotAngleAiming>
@@ -147,7 +147,7 @@
                 <TypeId>WeaponDefinition</TypeId>
                 <SubtypeId>SmallMediumCalibreTurret</SubtypeId>
             </Id>
-            <MissileAmmoData RateOfFire="180" ShootSoundName="WepMediumCalibreShot" FlightSoundName="MediumShellFlightSound" RicochetSoundName="ImpMetalMetalCat3" ShotsInBurst="1" />
+            <MissileAmmoData RateOfFire="180" ShootSoundName="WepMediumCalibreShot" FlightSoundName="HeavyShellFlightSound" RicochetSoundName="ImpMetalMetalCat3" ShotsInBurst="1" />
             <ReloadTime>3000</ReloadTime>
             <DeviateShotAngle>0.2</DeviateShotAngle>
             <DeviateShotAngleAiming>0.2</DeviateShotAngleAiming>
@@ -216,7 +216,7 @@
                 <TypeId>WeaponDefinition</TypeId>
                 <SubtypeId>CoilgunTurret</SubtypeId>
             </Id>
-            <MissileAmmoData RateOfFire="40" ShootSoundName="WepRailgunSmallShot" FlightSoundName="MediumShellFlightSound" ShotsInBurst="2" />
+            <MissileAmmoData RateOfFire="40" ShootSoundName="WepRailgunSmallShot" FlightSoundName="HeavyShellFlightSound" ShotsInBurst="2" />
             <ReloadTime>12000</ReloadTime>
             <DeviateShotAngle>0</DeviateShotAngle>
             <DeviateShotAngleAiming>0</DeviateShotAngleAiming>
@@ -251,7 +251,7 @@
                 <TypeId>WeaponDefinition</TypeId>
                 <SubtypeId>SmallCoilgun</SubtypeId>
             </Id>
-            <MissileAmmoData RateOfFire="20" ShootSoundName="WepRailgunSmallShot" PreShotSoundName="WepRailgunSmallCharge" FlightSoundName="MediumShellFlightSound" ShotsInBurst="1" />
+            <MissileAmmoData RateOfFire="20" ShootSoundName="WepRailgunSmallShot" PreShotSoundName="WepRailgunSmallCharge" FlightSoundName="HeavyShellFlightSound" ShotsInBurst="1" />
             <DeviateShotAngle>0</DeviateShotAngle>
             <DeviateShotAngleAiming>0</DeviateShotAngleAiming>
             <NoAmmoSoundName>WepShipRailgunNoAmmo</NoAmmoSoundName>
@@ -285,7 +285,7 @@
                 <TypeId>WeaponDefinition</TypeId>
                 <SubtypeId>TorpedoLauncher</SubtypeId>
             </Id>
-            <MissileAmmoData RateOfFire="40" ShootSoundName="WepShipSmallMissileShot" FlightSoundName="MissileFlightSound" ShotsInBurst="1" />
+            <MissileAmmoData RateOfFire="40" ShootSoundName="Torpdeo" FlightSoundName="MissileFlightSound" ShotsInBurst="1" />
             <ReloadTime>18000</ReloadTime>
             <DeviateShotAngle>0.1</DeviateShotAngle>
             <DeviateShotAngleAiming>0.1</DeviateShotAngleAiming>
@@ -327,7 +327,7 @@
                 <TypeId>WeaponDefinition</TypeId>
                 <SubtypeId>LargeMissileTurret</SubtypeId>
             </Id>
-            <MissileAmmoData RateOfFire="40" ShootSoundName="WepTurretMissileShot" FlightSoundName="MissileFlightSound" ShotsInBurst="6" />
+            <MissileAmmoData RateOfFire="40" ShootSoundName="WepShipSmallMissileShot" FlightSoundName="MissileFlightSound" ShotsInBurst="6" />
             <ReloadTime>3750</ReloadTime>
             <DeviateShotAngle>0.5</DeviateShotAngle>
             <DeviateShotAngleAiming>0.5</DeviateShotAngleAiming>
@@ -341,7 +341,7 @@
                 <TypeId>WeaponDefinition</TypeId>
                 <SubtypeId>SmallMissileTurret</SubtypeId>
             </Id>
-            <MissileAmmoData RateOfFire="40" ShootSoundName="WepTurretMissileShot" FlightSoundName="MissileFlightSound" ShotsInBurst="2" />
+            <MissileAmmoData RateOfFire="40" ShootSoundName="WepShipSmallMissileShot" FlightSoundName="MissileFlightSound" ShotsInBurst="2" />
             <ReloadTime>2250</ReloadTime>
             <DeviateShotAngle>0.5</DeviateShotAngle>
             <DeviateShotAngleAiming>0.5</DeviateShotAngleAiming>
