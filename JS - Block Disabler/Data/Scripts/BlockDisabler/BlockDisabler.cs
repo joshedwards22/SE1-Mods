@@ -14,23 +14,40 @@ namespace JSBlockDisabler
     public class JSBlockDisabler : MySessionComponentBase
     {
         private const string FILE_NAME = "Data\\DisabledBlocks.txt";
-        private HashSet<MyCubeBlockDefinition> _disabledBlocks = new HashSet<MyCubeBlockDefinition>();
+        private const string STORAGE_FILE_NAME = "DisabledBlocks.txt";
+        private HashSet<MyCubeBlockDefinition> disabledBlocks = new HashSet<MyCubeBlockDefinition>();
 
         public override void LoadData()
 		{
 			base.LoadData();
             
-            MyLog.Default.WriteLineAndConsole("BlockDisabler: Session Loading...");
-
             try
             {
+                HashSet<string> allLinesToDisable = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+
                 foreach (var mod in MyAPIGateway.Session.Mods)
                 {
                     if (MyAPIGateway.Utilities.FileExistsInModLocation(FILE_NAME, mod))
                     {
                         MyLog.Default.WriteLineAndConsole($"BlockDisabler: Found {FILE_NAME} in mod {mod.FriendlyName} ({mod.PublishedFileId})");
-                        ProcessDisableFile(mod);
+                        ReadLinesFromMod(mod, allLinesToDisable);
                     }
+                }
+
+                if (MyAPIGateway.Utilities.FileExistsInWorldStorage(STORAGE_FILE_NAME, typeof(JSBlockDisabler)))
+                {
+                    MyLog.Default.WriteLineAndConsole($"BlockDisabler: Found {STORAGE_FILE_NAME} in world storage");
+                    ReadLinesFromWorldStorage(allLinesToDisable);
+                }
+                else
+                {
+                    MyLog.Default.WriteLineAndConsole($"BlockDisabler: Creating {STORAGE_FILE_NAME} in world storage");
+                    CreateWorldStorageFile();
+                }
+
+                foreach (var line in allLinesToDisable)
+                {
+                    DisableBlock(line);
                 }
             }
             catch (Exception ex)
@@ -38,19 +55,17 @@ namespace JSBlockDisabler
                 MyLog.Default.WriteLineAndConsole($"BlockDisabler: Critical error in LoadData: {ex}");
             }
             
-            if (_disabledBlocks.Count > 0)
+            if (disabledBlocks.Count > 0)
             {
                 ProcessVariantGroups();
             }
-                        
-            MyLog.Default.WriteLineAndConsole("BlockDisabler: Finished processing.");
         }
 
         public override void BeforeStart()
         {
             base.BeforeStart();
             
-            if (_disabledBlocks.Count > 0)
+            if (disabledBlocks.Count > 0)
             {
                 RemoveDisabledBlocksFromWorld();
                 MyAPIGateway.Entities.OnEntityAdd += OnEntityAdd;
@@ -65,7 +80,7 @@ namespace JSBlockDisabler
 
         private void OnEntityAdd(VRage.ModAPI.IMyEntity entity)
         {
-            if (_disabledBlocks.Count == 0 || entity == null) 
+            if (disabledBlocks.Count == 0 || entity == null) 
                 return;
             
             var grid = entity as IMyCubeGrid;
@@ -77,7 +92,7 @@ namespace JSBlockDisabler
 
         private void RemoveDisabledBlocksFromWorld()
         {
-            if (_disabledBlocks.Count == 0) 
+            if (disabledBlocks.Count == 0) 
                 return;
 
             var entities = new HashSet<VRage.ModAPI.IMyEntity>();
@@ -104,7 +119,7 @@ namespace JSBlockDisabler
                 foreach (var block in allBlocks)
                 {
                     var cubeDef = block.BlockDefinition as MyCubeBlockDefinition;
-                    if (cubeDef != null && _disabledBlocks.Contains(cubeDef))
+                    if (cubeDef != null && disabledBlocks.Contains(cubeDef))
                     {
                         blocksToRemove.Add(block);
                     }
@@ -130,7 +145,6 @@ namespace JSBlockDisabler
             try
             {
                 var groups = MyDefinitionManager.Static.GetBlockVariantGroupDefinitions();
-                MyLog.Default.WriteLineAndConsole($"BlockDisabler: Processing {groups.Count} variant groups");
                 
                 foreach (var group in groups.Values)
                 {
@@ -149,7 +163,7 @@ namespace JSBlockDisabler
                             continue;
                         }
                         
-                        if (_disabledBlocks.Contains(block))
+                        if (disabledBlocks.Contains(block))
                         {
                             changed = true;
                             
@@ -204,7 +218,7 @@ namespace JSBlockDisabler
             }
         }
 
-        private void ProcessDisableFile(VRage.Game.MyObjectBuilder_Checkpoint.ModItem mod)
+        private void ReadLinesFromMod(VRage.Game.MyObjectBuilder_Checkpoint.ModItem mod, HashSet<string> lines)
         {
             try
             {
@@ -217,13 +231,52 @@ namespace JSBlockDisabler
                         if (string.IsNullOrWhiteSpace(line) || line.StartsWith("//"))
                             continue;
 
-                        DisableBlock(line);
+                        lines.Add(line);
                     }
                 }
             }
             catch (Exception ex)
             {
                 MyLog.Default.WriteLineAndConsole($"BlockDisabler: Error reading {FILE_NAME} from mod {mod.FriendlyName}: {ex}");
+            }
+        }
+
+        private void ReadLinesFromWorldStorage(HashSet<string> lines)
+        {
+            try
+            {
+                using (var reader = MyAPIGateway.Utilities.ReadFileInWorldStorage(STORAGE_FILE_NAME, typeof(JSBlockDisabler)))
+                {
+                    string line;
+                    while ((line = reader.ReadLine()) != null)
+                    {
+                        line = line.Trim();
+                        if (string.IsNullOrWhiteSpace(line) || line.StartsWith("//"))
+                            continue;
+
+                        lines.Add(line);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MyLog.Default.WriteLineAndConsole($"BlockDisabler: Error reading {STORAGE_FILE_NAME} from world storage: {ex}");
+            }
+        }
+
+        private void CreateWorldStorageFile()
+        {
+            try
+            {
+                using (var writer = MyAPIGateway.Utilities.WriteFileInWorldStorage(STORAGE_FILE_NAME, typeof(JSBlockDisabler)))
+                {
+                    writer.WriteLine("// Add blocks to disable here separated by new lines. Format: TypeId/SubtypeId");
+                    writer.WriteLine("// Example: SmallMissileLauncherReload/LargeRailgun");
+                }
+            }
+            catch (Exception ex)
+            {
+                MyLog.Default.WriteLineAndConsole($"BlockDisabler: Error writing {STORAGE_FILE_NAME} to world storage: {ex}");
             }
         }
 
@@ -245,7 +298,7 @@ namespace JSBlockDisabler
                 blockDef.GuiVisible = false;
                 blockDef.AvailableInSurvival = false; 
 
-                _disabledBlocks.Add(blockDef);
+                disabledBlocks.Add(blockDef);
                 
                 // Try to trigger post-processing to refresh the definition
                 try
