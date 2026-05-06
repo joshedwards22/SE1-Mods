@@ -57,6 +57,7 @@ Range: 1000m</Description>
             <BuildTimeSeconds>30</BuildTimeSeconds>
             <OverlayTexture>Textures\GUI\Screens\turret_overlay.dds</OverlayTexture>
             <WeaponDefinitionId Subtype="LargeGatlingTurret" />
+            <EnabledTargetingOptions>Players Missiles SmallShips LargeShips Stations Asteroids Enemies</EnabledTargetingOptions>
             <HiddenTargetingOptions>Friends</HiddenTargetingOptions>
             <InventoryMaxVolume>0.384</InventoryMaxVolume>
             <DamageEffectName>Damage_WeapExpl_Damaged</DamageEffectName>
@@ -146,6 +147,7 @@ Range: 1000m</Description>
             <BuildTimeSeconds>30</BuildTimeSeconds>
             <OverlayTexture>Textures\GUI\Screens\turret_overlay.dds</OverlayTexture>
             <WeaponDefinitionId Subtype="LargeGatlingTurret" />
+            <EnabledTargetingOptions>Players Missiles SmallShips LargeShips Stations Asteroids Enemies</EnabledTargetingOptions>
             <HiddenTargetingOptions>Friends</HiddenTargetingOptions>
             <InventoryMaxVolume>0.384</InventoryMaxVolume>
             <DamageEffectName>Damage_WeapExpl_Damaged</DamageEffectName>
@@ -235,6 +237,7 @@ Range: 1000m</Description>
             <BuildTimeSeconds>30</BuildTimeSeconds>
             <OverlayTexture>Textures\GUI\Screens\turret_overlay.dds</OverlayTexture>
             <WeaponDefinitionId Subtype="LargeGatlingTurret" />
+            <EnabledTargetingOptions>Players Missiles SmallShips LargeShips Stations Asteroids Enemies</EnabledTargetingOptions>
             <HiddenTargetingOptions>Friends</HiddenTargetingOptions>
             <InventoryMaxVolume>0.384</InventoryMaxVolume>
             <DamageEffectName>Damage_WeapExpl_Damaged</DamageEffectName>
@@ -340,6 +343,7 @@ Range: 1000m</Description>
             <BuildTimeSeconds>30</BuildTimeSeconds>
             <OverlayTexture>Textures\GUI\Screens\turret_overlay.dds</OverlayTexture>
             <WeaponDefinitionId Subtype="LargeGatlingTurret" />
+            <EnabledTargetingOptions>Players Missiles SmallShips LargeShips Stations Asteroids Enemies</EnabledTargetingOptions>
             <HiddenTargetingOptions>Friends</HiddenTargetingOptions>
             <InventoryMaxVolume>0.384</InventoryMaxVolume>
             <DamageEffectName>Damage_WeapExpl_Damaged</DamageEffectName>
@@ -449,6 +453,7 @@ Range: 1000m</Description>
             <BuildTimeSeconds>20</BuildTimeSeconds>
             <OverlayTexture>Textures\GUI\Screens\turret_overlay.dds</OverlayTexture>
             <WeaponDefinitionId Subtype="SmallGatlingTurret" />
+            <EnabledTargetingOptions>Players Missiles SmallShips LargeShips Stations Asteroids Enemies</EnabledTargetingOptions>
             <HiddenTargetingOptions>Friends</HiddenTargetingOptions>
             <InventoryMaxVolume>0.08</InventoryMaxVolume>
             <DamageEffectName>Damage_WeapExpl_Damaged</DamageEffectName>
@@ -541,6 +546,7 @@ Range: 1000m</Description>
             <BuildTimeSeconds>20</BuildTimeSeconds>
             <OverlayTexture>Textures\GUI\Screens\turret_overlay.dds</OverlayTexture>
             <WeaponDefinitionId Subtype="SmallGatlingTurret" />
+            <EnabledTargetingOptions>Players Missiles SmallShips LargeShips Stations Asteroids Enemies</EnabledTargetingOptions>
             <HiddenTargetingOptions>Friends</HiddenTargetingOptions>
             <InventoryMaxVolume>0.08</InventoryMaxVolume>
             <DamageEffectName>Damage_WeapExpl_Damaged</DamageEffectName>
