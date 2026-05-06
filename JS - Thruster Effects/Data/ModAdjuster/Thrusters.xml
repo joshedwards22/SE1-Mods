@@ -177,23 +177,6 @@
             </Id>
             <FlameLengthMaterial>SciFiEngineThrustMiddle</FlameLengthMaterial>
         </Definition>
-
-        <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
-            <Id>
-                <TypeId>Thrust</TypeId>
-                <SubtypeId>LargeBlockSmallThrustSciFi</SubtypeId>
-            </Id>
-            <FlameLengthMaterial>SciFiEngineThrustMiddle</FlameLengthMaterial>
-        </Definition>
-
-        <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
-            <Id>
-                <TypeId>Thrust</TypeId>
-                <SubtypeId>LargeBlockSmallModularThruster</SubtypeId>
-            </Id>
-            <FlameLengthMaterial>SciFiEngineThrustMiddle</FlameLengthMaterial>
-        </Definition>
-
         <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
             <Id>
                 <TypeId>Thrust</TypeId>
@@ -201,43 +184,10 @@
             </Id>
             <FlameLengthMaterial>SciFiEngineThrustMiddle</FlameLengthMaterial>
         </Definition>
-
-        <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
-            <Id>
-                <TypeId>Thrust</TypeId>
-                <SubtypeId>SmallBlockLargeThrustSciFi</SubtypeId>
-            </Id>
-            <FlameLengthMaterial>SciFiEngineThrustMiddle</FlameLengthMaterial>
-        </Definition>
-
-        <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
-            <Id>
-                <TypeId>Thrust</TypeId>
-                <SubtypeId>SmallBlockLargeModularThruster</SubtypeId>
-            </Id>
-            <FlameLengthMaterial>SciFiEngineThrustMiddle</FlameLengthMaterial>
-        </Definition>
-
         <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
             <Id>
                 <TypeId>Thrust</TypeId>
                 <SubtypeId>SmallBlockSmallThrust</SubtypeId>
-            </Id>
-            <FlameLengthMaterial>SciFiEngineThrustMiddle</FlameLengthMaterial>
-        </Definition>
-
-        <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
-            <Id>
-                <TypeId>Thrust</TypeId>
-                <SubtypeId>SmallBlockSmallThrustSciFi</SubtypeId>
-            </Id>
-            <FlameLengthMaterial>SciFiEngineThrustMiddle</FlameLengthMaterial>
-        </Definition>
-
-        <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
-            <Id>
-                <TypeId>Thrust</TypeId>
-                <SubtypeId>SmallBlockSmallModularThruster</SubtypeId>
             </Id>
             <FlameLengthMaterial>SciFiEngineThrustMiddle</FlameLengthMaterial>
         </Definition>
