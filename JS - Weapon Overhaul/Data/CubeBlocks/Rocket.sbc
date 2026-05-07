@@ -78,7 +78,6 @@ Range: 2000m</Description>
             <DestroyEffect>BlockDestroyedExplosion_Large</DestroyEffect>
             <DestroySound>WepSmallWarheadExpl</DestroySound>
             <PCU>275</PCU>
-            <IsAirTight>false</IsAirTight>
             <AmmoPullAmountPerTick>3</AmmoPullAmountPerTick>
             <InventoryFillFactorMin>.25</InventoryFillFactorMin>
             <InventoryFillFactorMax>.5</InventoryFillFactorMax>
@@ -168,7 +167,6 @@ Range: 2000m</Description>
             <DestroyEffect>BlockDestroyedExplosion_Large</DestroyEffect>
             <DestroySound>WepSmallWarheadExpl</DestroySound>
             <PCU>275</PCU>
-            <IsAirTight>false</IsAirTight>
             <AmmoPullAmountPerTick>3</AmmoPullAmountPerTick>
             <InventoryFillFactorMin>.25</InventoryFillFactorMin>
             <InventoryFillFactorMax>.5</InventoryFillFactorMax>
