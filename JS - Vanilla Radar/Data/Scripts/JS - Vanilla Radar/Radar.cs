@@ -11,6 +11,7 @@ using VRageMath;
 using Draygo.API;
 using Sandbox.Game.Entities;
 using Sandbox.Definitions;
+using SpaceEngineers.Game.ModAPI;
 
 namespace JSVanillaRadar.Radar
 {
@@ -62,14 +63,42 @@ namespace JSVanillaRadar.Radar
         public override void BeforeStart()
         {
             isClient = !MyAPIGateway.Utilities.IsDedicated;
+            
+            if (MyAPIGateway.Session.IsServer)
+            {
+                Sandbox.Game.MyVisualScriptLogicProvider.BlockBuilt += OnBlockBuilt;
+            }
+
             if (!isClient) return;
 
             scanTicks = Math.Max(1, (SCAN_INTERVAL_MS * 60) / 1000);
             hudApi = new HudAPIv2(OnHudApiReady);
         }
 
+        private void OnBlockBuilt(string typeId, string subtypeId, string gridName, long blockId)
+        {
+            if (subtypeId == "Lidar" || subtypeId == "LidarSmall")
+            {
+                var block = MyEntities.GetEntityById(blockId);
+                var turret = block as Sandbox.ModAPI.IMyLargeTurretBase;
+                if (turret != null)
+                {
+                    var def = turret.SlimBlock.BlockDefinition as MyLargeTurretBaseDefinition;
+                    if (def != null)
+                    {
+                        turret.Range = def.MaxRangeMeters;
+                    }
+                }
+            }
+        }
+
         protected override void UnloadData()
         {
+            if (MyAPIGateway.Session != null && MyAPIGateway.Session.IsServer)
+            {
+                Sandbox.Game.MyVisualScriptLogicProvider.BlockBuilt -= OnBlockBuilt;
+            }
+
             if (hudApi != null)
                 hudApi.Unload();
         }
@@ -107,10 +136,17 @@ namespace JSVanillaRadar.Radar
             if (aspectRatio == 0f)
                 aspectRatio = camera.ViewportSize.X / camera.ViewportSize.Y;
 
-            // Only operate if the player is actively controlling a powered ship controller (cockpit, etc.)
+            // Only operate if the player is actively controlling a powered ship controller (cockpit, etc.) or a turret
             var playerEnt = MyAPIGateway.Session.Player.Controller?.ControlledEntity?.Entity;
             var shipController = playerEnt as Sandbox.ModAPI.IMyShipController;
-            if (shipController == null || !shipController.IsWorking)
+            var turretController = playerEnt as Sandbox.ModAPI.IMyLargeTurretBase;
+            var customTurretController = playerEnt as SpaceEngineers.Game.ModAPI.IMyTurretControlBlock;
+
+            bool isControllerWorking = (shipController != null && shipController.IsWorking) || 
+                                       (turretController != null && turretController.IsWorking) ||
+                                       (customTurretController != null && customTurretController.IsWorking);
+
+            if (!isControllerWorking)
             {
                 activeTargets.Clear();
                 return;
@@ -250,8 +286,12 @@ namespace JSVanillaRadar.Radar
             int gridSpeed = grid.Physics != null ? (int)Math.Round(grid.Physics.LinearVelocity.Length()) : 0;
 
             // --- Build Name Label ---
+            string fullLabelText = $"{ownerStr}.{grid.DisplayName}";
+            if (fullLabelText.Length > 20)
+                fullLabelText = fullLabelText.Substring(0, 20);
+
             var nameLabelSb = new StringBuilder();
-            nameLabelSb.Append($"<color={hexColor}>{ownerStr}.{grid.DisplayName}");
+            nameLabelSb.Append($"<color={hexColor}>{fullLabelText}");
             var nameLabel = new HudAPIv2.HUDMessage(
                 nameLabelSb,
                 Vector2D.Zero,
@@ -275,17 +315,20 @@ namespace JSVanillaRadar.Radar
             );
             var infoLen = infoLabel.GetTextLength();
 
-            // Position them above the box, centered horizontally.
-            // Y-axis is up (+), and text flows down (-) from Origin.
-            // Info label sits just above the top edge of the box.
-            double infoOriginY = cy + bh + Math.Abs(infoLen.Y) + 0.005;
-            infoLabel.Origin = new Vector2D(cx - infoLen.X / 2.0, infoOriginY);
-            infoLabel.Visible = true;
-
-            // Name label sits just above the info label.
-            double nameOriginY = infoOriginY + Math.Abs(nameLen.Y);
-            nameLabel.Origin = new Vector2D(cx - nameLen.X / 2.0, nameOriginY);
+            // Position them on the right side of the box.
+            // X-axis: right edge of the box plus a small padding
+            double textOriginX = cx + bw + 0.005;
+            
+            // Y-axis: Text flows down (-) from its Origin.
+            // Place the Name label so its bottom edge is at the center line (cy)
+            double nameOriginY = cy + Math.Abs(nameLen.Y);
+            nameLabel.Origin = new Vector2D(textOriginX, nameOriginY);
             nameLabel.Visible = true;
+
+            // Place the Info label immediately below the Name label (starting at cy and flowing down)
+            double infoOriginY = cy;
+            infoLabel.Origin = new Vector2D(textOriginX, infoOriginY);
+            infoLabel.Visible = true;
         }
 
         // Draws a thin rectangle outline (4 sides) centered at cx,cy with half-extents bw,bh.
@@ -349,10 +392,10 @@ namespace JSVanillaRadar.Radar
                 g.GetBlocks(myBlocksScratch, b => b.FatBlock is Sandbox.ModAPI.IMyLargeTurretBase);
                 foreach (var b in myBlocksScratch)
                 {
-                    var turretDef = b.BlockDefinition as MyLargeTurretBaseDefinition;
-                    if (turretDef != null && turretDef.MaxRangeMeters > scanRange)
+                    var turret = b.FatBlock as Sandbox.ModAPI.IMyLargeTurretBase;
+                    if (turret != null && turret.IsWorking && turret.Range > scanRange)
                     {
-                        scanRange = turretDef.MaxRangeMeters;
+                        scanRange = turret.Range;
                     }
                 }
             }
