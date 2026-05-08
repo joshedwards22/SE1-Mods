@@ -1,0 +1,182 @@
+<?xml version="1.0" ?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <CubeBlocks>
+        <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+            <Id>
+                <TypeId>LargeGatlingTurret</TypeId>
+                <SubtypeId>Lidar</SubtypeId>
+            </Id>
+            <DisplayName>LiDAR</DisplayName>
+            <Icon>Textures\GUI\Icons\Cubes\LaserAntenna.dds</Icon>
+            <Description>Light Detection and Ranging turret that can detect targets up to 15km away.</Description>
+            <CubeSize>Large</CubeSize>
+            <GuiVisible>false</GuiVisible>
+            <PlaceDecals>false</PlaceDecals>
+            <BlockTopology>TriangleMesh</BlockTopology>
+            <Size x="1" y="2" z="1" />
+            <ModelOffset x="0" y="0" z="0" />
+            <Model>Models\Cubes\large\LidarBase.mwm</Model>
+            <UseModelIntersection>true</UseModelIntersection>
+            <Components>
+                <Component Subtype="SteelPlate" Count="40" />
+                <Component Subtype="Construction" Count="40" />
+                <Component Subtype="Motor" Count="16" />
+                <Component Subtype="Detector" Count="30" />
+                <Component Subtype="RadioCommunication" Count="20" />
+                <Component Subtype="Superconductor" Count="100" />
+                <Component Subtype="Computer" Count="50" />
+                <Component Subtype="BulletproofGlass" Count="4" />
+                <Component Subtype="SteelPlate" Count="10" />
+            </Components>
+            <CriticalComponent Subtype="Computer" Index="0" />
+            <MountPoints>
+                <MountPoint Side="Bottom" StartX="0" StartY="0" EndX="1" EndY="1" Default="true" />
+                <MountPoint Side="Left" StartX="0" StartY="0" EndX="1" EndY="1" />
+                <MountPoint Side="Right" StartX="0" StartY="0" EndX="1" EndY="1" />
+                <MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="1" />
+                <MountPoint Side="Front" StartX="0" StartY="0" EndX="1" EndY="1" />
+            </MountPoints>
+            <BuildProgressModels>
+                <Model BuildPercentUpperBound="0.33" File="Models\Cubes\large\LidarBase_BS1.mwm" />
+                <Model BuildPercentUpperBound="0.66" File="Models\Cubes\large\LidarBase_BS2.mwm" />
+                <Model BuildPercentUpperBound="1.00" File="Models\Cubes\large\LidarBase_BS3.mwm" />
+            </BuildProgressModels>
+            <BlockPairName>Lidar</BlockPairName>
+            <EdgeType>Light</EdgeType>
+            <BuildTimeSeconds>40</BuildTimeSeconds>
+            <MirroringY>Z</MirroringY>
+            <OverlayTexture>Textures\GUI\Screens\turret_overlay.dds</OverlayTexture>
+            <WeaponDefinitionId Subtype="Lidar" />
+            <EnabledTargetingOptions></EnabledTargetingOptions>
+            <HiddenTargetingOptions>SmallShips Neutrals LargeShips Stations Enemies Players Asteroids Missiles Friends</HiddenTargetingOptions>
+            <InventoryMaxVolume>0</InventoryMaxVolume>
+            <DamageEffectName>Damage_Electrical_Damaged</DamageEffectName>
+            <DamagedSound>ParticleElectrical</DamagedSound>
+            <ResourceSinkGroup>Defense</ResourceSinkGroup>
+            <MinElevationDegrees>-180</MinElevationDegrees>
+            <MaxElevationDegrees>180</MaxElevationDegrees>
+            <MinAzimuthDegrees>-180</MinAzimuthDegrees>
+            <MaxAzimuthDegrees>180</MaxAzimuthDegrees>
+            <IdleRotation>true</IdleRotation>
+            <MaxRangeMeters>15000</MaxRangeMeters>
+            <RotationSpeed>0.003</RotationSpeed>
+            <ElevationSpeed>0.003</ElevationSpeed>
+            <MinFov>0.1</MinFov>
+            <MaxFov>1.04719755</MaxFov>
+            <EmissiveColorPreset>Extended</EmissiveColorPreset>
+            <DestroyEffect>BlockDestroyedExplosion_Large</DestroyEffect>
+            <DestroySound>WepSmallWarheadExpl</DestroySound>
+            <PCU>100</PCU>
+            <TargetingGroups>
+                <string>Weapons</string>
+            </TargetingGroups>
+            <SubpartPairing>
+                <dictionary>
+                    <item>
+                        <Key>Base1</Key>
+                        <Value>LidarMid</Value>
+                    </item>
+                    <item>
+                        <Key>Base2</Key>
+                        <Value>LidarMid/LidarTop</Value>
+                    </item>
+                    <item>
+                        <Key>Barrel</Key>
+                        <Value>LidarMid/LidarTop</Value>
+                    </item>
+                </dictionary>
+            </SubpartPairing>
+            <CameraDummyName>camera</CameraDummyName>
+        </Definition>
+        <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+            <Id>
+                <TypeId>LargeGatlingTurret</TypeId>
+                <SubtypeId>LidarSmall</SubtypeId>
+            </Id>
+            <DisplayName>LiDAR</DisplayName>
+            <Icon>Textures\GUI\Icons\Cubes\LaserAntennaSmall.dds</Icon>
+            <Description>Light Detection and Ranging turret that can detect targets up to 10km away.</Description>
+            <CubeSize>Small</CubeSize>
+            <GuiVisible>false</GuiVisible>
+            <PlaceDecals>false</PlaceDecals>
+            <BlockTopology>TriangleMesh</BlockTopology>
+            <Size x="3" y="3" z="3" />
+            <ModelOffset x="0" y="0" z="0" />
+            <Model>Models\Cubes\small\LidarBase.mwm</Model>
+            <UseModelIntersection>true</UseModelIntersection>
+            <Components>
+                <Component Subtype="SteelPlate" Count="6" />
+                <Component Subtype="SmallTube" Count="10" />
+                <Component Subtype="Construction" Count="10" />
+                <Component Subtype="Motor" Count="5" />
+                <Component Subtype="Detector" Count="6" />
+                <Component Subtype="RadioCommunication" Count="5" />
+                <Component Subtype="Superconductor" Count="10" />
+                <Component Subtype="Computer" Count="30" />
+                <Component Subtype="BulletproofGlass" Count="2" />
+                <Component Subtype="SteelPlate" Count="4" />
+            </Components>
+            <CriticalComponent Subtype="Computer" Index="0" />
+            <Center x="1" y="0" z="1" />
+            <MountPoints>
+                <MountPoint Side="Bottom" StartX="0" StartY="0" EndX="3" EndY="3" Default="true" />
+                <MountPoint Side="Left" StartX="0" StartY="0" EndX="3" EndY="1" />
+                <MountPoint Side="Right" StartX="0" StartY="0" EndX="3" EndY="1" />
+                <MountPoint Side="Back" StartX="0" StartY="0" EndX="3" EndY="1" />
+                <MountPoint Side="Front" StartX="0" StartY="0" EndX="3" EndY="1" />
+            </MountPoints>
+            <BuildProgressModels>
+                <Model BuildPercentUpperBound="0.50" File="Models\Cubes\small\LidarBase_BS1.mwm" />
+                <Model BuildPercentUpperBound="0.100" File="Models\Cubes\small\LidarBase_BS2.mwm" />
+            </BuildProgressModels>
+            <BlockPairName>Lidar</BlockPairName>
+            <MirroringY>Z</MirroringY>
+            <MirroringZ>Y</MirroringZ>
+            <EdgeType>Light</EdgeType>
+            <BuildTimeSeconds>20</BuildTimeSeconds>
+            <OverlayTexture>Textures\GUI\Screens\turret_overlay.dds</OverlayTexture>
+            <WeaponDefinitionId Subtype="Lidar" />
+            <EnabledTargetingOptions></EnabledTargetingOptions>
+            <HiddenTargetingOptions>SmallShips Neutrals LargeShips Stations Enemies Players Asteroids Missiles Friends</HiddenTargetingOptions>
+            <InventoryMaxVolume>0</InventoryMaxVolume>
+            <DamageEffectName>Damage_Electrical_Damaged</DamageEffectName>
+            <DamagedSound>ParticleElectrical</DamagedSound>
+            <ResourceSinkGroup>Defense</ResourceSinkGroup>
+            <MinElevationDegrees>-180</MinElevationDegrees>
+            <MaxElevationDegrees>180</MaxElevationDegrees>
+            <MinAzimuthDegrees>-180</MinAzimuthDegrees>
+            <MaxAzimuthDegrees>180</MaxAzimuthDegrees>
+            <IdleRotation>true</IdleRotation>
+            <MaxRangeMeters>10000</MaxRangeMeters>
+            <RotationSpeed>0.003</RotationSpeed>
+            <ElevationSpeed>0.003</ElevationSpeed>
+            <MinFov>0.1</MinFov>
+            <MaxFov>1.04719755</MaxFov>
+            <EmissiveColorPreset>Extended</EmissiveColorPreset>
+            <DestroyEffect>BlockDestroyedExplosion_Large</DestroyEffect>
+            <DestroySound>WepSmallWarheadExpl</DestroySound>
+            <PCU>100</PCU>
+            <TargetingGroups>
+                <string>Weapons</string>
+            </TargetingGroups>
+            <SubpartPairing>
+                <dictionary>
+                    <item>
+                        <Key>Base1</Key>
+                        <Value>LidarMid</Value>
+                    </item>
+                    <item>
+                        <Key>Base2</Key>
+                        <Value>LidarMid/LidarTop</Value>
+                    </item>
+                    <item>
+                        <Key>Barrel</Key>
+                        <Value>LidarMid/LidarTop</Value>
+                    </item>
+                </dictionary>
+            </SubpartPairing>
+            <CameraDummyName>camera</CameraDummyName>
+        </Definition>
+    </CubeBlocks>
+</Definitions>
