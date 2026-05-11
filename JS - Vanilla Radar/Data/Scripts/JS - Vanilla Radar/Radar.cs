@@ -15,9 +15,28 @@ using SpaceEngineers.Game.ModAPI;
 
 namespace JSVanillaRadar.Radar
 {
+    public class RadarConfig
+    {
+        public float MinRange;
+        public float MaxRange;
+        public float LargeLidarRange;
+        public float SmallLidarRange;
+
+        public RadarConfig()
+        {
+            MinRange = 2500f;
+            MaxRange = 15000f;
+            LargeLidarRange = 15000f;
+            SmallLidarRange = 10000f;
+        }
+    }
+
     [MySessionComponentDescriptor(MyUpdateOrder.BeforeSimulation)]
     public class Radar : MySessionComponentBase
     {
+        private const string CONFIG_FILE = "VanillaRadarConfig.xml";
+        private RadarConfig config = new RadarConfig();
+
         // How often to scan for enemy grids (milliseconds)
         private const int SCAN_INTERVAL_MS = 1000;
 
@@ -59,6 +78,57 @@ namespace JSVanillaRadar.Radar
         private readonly List<IMyCubeGrid> groupScratch = new List<IMyCubeGrid>();
         private readonly HashSet<long> subgridIds = new HashSet<long>();
         private readonly List<IMySlimBlock> mechBlocksScratch = new List<IMySlimBlock>();
+
+        public override void LoadData()
+        {
+            base.LoadData();
+            LoadConfig();
+            
+            UpdateLidarRange("MyObjectBuilder_LargeGatlingTurret/Lidar", config.LargeLidarRange);
+            UpdateLidarRange("MyObjectBuilder_LargeGatlingTurret/LidarSmall", config.SmallLidarRange);
+        }
+
+        private void LoadConfig()
+        {
+            try
+            {
+                if (MyAPIGateway.Utilities.FileExistsInWorldStorage(CONFIG_FILE, typeof(Radar)))
+                {
+                    using (var reader = MyAPIGateway.Utilities.ReadFileInWorldStorage(CONFIG_FILE, typeof(Radar)))
+                    {
+                        var xml = reader.ReadToEnd();
+                        config = MyAPIGateway.Utilities.SerializeFromXML<RadarConfig>(xml);
+                    }
+                }
+                else
+                {
+                    var xml = MyAPIGateway.Utilities.SerializeToXML(config);
+                    using (var writer = MyAPIGateway.Utilities.WriteFileInWorldStorage(CONFIG_FILE, typeof(Radar)))
+                    {
+                        writer.Write(xml);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MyLog.Default.WriteLineAndConsole($"Vanilla Radar: Error loading config: {ex}");
+                config = new RadarConfig();
+            }
+        }
+
+        private void UpdateLidarRange(string typeSubtype, float newMaxRange)
+        {
+            MyDefinitionId id;
+            if (MyDefinitionId.TryParse(typeSubtype, out id))
+            {
+                MyCubeBlockDefinition blockDef = MyDefinitionManager.Static.GetCubeBlockDefinition(id);
+                var turretDef = blockDef as MyLargeTurretBaseDefinition;
+                if (turretDef != null)
+                {
+                    turretDef.MaxRangeMeters = newMaxRange;
+                }
+            }
+        }
 
         public override void BeforeStart()
         {
@@ -380,8 +450,8 @@ namespace JSVanillaRadar.Radar
 
         private float GetDynamicScanRange(IMyCubeGrid myGrid)
         {
-            float scanRange = 2500f; // Minimum 2.5km range
-            if (myGrid == null) return scanRange;
+            float scanRange = config.MinRange; // Minimum configured range
+            if (myGrid == null) return Math.Min(scanRange, config.MaxRange);
 
             myGroupScratch.Clear();
             MyAPIGateway.GridGroups.GetGroup(myGrid, GridLinkTypeEnum.Mechanical, myGroupScratch);
@@ -399,6 +469,12 @@ namespace JSVanillaRadar.Radar
                     }
                 }
             }
+
+            if (scanRange > config.MaxRange)
+            {
+                scanRange = config.MaxRange;
+            }
+
             return scanRange;
         }
 
