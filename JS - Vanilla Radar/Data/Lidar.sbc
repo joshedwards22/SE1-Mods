@@ -8,7 +8,7 @@
                 <SubtypeId>Lidar</SubtypeId>
             </Id>
             <DisplayName>LiDAR</DisplayName>
-            <Icon>Textures\GUI\Icons\Cubes\LaserAntenna.dds</Icon>
+            <Icon>Textures\GUI\Icons\Cubes\Lidar.dds</Icon>
             <Description>Light Detection and Ranging turret that can detect targets up to 15km away.</Description>
             <CubeSize>Large</CubeSize>
             <GuiVisible>false</GuiVisible>
@@ -16,7 +16,7 @@
             <BlockTopology>TriangleMesh</BlockTopology>
             <Size x="1" y="2" z="1" />
             <ModelOffset x="0" y="0" z="0" />
-            <Model>Models\Cubes\large\LidarBase.mwm</Model>
+            <Model>Models\Cubes\large\Lidar.mwm</Model>
             <UseModelIntersection>true</UseModelIntersection>
             <Components>
                 <Component Subtype="SteelPlate" Count="40" />
@@ -38,9 +38,9 @@
                 <MountPoint Side="Front" StartX="0" StartY="0" EndX="1" EndY="1" />
             </MountPoints>
             <BuildProgressModels>
-                <Model BuildPercentUpperBound="0.33" File="Models\Cubes\large\LidarBase_BS1.mwm" />
-                <Model BuildPercentUpperBound="0.66" File="Models\Cubes\large\LidarBase_BS2.mwm" />
-                <Model BuildPercentUpperBound="1.00" File="Models\Cubes\large\LidarBase_BS3.mwm" />
+                <Model BuildPercentUpperBound="0.33" File="Models\Cubes\large\Lidar_BS1.mwm" />
+                <Model BuildPercentUpperBound="0.66" File="Models\Cubes\large\Lidar_BS2.mwm" />
+                <Model BuildPercentUpperBound="1.00" File="Models\Cubes\large\Lidar_BS3.mwm" />
             </BuildProgressModels>
             <BlockPairName>Lidar</BlockPairName>
             <EdgeType>Light</EdgeType>
@@ -95,7 +95,7 @@
                 <SubtypeId>LidarSmall</SubtypeId>
             </Id>
             <DisplayName>LiDAR</DisplayName>
-            <Icon>Textures\GUI\Icons\Cubes\LaserAntennaSmall.dds</Icon>
+            <Icon>Textures\GUI\Icons\Cubes\LidarSmall.dds</Icon>
             <Description>Light Detection and Ranging turret that can detect targets up to 10km away.</Description>
             <CubeSize>Small</CubeSize>
             <GuiVisible>false</GuiVisible>
@@ -103,7 +103,7 @@
             <BlockTopology>TriangleMesh</BlockTopology>
             <Size x="3" y="3" z="3" />
             <ModelOffset x="0" y="0" z="0" />
-            <Model>Models\Cubes\small\LidarBase.mwm</Model>
+            <Model>Models\Cubes\small\LidarSmall.mwm</Model>
             <UseModelIntersection>true</UseModelIntersection>
             <Components>
                 <Component Subtype="SteelPlate" Count="6" />
@@ -127,8 +127,8 @@
                 <MountPoint Side="Front" StartX="0" StartY="0" EndX="3" EndY="1" />
             </MountPoints>
             <BuildProgressModels>
-                <Model BuildPercentUpperBound="0.50" File="Models\Cubes\small\LidarBase_BS1.mwm" />
-                <Model BuildPercentUpperBound="0.100" File="Models\Cubes\small\LidarBase_BS2.mwm" />
+                <Model BuildPercentUpperBound="0.50" File="Models\Cubes\small\LidarSmall_BS1.mwm" />
+                <Model BuildPercentUpperBound="0.100" File="Models\Cubes\small\LidarSmall_BS2.mwm" />
             </BuildProgressModels>
             <BlockPairName>Lidar</BlockPairName>
             <MirroringY>Z</MirroringY>
