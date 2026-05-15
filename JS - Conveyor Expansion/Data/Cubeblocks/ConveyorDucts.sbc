@@ -53,7 +53,6 @@
         <MountPoint Side="Back" StartX="0.2" StartY="0.3" EndX="0.3" EndY="0.7" />
         <MountPoint Side="Back" StartX="0.7" StartY="0.3" EndX="0.8" EndY="0.7" />
       </MountPoints>
-      <AutorotateMode>FirstDirection</AutorotateMode>
       <DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
       <DamagedSound>ParticleHeavyMech</DamagedSound>
       <DestroyEffect>BlockDestroyed_Large</DestroyEffect>
@@ -112,9 +111,6 @@
         <MountPoint Side="Back" StartX="0" StartY="0.85" EndX="1" EndY="1.0" />
         <MountPoint Side="Back" StartX="0.45" StartY="0.45" EndX="0.55" EndY="0.55" />
       </MountPoints>
-      <MirroringY>Z</MirroringY>
-      <MirroringZ>Y</MirroringZ>
-      <AutorotateMode>FirstDirection</AutorotateMode>
       <DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
       <DamagedSound>ParticleHeavyMech</DamagedSound>
       <DestroyEffect>BlockDestroyed_Large</DestroyEffect>
@@ -160,7 +156,6 @@
         <MountPoint Side="Bottom" StartX="0.5" StartY="0" EndX="1" EndY="1" />
         <MountPoint Side="Bottom" StartX="0" StartY="0" EndX="0.05" EndY="1.0" />
       </MountPoints>
-      <AutorotateMode>FirstDirection</AutorotateMode>
       <DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
       <DamagedSound>ParticleHeavyMech</DamagedSound>
       <DestroyEffect>BlockDestroyed_Small</DestroyEffect>
@@ -207,9 +202,6 @@
         <MountPoint Side="Left" StartX="0" StartY="0.85" EndX="1" EndY="1.0" />
         <MountPoint Side="Left" StartX="0.45" StartY="0.45" EndX="0.55" EndY="0.55" />
       </MountPoints>
-      <MirroringY>Z</MirroringY>
-      <MirroringZ>Y</MirroringZ>
-      <AutorotateMode>FirstDirection</AutorotateMode>
       <DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
       <DamagedSound>ParticleHeavyMech</DamagedSound>
       <DestroyEffect>BlockDestroyed_Small</DestroyEffect>

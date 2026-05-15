@@ -16,6 +16,7 @@
       </Id>
       <Icon>Textures\GUI\Icons\Cubes\ConveyorTube.dds</Icon>
       <Model>Models\Cubes\large\ConveyorTube.mwm</Model>
+      <AutorotateMode>OneDirection</AutorotateMode>
       <BuildProgressModels>
         <Model BuildPercentUpperBound="0.50" File="Models\Cubes\large\ConveyorTube_BS1.mwm" />
         <Model BuildPercentUpperBound="1.00" File="Models\Cubes\large\ConveyorTube_BS2.mwm" />
@@ -28,6 +29,7 @@
       </Id>
       <Icon>Textures\GUI\Icons\Cubes\ConveyorTubeCurved.dds</Icon>
       <Model>Models\Cubes\large\ConveyorTubeCurved.mwm</Model>
+      <AutorotateMode>OneDirection</AutorotateMode>
       <BuildProgressModels>
         <Model BuildPercentUpperBound="0.50" File="Models\Cubes\large\ConveyorTubeCurved_BS1.mwm" />
         <Model BuildPercentUpperBound="1.00" File="Models\Cubes\large\ConveyorTubeCurved_BS2.mwm" />
@@ -52,6 +54,7 @@
       </Id>
       <Icon>Textures\GUI\Icons\Cubes\ConveyorDuct.dds</Icon>
       <Model>Models\Cubes\large\ConveyorDuct.mwm</Model>
+      <AutorotateMode>OneDirection</AutorotateMode>
       <BuildProgressModels>
         <Model BuildPercentUpperBound="0.50" File="Models\Cubes\large\ConveyorDuct_BS1.mwm" />
         <Model BuildPercentUpperBound="1.00" File="Models\Cubes\large\ConveyorDuct_BS2.mwm" />
@@ -161,6 +164,7 @@
       </Id>
       <Icon>Textures\GUI\Icons\Cubes\ConveyorTubeMedium.dds</Icon>
       <Model>Models\Cubes\small\ConveyorTubeMedium.mwm</Model>
+      <AutorotateMode>OneDirection</AutorotateMode>
       <BuildProgressModels>
         <Model BuildPercentUpperBound="0.50" File="Models\Cubes\small\ConveyorTubeMedium_BS1.mwm" />
         <Model BuildPercentUpperBound="1.00" File="Models\Cubes\small\ConveyorTubeMedium_BS2.mwm" />
@@ -174,6 +178,7 @@
       <Icon>Textures\GUI\Icons\Cubes\ConveyorTubeCurvedMedium.dds</Icon>
       <DisplayName>Medium Curved Conveyor Tube</DisplayName>
       <Model>Models\Cubes\small\ConveyorTubeCurvedMedium.mwm</Model>
+      <AutorotateMode>OneDirection</AutorotateMode>
       <BuildProgressModels>
         <Model BuildPercentUpperBound="0.50" File="Models\Cubes\small\ConveyorTubeCurvedMedium_BS1.mwm" />
         <Model BuildPercentUpperBound="1.00" File="Models\Cubes\small\ConveyorTubeCurvedMedium_BS2.mwm" />
@@ -186,6 +191,7 @@
       </Id>
       <Icon>Textures\GUI\Icons\Cubes\ConveyorFrameMedium.dds</Icon>
       <Model>Models\Cubes\small\ConveyorFrameMedium.mwm</Model>
+      <AutorotateMode>OneDirection</AutorotateMode>
       <BuildProgressModels>
         <Model BuildPercentUpperBound="0.50" File="Models\Cubes\small\ConveyorFrameMedium_BS1.mwm" />
         <Model BuildPercentUpperBound="1.00" File="Models\Cubes\small\ConveyorFrameMedium_BS2.mwm" />
