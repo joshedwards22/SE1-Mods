@@ -149,7 +149,10 @@
       <BuildTimeSeconds>10</BuildTimeSeconds>
       <MountPoints>
         <MountPoint Side="Right" StartX="0" StartY="0" EndX="1" EndY="1" />
-        <MountPoint Side="Left" StartX="0" StartY="0" EndX="1" EndY="1" />
+        <MountPoint Side="Left" StartX="0" StartY="0" EndX="0.15" EndY="0.85" />
+        <MountPoint Side="Left" StartX="0" StartY="0.85" EndX="1" EndY="1.0" />
+        <MountPoint Side="Left" StartX="0.45" StartY="0.45" EndX="0.55" EndY="0.55" />
+        <MountPoint Side="Left" StartX="0.9" StartY="0" EndX="1" EndY="0.1" />
         <MountPoint Side="Front" StartX="0" StartY="0" EndX="1" EndY="1" />
         <MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" />
         <MountPoint Side="Back" StartX="0.5" StartY="0" EndX="1" EndY="1.0" />
