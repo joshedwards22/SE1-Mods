@@ -27,6 +27,14 @@
       <Name>Section1_Position1_SmallBlocks</Name>
       <StrictSearch>true</StrictSearch>
       <ItemIds>
+        <string>Conveyor/ConveyorTubeSmallElbow</string>
+        <string>Conveyor/ConveyorTubeSmallCross</string>
+        <string>Conveyor/MediumBlockConveyor</string>
+        <string>Conveyor/ConveyorTubeTMedium</string>
+        <string>Conveyor/ConveyorTubeElbowMedium</string>
+        <string>Conveyor/ConveyorTubeCrossMedium</string>
+        <string>Conveyor/ConveyorTubeDuctSmallElbow</string>
+        <string>Conveyor/ConveyorTubeDuctSmallCross</string>
       </ItemIds>
     </Category>
     <Category xsi:type="MyObjectBuilder_GuiBlockCategoryDefinition">
@@ -43,6 +51,14 @@
         <string>Conveyor/ConveyorTubeDuctElbow</string>
         <string>Conveyor/ConveyorTubeDuctCross</string>
         <string>Conveyor/LargeBlockConveyorPipeElbow</string>
+        <string>Conveyor/ConveyorTubeSmallElbow</string>
+        <string>Conveyor/ConveyorTubeSmallCross</string>
+        <string>Conveyor/MediumBlockConveyor</string>
+        <string>Conveyor/ConveyorTubeTMedium</string>
+        <string>Conveyor/ConveyorTubeElbowMedium</string>
+        <string>Conveyor/ConveyorTubeCrossMedium</string>
+        <string>Conveyor/ConveyorTubeDuctSmallElbow</string>
+        <string>Conveyor/ConveyorTubeDuctSmallCross</string>
       </ItemIds>
     </Category>
   </CategoryClasses>

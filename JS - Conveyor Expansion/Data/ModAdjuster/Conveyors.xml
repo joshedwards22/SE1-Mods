@@ -4,9 +4,17 @@
   <CubeBlocks>
     <Definition>
       <Id>
+        <TypeId>Conveyor</TypeId>
+        <SubtypeId>LargeBlockConveyor</SubtypeId>
+      </Id>
+      <Icon>Textures\GUI\Icons\Cubes\Conveyor.dds</Icon>
+    </Definition>
+    <Definition>
+      <Id>
         <TypeId>ConveyorConnector</TypeId>
         <SubtypeId>ConveyorTube</SubtypeId>
       </Id>
+      <Icon>Textures\GUI\Icons\Cubes\ConveyorTube.dds</Icon>
       <Model>Models\Cubes\large\ConveyorTube.mwm</Model>
       <BuildProgressModels>
         <Model BuildPercentUpperBound="0.50" File="Models\Cubes\large\ConveyorTube_BS1.mwm" />
@@ -18,6 +26,7 @@
         <TypeId>ConveyorConnector</TypeId>
         <SubtypeId>ConveyorTubeCurved</SubtypeId>
       </Id>
+      <Icon>Textures\GUI\Icons\Cubes\ConveyorTubeCurved.dds</Icon>
       <Model>Models\Cubes\large\ConveyorTubeCurved.mwm</Model>
       <BuildProgressModels>
         <Model BuildPercentUpperBound="0.50" File="Models\Cubes\large\ConveyorTubeCurved_BS1.mwm" />
@@ -29,6 +38,7 @@
         <TypeId>Conveyor</TypeId>
         <SubtypeId>ConveyorTubeT</SubtypeId>
       </Id>
+      <Icon>Textures\GUI\Icons\Cubes\ConveyorTubeT.dds</Icon>
       <Model>Models\Cubes\large\ConveyorTubeT.mwm</Model>
       <BuildProgressModels>
         <Model BuildPercentUpperBound="0.50" File="Models\Cubes\large\ConveyorTubeT_BS1.mwm" />
@@ -40,11 +50,11 @@
         <TypeId>ConveyorConnector</TypeId>
         <SubtypeId>ConveyorTubeDuct</SubtypeId>
       </Id>
+      <Icon>Textures\GUI\Icons\Cubes\ConveyorDuct.dds</Icon>
       <Model>Models\Cubes\large\ConveyorDuct.mwm</Model>
       <BuildProgressModels>
-        <Model BuildPercentUpperBound="0.33" File="Models\Cubes\large\ConveyorDuct_BS1.mwm" />
-        <Model BuildPercentUpperBound="0.66" File="Models\Cubes\large\ConveyorDuct_BS2.mwm" />
-        <Model BuildPercentUpperBound="1.00" File="Models\Cubes\large\ConveyorDuct_BS3.mwm" />
+        <Model BuildPercentUpperBound="0.50" File="Models\Cubes\large\ConveyorDuct_BS1.mwm" />
+        <Model BuildPercentUpperBound="1.00" File="Models\Cubes\large\ConveyorDuct_BS2.mwm" />
       </BuildProgressModels>
     </Definition>
     <Definition>
@@ -52,11 +62,11 @@
         <TypeId>ConveyorConnector</TypeId>
         <SubtypeId>ConveyorTubeDuctCurved</SubtypeId>
       </Id>
+      <Icon>Textures\GUI\Icons\Cubes\ConveyorDuctCurved.dds</Icon>
       <Model>Models\Cubes\large\ConveyorDuctCurved.mwm</Model>
       <BuildProgressModels>
-        <Model BuildPercentUpperBound="0.33" File="Models\Cubes\large\ConveyorDuctCurved_BS1.mwm" />
-        <Model BuildPercentUpperBound="0.66" File="Models\Cubes\large\ConveyorDuctCurved_BS2.mwm" />
-        <Model BuildPercentUpperBound="1.00" File="Models\Cubes\large\ConveyorDuctCurved_BS3.mwm" />
+        <Model BuildPercentUpperBound="0.50" File="Models\Cubes\large\ConveyorDuctCurved_BS1.mwm" />
+        <Model BuildPercentUpperBound="1.00" File="Models\Cubes\large\ConveyorDuctCurved_BS2.mwm" />
       </BuildProgressModels>
     </Definition>
     <Definition>
@@ -64,11 +74,11 @@
         <TypeId>Conveyor</TypeId>
         <SubtypeId>ConveyorTubeDuctT</SubtypeId>
       </Id>
+      <Icon>Textures\GUI\Icons\Cubes\ConveyorDuctT.dds</Icon>
       <Model>Models\Cubes\large\ConveyorDuctT.mwm</Model>
       <BuildProgressModels>
-        <Model BuildPercentUpperBound="0.33" File="Models\Cubes\large\ConveyorDuctT_BS1.mwm" />
-        <Model BuildPercentUpperBound="0.66" File="Models\Cubes\large\ConveyorDuctT_BS2.mwm" />
-        <Model BuildPercentUpperBound="1.00" File="Models\Cubes\large\ConveyorDuctT_BS3.mwm" />
+        <Model BuildPercentUpperBound="0.50" File="Models\Cubes\large\ConveyorDuctT_BS1.mwm" />
+        <Model BuildPercentUpperBound="1.00" File="Models\Cubes\large\ConveyorDuctT_BS2.mwm" />
       </BuildProgressModels>
     </Definition>
     <Definition>
@@ -76,6 +86,7 @@
         <TypeId>ConveyorConnector</TypeId>
         <SubtypeId>LargeBlockConveyorPipeSeamless</SubtypeId>
       </Id>
+      <Icon>Textures\GUI\Icons\Cubes\PipeSeamless.dds</Icon>
       <Model>Models\Cubes\large\PipeSeamless.mwm</Model>
       <BuildProgressModels>
         <Model BuildPercentUpperBound="0.33" File="Models\Cubes\large\PipeSeamless_BS1.mwm" />
@@ -88,6 +99,7 @@
         <TypeId>ConveyorConnector</TypeId>
         <SubtypeId>LargeBlockConveyorPipeEnd</SubtypeId>
       </Id>
+      <Icon>Textures\GUI\Icons\Cubes\PipeEnd.dds</Icon>
       <Model>Models\Cubes\large\PipeEnd.mwm</Model>
       <BuildProgressModels>
         <Model BuildPercentUpperBound="0.33" File="Models\Cubes\large\PipeEnd_BS1.mwm" />
@@ -100,6 +112,7 @@
         <TypeId>ConveyorConnector</TypeId>
         <SubtypeId>LargeBlockConveyorPipeFlange</SubtypeId>
       </Id>
+      <Icon>Textures\GUI\Icons\Cubes\PipeFlange.dds</Icon>
       <Model>Models\Cubes\large\PipeFlange.mwm</Model>
       <BuildProgressModels>
         <Model BuildPercentUpperBound="0.33" File="Models\Cubes\large\PipeFlange_BS1.mwm" />
@@ -112,6 +125,7 @@
         <TypeId>ConveyorConnector</TypeId>
         <SubtypeId>LargeBlockConveyorPipeCorner</SubtypeId>
       </Id>
+      <Icon>Textures\GUI\Icons\Cubes\PipeCurved.dds</Icon>
       <Model>Models\Cubes\large\PipeCurved.mwm</Model>
       <BuildProgressModels>
         <Model BuildPercentUpperBound="0.33" File="Models\Cubes\large\PipeCurved_BS1.mwm" />
@@ -121,9 +135,31 @@
     </Definition>
     <Definition>
       <Id>
+        <TypeId>Conveyor</TypeId>
+        <SubtypeId>LargeBlockConveyorPipeJunction</SubtypeId>
+      </Id>
+      <Icon>Textures\GUI\Icons\Cubes\PipeNode.dds</Icon>
+    </Definition>
+    <Definition>
+      <Id>
+        <TypeId>Conveyor</TypeId>
+        <SubtypeId>LargeBlockConveyorPipeIntersection</SubtypeId>
+      </Id>
+      <Icon>Textures\GUI\Icons\Cubes\PipeJunction.dds</Icon>
+    </Definition>
+    <Definition>
+      <Id>
+        <TypeId>Conveyor</TypeId>
+        <SubtypeId>LargeBlockConveyorPipeT</SubtypeId>
+      </Id>
+      <Icon>Textures\GUI\Icons\Cubes\PipeT.dds</Icon>
+    </Definition>
+    <Definition>
+      <Id>
         <TypeId>ConveyorConnector</TypeId>
         <SubtypeId>ConveyorTubeMedium</SubtypeId>
       </Id>
+      <Icon>Textures\GUI\Icons\Cubes\ConveyorTubeMedium.dds</Icon>
       <Model>Models\Cubes\small\ConveyorTubeMedium.mwm</Model>
       <BuildProgressModels>
         <Model BuildPercentUpperBound="0.50" File="Models\Cubes\small\ConveyorTubeMedium_BS1.mwm" />
@@ -135,6 +171,8 @@
         <TypeId>ConveyorConnector</TypeId>
         <SubtypeId>ConveyorTubeCurvedMedium</SubtypeId>
       </Id>
+      <Icon>Textures\GUI\Icons\Cubes\ConveyorTubeCurvedMedium.dds</Icon>
+      <DisplayName>Medium Curved Conveyor Tube</DisplayName>
       <Model>Models\Cubes\small\ConveyorTubeCurvedMedium.mwm</Model>
       <BuildProgressModels>
         <Model BuildPercentUpperBound="0.50" File="Models\Cubes\small\ConveyorTubeCurvedMedium_BS1.mwm" />
@@ -146,20 +184,38 @@
         <TypeId>ConveyorConnector</TypeId>
         <SubtypeId>ConveyorFrameMedium</SubtypeId>
       </Id>
+      <Icon>Textures\GUI\Icons\Cubes\ConveyorFrameMedium.dds</Icon>
       <Model>Models\Cubes\small\ConveyorFrameMedium.mwm</Model>
       <BuildProgressModels>
-        <Model BuildPercentUpperBound="1.00" File="Models\Cubes\small\ConveyorFrameMedium_BS1.mwm" />
+        <Model BuildPercentUpperBound="0.50" File="Models\Cubes\small\ConveyorFrameMedium_BS1.mwm" />
+        <Model BuildPercentUpperBound="1.00" File="Models\Cubes\small\ConveyorFrameMedium_BS2.mwm" />
       </BuildProgressModels>
+    </Definition>
+    <Definition>
+      <Id>
+        <TypeId>Conveyor</TypeId>
+        <SubtypeId>SmallBlockConveyor</SubtypeId>
+      </Id>
+      <DisplayName>Small Conveyor Junction</DisplayName>
+      <Icon>Textures\GUI\Icons\Cubes\ConveyorSmall.dds</Icon>
+    </Definition>
+    <Definition>
+      <Id>
+        <TypeId>Conveyor</TypeId>
+        <SubtypeId>SmallShipConveyorHub</SubtypeId>
+      </Id>
+      <DisplayName>Conveyor Hub</DisplayName>
     </Definition>
     <Definition>
       <Id>
         <TypeId>ConveyorConnector</TypeId>
         <SubtypeId>ConveyorTubeSmall</SubtypeId>
       </Id>
-      <Model>Models\Cubes\small\ConveyorTube.mwm</Model>
+      <Icon>Textures\GUI\Icons\Cubes\ConveyorTubeSmall.dds</Icon>
+      <Model>Models\Cubes\small\ConveyorTubeSmall.mwm</Model>
       <BuildProgressModels>
-        <Model BuildPercentUpperBound="0.50" File="Models\Cubes\small\ConveyorTube_BS1.mwm" />
-        <Model BuildPercentUpperBound="1.00" File="Models\Cubes\small\ConveyorTube_BS2.mwm" />
+        <Model BuildPercentUpperBound="0.50" File="Models\Cubes\small\ConveyorTubeSmall_BS1.mwm" />
+        <Model BuildPercentUpperBound="1.00" File="Models\Cubes\small\ConveyorTubeSmall_BS2.mwm" />
       </BuildProgressModels>
     </Definition>
     <Definition>
@@ -167,9 +223,11 @@
         <TypeId>ConveyorConnector</TypeId>
         <SubtypeId>ConveyorTubeSmallCurved</SubtypeId>
       </Id>
-      <Model>Models\Cubes\small\ConveyorTubeCurved.mwm</Model>
+      <Icon>Textures\GUI\Icons\Cubes\ConveyorTubeSmallCurved.dds</Icon>
+      <Model>Models\Cubes\small\ConveyorTubeSmallCurved.mwm</Model>
       <BuildProgressModels>
-        <Model BuildPercentUpperBound="1.00" File="Models\Cubes\small\ConveyorTubeCurved_BS1.mwm" />
+        <Model BuildPercentUpperBound="0.50" File="Models\Cubes\small\ConveyorTubeSmallCurved_BS1.mwm" />
+        <Model BuildPercentUpperBound="1.00" File="Models\Cubes\small\ConveyorTubeSmallCurved_BS2.mwm" />
       </BuildProgressModels>
     </Definition>
     <Definition>
@@ -177,9 +235,11 @@
         <TypeId>Conveyor</TypeId>
         <SubtypeId>ConveyorTubeSmallT</SubtypeId>
       </Id>
-      <Model>Models\Cubes\small\ConveyorTubeT.mwm</Model>
+      <Icon>Textures\GUI\Icons\Cubes\ConveyorTubeSmallT.dds</Icon>
+      <Model>Models\Cubes\small\ConveyorTubeSmallT.mwm</Model>
       <BuildProgressModels>
-        <Model BuildPercentUpperBound="1.00" File="Models\Cubes\small\ConveyorTubeT_BS1.mwm" />
+        <Model BuildPercentUpperBound="0.50" File="Models\Cubes\small\ConveyorTubeSmallT_BS1.mwm" />
+        <Model BuildPercentUpperBound="1.00" File="Models\Cubes\small\ConveyorTubeSmallT_BS2.mwm" />
       </BuildProgressModels>
     </Definition>
     <Definition>
@@ -187,36 +247,36 @@
         <TypeId>ConveyorConnector</TypeId>
         <SubtypeId>ConveyorTubeDuctSmall</SubtypeId>
       </Id>
-      <Model>Models\Cubes\small\ConveyorDuct.mwm</Model>
+      <Icon>Textures\GUI\Icons\Cubes\ConveyorDuctSmall.dds</Icon>
+      <Model>Models\Cubes\small\ConveyorDuctSmall.mwm</Model>
       <BuildProgressModels>
-        <Model BuildPercentUpperBound="0.50" File="Models\Cubes\small\ConveyorDuct_BS1.mwm" />
-        <Model BuildPercentUpperBound="1.00" File="Models\Cubes\small\ConveyorDuct_BS2.mwm" />
+        <Model BuildPercentUpperBound="0.50" File="Models\Cubes\small\ConveyorDuctSmall_BS1.mwm" />
+        <Model BuildPercentUpperBound="1.00" File="Models\Cubes\small\ConveyorDuctSmall_BS2.mwm" />
       </BuildProgressModels>
-      <BlockPairName>ConveyorTubeDuct</BlockPairName>
     </Definition>
     <Definition>
       <Id>
         <TypeId>ConveyorConnector</TypeId>
         <SubtypeId>ConveyorTubeDuctSmallCurved</SubtypeId>
       </Id>
-      <Model>Models\Cubes\small\ConveyorDuctCurved.mwm</Model>
+      <Icon>Textures\GUI\Icons\Cubes\ConveyorDuctSmallCurved.dds</Icon>
+      <Model>Models\Cubes\small\ConveyorDuctSmallCurved.mwm</Model>
       <BuildProgressModels>
-        <Model BuildPercentUpperBound="0.50" File="Models\Cubes\small\ConveyorDuctCurved_BS1.mwm" />
-        <Model BuildPercentUpperBound="1.00" File="Models\Cubes\small\ConveyorDuctCurved_BS2.mwm" />
+        <Model BuildPercentUpperBound="0.50" File="Models\Cubes\small\ConveyorDuctSmallCurved_BS1.mwm" />
+        <Model BuildPercentUpperBound="1.00" File="Models\Cubes\small\ConveyorDuctSmallCurved_BS2.mwm" />
       </BuildProgressModels>
-      <BlockPairName>ConveyorTubeDuctCurved</BlockPairName>
     </Definition>
     <Definition>
       <Id>
         <TypeId>Conveyor</TypeId>
         <SubtypeId>ConveyorTubeDuctSmallT</SubtypeId>
       </Id>
-      <Model>Models\Cubes\small\ConveyorDuctT.mwm</Model>
+      <Icon>Textures\GUI\Icons\Cubes\ConveyorDuctSmallT.dds</Icon>
+      <Model>Models\Cubes\small\ConveyorDuctSmallT.mwm</Model>
       <BuildProgressModels>
-        <Model BuildPercentUpperBound="0.50" File="Models\Cubes\small\ConveyorDuctT_BS1.mwm" />
-        <Model BuildPercentUpperBound="1.00" File="Models\Cubes\small\ConveyorDuctT_BS2.mwm" />
+        <Model BuildPercentUpperBound="0.50" File="Models\Cubes\small\ConveyorDuctSmallT_BS1.mwm" />
+        <Model BuildPercentUpperBound="1.00" File="Models\Cubes\small\ConveyorDuctSmallT_BS2.mwm" />
       </BuildProgressModels>
-      <BlockPairName>ConveyorTubeDuctT</BlockPairName>
     </Definition>
   </CubeBlocks>
 </Definitions>
