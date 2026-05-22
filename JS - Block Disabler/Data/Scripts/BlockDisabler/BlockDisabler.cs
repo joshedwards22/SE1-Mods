@@ -15,7 +15,7 @@ namespace JSBlockDisabler
     {
         private const string FILE_NAME = "Data\\DisabledBlocks.txt";
         private const string STORAGE_FILE_NAME = "DisabledBlocks.txt";
-        private HashSet<MyCubeBlockDefinition> disabledBlocks = new HashSet<MyCubeBlockDefinition>();
+        private HashSet<MyCubeBlockDefinition> disabledBlocks_ = new HashSet<MyCubeBlockDefinition>();
 
         public override void LoadData()
 		{
@@ -55,7 +55,7 @@ namespace JSBlockDisabler
                 MyLog.Default.WriteLineAndConsole($"BlockDisabler: Critical error in LoadData: {ex}");
             }
             
-            if (disabledBlocks.Count > 0)
+            if (disabledBlocks_.Count > 0)
             {
                 ProcessVariantGroups();
             }
@@ -65,7 +65,7 @@ namespace JSBlockDisabler
         {
             base.BeforeStart();
             
-            if (disabledBlocks.Count > 0)
+            if (disabledBlocks_.Count > 0)
             {
                 RemoveDisabledBlocksFromWorld();
                 MyAPIGateway.Entities.OnEntityAdd += OnEntityAdd;
@@ -80,7 +80,7 @@ namespace JSBlockDisabler
 
         private void OnEntityAdd(VRage.ModAPI.IMyEntity entity)
         {
-            if (disabledBlocks.Count == 0 || entity == null) 
+            if (disabledBlocks_.Count == 0 || entity == null) 
                 return;
             
             var grid = entity as IMyCubeGrid;
@@ -92,7 +92,7 @@ namespace JSBlockDisabler
 
         private void RemoveDisabledBlocksFromWorld()
         {
-            if (disabledBlocks.Count == 0) 
+            if (disabledBlocks_.Count == 0) 
                 return;
 
             var entities = new HashSet<VRage.ModAPI.IMyEntity>();
@@ -119,7 +119,7 @@ namespace JSBlockDisabler
                 foreach (var block in allBlocks)
                 {
                     var cubeDef = block.BlockDefinition as MyCubeBlockDefinition;
-                    if (cubeDef != null && disabledBlocks.Contains(cubeDef))
+                    if (cubeDef != null && disabledBlocks_.Contains(cubeDef))
                     {
                         blocksToRemove.Add(block);
                     }
@@ -163,7 +163,7 @@ namespace JSBlockDisabler
                             continue;
                         }
                         
-                        if (disabledBlocks.Contains(block))
+                        if (disabledBlocks_.Contains(block))
                         {
                             changed = true;
                             
@@ -298,7 +298,7 @@ namespace JSBlockDisabler
                 blockDef.GuiVisible = false;
                 blockDef.AvailableInSurvival = false; 
 
-                disabledBlocks.Add(blockDef);
+                disabledBlocks_.Add(blockDef);
                 
                 // Try to trigger post-processing to refresh the definition
                 try
@@ -334,7 +334,7 @@ namespace JSBlockDisabler
                 if (!type.StartsWith("MyObjectBuilder_", StringComparison.OrdinalIgnoreCase))
                 {
                     string newType = "MyObjectBuilder_" + type;
-                     if (MyDefinitionId.TryParse($"{newType}/{subtype}", out id))
+                    if (MyDefinitionId.TryParse($"{newType}/{subtype}", out id))
                         return true;
                 }
             }

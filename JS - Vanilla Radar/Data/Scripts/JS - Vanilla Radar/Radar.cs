@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Xml.Serialization;
 using Sandbox.ModAPI;
 using VRage.Game;
 using VRage.Game.Components;
@@ -17,25 +18,29 @@ namespace JSVanillaRadar.Radar
 {
     public class RadarConfig
     {
-        public float MinRange;
-        public float MaxRange;
-        public float LargeLidarRange;
-        public float SmallLidarRange;
+        [XmlElement("MinRange")]
+        public float MinRange_;
+        [XmlElement("MaxRange")]
+        public float MaxRange_;
+        [XmlElement("LargeLidarRange")]
+        public float LargeLidarRange_;
+        [XmlElement("SmallLidarRange")]
+        public float SmallLidarRange_;
 
         public RadarConfig()
         {
-            MinRange        = 2500f;
-            MaxRange        = 15000f;
-            LargeLidarRange = 15000f;
-            SmallLidarRange = 10000f;
+            MinRange_        = 2500f;
+            MaxRange_        = 15000f;
+            LargeLidarRange_ = 15000f;
+            SmallLidarRange_ = 10000f;
         }
 
         public void Validate()
         {
-            MinRange        = Math.Max(100f,    Math.Min(MinRange,        50000f));
-            MaxRange        = Math.Max(MinRange, Math.Min(MaxRange,        50000f));
-            LargeLidarRange = Math.Max(100f,    Math.Min(LargeLidarRange, 50000f));
-            SmallLidarRange = Math.Max(100f,    Math.Min(SmallLidarRange, 50000f));
+            MinRange_        = Math.Max(100f,    Math.Min(MinRange_,        50000f));
+            MaxRange_        = Math.Max(MinRange_, Math.Min(MaxRange_,        50000f));
+            LargeLidarRange_ = Math.Max(100f,    Math.Min(LargeLidarRange_, 50000f));
+            SmallLidarRange_ = Math.Max(100f,    Math.Min(SmallLidarRange_, 50000f));
         }
     }
 
@@ -43,10 +48,10 @@ namespace JSVanillaRadar.Radar
     public class Radar : MySessionComponentBase
     {
         private const string CONFIG_FILE = "VanillaRadarConfig.xml";
-        private RadarConfig config = new RadarConfig();
+        private RadarConfig config_ = new RadarConfig();
 
         // Debug setting to always show radar even outside cockpits/turrets
-        private bool debugAlwaysShowRadar = false;
+        private bool debugAlwaysShowRadar_ = false;
 
         // How often to scan for enemy grids (milliseconds) — 500ms = 2 Hz
         private const int SCAN_INTERVAL_MS = 500;
@@ -61,86 +66,87 @@ namespace JSVanillaRadar.Radar
         private const int MIN_BLOCK_COUNT = 5;
 
         // Vanilla SE material: a plain solid square, used to draw thin lines
-        private static readonly MyStringId MatSquare = MyStringId.GetOrCompute("Square");
+        private static readonly MyStringId MAT_SQUARE = MyStringId.GetOrCompute("Square");
 
         // Cached block filter delegates — prevents per-scan lambda allocation
-        private static readonly Func<IMySlimBlock, bool> IsTurretFilter = b => b.FatBlock is IMyLargeTurretBase;
-        private static readonly Func<IMySlimBlock, bool> IsMechFilter   = b => b.FatBlock is IMyMechanicalConnectionBlock;
+        private static readonly Func<IMySlimBlock, bool> IS_TURRET_FILTER = b => b.FatBlock is IMyLargeTurretBase;
+        private static readonly Func<IMySlimBlock, bool> IS_MECH_FILTER   = b => b.FatBlock is IMyMechanicalConnectionBlock;
 
-        private HudAPIv2 hudApi;
-        private bool hudApiReady = false;
-        private int tick = 0;
-        private int scanTicks;
-        private bool isClient = false;
-        private float aspectRatio = 1f;
-        private Vector3D _scanOrigin;  // set each scan, used for LOS raycasts
+        private HudAPIv2 hudApi_;
+        private bool hudApiReady_ = false;
+        private int tick_ = 0;
+        private int scanTicks_;
+        private bool isClient_ = false;
+        private float aspectRatio_ = 1f;
+        private Vector3D scanOrigin_;  // set each scan, used for LOS raycasts
 
         private enum RadarMode
         {
             All,
             Enemies,
+            EnemiesAndNeutrals,
             None
         }
-        private RadarMode currentMode = RadarMode.All;
+        private RadarMode currentMode_ = RadarMode.Enemies;
 
         // List of currently targeted grids
-        private List<IMyCubeGrid> activeTargets = new List<IMyCubeGrid>();
+        private List<IMyCubeGrid> activeTargets_ = new List<IMyCubeGrid>();
 
         // Cached collections to prevent memory allocations (garbage collection) during scans
-        private readonly List<IMyCubeGrid> myGroupScratch = new List<IMyCubeGrid>();
-        private readonly List<IMySlimBlock> myBlocksScratch = new List<IMySlimBlock>();
-        private readonly HashSet<long> processedGroups = new HashSet<long>();
-        private readonly List<IMyCubeGrid> groupScratch = new List<IMyCubeGrid>();
-        private readonly HashSet<long> subgridIds = new HashSet<long>();
-        private readonly List<IMySlimBlock>  mechBlocksScratch = new List<IMySlimBlock>();
+        private readonly List<IMyCubeGrid> myGroupScratch_ = new List<IMyCubeGrid>();
+        private readonly List<IMySlimBlock> myBlocksScratch_ = new List<IMySlimBlock>();
+        private readonly HashSet<long> processedGroups_ = new HashSet<long>();
+        private readonly List<IMyCubeGrid> groupScratch_ = new List<IMyCubeGrid>();
+        private readonly HashSet<long> subgridIds_ = new HashSet<long>();
+        private readonly List<IMySlimBlock> mechBlocksScratch_ = new List<IMySlimBlock>();
 
         // HUD object pool — allocated once on first use, reused every frame
-        private readonly List<TargetHudSlot> _hudPool = new List<TargetHudSlot>();
-        private int _activeHudSlots = 0;
+        private readonly List<TargetHudSlot> hudPool_ = new List<TargetHudSlot>();
+        private int activeHudSlots_ = 0;
 
         private class TargetHudSlot
         {
-            public readonly StringBuilder NameSb = new StringBuilder(32);
-            public readonly StringBuilder InfoSb = new StringBuilder(32);
-            public HudAPIv2.HUDMessage          NameLabel;
-            public HudAPIv2.HUDMessage          InfoLabel;
-            public HudAPIv2.BillBoardHUDMessage BoxTop, BoxBottom, BoxLeft, BoxRight;
+            public readonly StringBuilder nameSb_ = new StringBuilder(32);
+            public readonly StringBuilder infoSb_ = new StringBuilder(32);
+            public HudAPIv2.HUDMessage nameLabel_;
+            public HudAPIv2.HUDMessage infoLabel_;
+            public HudAPIv2.BillBoardHUDMessage boxTop_, boxBottom_, boxLeft_, boxRight_;
 
             public void Initialize(MyStringId mat, double textScale)
             {
                 var zero  = Vector2D.Zero;
                 var white = Color.White.ToVector4();
                 const float T = 0.0015f;
-                NameLabel = new HudAPIv2.HUDMessage(NameSb, zero, TimeToLive: -1, Scale: textScale, HideHud: false, Shadowing: true);
-                NameLabel.Visible = false;
-                InfoLabel = new HudAPIv2.HUDMessage(InfoSb, zero, TimeToLive: -1, Scale: textScale, HideHud: false, Shadowing: true);
-                InfoLabel.Visible = false;
-                BoxTop    = new HudAPIv2.BillBoardHUDMessage(mat, zero, white, Width: T, Height: T, TimeToLive: -1, HideHud: false, Shadowing: true);
-                BoxTop.Visible = false;
-                BoxBottom = new HudAPIv2.BillBoardHUDMessage(mat, zero, white, Width: T, Height: T, TimeToLive: -1, HideHud: false, Shadowing: true);
-                BoxBottom.Visible = false;
-                BoxLeft   = new HudAPIv2.BillBoardHUDMessage(mat, zero, white, Width: T, Height: T, TimeToLive: -1, HideHud: false, Shadowing: true);
-                BoxLeft.Visible = false;
-                BoxRight  = new HudAPIv2.BillBoardHUDMessage(mat, zero, white, Width: T, Height: T, TimeToLive: -1, HideHud: false, Shadowing: true);
-                BoxRight.Visible = false;
+                nameLabel_ = new HudAPIv2.HUDMessage(nameSb_, zero, TimeToLive: -1, Scale: textScale, HideHud: false, Shadowing: true);
+                nameLabel_.Visible = false;
+                infoLabel_ = new HudAPIv2.HUDMessage(infoSb_, zero, TimeToLive: -1, Scale: textScale, HideHud: false, Shadowing: true);
+                infoLabel_.Visible = false;
+                boxTop_    = new HudAPIv2.BillBoardHUDMessage(mat, zero, white, Width: T, Height: T, TimeToLive: -1, HideHud: false, Shadowing: true);
+                boxTop_.Visible = false;
+                boxBottom_ = new HudAPIv2.BillBoardHUDMessage(mat, zero, white, Width: T, Height: T, TimeToLive: -1, HideHud: false, Shadowing: true);
+                boxBottom_.Visible = false;
+                boxLeft_   = new HudAPIv2.BillBoardHUDMessage(mat, zero, white, Width: T, Height: T, TimeToLive: -1, HideHud: false, Shadowing: true);
+                boxLeft_.Visible = false;
+                boxRight_  = new HudAPIv2.BillBoardHUDMessage(mat, zero, white, Width: T, Height: T, TimeToLive: -1, HideHud: false, Shadowing: true);
+                boxRight_.Visible = false;
             }
 
             public void Hide()
             {
-                if (NameLabel != null) NameLabel.Visible = false;
-                if (InfoLabel != null) InfoLabel.Visible = false;
-                if (BoxTop    != null) BoxTop.Visible    = false;
-                if (BoxBottom != null) BoxBottom.Visible = false;
-                if (BoxLeft   != null) BoxLeft.Visible   = false;
-                if (BoxRight  != null) BoxRight.Visible  = false;
+                if (nameLabel_ != null) nameLabel_.Visible = false;
+                if (infoLabel_ != null) infoLabel_.Visible = false;
+                if (boxTop_    != null) boxTop_.Visible    = false;
+                if (boxBottom_ != null) boxBottom_.Visible = false;
+                if (boxLeft_   != null) boxLeft_.Visible   = false;
+                if (boxRight_  != null) boxRight_.Visible  = false;
             }
         }
 
         // Hides every slot in the pool — call on any early exit from Draw()
         private void HideAllSlots()
         {
-            for (int i = 0; i < _hudPool.Count; i++)
-                _hudPool[i].Hide();
+            for (int i = 0; i < hudPool_.Count; i++)
+                hudPool_[i].Hide();
         }
 
         public override void LoadData()
@@ -148,8 +154,8 @@ namespace JSVanillaRadar.Radar
             base.LoadData();
             LoadConfig();
             
-            UpdateLidarRange("MyObjectBuilder_LargeGatlingTurret/Lidar", config.LargeLidarRange);
-            UpdateLidarRange("MyObjectBuilder_LargeGatlingTurret/LidarSmall", config.SmallLidarRange);
+            UpdateLidarRange("MyObjectBuilder_LargeGatlingTurret/Lidar", config_.LargeLidarRange_);
+            UpdateLidarRange("MyObjectBuilder_LargeGatlingTurret/LidarSmall", config_.SmallLidarRange_);
         }
 
         private void LoadConfig()
@@ -161,13 +167,13 @@ namespace JSVanillaRadar.Radar
                     using (var reader = MyAPIGateway.Utilities.ReadFileInWorldStorage(CONFIG_FILE, typeof(Radar)))
                     {
                         var xml = reader.ReadToEnd();
-                        config = MyAPIGateway.Utilities.SerializeFromXML<RadarConfig>(xml);
-                        config.Validate();
+                        config_ = MyAPIGateway.Utilities.SerializeFromXML<RadarConfig>(xml);
+                        config_.Validate();
                     }
                 }
                 else
                 {
-                    var xml = MyAPIGateway.Utilities.SerializeToXML(config);
+                    var xml = MyAPIGateway.Utilities.SerializeToXML(config_);
                     using (var writer = MyAPIGateway.Utilities.WriteFileInWorldStorage(CONFIG_FILE, typeof(Radar)))
                     {
                         writer.Write(xml);
@@ -177,7 +183,7 @@ namespace JSVanillaRadar.Radar
             catch (Exception ex)
             {
                 MyLog.Default.WriteLineAndConsole($"Vanilla Radar: Error loading config: {ex}");
-                config = new RadarConfig();
+                config_ = new RadarConfig();
             }
         }
 
@@ -197,24 +203,25 @@ namespace JSVanillaRadar.Radar
 
         public override void BeforeStart()
         {
-            isClient = !MyAPIGateway.Utilities.IsDedicated;
+            base.BeforeStart();
+            isClient_ = !MyAPIGateway.Utilities.IsDedicated;
             
             if (MyAPIGateway.Session.IsServer)
             {
                 Sandbox.Game.MyVisualScriptLogicProvider.BlockBuilt += OnBlockBuilt;
             }
 
-            if (!isClient) return;
+            if (!isClient_) return;
 
-            scanTicks = Math.Max(1, (SCAN_INTERVAL_MS * 60) / 1000);
-            hudApi = new HudAPIv2(OnHudApiReady);
+            scanTicks_ = Math.Max(1, (SCAN_INTERVAL_MS * 60) / 1000);
+            hudApi_ = new HudAPIv2(OnHudApiReady);
         }
 
         private void OnBlockBuilt(string typeId, string subtypeId, string gridName, long blockId)
         {
             if (subtypeId == "Lidar" || subtypeId == "LidarSmall")
             {
-                var block = MyEntities.GetEntityById(blockId);
+                var block = MyAPIGateway.Entities.GetEntityById(blockId);
                 var turret = block as Sandbox.ModAPI.IMyLargeTurretBase;
                 if (turret != null)
                 {
@@ -234,34 +241,45 @@ namespace JSVanillaRadar.Radar
                 Sandbox.Game.MyVisualScriptLogicProvider.BlockBuilt -= OnBlockBuilt;
             }
 
-            if (hudApi != null)
-                hudApi.Unload();
+            if (hudApi_ != null)
+                hudApi_.Unload();
+
+            base.UnloadData();
         }
 
         private void OnHudApiReady()
         {
-            hudApiReady = true;
+            hudApiReady_ = true;
         }
 
         public override void HandleInput()
         {
             base.HandleInput();
-            if (!isClient) return;
+            if (!isClient_) return;
             if (MyAPIGateway.Input.IsNewKeyPressed(VRage.Input.MyKeys.R) && MyAPIGateway.Input.IsAnyCtrlKeyPressed())
             {
-                currentMode = (RadarMode)(((int)currentMode + 1) % 3);
-                MyAPIGateway.Utilities.ShowNotification($"Radar Mode: {currentMode}", 2000, "White");
+                currentMode_ = (RadarMode)(((int)currentMode_ + 1) % 4);
+                string modeLabel;
+                switch (currentMode_)
+                {
+                    case RadarMode.All:                modeLabel = "Show All";                 break;
+                    case RadarMode.Enemies:            modeLabel = "Show Enemies";             break;
+                    case RadarMode.EnemiesAndNeutrals: modeLabel = "Show Enemies and Neutrals"; break;
+                    case RadarMode.None:               modeLabel = "Radar Off";                break;
+                    default:                           modeLabel = currentMode_.ToString();     break;
+                }
+                MyAPIGateway.Utilities.ShowNotification($"Radar Mode: {modeLabel}", 2000, "White");
             }
         }
 
         public override void Draw()
         {
-            if (!isClient || !hudApiReady || MyAPIGateway.Session?.Player == null)
+            if (!isClient_ || !hudApiReady_ || MyAPIGateway.Session?.Player == null)
                 return;
 
-            if (currentMode == RadarMode.None)
+            if (currentMode_ == RadarMode.None)
             {
-                activeTargets.Clear();
+                activeTargets_.Clear();
                 HideAllSlots();
                 return;
             }
@@ -270,7 +288,7 @@ namespace JSVanillaRadar.Radar
             if (camera == null) return;
 
             // Update aspect ratio every frame to handle resolution/window changes
-            aspectRatio = camera.ViewportSize.X / camera.ViewportSize.Y;
+            aspectRatio_ = camera.ViewportSize.X / camera.ViewportSize.Y;
 
             // Only operate if the player is actively controlling a powered ship controller (cockpit, etc.) or a turret
             var playerEnt = MyAPIGateway.Session.Player.Controller?.ControlledEntity?.Entity;
@@ -282,21 +300,21 @@ namespace JSVanillaRadar.Radar
                                        (turretController != null && turretController.IsWorking) ||
                                        (customTurretController != null && customTurretController.IsWorking);
 
-            if (!isControllerWorking && !debugAlwaysShowRadar)
+            if (!isControllerWorking && !debugAlwaysShowRadar_)
             {
-                activeTargets.Clear();
+                activeTargets_.Clear();
                 HideAllSlots();
                 return;
             }
 
             // Throttle scan only; drawing happens every render frame
-            if (++tick >= scanTicks)
+            if (++tick_ >= scanTicks_)
             {
-                tick = 0;
+                tick_ = 0;
                 ScanForTargets(camera);
             }
 
-            if (activeTargets.Count == 0)
+            if (activeTargets_.Count == 0)
             {
                 HideAllSlots();
                 return;
@@ -307,7 +325,7 @@ namespace JSVanillaRadar.Radar
             var camPos = camera.Position;
 
             // Sort targets by distance descending so closest renders on top
-            activeTargets.Sort((a, b) =>
+            activeTargets_.Sort((a, b) =>
             {
                 if (a == null || b == null) return 0;
                 double dA = Vector3D.DistanceSquared(a.PositionComp.WorldAABB.Center, camPos);
@@ -316,21 +334,21 @@ namespace JSVanillaRadar.Radar
             });
 
             // Draw all targets using pooled HUD slots
-            _activeHudSlots = 0;
-            foreach (var grid in activeTargets)
+            activeHudSlots_ = 0;
+            foreach (var grid in activeTargets_)
             {
-                if (_activeHudSlots >= _hudPool.Count)
+                if (activeHudSlots_ >= hudPool_.Count)
                 {
                     var slot = new TargetHudSlot();
-                    slot.Initialize(MatSquare, LABEL_TEXT_SIZE);
-                    _hudPool.Add(slot);
+                    slot.Initialize(MAT_SQUARE, LABEL_TEXT_SIZE);
+                    hudPool_.Add(slot);
                 }
-                DrawTarget(grid, ref viewProj, ref camMat, ref camPos, _hudPool[_activeHudSlots]);
-                _activeHudSlots++;
+                DrawTarget(grid, ref viewProj, ref camMat, ref camPos, hudPool_[activeHudSlots_]);
+                activeHudSlots_++;
             }
             // Hide any slots not used this frame
-            for (int i = _activeHudSlots; i < _hudPool.Count; i++)
-                _hudPool[i].Hide();
+            for (int i = activeHudSlots_; i < hudPool_.Count; i++)
+                hudPool_[i].Hide();
         }
 
         private void DrawTarget(IMyCubeGrid grid, ref MatrixD viewProj, ref MatrixD camMat, ref Vector3D camPos, TargetHudSlot slot)
@@ -349,7 +367,7 @@ namespace JSVanillaRadar.Radar
             var objSize      = grid.PositionComp.LocalVolume.Radius * 1.1f;
             var topRightWorld = Vector3D.Transform(pos + camMat.Up * objSize + camMat.Right * objSize, viewProj);
             float bw = Math.Max((float)Math.Abs(topRightWorld.X - cx), MIN_BRACKET_SIZE);
-            float bh = Math.Max((float)Math.Abs(topRightWorld.Y - cy), MIN_BRACKET_SIZE * aspectRatio);
+            float bh = Math.Max((float)Math.Abs(topRightWorld.Y - cy), MIN_BRACKET_SIZE * aspectRatio_);
 
             if (bw > 1.0f || bh > 1.0f) { slot.Hide(); return; }
 
@@ -387,7 +405,12 @@ namespace JSVanillaRadar.Radar
                     ownerStr = "Unknown";
             }
 
-            if (currentMode == RadarMode.Enemies &&
+            // Filter targets based on radar mode
+            if (currentMode_ == RadarMode.Enemies &&
+                relation != MyRelationsBetweenPlayerAndBlock.Enemies)
+            { slot.Hide(); return; }
+
+            if (currentMode_ == RadarMode.EnemiesAndNeutrals &&
                 (relation == MyRelationsBetweenPlayerAndBlock.Friends ||
                  relation == MyRelationsBetweenPlayerAndBlock.FactionShare ||
                  relation == MyRelationsBetweenPlayerAndBlock.Owner))
@@ -418,18 +441,18 @@ namespace JSVanillaRadar.Radar
             string fullLabelText = $"{ownerStr}.{grid.DisplayName}";
             if (fullLabelText.Length > 20) fullLabelText = fullLabelText.Substring(0, 20);
 
-            slot.NameSb.Clear();
-            slot.NameSb.Append($"<color={hexColor}>{fullLabelText}");
-            slot.NameLabel.Visible = true;
-            var nameLen = slot.NameLabel.GetTextLength();
+            slot.nameSb_.Clear();
+            slot.nameSb_.Append($"<color={hexColor}>{fullLabelText}");
+            slot.nameLabel_.Visible = true;
+            var nameLen = slot.nameLabel_.GetTextLength();
 
-            slot.InfoSb.Clear();
-            slot.InfoSb.Append($"<color={hexColor}>{km:F2}km  {gridSpeed}m/s");
-            slot.InfoLabel.Visible = true;
+            slot.infoSb_.Clear();
+            slot.infoSb_.Append($"<color={hexColor}>{km:F2}km  {gridSpeed}m/s");
+            slot.infoLabel_.Visible = true;
 
             double textOriginX = cx + bw + 0.005;
-            slot.NameLabel.Origin = new Vector2D(textOriginX, cy + Math.Abs(nameLen.Y));
-            slot.InfoLabel.Origin = new Vector2D(textOriginX, cy);
+            slot.nameLabel_.Origin = new Vector2D(textOriginX, cy + Math.Abs(nameLen.Y));
+            slot.infoLabel_.Origin = new Vector2D(textOriginX, cy);
         }
 
         // Updates the four billboard sides of a pooled TargetHudSlot rectangle.
@@ -438,21 +461,21 @@ namespace JSVanillaRadar.Radar
             const float T = 0.0015f;
             var color = boxColor.ToVector4();
 
-            slot.BoxTop.Origin    = new Vector2D(cx,      cy + bh); slot.BoxTop.Width    = bw * 2 + T; slot.BoxTop.Height    = T;      slot.BoxTop.BillBoardColor    = color; slot.BoxTop.Visible    = true;
-            slot.BoxBottom.Origin = new Vector2D(cx,      cy - bh); slot.BoxBottom.Width = bw * 2 + T; slot.BoxBottom.Height = T;      slot.BoxBottom.BillBoardColor = color; slot.BoxBottom.Visible = true;
-            slot.BoxLeft.Origin   = new Vector2D(cx - bw, cy);      slot.BoxLeft.Width   = T;          slot.BoxLeft.Height   = bh * 2; slot.BoxLeft.BillBoardColor   = color; slot.BoxLeft.Visible   = true;
-            slot.BoxRight.Origin  = new Vector2D(cx + bw, cy);      slot.BoxRight.Width  = T;          slot.BoxRight.Height  = bh * 2; slot.BoxRight.BillBoardColor  = color; slot.BoxRight.Visible  = true;
+            slot.boxTop_.Origin    = new Vector2D(cx,      cy + bh); slot.boxTop_.Width    = bw * 2 + T; slot.boxTop_.Height    = T;      slot.boxTop_.BillBoardColor    = color; slot.boxTop_.Visible    = true;
+            slot.boxBottom_.Origin = new Vector2D(cx,      cy - bh); slot.boxBottom_.Width = bw * 2 + T; slot.boxBottom_.Height = T;      slot.boxBottom_.BillBoardColor = color; slot.boxBottom_.Visible = true;
+            slot.boxLeft_.Origin   = new Vector2D(cx - bw, cy);      slot.boxLeft_.Width   = T;          slot.boxLeft_.Height   = bh * 2; slot.boxLeft_.BillBoardColor   = color; slot.boxLeft_.Visible   = true;
+            slot.boxRight_.Origin  = new Vector2D(cx + bw, cy);      slot.boxRight_.Width  = T;          slot.boxRight_.Height  = bh * 2; slot.boxRight_.BillBoardColor  = color; slot.boxRight_.Visible  = true;
         }
 
-        private void ScanForTargets(IMyCamera camera)
+        private void ScanForTargets(VRage.ModAPI.IMyCamera camera)
         {
-            activeTargets.Clear();
+            activeTargets_.Clear();
 
             var player = MyAPIGateway.Session?.Player;
             if (player == null) return;
 
             var controlled = player.Controller?.ControlledEntity?.Entity;
-            if (controlled == null && !debugAlwaysShowRadar) return;
+            if (controlled == null && !debugAlwaysShowRadar_) return;
 
             IMyCubeGrid myGrid = null;
             if (controlled is IMyCubeBlock)
@@ -464,12 +487,12 @@ namespace JSVanillaRadar.Radar
 
 
             Vector3D centerPos = controlled != null ? controlled.PositionComp.GetPosition() : camera.Position;
-            _scanOrigin = centerPos;
+            scanOrigin_ = centerPos;
             var sphere = new BoundingSphereD(centerPos, scanRange);
             var entities = MyAPIGateway.Entities.GetTopMostEntitiesInSphere(ref sphere);
 
             // We track processed entity IDs to avoid marking the same mechanical group twice.
-            processedGroups.Clear();
+            processedGroups_.Clear();
 
             foreach (var ent in entities)
             {
@@ -479,17 +502,17 @@ namespace JSVanillaRadar.Radar
 
         private float GetDynamicScanRange(IMyCubeGrid myGrid)
         {
-            float scanRange = config.MinRange; // Minimum configured range
-            if (myGrid == null) return Math.Min(scanRange, config.MaxRange);
+            float scanRange = config_.MinRange_; // Minimum configured range
+            if (myGrid == null) return Math.Min(scanRange, config_.MaxRange_);
 
-            myGroupScratch.Clear();
-            MyAPIGateway.GridGroups.GetGroup(myGrid, GridLinkTypeEnum.Mechanical, myGroupScratch);
+            myGroupScratch_.Clear();
+            MyAPIGateway.GridGroups.GetGroup(myGrid, GridLinkTypeEnum.Mechanical, myGroupScratch_);
             
-            foreach (var g in myGroupScratch)
+            foreach (var g in myGroupScratch_)
             {
-                myBlocksScratch.Clear();
-                g.GetBlocks(myBlocksScratch, IsTurretFilter);
-                foreach (var b in myBlocksScratch)
+                myBlocksScratch_.Clear();
+                g.GetBlocks(myBlocksScratch_, IS_TURRET_FILTER);
+                foreach (var b in myBlocksScratch_)
                 {
                     var turret = b.FatBlock as Sandbox.ModAPI.IMyLargeTurretBase;
                     if (turret != null && turret.IsWorking && turret.Range > scanRange)
@@ -499,9 +522,9 @@ namespace JSVanillaRadar.Radar
                 }
             }
 
-            if (scanRange > config.MaxRange)
+            if (scanRange > config_.MaxRange_)
             {
-                scanRange = config.MaxRange;
+                scanRange = config_.MaxRange_;
             }
 
             return scanRange;
@@ -514,24 +537,24 @@ namespace JSVanillaRadar.Radar
 
             // Allow unowned/neutral grids to be processed (they will default to NoOwnership and draw as white)
             // Get the full mechanical group for this grid
-            groupScratch.Clear();
-            MyAPIGateway.GridGroups.GetGroup(grid, GridLinkTypeEnum.Mechanical, groupScratch);
+            groupScratch_.Clear();
+            MyAPIGateway.GridGroups.GetGroup(grid, GridLinkTypeEnum.Mechanical, groupScratch_);
 
             // If any part of this mechanical group is the player's controlled grid, skip the whole thing
-            if (myGrid != null && groupScratch.Contains(myGrid)) return;
+            if (myGrid != null && groupScratch_.Contains(myGrid)) return;
 
             // Find the root grid via hierarchy: collect all grids that are
             // someone else's TopGrid (i.e. subgrids). The root is the one that isn't.
-            subgridIds.Clear();
-            foreach (var g in groupScratch)
+            subgridIds_.Clear();
+            foreach (var g in groupScratch_)
             {
-                mechBlocksScratch.Clear();
-                g.GetBlocks(mechBlocksScratch, IsMechFilter);
-                foreach (var b in mechBlocksScratch)
+                mechBlocksScratch_.Clear();
+                g.GetBlocks(mechBlocksScratch_, IS_MECH_FILTER);
+                foreach (var b in mechBlocksScratch_)
                 {
                     var mech = b.FatBlock as IMyMechanicalConnectionBlock;
                     if (mech?.TopGrid != null)
-                        subgridIds.Add(mech.TopGrid.EntityId);
+                        subgridIds_.Add(mech.TopGrid.EntityId);
                 }
             }
 
@@ -540,12 +563,12 @@ namespace JSVanillaRadar.Radar
             long groupKey = grid.EntityId;
             int totalBlocks = 0;
             
-            foreach (var g in groupScratch)
+            foreach (var g in groupScratch_)
             {
                 var cubeGrid = g as MyCubeGrid;
                 totalBlocks += cubeGrid?.BlocksCount ?? 0;
                 if (g.EntityId < groupKey) groupKey = g.EntityId;
-                if (!subgridIds.Contains(g.EntityId))
+                if (!subgridIds_.Contains(g.EntityId))
                     representative = g;
             }
 
@@ -553,18 +576,18 @@ namespace JSVanillaRadar.Radar
             if (totalBlocks < MIN_BLOCK_COUNT) return;
 
             // Skip if we already added something from this mechanical group
-            if (!processedGroups.Add(groupKey)) return;
+            if (!processedGroups_.Add(groupKey)) return;
 
             // Voxel LOS check: discard targets occluded by asteroids or planets
             var targetCenter = representative.PositionComp.WorldAABB.Center;
             IHitInfo hitInfo;
-            if (MyAPIGateway.Physics.CastRay(_scanOrigin, targetCenter, out hitInfo))
+            if (MyAPIGateway.Physics.CastRay(scanOrigin_, targetCenter, out hitInfo))
             {
                 if (hitInfo?.HitEntity is IMyVoxelBase)
                     return; // blocked by voxel
             }
 
-            activeTargets.Add(representative);
+            activeTargets_.Add(representative);
         }
     }
 }
