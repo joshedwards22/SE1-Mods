@@ -7,8 +7,8 @@
                 <TypeId>WeaponDefinition</TypeId>
                 <SubtypeId>LargeGatlingTurret</SubtypeId>
             </Id>
-            <ProjectileAmmoData RateOfFire="1400" ShootSoundName="WepShipGatlingShot" ShotsInBurst="140" />
-            <ReloadTime>2000</ReloadTime>
+            <ProjectileAmmoData RateOfFire="1400" ShootSoundName="WepShipGatlingShot" ShotsInBurst="300" />
+            <ReloadTime>4000</ReloadTime>
             <ReleaseTimeAfterFire>204</ReleaseTimeAfterFire>
             <DeviateShotAngle>0.1</DeviateShotAngle>
             <DeviateShotAngleAiming>0.1</DeviateShotAngleAiming>
@@ -27,8 +27,8 @@
                 <TypeId>WeaponDefinition</TypeId>
                 <SubtypeId>SmallGatlingTurret</SubtypeId>
             </Id>
-            <ProjectileAmmoData RateOfFire="1400" ShootSoundName="WepShipGatlingShot" ShotsInBurst="140" />
-            <ReloadTime>2000</ReloadTime>
+            <ProjectileAmmoData RateOfFire="1400" ShootSoundName="WepShipGatlingShot" ShotsInBurst="300" />
+            <ReloadTime>4000</ReloadTime>
             <ReleaseTimeAfterFire>204</ReleaseTimeAfterFire>
             <DeviateShotAngle>0.1</DeviateShotAngle>
             <DeviateShotAngleAiming>0.1</DeviateShotAngleAiming>
@@ -47,7 +47,7 @@
                 <TypeId>WeaponDefinition</TypeId>
                 <SubtypeId>GatlingGunWarfare</SubtypeId>
             </Id>
-            <ProjectileAmmoData RateOfFire="1056" ShootSoundName="WepShipGatlingShot" ShotsInBurst="140" />
+            <ProjectileAmmoData RateOfFire="1070" ShootSoundName="WepShipGatlingShot" ShotsInBurst="300" />
             <ReleaseTimeAfterFire>204</ReleaseTimeAfterFire>
             <DeviateShotAngle>0.1</DeviateShotAngle>
             <DeviateShotAngleAiming>0.1</DeviateShotAngleAiming>

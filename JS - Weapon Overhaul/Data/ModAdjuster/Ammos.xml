@@ -33,5 +33,12 @@
             </Id>
             <DisplayName>Small Kinetic Sabot</DisplayName>
         </AmmoMagazine>
+        <AmmoMagazine>
+            <Id>
+                <TypeId>AmmoMagazine</TypeId>
+                <SubtypeId>NATO_25x184mm</SubtypeId>
+            </Id>
+            <Capacity>300</Capacity>
+        </AmmoMagazine>
     </AmmoMagazines>
 </Definitions>

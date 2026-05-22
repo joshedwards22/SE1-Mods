@@ -16,6 +16,11 @@
         <string>Conveyor/ConveyorTubeDuctElbow</string>
         <string>Conveyor/ConveyorTubeDuctCross</string>
         <string>Conveyor/LargeBlockConveyorPipeElbow</string>
+        <string>Conveyor/LargeConveyorStraight</string>
+        <string>Conveyor/LargeConveyorCurved</string>
+        <string>Conveyor/LargeConveyorT</string>
+        <string>Conveyor/LargeConveyorElbow</string>
+        <string>Conveyor/LargeConveyorCross</string>
       </ItemIds>
     </Category>
     <Category xsi:type="MyObjectBuilder_GuiBlockCategoryDefinition">
@@ -51,6 +56,11 @@
         <string>Conveyor/ConveyorTubeDuctElbow</string>
         <string>Conveyor/ConveyorTubeDuctCross</string>
         <string>Conveyor/LargeBlockConveyorPipeElbow</string>
+        <string>Conveyor/LargeConveyorStraight</string>
+        <string>Conveyor/LargeConveyorCurved</string>
+        <string>Conveyor/LargeConveyorT</string>
+        <string>Conveyor/LargeConveyorElbow</string>
+        <string>Conveyor/LargeConveyorCross</string>
         <string>Conveyor/ConveyorTubeSmallElbow</string>
         <string>Conveyor/ConveyorTubeSmallCross</string>
         <string>Conveyor/MediumBlockConveyor</string>

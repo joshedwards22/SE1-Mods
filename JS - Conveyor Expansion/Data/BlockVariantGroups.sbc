@@ -10,6 +10,11 @@
       <Blocks>
         <Block Type="MyObjectBuilder_Conveyor" Subtype="LargeBlockConveyor" />
         <Block Type="MyObjectBuilder_Conveyor" Subtype="MediumBlockConveyor" />
+        <Block Type="MyObjectBuilder_Conveyor" Subtype="LargeConveyorStraight" />
+        <Block Type="MyObjectBuilder_Conveyor" Subtype="LargeConveyorCurved" />
+        <Block Type="MyObjectBuilder_Conveyor" Subtype="LargeConveyorT" />
+        <Block Type="MyObjectBuilder_Conveyor" Subtype="LargeConveyorElbow" />
+        <Block Type="MyObjectBuilder_Conveyor" Subtype="LargeConveyorCross" />
         <Block Type="MyObjectBuilder_ConveyorConnector" Subtype="ConveyorTube" />
         <Block Type="MyObjectBuilder_ConveyorConnector" Subtype="ConveyorTubeMedium" />
         <Block Type="MyObjectBuilder_ConveyorConnector" Subtype="ConveyorTubeCurved" />
