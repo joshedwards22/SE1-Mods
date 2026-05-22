@@ -1,16 +1,13 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using Sandbox.Definitions;
 using Sandbox.Game;
 using Sandbox.Game.Entities;
 using Sandbox.ModAPI;
-using Sandbox.ModAPI.Weapons;
-using Sandbox.ModAPI.Interfaces;
 using VRage.Game;
 using VRage.Game.Components;
 using VRage.Game.ModAPI;
 using VRage.ObjectBuilders;
-using VRage.Utils;
 using VRageMath;
 using Sandbox.Common.ObjectBuilders;
 
@@ -19,12 +16,20 @@ namespace JSCreativeBlockTools
 	[MySessionComponentDescriptor(MyUpdateOrder.AfterSimulation)]
 	public class JSCreativeBlockTools : MySessionComponentBase
 	{
+		private const int MaxRaycastDistance = 10000;
 		public override void HandleInput()
 		{
 			base.HandleInput();
-			if (MyAPIGateway.Input.IsNewKeyPressed(VRage.Input.MyKeys.T) && MyAPIGateway.Input.IsAnyCtrlKeyPressed() && MyAPIGateway.Session.IsServer)
+			if (MyAPIGateway.Session.IsServer)
 			{
-				CycleArmorTransparency();
+				if (MyAPIGateway.Input.IsNewKeyPressed(VRage.Input.MyKeys.T) && MyAPIGateway.Input.IsAnyCtrlKeyPressed())
+				{
+					CycleArmorTransparency();
+				}
+				else if (MyAPIGateway.Input.IsNewKeyPressed(VRage.Input.MyKeys.G) && MyAPIGateway.Input.IsAnyCtrlKeyPressed())
+				{
+					PickBlock();
+				}
 			}
 		}
 
@@ -36,9 +41,13 @@ namespace JSCreativeBlockTools
 
 		private void Utilities_MessageEntered(string messageText, ref bool sendToOthers)
 		{
-			if (messageText.StartsWith("/remove") && MyAPIGateway.Session.IsServer)
+			if (!MyAPIGateway.Session.IsServer) return;
+
+			string[] splits = messageText.Split(' ');
+			string command = splits[0].ToLower();
+
+			if (command == "/remove")
 			{
-				string[] splits = messageText.Split(' ');
 				if (splits.Length != 2 || string.IsNullOrWhiteSpace(splits[1]))
 				{
 					MyAPIGateway.Utilities.ShowMessage("CreativeBlockTools", "Usage: '/remove name' - will remove all blocks whos name contains 'name' if they wont break the grid by removing them");
@@ -47,9 +56,8 @@ namespace JSCreativeBlockTools
 				RemoveBlocks(splits[1]);
 				sendToOthers = false;
 			}
-			if (messageText.StartsWith("/hide") && MyAPIGateway.Session.IsServer)
+			else if (command == "/hide")
 			{
-				string[] splits = messageText.Split(' ');
 				if (splits.Length != 2 || string.IsNullOrWhiteSpace(splits[1]))
 				{
 					MyAPIGateway.Utilities.ShowMessage("CreativeBlockTools", "Usage: '/hide name' - will hide all blocks whos name contains 'name'");
@@ -58,7 +66,7 @@ namespace JSCreativeBlockTools
 				SetBlockTransparency(1.0f, splits[1]);
 				sendToOthers = false;
 			}
-			if (messageText == "/unhide" && MyAPIGateway.Session.IsServer)
+			else if (command == "/unhide")
 			{
 				UnHideBlocks();
 				sendToOthers = false;
@@ -73,7 +81,6 @@ namespace JSCreativeBlockTools
 
 		public IMyCubeGrid GetTargetedGrid()
 		{
-			var MaxRaycastDistance = 10000;
 			var player = MyAPIGateway.Session?.LocalHumanPlayer;
 			if (player == null) return null;
 
@@ -88,23 +95,62 @@ namespace JSCreativeBlockTools
 			var entity = hitInfo?.HitEntity;
 			if (entity?.Physics == null) return null;
 
-			var grid = entity.GetTopMostParent() as IMyCubeGrid;
-			return grid;
+			return entity.GetTopMostParent() as IMyCubeGrid;
+		}
+
+		public IMySlimBlock GetTargetedBlock()
+		{
+			IMyCubeGrid grid = GetTargetedGrid();
+			if (grid == null) return null;
+
+			var cameraMatrix = MyAPIGateway.Session.Camera.WorldMatrix;
+			var forwardVector = Vector3D.Normalize(cameraMatrix.Forward);
+			var toVector = cameraMatrix.Translation + forwardVector * MaxRaycastDistance;
+
+			Vector3I? blockPos = grid.RayCastBlocks(cameraMatrix.Translation, toVector);
+			if (!blockPos.HasValue) return null;
+
+			return grid.GetCubeBlock(blockPos.Value);
+		}
+
+		private void PickBlock()
+		{
+			IMySlimBlock block = GetTargetedBlock();
+			if (block == null)
+			{
+				MyAPIGateway.Utilities.ShowMessage("CreativeBlockTools", "No block found");
+				return;
+			}
+
+			MyDefinitionId defId = block.BlockDefinition.Id;
+
+			// Assign to toolbar slot 9 (index 8) and activate build mode
+			long playerId = MyAPIGateway.Session.Player.IdentityId;
+			MyVisualScriptLogicProvider.SetToolbarSlotToItemLocal(8, defId, playerId);
+
+			// Switch to CubePlacer (enters build mode like pressing a number key)
+			var ctrl = MyAPIGateway.Session.ControlledObject as Sandbox.Game.Entities.IMyControllableEntity;
+			if (ctrl != null)
+			{
+				ctrl.SwitchToWeapon(new MyDefinitionId(typeof(MyObjectBuilder_CubePlacer)));
+				MyCubeBuilder.Static.Activate(defId);
+			}
+			MyAPIGateway.Utilities.ShowMessage("CreativeBlockTools", "Picked: " + block.BlockDefinition.DisplayNameText);
 		}
 
 		private static float armorTransparency = 0.0f;
 
-        private void CycleArmorTransparency()
+		private void CycleArmorTransparency()
 		{
 			if (armorTransparency == 0.0f)
-            {
-				armorTransparency = .5f;
+			{
+				armorTransparency = 0.5f;
 			}
 			else if (armorTransparency == 0.5f)
 			{
 				armorTransparency = 1.0f;
 			}
-			else if (armorTransparency == 1.0f)
+			else
 			{
 				armorTransparency = 0.0f;
 			}
