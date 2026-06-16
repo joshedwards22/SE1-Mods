@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <CubeBlocks>
-    <Definition>
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <CubeBlocks>
+        <Definition>
             <Id>
                 <TypeId>Conveyor</TypeId>
                 <SubtypeId>LargeConveyorStraight</SubtypeId>
             </Id>
             <DisplayName>Conveyor Straight</DisplayName>
-            <Icon>Textures\GUI\Icons\Cubes\conveyor.dds</Icon>
+            <Icon>Textures\GUI\Icons\Cubes\ConveyorStraight.dds</Icon>
             <Description>Description_ConveyorTube</Description>
             <GuiVisible>false</GuiVisible>
             <CubeSize>Large</CubeSize>
@@ -47,7 +47,7 @@
                 <SubtypeId>LargeConveyorCurved</SubtypeId>
             </Id>
             <DisplayName>Curved Conveyor</DisplayName>
-            <Icon>Textures\GUI\Icons\Cubes\conveyor.dds</Icon>
+            <Icon>Textures\GUI\Icons\Cubes\ConveyorStraight.dds</Icon>
             <Description>Description_ConveyorTube</Description>
             <GuiVisible>false</GuiVisible>
             <CubeSize>Large</CubeSize>
@@ -86,7 +86,7 @@
                 <SubtypeId>LargeConveyorT</SubtypeId>
             </Id>
             <DisplayName>Conveyor T Junction</DisplayName>
-            <Icon>Textures\GUI\Icons\Cubes\conveyor.dds</Icon>
+            <Icon>Textures\GUI\Icons\Cubes\ConveyorStraight.dds</Icon>
             <Description>Description_ConveyorTube</Description>
             <GuiVisible>false</GuiVisible>
             <CubeSize>Large</CubeSize>
@@ -125,7 +125,7 @@
                 <SubtypeId>LargeConveyorElbow</SubtypeId>
             </Id>
             <DisplayName>Conveyor Elbow</DisplayName>
-            <Icon>Textures\GUI\Icons\Cubes\conveyor.dds</Icon>
+            <Icon>Textures\GUI\Icons\Cubes\ConveyorElbow.dds</Icon>
             <Description>Description_ConveyorTube</Description>
             <GuiVisible>false</GuiVisible>
             <CubeSize>Large</CubeSize>
@@ -164,7 +164,7 @@
                 <SubtypeId>LargeConveyorCross</SubtypeId>
             </Id>
             <DisplayName>Conveyor Cross</DisplayName>
-            <Icon>Textures\GUI\Icons\Cubes\conveyor.dds</Icon>
+            <Icon>Textures\GUI\Icons\Cubes\ConveyorCross.dds</Icon>
             <Description>Description_ConveyorTube</Description>
             <GuiVisible>false</GuiVisible>
             <CubeSize>Large</CubeSize>
@@ -197,5 +197,5 @@
             <PCU>10</PCU>
             <IsAirTight>true</IsAirTight>
         </Definition>
-  </CubeBlocks>
+    </CubeBlocks>
 </Definitions>
