@@ -36,10 +36,10 @@ namespace JSCreativeBlockTools
 		public override void HandleInput()
 		{
 			base.HandleInput();
-			if (MyAPIGateway.Session.IsServer)
+			if (!MyAPIGateway.Utilities.IsDedicated && MyAPIGateway.Session?.LocalHumanPlayer != null)
 			{
-				// Ctrl+S: toggle slice mode
-				if (MyAPIGateway.Input.IsNewKeyPressed(VRage.Input.MyKeys.S) && MyAPIGateway.Input.IsAnyCtrlKeyPressed())
+				// Ctrl+J: toggle slice mode
+				if (MyAPIGateway.Input.IsNewKeyPressed(VRage.Input.MyKeys.J) && MyAPIGateway.Input.IsAnyCtrlKeyPressed())
 				{
 					if (sliceActive_)
 						ExitSliceMode();
@@ -90,7 +90,7 @@ namespace JSCreativeBlockTools
 
 		private void Utilities_MessageEntered(string messageText, ref bool sendToOthers)
 		{
-			if (!MyAPIGateway.Session.IsServer) return;
+			if (MyAPIGateway.Utilities.IsDedicated || MyAPIGateway.Session?.LocalHumanPlayer == null) return;
 
 			string[] splits = messageText.Split(' ');
 			string command = splits[0].ToLower();
@@ -100,6 +100,7 @@ namespace JSCreativeBlockTools
 				if (splits.Length != 2 || string.IsNullOrWhiteSpace(splits[1]))
 				{
 					MyAPIGateway.Utilities.ShowMessage("CreativeBlockTools", "Usage: '/remove name' - will remove all blocks whos name contains 'name' if they wont break the grid by removing them");
+					sendToOthers = false;
 					return;
 				}
 				RemoveBlocks(splits[1]);
@@ -110,6 +111,7 @@ namespace JSCreativeBlockTools
 				if (splits.Length != 2 || string.IsNullOrWhiteSpace(splits[1]))
 				{
 					MyAPIGateway.Utilities.ShowMessage("CreativeBlockTools", "Usage: '/hide name' - will hide all blocks whos name contains 'name'");
+					sendToOthers = false;
 					return;
 				}
 				SetBlockTransparency(1.0f, splits[1]);
@@ -247,6 +249,7 @@ namespace JSCreativeBlockTools
 			{
 				SetBlockDithering(block, 0.0f);
 			}
+			disabledBlocks_.Clear();
 		}
 
 		private void RemoveBlocks(string name)
@@ -349,6 +352,8 @@ namespace JSCreativeBlockTools
 					}
 				}
 			}
+
+			disabledBlocks_.Clear();
 
 			sliceActive_ = false;
 			sliceGrid_ = null;
@@ -478,11 +483,11 @@ namespace JSCreativeBlockTools
 			var grids = new List<IMyCubeGrid>();
 			MyAPIGateway.GridGroups.GetGroup(sliceGrid_, GridLinkTypeEnum.Mechanical, grids);
 
-			double gridSize = sliceGrid_.GridSize; // 2.5m for large, 0.5m for small
 			var blocksByLayer = new SortedDictionary<int, List<IMySlimBlock>>();
 
 			foreach (var grid in grids)
 			{
+				double gridSize = grid.GridSize; // 2.5m for large, 0.5m for small
 				var blocks = new List<IMySlimBlock>();
 				grid.GetBlocks(blocks);
 

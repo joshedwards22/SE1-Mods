@@ -16,6 +16,7 @@
         <Block Type="MyObjectBuilder_Conveyor" Subtype="LargeConveyorElbow" />
         <Block Type="MyObjectBuilder_Conveyor" Subtype="LargeConveyorCross" />
         <Block Type="MyObjectBuilder_ConveyorConnector" Subtype="ConveyorTube" />
+        <Block Type="MyObjectBuilder_ConveyorConnector" Subtype="ConveyorTube3X" />
         <Block Type="MyObjectBuilder_ConveyorConnector" Subtype="ConveyorTubeMedium" />
         <Block Type="MyObjectBuilder_ConveyorConnector" Subtype="ConveyorTubeCurved" />
         <Block Type="MyObjectBuilder_ConveyorConnector" Subtype="ConveyorTubeCurvedMedium" />
@@ -26,6 +27,7 @@
         <Block Type="MyObjectBuilder_Conveyor" Subtype="ConveyorTubeCross" />
         <Block Type="MyObjectBuilder_Conveyor" Subtype="ConveyorTubeCrossMedium" />
         <Block Type="MyObjectBuilder_ConveyorConnector" Subtype="ConveyorTubeDuct" />
+        <Block Type="MyObjectBuilder_ConveyorConnector" Subtype="ConveyorTubeDuct3X" />
         <Block Type="MyObjectBuilder_ConveyorConnector" Subtype="ConveyorTubeDuctCurved" />
         <Block Type="MyObjectBuilder_Conveyor" Subtype="ConveyorTubeDuctT" />
         <Block Type="MyObjectBuilder_Conveyor" Subtype="ConveyorTubeDuctElbow" />
@@ -48,8 +50,11 @@
       <Blocks>
         <Block Type="MyObjectBuilder_Conveyor" Subtype="LargeBlockConveyorPipeJunction" />
         <Block Type="MyObjectBuilder_ConveyorConnector" Subtype="LargeBlockConveyorPipeSeamless" />
+        <Block Type="MyObjectBuilder_ConveyorConnector" Subtype="LargeBlockConveyorPipeSeamless3X" />
         <Block Type="MyObjectBuilder_ConveyorConnector" Subtype="LargeBlockConveyorPipeFlange" />
+        <Block Type="MyObjectBuilder_ConveyorConnector" Subtype="LargeBlockConveyorPipeFlange3X" />
         <Block Type="MyObjectBuilder_ConveyorConnector" Subtype="LargeBlockConveyorPipeEnd" />
+        <Block Type="MyObjectBuilder_ConveyorConnector" Subtype="LargeBlockConveyorPipeEnd3X" />
         <Block Type="MyObjectBuilder_ConveyorConnector" Subtype="LargeBlockConveyorPipeCorner" />
         <Block Type="MyObjectBuilder_Conveyor" Subtype="LargeBlockConveyorPipeT" />
         <Block Type="MyObjectBuilder_Conveyor" Subtype="LargeBlockConveyorPipeElbow" />
@@ -67,11 +72,13 @@
       <Blocks>
         <Block Type="MyObjectBuilder_Conveyor" Subtype="SmallBlockConveyor" />
         <Block Type="MyObjectBuilder_ConveyorConnector" Subtype="ConveyorTubeSmall" />
+        <Block Type="MyObjectBuilder_ConveyorConnector" Subtype="ConveyorTubeSmall3X" />
         <Block Type="MyObjectBuilder_ConveyorConnector" Subtype="ConveyorTubeSmallCurved" />
         <Block Type="MyObjectBuilder_Conveyor" Subtype="ConveyorTubeSmallT" />
         <Block Type="MyObjectBuilder_Conveyor" Subtype="ConveyorTubeSmallElbow" />
         <Block Type="MyObjectBuilder_Conveyor" Subtype="ConveyorTubeSmallCross" />
         <Block Type="MyObjectBuilder_ConveyorConnector" Subtype="ConveyorTubeDuctSmall" />
+        <Block Type="MyObjectBuilder_ConveyorConnector" Subtype="ConveyorTubeDuctSmall3X" />
         <Block Type="MyObjectBuilder_ConveyorConnector" Subtype="ConveyorTubeDuctSmallCurved" />
         <Block Type="MyObjectBuilder_Conveyor" Subtype="ConveyorTubeDuctSmallT" />
         <Block Type="MyObjectBuilder_Conveyor" Subtype="ConveyorTubeDuctSmallElbow" />

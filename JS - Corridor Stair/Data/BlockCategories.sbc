@@ -13,7 +13,7 @@
       <StrictSearch>true</StrictSearch>
       <ItemIds>
         <string>InteriorLight/JS_CorridorStair</string>
-        <string>InteriorLight/JS_CorridorStairWindow</string>
+        <string>CubeBlock/JS_CorridorStairWindow</string>
       </ItemIds>
     </Category>
   </CategoryClasses>

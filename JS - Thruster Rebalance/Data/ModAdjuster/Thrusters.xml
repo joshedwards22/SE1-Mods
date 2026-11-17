@@ -322,6 +322,15 @@
         <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
             <Id>
                 <TypeId>Thrust</TypeId>
+                <SubtypeId>LargeBlockLargeFlatAtmosphericThrustRound</SubtypeId>
+            </Id>
+            <ForceMagnitude>2400000</ForceMagnitude>
+            <MaxPowerConsumption>6</MaxPowerConsumption>
+        </Definition>
+
+        <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
+            <Id>
+                <TypeId>Thrust</TypeId>
                 <SubtypeId>LargeBlockSmallFlatAtmosphericThrust</SubtypeId>
             </Id>
             <ForceMagnitude>267000</ForceMagnitude>
@@ -332,6 +341,15 @@
             <Id>
                 <TypeId>Thrust</TypeId>
                 <SubtypeId>LargeBlockSmallFlatAtmosphericThrustDShape</SubtypeId>
+            </Id>
+            <ForceMagnitude>267000</ForceMagnitude>
+            <MaxPowerConsumption>0.889</MaxPowerConsumption>
+        </Definition>
+
+        <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
+            <Id>
+                <TypeId>Thrust</TypeId>
+                <SubtypeId>LargeBlockSmallFlatAtmosphericThrustRound</SubtypeId>
             </Id>
             <ForceMagnitude>267000</ForceMagnitude>
             <MaxPowerConsumption>0.889</MaxPowerConsumption>
@@ -358,6 +376,15 @@
         <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
             <Id>
                 <TypeId>Thrust</TypeId>
+                <SubtypeId>SmallBlockLargeFlatAtmosphericThrustRound</SubtypeId>
+            </Id>
+            <ForceMagnitude>240000</ForceMagnitude>
+            <MaxPowerConsumption>.960</MaxPowerConsumption>
+        </Definition>
+
+        <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
+            <Id>
+                <TypeId>Thrust</TypeId>
                 <SubtypeId>SmallBlockSmallFlatAtmosphericThrust</SubtypeId>
             </Id>
             <ForceMagnitude>26700</ForceMagnitude>
@@ -368,6 +395,15 @@
             <Id>
                 <TypeId>Thrust</TypeId>
                 <SubtypeId>SmallBlockSmallFlatAtmosphericThrustDShape</SubtypeId>
+            </Id>
+            <ForceMagnitude>26700</ForceMagnitude>
+            <MaxPowerConsumption>0.178</MaxPowerConsumption>
+        </Definition>
+
+        <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
+            <Id>
+                <TypeId>Thrust</TypeId>
+                <SubtypeId>SmallBlockSmallFlatAtmosphericThrustRound</SubtypeId>
             </Id>
             <ForceMagnitude>26700</ForceMagnitude>
             <MaxPowerConsumption>0.178</MaxPowerConsumption>

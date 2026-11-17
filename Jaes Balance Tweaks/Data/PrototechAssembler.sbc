@@ -113,6 +113,7 @@
                 <unsignedInt>240</unsignedInt>
             </TieredUpdateTimes>
             <AllowSelfPulling>true</AllowSelfPulling>
+            <Repairable>false</Repairable>
         </Definition>
     </CubeBlocks>
 </Definitions>

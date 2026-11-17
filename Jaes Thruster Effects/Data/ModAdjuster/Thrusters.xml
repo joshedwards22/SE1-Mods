@@ -20,7 +20,6 @@
                 <W>0.75</W>
             </FlameFullColor>
             <FlameLengthMaterial>SciFiThrusterFlame</FlameLengthMaterial>
-            <DLC>CoreSystems</DLC>
         </Definition>
 
         <Definition xsi:type="MyObjectBuilder_ThrustDefinition">

@@ -5,14 +5,14 @@
         <Blueprint>
             <Id>
                 <TypeId>BlueprintDefinition</TypeId>
-                <SubtypeId>Position0100_Missile200mm</SubtypeId>
+                <SubtypeId>Position0101_Missile200mmHoming</SubtypeId>
             </Id>
             <Prerequisites>
                 <Item Amount="55" TypeId="Ingot" SubtypeId="Iron" />
                 <Item Amount="7" TypeId="Ingot" SubtypeId="Nickel" />
-                <Item Amount="0.2" TypeId="Ingot" SubtypeId="Silicon" />
-                <Item Amount="0.04" TypeId="Ingot" SubtypeId="Gold" />
-                <Item Amount="1.2" TypeId="Ingot" SubtypeId="Magnesium" />
+                <Item Amount="0.3" TypeId="Ingot" SubtypeId="Silicon" />
+                <Item Amount="0.04" TypeId="Ingot" SubtypeId="Platinum" />
+                <Item Amount="0.8" TypeId="Ingot" SubtypeId="Magnesium" />
             </Prerequisites>
         </Blueprint>
         <Blueprint>
@@ -44,7 +44,7 @@
                 <SubtypeId>Position0140_LargeRailgunAmmo</SubtypeId>
             </Id>
             <Prerequisites>
-                <Item Amount="24" TypeId="Ingot" SubtypeId="Iron" />
+                <Item Amount="20" TypeId="Ingot" SubtypeId="Iron" />
                 <Item Amount="3" TypeId="Ingot" SubtypeId="Nickel" />
                 <Item Amount="30" TypeId="Ingot" SubtypeId="Silicon" />
             </Prerequisites>
@@ -52,14 +52,53 @@
         <Blueprint>
             <Id>
                 <TypeId>BlueprintDefinition</TypeId>
-                <SubtypeId>Torpedo</SubtypeId>
+                <SubtypeId>Position0200_Torpedo</SubtypeId>
             </Id>
             <Prerequisites>
-                <Item Amount="440" TypeId="Ingot" SubtypeId="Iron" />
-                <Item Amount="56" TypeId="Ingot" SubtypeId="Nickel" />
-                <Item Amount="1.6" TypeId="Ingot" SubtypeId="Silicon" />
-                <Item Amount="3.2" TypeId="Ingot" SubtypeId="Gold" />
-                <Item Amount="9.6" TypeId="Ingot" SubtypeId="Magnesium" />
+                <Item Amount="400" TypeId="Ingot" SubtypeId="Iron" />
+                <Item Amount="30" TypeId="Ingot" SubtypeId="Nickel" />
+                <Item Amount="1" TypeId="Ingot" SubtypeId="Silicon" />
+                <Item Amount="1" TypeId="Ingot" SubtypeId="Platinum" />
+                <Item Amount="10" TypeId="Ingot" SubtypeId="Magnesium" />
+            </Prerequisites>
+        </Blueprint>
+        <Blueprint>
+            <Id>
+                <TypeId>BlueprintDefinition</TypeId>
+                <SubtypeId>Position0210_Torpedo_Seeking</SubtypeId>
+            </Id>
+            <Prerequisites>
+                <Item Amount="400" TypeId="Ingot" SubtypeId="Iron" />
+                <Item Amount="30" TypeId="Ingot" SubtypeId="Nickel" />
+                <Item Amount="1" TypeId="Ingot" SubtypeId="Silicon" />
+                <Item Amount="2" TypeId="Ingot" SubtypeId="Platinum" />
+                <Item Amount="5" TypeId="Ingot" SubtypeId="Magnesium" />
+            </Prerequisites>
+        </Blueprint>
+        <Blueprint>
+            <Id>
+                <TypeId>BlueprintDefinition</TypeId>
+                <SubtypeId>Position0220_Torpedo_Heavy</SubtypeId>
+            </Id>
+            <Prerequisites>
+                <Item Amount="400" TypeId="Ingot" SubtypeId="Iron" />
+                <Item Amount="30" TypeId="Ingot" SubtypeId="Nickel" />
+                <Item Amount="1" TypeId="Ingot" SubtypeId="Silicon" />
+                <Item Amount="1" TypeId="Ingot" SubtypeId="Platinum" />
+                <Item Amount="20" TypeId="Ingot" SubtypeId="Magnesium" />
+            </Prerequisites>
+        </Blueprint>
+        <Blueprint>
+            <Id>
+                <TypeId>BlueprintDefinition</TypeId>
+                <SubtypeId>Position0230_Torpedo_Piercing</SubtypeId>
+            </Id>
+            <Prerequisites>
+                <Item Amount="400" TypeId="Ingot" SubtypeId="Iron" />
+                <Item Amount="30" TypeId="Ingot" SubtypeId="Nickel" />
+                <Item Amount="1" TypeId="Ingot" SubtypeId="Silicon" />
+                <Item Amount="1" TypeId="Ingot" SubtypeId="Platinum" />
+                <Item Amount="5" TypeId="Ingot" SubtypeId="Magnesium" />
             </Prerequisites>
         </Blueprint>
     </Blueprints>

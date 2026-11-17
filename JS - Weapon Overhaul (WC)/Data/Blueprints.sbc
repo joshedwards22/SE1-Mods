@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Blueprints>
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>Torpedo</SubtypeId>
+      </Id>
+      <DisplayName>Torpedo</DisplayName>
+      <Icon>Textures\GUI\Icons\Projectiles\Projectile_Torpedo.dds</Icon>
+      <Prerequisites>
+        <Item Amount="440" TypeId="Ingot" SubtypeId="Iron" />
+        <Item Amount="56" TypeId="Ingot" SubtypeId="Nickel" />
+        <Item Amount="1.6" TypeId="Ingot" SubtypeId="Silicon" />
+        <Item Amount="0.8" TypeId="Ingot" SubtypeId="Uranium" />
+        <Item Amount="0.32" TypeId="Ingot" SubtypeId="Platinum" />
+        <Item Amount="9.6" TypeId="Ingot" SubtypeId="Magnesium" />
+      </Prerequisites>
+      <Result Amount="1" TypeId="AmmoMagazine" SubtypeId="TorpedoMag" />
+      <BaseProductionTimeInSeconds>20</BaseProductionTimeInSeconds>
+    </Blueprint>
+  </Blueprints>
+</Definitions>
