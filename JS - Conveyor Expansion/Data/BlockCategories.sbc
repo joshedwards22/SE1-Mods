@@ -35,6 +35,7 @@
         <string>Conveyor/ConveyorTubeSmallElbow</string>
         <string>Conveyor/ConveyorTubeSmallCross</string>
         <string>Conveyor/MediumBlockConveyor</string>
+        <string>ConveyorConnector/ConveyorTubeMedium3X</string>
         <string>Conveyor/ConveyorTubeTMedium</string>
         <string>Conveyor/ConveyorTubeElbowMedium</string>
         <string>Conveyor/ConveyorTubeCrossMedium</string>
@@ -64,6 +65,7 @@
         <string>Conveyor/ConveyorTubeSmallElbow</string>
         <string>Conveyor/ConveyorTubeSmallCross</string>
         <string>Conveyor/MediumBlockConveyor</string>
+        <string>ConveyorConnector/ConveyorTubeMedium3X</string>
         <string>Conveyor/ConveyorTubeTMedium</string>
         <string>Conveyor/ConveyorTubeElbowMedium</string>
         <string>Conveyor/ConveyorTubeCrossMedium</string>

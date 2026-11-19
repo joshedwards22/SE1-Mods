@@ -4,7 +4,7 @@
   <BlockVariantGroups>
     <BlockVariantGroup>
       <Id Type="MyObjectBuilder_BlockVariantGroup" Subtype="ConveyorGroup" />
-      <Icon>Textures\GUI\Icons\Cubes\conveyor.dds</Icon>
+      <Icon>Textures\GUI\Icons\cubes\conveyor.dds</Icon>
       <DisplayName>DisplayName_Block_Conveyor</DisplayName>
       <Description>Description_ConveyorTube</Description>
       <Blocks>
@@ -18,6 +18,7 @@
         <Block Type="MyObjectBuilder_ConveyorConnector" Subtype="ConveyorTube" />
         <Block Type="MyObjectBuilder_ConveyorConnector" Subtype="ConveyorTube3X" />
         <Block Type="MyObjectBuilder_ConveyorConnector" Subtype="ConveyorTubeMedium" />
+        <Block Type="MyObjectBuilder_ConveyorConnector" Subtype="ConveyorTubeMedium3X" />
         <Block Type="MyObjectBuilder_ConveyorConnector" Subtype="ConveyorTubeCurved" />
         <Block Type="MyObjectBuilder_ConveyorConnector" Subtype="ConveyorTubeCurvedMedium" />
         <Block Type="MyObjectBuilder_Conveyor" Subtype="ConveyorTubeT" />
@@ -44,7 +45,7 @@
 
     <BlockVariantGroup>
       <Id Type="MyObjectBuilder_BlockVariantGroup" Subtype="ConveyorPipeGroup" />
-      <Icon>Textures\GUI\Icons\Cubes\PipeNode.dds</Icon>
+      <Icon>Textures\GUI\Icons\cubes\PipeNode.dds</Icon>
       <DisplayName>DisplayName_Block_ConveyorPipes</DisplayName>
       <Description>Description_ConveyorTube</Description>
       <Blocks>
@@ -66,7 +67,7 @@
 
     <BlockVariantGroup>
       <Id Type="MyObjectBuilder_BlockVariantGroup" Subtype="ConveyorSmallGroup" />
-      <Icon>Textures\GUI\Icons\Cubes\ConveyorSmall.dds</Icon>
+      <Icon>Textures\GUI\Icons\cubes\ConveyorSmall.dds</Icon>
       <DisplayName>DisplayName_Block_ConveyorTubeSmall</DisplayName>
       <Description>Description_ConveyorTube</Description>
       <Blocks>
