@@ -8,7 +8,7 @@
                 <SubtypeId>Lidar</SubtypeId>
             </Id>
             <DisplayName>LiDAR</DisplayName>
-            <Icon>Textures\GUI\Icons\Cubes\Lidar.dds</Icon>
+            <Icon>Textures\GUI\Icons\Cubes\LaserAntenna.dds</Icon>
             <Description>Light Detection and Ranging turret that can detect targets up to 15km away.</Description>
             <CubeSize>Large</CubeSize>
             <GuiVisible>false</GuiVisible>
@@ -95,7 +95,7 @@
                 <SubtypeId>LidarSmall</SubtypeId>
             </Id>
             <DisplayName>LiDAR</DisplayName>
-            <Icon>Textures\GUI\Icons\Cubes\LidarSmall.dds</Icon>
+            <Icon>Textures\GUI\Icons\Cubes\LaserAntennaSmall.dds</Icon>
             <Description>Light Detection and Ranging turret that can detect targets up to 10km away.</Description>
             <CubeSize>Small</CubeSize>
             <GuiVisible>false</GuiVisible>
