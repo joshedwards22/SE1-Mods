@@ -5,7 +5,7 @@
         <AmmoMagazine>
             <Id>
                 <TypeId>AmmoMagazine</TypeId>
-                <SubtypeId>Energy</SubtypeId>
+                <SubtypeId>JSLidar_Energy</SubtypeId>
             </Id>
             <DisplayName>Energy</DisplayName>
             <Icon>Textures\GUI\Icons\component\BatteryComponent.dds</Icon>
@@ -18,7 +18,8 @@
             <Volume>1</Volume>
             <Model>Models\Components\PowerCellComponent.mwm</Model>
             <Capacity>1</Capacity>
-            <AmmoDefinitionId Subtype="Blank" />
+            <AmmoDefinitionId Subtype="JSLidar_Blank" />
+            <Public>false</Public>
         </AmmoMagazine>
     </AmmoMagazines>
 </Definitions>

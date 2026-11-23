@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <BlockVariantGroups>
+    <BlockVariantGroup>
+      <Id Type="MyObjectBuilder_BlockVariantGroup" Subtype="JS_CorridorStairGroup" />
+      <Icon>Textures\GUI\Icons\Cubes\CorridorStairLight.dds</Icon>
+      <DisplayName>Corridor Stairs</DisplayName>
+      <Description>Corridors with stairs</Description>
+      <Blocks>
+        <Block Type="MyObjectBuilder_InteriorLight" Subtype="JS_CorridorStair" />
+        <Block Type="MyObjectBuilder_CubeBlock" Subtype="JS_CorridorStairWindow" />
+      </Blocks>
+    </BlockVariantGroup>
+  </BlockVariantGroups>
+</Definitions>

@@ -29,6 +29,9 @@
         <Model BuildPercentUpperBound="1.00" File="Models\Cubes\large\ConveyorDuctElbow_BS2.mwm" />
       </BuildProgressModels>
       <BlockPairName>ConveyorTubeDuctElbow</BlockPairName>
+      <MirroringX>HalfY</MirroringX>
+      <MirroringY>MinusHalfX</MirroringY>
+      <MirroringZ>MinusHalfY</MirroringZ>
       <EdgeType>Light</EdgeType>
       <BuildTimeSeconds>10</BuildTimeSeconds>
       <MountPoints>
@@ -86,6 +89,8 @@
         <Model BuildPercentUpperBound="1.00" File="Models\Cubes\large\ConveyorDuctCross_BS2.mwm" />
       </BuildProgressModels>
       <BlockPairName>ConveyorTubeDuctCross</BlockPairName>
+      <MirroringY>Z</MirroringY>
+      <MirroringZ>Y</MirroringZ>
       <EdgeType>Light</EdgeType>
       <BuildTimeSeconds>10</BuildTimeSeconds>
       <MountPoints>
@@ -130,9 +135,11 @@
       <Size x="1" y="1" z="1" />
       <Model>Models\Cubes\small\ConveyorDuctSmallElbow.mwm</Model>
       <Components>
+        <Component Subtype="SteelPlate" Count="1" />
         <Component Subtype="InteriorPlate" Count="2" />
         <Component Subtype="Motor" Count="1" />
         <Component Subtype="Construction" Count="2" />
+        <Component Subtype="SteelPlate" Count="1" />
       </Components>
       <CriticalComponent Subtype="Construction" Index="0" />
       <BuildProgressModels>
@@ -140,8 +147,11 @@
         <Model BuildPercentUpperBound="1.00" File="Models\Cubes\small\ConveyorDuctSmallElbow_BS2.mwm" />
       </BuildProgressModels>
       <BlockPairName>ConveyorTubeDuctElbowSmall</BlockPairName>
+      <MirroringX>MinusHalfY</MirroringX>
+      <MirroringY>MinusHalfX</MirroringY>
+      <MirroringZ>HalfY</MirroringZ>
       <EdgeType>Light</EdgeType>
-      <BuildTimeSeconds>10</BuildTimeSeconds>
+      <BuildTimeSeconds>4</BuildTimeSeconds>
       <MountPoints>
         <MountPoint Side="Right" StartX="0" StartY="0" EndX="1" EndY="1" />
         <MountPoint Side="Left" StartX="0" StartY="0" EndX="0.15" EndY="0.85" />
@@ -175,9 +185,11 @@
       <Size x="1" y="1" z="1" />
       <Model>Models\Cubes\small\ConveyorDuctSmallCross.mwm</Model>
       <Components>
+        <Component Subtype="SteelPlate" Count="1" />
         <Component Subtype="InteriorPlate" Count="3" />
         <Component Subtype="Motor" Count="1" />
         <Component Subtype="Construction" Count="3" />
+        <Component Subtype="SteelPlate" Count="1" />
       </Components>
       <CriticalComponent Subtype="Construction" Index="0" />
       <BuildProgressModels>
@@ -185,8 +197,10 @@
         <Model BuildPercentUpperBound="1.00" File="Models\Cubes\small\ConveyorDuctSmallCross_BS2.mwm" />
       </BuildProgressModels>
       <BlockPairName>ConveyorTubeDuctCrossSmall</BlockPairName>
+      <MirroringY>Z</MirroringY>
+      <MirroringZ>Y</MirroringZ>
       <EdgeType>Light</EdgeType>
-      <BuildTimeSeconds>10</BuildTimeSeconds>
+      <BuildTimeSeconds>4</BuildTimeSeconds>
       <MountPoints>
         <MountPoint Side="Back" StartX="0.5" StartY="0" EndX="1" EndY="1.0" />
         <MountPoint Side="Back" StartX="0" StartY="0" EndX="0.05" EndY="1.0" />
@@ -289,9 +303,8 @@
       </Components>
       <CriticalComponent Subtype="Motor" Index="0" />
       <BuildProgressModels>
-        <Model BuildPercentUpperBound="0.33" File="Models\Cubes\large\ConveyorDuct3x_BS1.mwm" />
-        <Model BuildPercentUpperBound="0.66" File="Models\Cubes\large\ConveyorDuct3x_BS2.mwm" />
-        <Model BuildPercentUpperBound="1.00" File="Models\Cubes\large\ConveyorDuct3x_BS3.mwm" />
+        <Model BuildPercentUpperBound="0.50" File="Models\Cubes\large\ConveyorDuct3x_BS1.mwm" />
+        <Model BuildPercentUpperBound="1.00" File="Models\Cubes\large\ConveyorDuct3x_BS2.mwm" />
       </BuildProgressModels>
       <BlockPairName>ConveyorTubeDuct3X</BlockPairName>
       <EdgeType>Light</EdgeType>
@@ -474,7 +487,6 @@
         <MountPoint Side="Left" StartX="0" StartY="0.85" EndX="1" EndY="1.0" />
         <MountPoint Side="Left" StartX="0.45" StartY="0.45" EndX="0.55" EndY="0.55" />
       </MountPoints>
-      <CriticalComponent Subtype="Construction" Index="0" />
       <BuildProgressModels>
         <Model BuildPercentUpperBound="0.50" File="Models\Cubes\small\ConveyorDuctSmall_BS1.mwm" />
         <Model BuildPercentUpperBound="1.00" File="Models\Cubes\small\ConveyorDuctSmall_BS2.mwm" />
@@ -526,7 +538,6 @@
         <MountPoint Side="Left" StartX="1.45" StartY="0.45" EndX="1.55" EndY="0.55" />
         <MountPoint Side="Left" StartX="2.45" StartY="0.45" EndX="2.55" EndY="0.55" />
       </MountPoints>
-      <CriticalComponent Subtype="Construction" Index="0" />
       <BuildProgressModels>
         <Model BuildPercentUpperBound="0.50" File="Models\Cubes\small\ConveyorDuctSmall3x_BS1.mwm" />
         <Model BuildPercentUpperBound="1.00" File="Models\Cubes\small\ConveyorDuctSmall3x_BS2.mwm" />
@@ -577,7 +588,6 @@
         <MountPoint Side="Left" StartX="0.45" StartY="0.45" EndX="0.55" EndY="0.55" />
         <MountPoint Side="Left" StartX="0.9" StartY="0" EndX="1" EndY="0.1" />
       </MountPoints>
-      <CriticalComponent Subtype="Construction" Index="0" />
       <BuildProgressModels>
         <Model BuildPercentUpperBound="0.50" File="Models\Cubes\small\ConveyorDuctSmallCurved_BS1.mwm" />
         <Model BuildPercentUpperBound="1.00" File="Models\Cubes\small\ConveyorDuctSmallCurved_BS2.mwm" />
@@ -642,8 +652,8 @@
       <EmissiveColorPreset>Default</EmissiveColorPreset>
       <DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
       <DamagedSound>ParticleHeavyMech</DamagedSound>
-      <DestroyEffect>BlockDestroyed_Large</DestroyEffect>
-      <DestroySound>PoofExplosionCat3</DestroySound>
+      <DestroyEffect>BlockDestroyed_Small</DestroyEffect>
+      <DestroySound>PoofExplosionCat1</DestroySound>
       <PCU>10</PCU>
     </Definition>
   </CubeBlocks>

@@ -2,11 +2,13 @@ using Sandbox.Definitions;
 using Sandbox.ModAPI;
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Text;
 using VRage.Game;
 using VRage.Game.Components;
-using VRage.Utils;
-using VRage.ObjectBuilders;
 using VRage.Game.ModAPI;
+using VRage.ModAPI;
+using VRage.Utils;
 
 namespace JSBlockDisabler
 {
@@ -15,34 +17,56 @@ namespace JSBlockDisabler
     {
         private const string FILE_NAME = "Data\\DisabledBlocks.txt";
         private const string STORAGE_FILE_NAME = "DisabledBlocks.txt";
-        private HashSet<MyCubeBlockDefinition> disabledBlocks_ = new HashSet<MyCubeBlockDefinition>();
+        private const ushort NETWORK_MESSAGE_ID = 47291;
+
+        private readonly HashSet<MyCubeBlockDefinition> disabledBlocks_ = new HashSet<MyCubeBlockDefinition>();
+        private readonly HashSet<string> worldStorageLines_ = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+        private readonly HashSet<IMyCubeGrid> trackedGrids_ = new HashSet<IMyCubeGrid>();
+        private bool networkHandlerRegistered_ = false;
+        private bool entityAddRegistered_ = false;
 
         public override void LoadData()
-		{
-			base.LoadData();
-            
+        {
+            base.LoadData();
+
             try
             {
+                if (MyAPIGateway.Multiplayer != null)
+                {
+                    MyAPIGateway.Multiplayer.RegisterSecureMessageHandler(NETWORK_MESSAGE_ID, OnNetworkMessageReceived);
+                    networkHandlerRegistered_ = true;
+                }
+
                 HashSet<string> allLinesToDisable = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
 
-                foreach (var mod in MyAPIGateway.Session.Mods)
+                if (MyAPIGateway.Session?.Mods != null)
                 {
-                    if (MyAPIGateway.Utilities.FileExistsInModLocation(FILE_NAME, mod))
+                    foreach (var mod in MyAPIGateway.Session.Mods)
                     {
-                        MyLog.Default.WriteLineAndConsole($"BlockDisabler: Found {FILE_NAME} in mod {mod.FriendlyName} ({mod.PublishedFileId})");
-                        ReadLinesFromMod(mod, allLinesToDisable);
+                        if (MyAPIGateway.Utilities.FileExistsInModLocation(FILE_NAME, mod))
+                        {
+                            MyLog.Default.WriteLineAndConsole($"BlockDisabler: Found {FILE_NAME} in mod {mod.FriendlyName} ({mod.PublishedFileId})");
+                            ReadLinesFromMod(mod, allLinesToDisable);
+                        }
                     }
                 }
 
-                if (MyAPIGateway.Utilities.FileExistsInWorldStorage(STORAGE_FILE_NAME, typeof(JSBlockDisabler)))
+                if (IsServer())
                 {
-                    MyLog.Default.WriteLineAndConsole($"BlockDisabler: Found {STORAGE_FILE_NAME} in world storage");
-                    ReadLinesFromWorldStorage(allLinesToDisable);
-                }
-                else
-                {
-                    MyLog.Default.WriteLineAndConsole($"BlockDisabler: Creating {STORAGE_FILE_NAME} in world storage");
-                    CreateWorldStorageFile();
+                    if (MyAPIGateway.Utilities.FileExistsInWorldStorage(STORAGE_FILE_NAME, typeof(JSBlockDisabler)))
+                    {
+                        MyLog.Default.WriteLineAndConsole($"BlockDisabler: Found {STORAGE_FILE_NAME} in world storage");
+                        ReadLinesFromWorldStorage(worldStorageLines_);
+                        foreach (var line in worldStorageLines_)
+                        {
+                            allLinesToDisable.Add(line);
+                        }
+                    }
+                    else
+                    {
+                        MyLog.Default.WriteLineAndConsole($"BlockDisabler: Creating {STORAGE_FILE_NAME} in world storage");
+                        CreateWorldStorageFile();
+                    }
                 }
 
                 foreach (var line in allLinesToDisable)
@@ -54,7 +78,7 @@ namespace JSBlockDisabler
             {
                 MyLog.Default.WriteLineAndConsole($"BlockDisabler: Critical error in LoadData: {ex}");
             }
-            
+
             if (disabledBlocks_.Count > 0)
             {
                 ProcessVariantGroups();
@@ -64,45 +88,192 @@ namespace JSBlockDisabler
         public override void BeforeStart()
         {
             base.BeforeStart();
-            
-            if (disabledBlocks_.Count > 0)
+
+            if (IsServer())
             {
-                RemoveDisabledBlocksFromWorld();
-                MyAPIGateway.Entities.OnEntityAdd += OnEntityAdd;
+                if (disabledBlocks_.Count > 0)
+                {
+                    RemoveDisabledBlocksFromWorld();
+                    if (MyAPIGateway.Entities != null)
+                    {
+                        MyAPIGateway.Entities.OnEntityAdd += OnEntityAdd;
+                        entityAddRegistered_ = true;
+                    }
+                }
+            }
+            else if (MyAPIGateway.Multiplayer != null)
+            {
+                // Request server's world-storage disabled block list so client G-menu stays in sync
+                MyAPIGateway.Multiplayer.SendMessageToServer(NETWORK_MESSAGE_ID, new byte[0]);
             }
         }
 
         protected override void UnloadData()
         {
-            MyAPIGateway.Entities.OnEntityAdd -= OnEntityAdd;
-			base.UnloadData();
+            if (entityAddRegistered_ && MyAPIGateway.Entities != null)
+            {
+                MyAPIGateway.Entities.OnEntityAdd -= OnEntityAdd;
+                entityAddRegistered_ = false;
+            }
+
+            foreach (var grid in trackedGrids_)
+            {
+                if (grid != null)
+                {
+                    grid.OnBlockAdded -= OnGridBlockAdded;
+                    grid.OnMarkForClose -= OnGridMarkForClose;
+                }
+            }
+            trackedGrids_.Clear();
+
+            if (networkHandlerRegistered_ && MyAPIGateway.Multiplayer != null)
+            {
+                MyAPIGateway.Multiplayer.UnregisterSecureMessageHandler(NETWORK_MESSAGE_ID, OnNetworkMessageReceived);
+                networkHandlerRegistered_ = false;
+            }
+
+            disabledBlocks_.Clear();
+            worldStorageLines_.Clear();
+
+            base.UnloadData();
         }
 
-        private void OnEntityAdd(VRage.ModAPI.IMyEntity entity)
+        private bool IsServer()
         {
-            if (disabledBlocks_.Count == 0 || entity == null) 
-                return;
-            
-            var grid = entity as IMyCubeGrid;
-            if (grid != null)
+            return MyAPIGateway.Session == null || MyAPIGateway.Session.IsServer;
+        }
+
+        private void OnNetworkMessageReceived(ushort handlerId, byte[] data, ulong senderSteamId, bool fromServer)
+        {
+            try
             {
-                ProcessGrid(grid);
+                if (IsServer())
+                {
+                    if (worldStorageLines_.Count == 0 || MyAPIGateway.Multiplayer == null)
+                        return;
+
+                    string payloadText = string.Join("\n", worldStorageLines_);
+                    byte[] payload = Encoding.UTF8.GetBytes(payloadText);
+                    MyAPIGateway.Multiplayer.SendMessageTo(NETWORK_MESSAGE_ID, payload, senderSteamId);
+                }
+                else if (fromServer && data != null && data.Length > 0)
+                {
+                    string payloadText = Encoding.UTF8.GetString(data);
+                    bool anyNewDisabled = false;
+
+                    // StringReader is prohibited by the mod script whitelist, so split the payload manually
+                    HashSet<string> receivedLines = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+                    foreach (var rawLine in payloadText.Split('\n'))
+                    {
+                        AddCleanLine(rawLine, receivedLines);
+                    }
+
+                    foreach (var line in receivedLines)
+                    {
+                        if (DisableBlock(line))
+                        {
+                            anyNewDisabled = true;
+                        }
+                    }
+
+                    if (anyNewDisabled)
+                    {
+                        ProcessVariantGroups();
+                    }
+                }
             }
+            catch (Exception ex)
+            {
+                MyLog.Default.WriteLineAndConsole($"BlockDisabler: Error handling network message: {ex}");
+            }
+        }
+
+        private void OnEntityAdd(IMyEntity entity)
+        {
+            if (!IsServer() || disabledBlocks_.Count == 0 || entity == null || entity.Closed || entity.MarkedForClose)
+                return;
+
+            var grid = entity as IMyCubeGrid;
+            if (grid == null)
+                return;
+
+            MyAPIGateway.Utilities.InvokeOnGameThread(() =>
+            {
+                if (grid == null || grid.Closed || grid.MarkedForClose || grid.Physics == null)
+                    return;
+
+                TrackGrid(grid);
+                ProcessGrid(grid);
+            });
+        }
+
+        private void TrackGrid(IMyCubeGrid grid)
+        {
+            if (grid == null || grid.Closed || grid.MarkedForClose)
+                return;
+
+            if (trackedGrids_.Add(grid))
+            {
+                grid.OnBlockAdded += OnGridBlockAdded;
+                grid.OnMarkForClose += OnGridMarkForClose;
+            }
+        }
+
+        private void OnGridMarkForClose(IMyEntity entity)
+        {
+            var grid = entity as IMyCubeGrid;
+            if (grid == null)
+                return;
+
+            grid.OnBlockAdded -= OnGridBlockAdded;
+            grid.OnMarkForClose -= OnGridMarkForClose;
+            trackedGrids_.Remove(grid);
+        }
+
+        private void OnGridBlockAdded(IMySlimBlock block)
+        {
+            if (!IsServer() || disabledBlocks_.Count == 0 || block == null || block.IsDestroyed)
+                return;
+
+            var cubeDef = block.BlockDefinition as MyCubeBlockDefinition;
+            if (cubeDef == null || !disabledBlocks_.Contains(cubeDef))
+                return;
+
+            var grid = block.CubeGrid;
+            if (grid == null || grid.Closed || grid.MarkedForClose || grid.Physics == null)
+                return;
+
+            MyAPIGateway.Utilities.InvokeOnGameThread(() =>
+            {
+                if (block == null || block.IsDestroyed || grid == null || grid.Closed || grid.MarkedForClose || grid.Physics == null)
+                    return;
+
+                try
+                {
+                    grid.RemoveBlock(block, true);
+                    MyLog.Default.WriteLineAndConsole($"BlockDisabler: Removed newly added disabled block {cubeDef.Id} from grid {grid.DisplayName}");
+                }
+                catch (Exception ex)
+                {
+                    MyLog.Default.WriteLineAndConsole($"BlockDisabler: Error removing newly added block {cubeDef.Id} from grid {grid.DisplayName}: {ex}");
+                }
+            });
         }
 
         private void RemoveDisabledBlocksFromWorld()
         {
-            if (disabledBlocks_.Count == 0) 
+            if (!IsServer() || disabledBlocks_.Count == 0 || MyAPIGateway.Entities == null)
                 return;
 
-            var entities = new HashSet<VRage.ModAPI.IMyEntity>();
+            var entities = new HashSet<IMyEntity>();
             MyAPIGateway.Entities.GetEntities(entities);
 
             foreach (var entity in entities)
             {
                 var grid = entity as IMyCubeGrid;
-                if (grid != null)
+                if (grid != null && !grid.Closed && !grid.MarkedForClose && grid.Physics != null)
                 {
+                    TrackGrid(grid);
                     ProcessGrid(grid);
                 }
             }
@@ -110,14 +281,20 @@ namespace JSBlockDisabler
 
         private void ProcessGrid(IMyCubeGrid grid)
         {
-            try 
+            if (grid == null || grid.Closed || grid.MarkedForClose || grid.Physics == null)
+                return;
+
+            try
             {
                 var blocksToRemove = new List<IMySlimBlock>();
                 var allBlocks = new List<IMySlimBlock>();
                 grid.GetBlocks(allBlocks);
-                
+
                 foreach (var block in allBlocks)
                 {
+                    if (block == null || block.IsDestroyed)
+                        continue;
+
                     var cubeDef = block.BlockDefinition as MyCubeBlockDefinition;
                     if (cubeDef != null && disabledBlocks_.Contains(cubeDef))
                     {
@@ -127,11 +304,23 @@ namespace JSBlockDisabler
 
                 if (blocksToRemove.Count > 0)
                 {
+                    int removedCount = 0;
                     foreach (var block in blocksToRemove)
                     {
-                        grid.RemoveBlock(block);
+                        if (grid.Closed || grid.MarkedForClose)
+                            break;
+
+                        if (block.IsDestroyed)
+                            continue;
+
+                        grid.RemoveBlock(block, true);
+                        removedCount++;
                     }
-                    MyLog.Default.WriteLineAndConsole($"BlockDisabler: Removed {blocksToRemove.Count} disabled blocks from grid {grid.DisplayName}");
+
+                    if (removedCount > 0)
+                    {
+                        MyLog.Default.WriteLineAndConsole($"BlockDisabler: Removed {removedCount} disabled blocks from grid {grid.DisplayName}");
+                    }
                 }
             }
             catch (Exception ex)
@@ -145,16 +334,17 @@ namespace JSBlockDisabler
             try
             {
                 var groups = MyDefinitionManager.Static.GetBlockVariantGroupDefinitions();
-                
+                var modContext = ModContext as MyModContext;
+
                 foreach (var group in groups.Values)
                 {
-                    if (group.Blocks == null || group.Blocks.Length == 0)
+                    if (group == null || group.Blocks == null || group.Blocks.Length == 0)
                         continue;
 
                     int originalCount = group.Blocks.Length;
                     bool changed = false;
                     List<MyCubeBlockDefinition> newBlocks = new List<MyCubeBlockDefinition>();
-                    
+
                     foreach (var block in group.Blocks)
                     {
                         if (block == null)
@@ -162,16 +352,16 @@ namespace JSBlockDisabler
                             MyLog.Default.WriteLineAndConsole($"BlockDisabler: WARNING - Null block found in variant group {group.Id}");
                             continue;
                         }
-                        
+
                         if (disabledBlocks_.Contains(block))
                         {
                             changed = true;
-                            
-                            // Properly detach block from group (THDigi's approach)
+
+                            // Detach disabled block from group while keeping it hidden
                             block.BlockStages = null;
                             block.BlockVariantsGroup = null;
-                            block.GuiVisible = true; // Reset since it was assigned by the group
-                            
+                            block.GuiVisible = false;
+
                             MyLog.Default.WriteLineAndConsole($"BlockDisabler: Removing {block.Id} from variant group {group.Id}");
                         }
                         else
@@ -184,29 +374,44 @@ namespace JSBlockDisabler
                     {
                         if (newBlocks.Count == 0)
                         {
-                            // If all blocks removed, set to empty array
+                            // All blocks removed: empty and disable the variant group
                             group.Blocks = new MyCubeBlockDefinition[0];
-                            MyLog.Default.WriteLineAndConsole($"BlockDisabler: Variant group {group.Id} is now empty (was {originalCount} blocks)");
+                            group.Enabled = false;
+                            group.Public = false;
+                            if (modContext != null)
+                            {
+                                group.Context = modContext;
+                            }
+
+                            MyLog.Default.WriteLineAndConsole($"BlockDisabler: Variant group {group.Id} is now empty and disabled (was {originalCount} blocks)");
                         }
                         else
                         {
-                            // Update group with new block list
+                            // Reset remaining blocks before Postprocess so a new primary block is cleanly promoted
+                            foreach (var remaining in newBlocks)
+                            {
+                                remaining.BlockStages = null;
+                                remaining.BlockVariantsGroup = null;
+                                remaining.GuiVisible = true;
+                            }
+
                             group.Blocks = newBlocks.ToArray();
-                            
-                            // Mark it as modified by this mod
-                            group.Context = (VRage.Game.MyModContext)ModContext;
-                            
-                            // Re-process the group (THDigi's approach)
+
+                            if (modContext != null)
+                            {
+                                group.Context = modContext;
+                            }
+
                             group.DisplayNameEnum = null;
                             group.Icons = null;
                             group.Postprocess();
-                            
-                            // Re-link all remaining blocks to the group (THDigi's approach)
+
+                            // Re-link all remaining blocks to the group
                             foreach (var block in group.Blocks)
                             {
                                 block.BlockVariantsGroup = group;
                             }
-                            
+
                             MyLog.Default.WriteLineAndConsole($"BlockDisabler: Variant group {group.Id} reduced from {originalCount} to {newBlocks.Count} blocks");
                         }
                     }
@@ -218,21 +423,13 @@ namespace JSBlockDisabler
             }
         }
 
-        private void ReadLinesFromMod(VRage.Game.MyObjectBuilder_Checkpoint.ModItem mod, HashSet<string> lines)
+        private void ReadLinesFromMod(MyObjectBuilder_Checkpoint.ModItem mod, HashSet<string> lines)
         {
             try
             {
                 using (var reader = MyAPIGateway.Utilities.ReadFileInModLocation(FILE_NAME, mod))
                 {
-                    string line;
-                    while ((line = reader.ReadLine()) != null)
-                    {
-                        line = line.Trim();
-                        if (string.IsNullOrWhiteSpace(line) || line.StartsWith("//"))
-                            continue;
-
-                        lines.Add(line);
-                    }
+                    ReadLinesFromReader(reader, lines);
                 }
             }
             catch (Exception ex)
@@ -247,21 +444,46 @@ namespace JSBlockDisabler
             {
                 using (var reader = MyAPIGateway.Utilities.ReadFileInWorldStorage(STORAGE_FILE_NAME, typeof(JSBlockDisabler)))
                 {
-                    string line;
-                    while ((line = reader.ReadLine()) != null)
-                    {
-                        line = line.Trim();
-                        if (string.IsNullOrWhiteSpace(line) || line.StartsWith("//"))
-                            continue;
-
-                        lines.Add(line);
-                    }
+                    ReadLinesFromReader(reader, lines);
                 }
             }
             catch (Exception ex)
             {
                 MyLog.Default.WriteLineAndConsole($"BlockDisabler: Error reading {STORAGE_FILE_NAME} from world storage: {ex}");
             }
+        }
+
+        private void ReadLinesFromReader(TextReader reader, HashSet<string> lines)
+        {
+            if (reader == null)
+                return;
+
+            string line;
+            while ((line = reader.ReadLine()) != null)
+            {
+                AddCleanLine(line, lines);
+            }
+        }
+
+        /// <summary>
+        /// Strips any // comment and surrounding whitespace (including a trailing '\r'), then adds the line if non-empty.
+        /// </summary>
+        private void AddCleanLine(string line, HashSet<string> lines)
+        {
+            if (line == null)
+                return;
+
+            int commentIndex = line.IndexOf("//", StringComparison.Ordinal);
+            if (commentIndex >= 0)
+            {
+                line = line.Substring(0, commentIndex);
+            }
+
+            line = line.Trim();
+            if (string.IsNullOrWhiteSpace(line))
+                return;
+
+            lines.Add(line);
         }
 
         private void CreateWorldStorageFile()
@@ -280,57 +502,62 @@ namespace JSBlockDisabler
             }
         }
 
-        private void DisableBlock(string idString)
+        private bool DisableBlock(string idString)
         {
             MyDefinitionId id;
             if (!ParseDefinitionId(idString, out id))
             {
                 MyLog.Default.WriteLineAndConsole($"BlockDisabler: Could not parse '{idString}' as a block ID. Expected format TypeId/SubtypeId.");
-                return;
+                return false;
             }
 
             MyCubeBlockDefinition blockDef = MyDefinitionManager.Static.GetCubeBlockDefinition(id);
             if (blockDef != null)
             {
-                // Disable the block
                 blockDef.Enabled = false;
                 blockDef.Public = false;
                 blockDef.GuiVisible = false;
-                blockDef.AvailableInSurvival = false; 
+                blockDef.AvailableInSurvival = false;
 
-                disabledBlocks_.Add(blockDef);
-                
-                // Try to trigger post-processing to refresh the definition
-                try
+                bool added = disabledBlocks_.Add(blockDef);
+                if (added)
                 {
-                    blockDef.Postprocess();
+                    MyLog.Default.WriteLineAndConsole($"BlockDisabler: Disabled block {id}");
                 }
-                catch (Exception ex)
-                {
-                    MyLog.Default.WriteLineAndConsole($"BlockDisabler: Postprocess failed for {id}: {ex.Message}");
-                }
-
-                MyLog.Default.WriteLineAndConsole($"BlockDisabler: Disabled block {id}");
+                return added;
             }
             else
             {
                 MyLog.Default.WriteLineAndConsole($"BlockDisabler: Block definition not found for {id}");
+                return false;
             }
         }
 
         private bool ParseDefinitionId(string input, out MyDefinitionId id)
         {
-            // Try direct parse
-            if (MyDefinitionId.TryParse(input, out id))
+            id = default(MyDefinitionId);
+            if (string.IsNullOrWhiteSpace(input))
+                return false;
+
+            string trimmed = input.Trim();
+
+            // Try direct parse first
+            if (MyDefinitionId.TryParse(trimmed, out id))
                 return true;
 
-            // Try adding MyObjectBuilder_ prefix to type
-            var parts = input.Split('/');
+            // Normalize whitespace around '/' and try adding MyObjectBuilder_ prefix
+            var parts = trimmed.Split('/');
             if (parts.Length == 2)
             {
-                string type = parts[0];
-                string subtype = parts[1];
-                
+                string type = parts[0].Trim();
+                string subtype = parts[1].Trim();
+
+                if (string.IsNullOrEmpty(type))
+                    return false;
+
+                if (MyDefinitionId.TryParse($"{type}/{subtype}", out id))
+                    return true;
+
                 if (!type.StartsWith("MyObjectBuilder_", StringComparison.OrdinalIgnoreCase))
                 {
                     string newType = "MyObjectBuilder_" + type;

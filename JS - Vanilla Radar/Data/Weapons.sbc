@@ -10,7 +10,7 @@
             <ProjectileAmmoData RateOfFire="0" ShootSoundName="" FlightSoundName="" RicochetSoundName="" ShotsInBurst="0" />
             <ReloadTime>0</ReloadTime>
             <AmmoMagazines>
-                <AmmoMagazine Subtype="Energy" />
+                <AmmoMagazine Subtype="JSLidar_Energy" />
             </AmmoMagazines>
         </Weapon>
     </Weapons>

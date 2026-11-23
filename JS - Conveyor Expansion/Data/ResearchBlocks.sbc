@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ResearchBlocks>
+    <!-- Large Armored Conveyors -->
+    <ResearchBlock xsi:type="ResearchBlock">
+      <Id Type="MyObjectBuilder_Conveyor" Subtype="LargeConveyorStraight" />
+      <UnlockedByGroups>
+        <GroupSubtype>24</GroupSubtype>
+      </UnlockedByGroups>
+    </ResearchBlock>
+    <ResearchBlock xsi:type="ResearchBlock">
+      <Id Type="MyObjectBuilder_Conveyor" Subtype="LargeConveyorCurved" />
+      <UnlockedByGroups>
+        <GroupSubtype>24</GroupSubtype>
+      </UnlockedByGroups>
+    </ResearchBlock>
+    <ResearchBlock xsi:type="ResearchBlock">
+      <Id Type="MyObjectBuilder_Conveyor" Subtype="LargeConveyorT" />
+      <UnlockedByGroups>
+        <GroupSubtype>24</GroupSubtype>
+      </UnlockedByGroups>
+    </ResearchBlock>
+    <ResearchBlock xsi:type="ResearchBlock">
+      <Id Type="MyObjectBuilder_Conveyor" Subtype="LargeConveyorElbow" />
+      <UnlockedByGroups>
+        <GroupSubtype>24</GroupSubtype>
+      </UnlockedByGroups>
+    </ResearchBlock>
+    <ResearchBlock xsi:type="ResearchBlock">
+      <Id Type="MyObjectBuilder_Conveyor" Subtype="LargeConveyorCross" />
+      <UnlockedByGroups>
+        <GroupSubtype>24</GroupSubtype>
+      </UnlockedByGroups>
+    </ResearchBlock>
+
+    <!-- Large Conveyor Tubes & Ducts -->
+    <ResearchBlock xsi:type="ResearchBlock">
+      <Id Type="MyObjectBuilder_Conveyor" Subtype="ConveyorTubeElbow" />
+      <UnlockedByGroups>
+        <GroupSubtype>24</GroupSubtype>
+      </UnlockedByGroups>
+    </ResearchBlock>
+    <ResearchBlock xsi:type="ResearchBlock">
+      <Id Type="MyObjectBuilder_Conveyor" Subtype="ConveyorTubeCross" />
+      <UnlockedByGroups>
+        <GroupSubtype>24</GroupSubtype>
+      </UnlockedByGroups>
+    </ResearchBlock>
+    <ResearchBlock xsi:type="ResearchBlock">
+      <Id Type="MyObjectBuilder_Conveyor" Subtype="ConveyorTubeDuctElbow" />
+      <UnlockedByGroups>
+        <GroupSubtype>24</GroupSubtype>
+      </UnlockedByGroups>
+    </ResearchBlock>
+    <ResearchBlock xsi:type="ResearchBlock">
+      <Id Type="MyObjectBuilder_Conveyor" Subtype="ConveyorTubeDuctCross" />
+      <UnlockedByGroups>
+        <GroupSubtype>24</GroupSubtype>
+      </UnlockedByGroups>
+    </ResearchBlock>
+
+    <!-- Large Conveyor Pipes -->
+    <ResearchBlock xsi:type="ResearchBlock">
+      <Id Type="MyObjectBuilder_Conveyor" Subtype="LargeBlockConveyorPipeElbow" />
+      <UnlockedByGroups>
+        <GroupSubtype>24</GroupSubtype>
+      </UnlockedByGroups>
+    </ResearchBlock>
+
+    <!-- Small Medium Conveyors & Tubes -->
+    <ResearchBlock xsi:type="ResearchBlock">
+      <Id Type="MyObjectBuilder_Conveyor" Subtype="MediumBlockConveyor" />
+      <UnlockedByGroups>
+        <GroupSubtype>24</GroupSubtype>
+      </UnlockedByGroups>
+    </ResearchBlock>
+    <ResearchBlock xsi:type="ResearchBlock">
+      <Id Type="MyObjectBuilder_ConveyorConnector" Subtype="ConveyorTubeMedium3X" />
+      <UnlockedByGroups>
+        <GroupSubtype>24</GroupSubtype>
+      </UnlockedByGroups>
+    </ResearchBlock>
+    <ResearchBlock xsi:type="ResearchBlock">
+      <Id Type="MyObjectBuilder_Conveyor" Subtype="ConveyorTubeTMedium" />
+      <UnlockedByGroups>
+        <GroupSubtype>24</GroupSubtype>
+      </UnlockedByGroups>
+    </ResearchBlock>
+    <ResearchBlock xsi:type="ResearchBlock">
+      <Id Type="MyObjectBuilder_Conveyor" Subtype="ConveyorTubeElbowMedium" />
+      <UnlockedByGroups>
+        <GroupSubtype>24</GroupSubtype>
+      </UnlockedByGroups>
+    </ResearchBlock>
+    <ResearchBlock xsi:type="ResearchBlock">
+      <Id Type="MyObjectBuilder_Conveyor" Subtype="ConveyorTubeCrossMedium" />
+      <UnlockedByGroups>
+        <GroupSubtype>24</GroupSubtype>
+      </UnlockedByGroups>
+    </ResearchBlock>
+
+    <!-- Small Conveyor Tubes & Ducts -->
+    <ResearchBlock xsi:type="ResearchBlock">
+      <Id Type="MyObjectBuilder_Conveyor" Subtype="ConveyorTubeSmallElbow" />
+      <UnlockedByGroups>
+        <GroupSubtype>24</GroupSubtype>
+      </UnlockedByGroups>
+    </ResearchBlock>
+    <ResearchBlock xsi:type="ResearchBlock">
+      <Id Type="MyObjectBuilder_Conveyor" Subtype="ConveyorTubeSmallCross" />
+      <UnlockedByGroups>
+        <GroupSubtype>24</GroupSubtype>
+      </UnlockedByGroups>
+    </ResearchBlock>
+    <ResearchBlock xsi:type="ResearchBlock">
+      <Id Type="MyObjectBuilder_Conveyor" Subtype="ConveyorTubeDuctSmallElbow" />
+      <UnlockedByGroups>
+        <GroupSubtype>24</GroupSubtype>
+      </UnlockedByGroups>
+    </ResearchBlock>
+    <ResearchBlock xsi:type="ResearchBlock">
+      <Id Type="MyObjectBuilder_Conveyor" Subtype="ConveyorTubeDuctSmallCross" />
+      <UnlockedByGroups>
+        <GroupSubtype>24</GroupSubtype>
+      </UnlockedByGroups>
+    </ResearchBlock>
+  </ResearchBlocks>
+</Definitions>

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Gatling point-defense rebalance, applied by ModAdjusterV2 (workshop 3017795356) as field-level patches.
+    No SBC definitions are overridden.
+
+    Goal: faster fire + faster turrets for shooting down missiles, with vanilla DPS and ingot cost per damage.
+      Vanilla: 700 RPM x 90 dmg, 140 rounds per box.
+      New:    1200 RPM x 53.55 dmg (DamageMultiplier 0.595), 240 rounds per box.
+        - DPS: 1200 x 53.55 = 64,260/min vs 63,000/min vanilla (+2%).
+        - 0.595 instead of 0.5833 (700/1200) so a torpedo (Integrity 160) dies in 3 hits instead of 4.
+        - Box: 240 x 53.55 = 12,852 dmg vs 12,600 vanilla, same blueprint.
+        - ShotsInBurst scaled 140 -> 240 to keep the same 12 s of firing between reloads.
+        - Recoil and hit push per bullet scaled by 7/12 so total recoil and push match vanilla.
+
+    Fixed vs turret parity (see DamageBalance.xml for the full DPS ladder):
+      - Fixed gatlings never pause to reload, so they fire 900 RPM instead of 1200:
+        900 x 53.55 / 60 = ~803 DPS, matching the large turret (~806 with its 4 s reload every 240 rounds).
+      - Small turret reload 6 -> 4 s to match the large turret (~806 DPS each).
+-->
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <!--
+        Weapons. ProjectileAmmoData is only applied by ModAdjuster when AmmoMagazines is in the same entry,
+        and it is rebuilt from scratch, so ShootSoundName must be included (vanilla sound names).
+    -->
+    <Weapons>
+        <!-- Large gatling turret (also the Contact Pack reskin) -->
+        <Weapon>
+            <Id>
+                <TypeId>WeaponDefinition</TypeId>
+                <SubtypeId>LargeGatlingTurret</SubtypeId>
+            </Id>
+            <ProjectileAmmoData RateOfFire="1200" ShootSoundName="WepGatlingTurretShot" ShotsInBurst="240" />
+            <AmmoMagazines>
+                <AmmoMagazine Subtype="NATO_25x184mm" />
+            </AmmoMagazines>
+            <DamageMultiplier>0.595</DamageMultiplier>
+        </Weapon>
+
+        <!-- Small grid gatling turret (also the Contact Pack reskin) -->
+        <Weapon>
+            <Id>
+                <TypeId>WeaponDefinition</TypeId>
+                <SubtypeId>SmallGatlingTurret</SubtypeId>
+            </Id>
+            <ProjectileAmmoData RateOfFire="1200" ShootSoundName="WepGatlingTurretShot" ShotsInBurst="240" />
+            <AmmoMagazines>
+                <AmmoMagazine Subtype="NATO_25x184mm" />
+            </AmmoMagazines>
+            <DamageMultiplier>0.595</DamageMultiplier>
+            <!-- Vanilla 6 s; matched to the large turret -->
+            <ReloadTime>4000</ReloadTime>
+        </Weapon>
+
+        <!-- Fixed small grid gatling gun (vanilla definition) -->
+        <Weapon>
+            <Id>
+                <TypeId>WeaponDefinition</TypeId>
+                <SubtypeId>GatlingGun</SubtypeId>
+            </Id>
+            <!-- 900 RPM: fixed guns never reload, so this matches turret DPS -->
+            <ProjectileAmmoData RateOfFire="900" ShootSoundName="WepShipGatlingShot" ShotsInBurst="240" />
+            <AmmoMagazines>
+                <AmmoMagazine Subtype="NATO_25x184mm" />
+            </AmmoMagazines>
+            <DamageMultiplier>0.595</DamageMultiplier>
+        </Weapon>
+
+        <!-- Fixed small grid gatling gun (Warfare 2 variant, also used by JS - Weapon Overhaul's SmallGatlingGun) -->
+        <Weapon>
+            <Id>
+                <TypeId>WeaponDefinition</TypeId>
+                <SubtypeId>GatlingGunWarfare</SubtypeId>
+            </Id>
+            <!-- 900 RPM: fixed guns never reload, so this matches turret DPS -->
+            <ProjectileAmmoData RateOfFire="900" ShootSoundName="WepShipGatlingShot" ShotsInBurst="240" />
+            <AmmoMagazines>
+                <AmmoMagazine Subtype="NATO_25x184mm" />
+            </AmmoMagazines>
+            <DamageMultiplier>0.595</DamageMultiplier>
+        </Weapon>
+    </Weapons>
+
+    <!-- Ammo box: more rounds per box so ingot cost per damage stays vanilla. Blueprint untouched. -->
+    <AmmoMagazines>
+        <AmmoMagazine>
+            <Id>
+                <TypeId>AmmoMagazine</TypeId>
+                <SubtypeId>NATO_25x184mm</SubtypeId>
+            </Id>
+            <Capacity>240</Capacity>
+        </AmmoMagazine>
+    </AmmoMagazines>
+
+    <!-- Bullet: per-bullet recoil and hit push scaled by 7/12. Damage is NOT changed here (DamageMultiplier is used instead). -->
+    <Ammos>
+        <Ammo xsi:type="MyObjectBuilder_ProjectileAmmoDefinition">
+            <Id>
+                <TypeId>AmmoDefinition</TypeId>
+                <SubtypeId>LargeCaliber</SubtypeId>
+            </Id>
+            <BasicProperties>
+                <BackkickForce>116.7</BackkickForce>
+            </BasicProperties>
+            <ProjectileProperties>
+                <ProjectileHitImpulse>1.17</ProjectileHitImpulse>
+            </ProjectileProperties>
+        </Ammo>
+    </Ammos>
+
+    <!--
+        Turret blocks: faster turning, and TieredUpdateTimes 3/0 (vanilla 10/0).
+        RotationSpeed is roughly rad/ms with ~960 ms per second: 0.003 = ~165 deg/s, 0.004 = ~220 deg/s.
+        TieredUpdateTimes: [0] ticks between updates when a player or another grid within ~3 km is near, [1] otherwise (0 = paused).
+    -->
+    <CubeBlocks>
+        <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+            <Id>
+                <TypeId>LargeGatlingTurret</TypeId>
+                <SubtypeId></SubtypeId>
+            </Id>
+            <RotationSpeed>0.003</RotationSpeed>
+            <ElevationSpeed>0.003</ElevationSpeed>
+            <TieredUpdateTimes>
+                <unsignedInt>3</unsignedInt>
+                <unsignedInt>0</unsignedInt>
+            </TieredUpdateTimes>
+        </Definition>
+
+        <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+            <Id>
+                <TypeId>LargeGatlingTurret</TypeId>
+                <SubtypeId>LargeGatlingTurretReskin</SubtypeId>
+            </Id>
+            <RotationSpeed>0.003</RotationSpeed>
+            <ElevationSpeed>0.003</ElevationSpeed>
+            <TieredUpdateTimes>
+                <unsignedInt>3</unsignedInt>
+                <unsignedInt>0</unsignedInt>
+            </TieredUpdateTimes>
+        </Definition>
+
+        <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+            <Id>
+                <TypeId>LargeGatlingTurret</TypeId>
+                <SubtypeId>SmallGatlingTurret</SubtypeId>
+            </Id>
+            <RotationSpeed>0.004</RotationSpeed>
+            <ElevationSpeed>0.004</ElevationSpeed>
+            <TieredUpdateTimes>
+                <unsignedInt>3</unsignedInt>
+                <unsignedInt>0</unsignedInt>
+            </TieredUpdateTimes>
+        </Definition>
+
+        <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+            <Id>
+                <TypeId>LargeGatlingTurret</TypeId>
+                <SubtypeId>SmallGatlingTurretReskin</SubtypeId>
+            </Id>
+            <RotationSpeed>0.004</RotationSpeed>
+            <ElevationSpeed>0.004</ElevationSpeed>
+            <TieredUpdateTimes>
+                <unsignedInt>3</unsignedInt>
+                <unsignedInt>0</unsignedInt>
+            </TieredUpdateTimes>
+        </Definition>
+    </CubeBlocks>
+</Definitions>

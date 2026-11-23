@@ -10,9 +10,9 @@
 			<DisplayName>Railgun Turret</DisplayName>
 			<Description>Low rate of fire extremely powerful electromagnetic mass driver. Capable of putting holes in literally anything.
 
-Charging: 48MW            
-Range: 5000m</Description>
-			<Icon>Textures\GUI\Icons\Cubes\MonarchRailgunTurretBase.png</Icon>
+Charging: 38MW            
+Range: 2000m</Description>
+			<Icon>Textures\GUI\Icons\Cubes\MonarchRailgunTurretBase.dds</Icon>
 			<CubeSize>Large</CubeSize>
 			<GuiVisible>false</GuiVisible>
 			<PlaceDecals>false</PlaceDecals>
@@ -34,25 +34,39 @@ Range: 5000m</Description>
 			</Components>
 			<CriticalComponent Subtype="Computer" Index="0" />
 			<MountPoints>
-				<MountPoint Side="Bottom" StartX="0" StartY="0" EndX="5" EndY="5" />
+				<MountPoint Side="Bottom" StartX="0" StartY="0" EndX="5" EndY="5" Default="true" />
 			</MountPoints>
+			<VoxelPlacement>
+				<StaticMode>
+					<PlacementMode>OutsideVoxel</PlacementMode>
+					<MaxAllowed>0.2</MaxAllowed>
+					<MinAllowed>0</MinAllowed>
+				</StaticMode>
+				<DynamicMode>
+					<PlacementMode>OutsideVoxel</PlacementMode>
+					<MaxAllowed>0.2</MaxAllowed>
+					<MinAllowed>0.01</MinAllowed>
+				</DynamicMode>
+			</VoxelPlacement>
 			<BlockPairName>RailgunTurret</BlockPairName>
+			<MirroringY>Z</MirroringY>
+			<MirroringZ>Y</MirroringZ>
 			<EdgeType>Light</EdgeType>
 			<BuildTimeSeconds>80</BuildTimeSeconds>
 			<OverlayTexture>Textures\GUI\Screens\turret_overlay.dds</OverlayTexture>
 			<WeaponDefinitionId Subtype="RailgunTurret" />
 			<EnabledTargetingOptions>LargeShips SmallShips Stations Enemies</EnabledTargetingOptions>
 			<HiddenTargetingOptions>Asteroids Missiles Friends</HiddenTargetingOptions>
-			<InventoryMaxVolume>1.28</InventoryMaxVolume>
+			<InventoryMaxVolume>0.04</InventoryMaxVolume>
 			<DamageEffectName>Damage_WeapExpl_Damaged</DamageEffectName>
 			<DamagedSound>ParticleWeapExpl</DamagedSound>
-			<ResourceSinkGroup>Defense</ResourceSinkGroup>
+			<ResourceSinkGroup>DefenseAdative</ResourceSinkGroup>
 			<MinElevationDegrees>-20</MinElevationDegrees>
 			<MaxElevationDegrees>45</MaxElevationDegrees>
 			<MinAzimuthDegrees>-180</MinAzimuthDegrees>
 			<MaxAzimuthDegrees>180</MaxAzimuthDegrees>
 			<IdleRotation>false</IdleRotation>
-			<MaxRangeMeters>5000</MaxRangeMeters>
+			<MaxRangeMeters>2000</MaxRangeMeters>
 			<RotationSpeed>0.0001</RotationSpeed>
 			<ElevationSpeed>0.0001</ElevationSpeed>
 			<EmissiveColorPreset>Default</EmissiveColorPreset>
@@ -62,7 +76,7 @@ Range: 5000m</Description>
 			<DestroySound>WepSmallWarheadExpl</DestroySound>
 			<PCU>275</PCU>
 			<IsAirTight>false</IsAirTight>
-			<AmmoPullAmountPerTick>2</AmmoPullAmountPerTick>
+			<AmmoPullAmountPerTick>1</AmmoPullAmountPerTick>
 			<InventoryFillFactorMin>.25</InventoryFillFactorMin>
 			<InventoryFillFactorMax>.5</InventoryFillFactorMax>
 			<TieredUpdateTimes>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <ResearchBlocks>
+        <!-- Same unlock group as vanilla corridors, corridor windows and stairs (group 5). -->
+        <ResearchBlock xsi:type="ResearchBlock">
+            <Id Type="MyObjectBuilder_InteriorLight" Subtype="JS_CorridorStair" />
+            <UnlockedByGroups>
+                <GroupSubtype>5</GroupSubtype>
+            </UnlockedByGroups>
+        </ResearchBlock>
+        <ResearchBlock xsi:type="ResearchBlock">
+            <Id Type="MyObjectBuilder_CubeBlock" Subtype="JS_CorridorStairWindow" />
+            <UnlockedByGroups>
+                <GroupSubtype>5</GroupSubtype>
+            </UnlockedByGroups>
+        </ResearchBlock>
+    </ResearchBlocks>
+</Definitions>

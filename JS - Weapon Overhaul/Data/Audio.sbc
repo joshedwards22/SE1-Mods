@@ -2,6 +2,14 @@
 <Definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <Sounds>
+        <!--
+            Distant cues: each weapon reuses its own near wave for the distant bands.
+            The engine fades volume out toward each cue's MaxDistance, and the
+            JSDistantMuffle / JSFarDistantMuffle low-pass effects (AudioEffects.sbc)
+            cut the highs so it sounds far away.
+        -->
+
+        <!-- ===================== Gatling (fixed gun) ===================== -->
         <Sound>
             <Id>
                 <TypeId>MyObjectBuilder_AudioDefinition</TypeId>
@@ -13,9 +21,9 @@
             <DynamicMusicCategory>HeavyFight</DynamicMusicCategory>
             <DynamicMusicAmount>3</DynamicMusicAmount>
             <DistantSounds>
-                <DistantSound DistanceCrossfade="10" Distance="200" Sound="WepShipGatlingShotDistant1" />
+                <DistantSound DistanceCrossfade="10" Distance="200" Sound="JSWepGatlingShotDist" />
             </DistantSounds>
-            <Volume>2</Volume>
+            <Volume>1.5</Volume>
             <Waves>
                 <Wave Type="D3">
                     <Start>Audio\Wep\gatling01.wav</Start>
@@ -38,8 +46,93 @@
                 <Wave Type="D3">
                     <Start>Audio\Wep\gatling07.wav</Start>
                 </Wave>
+                <Wave Type="D3">
+                    <Start>Audio\Wep\gatling08.wav</Start>
+                </Wave>
             </Waves>
         </Sound>
+
+        <!-- ===================== Gatling (turrets) ===================== -->
+        <Sound>
+            <Id>
+                <TypeId>MyObjectBuilder_AudioDefinition</TypeId>
+                <SubtypeId>ArcWepGatlingTurretShot</SubtypeId>
+            </Id>
+            <Category>SHOT</Category>
+            <MaxDistance>230</MaxDistance>
+            <PreventSynchronization>0</PreventSynchronization>
+            <DynamicMusicCategory>HeavyFight</DynamicMusicCategory>
+            <DynamicMusicAmount>3</DynamicMusicAmount>
+            <DistantSounds>
+                <DistantSound DistanceCrossfade="10" Distance="230" Sound="JSWepGatlingShotDist" />
+            </DistantSounds>
+            <Volume>1.5</Volume>
+            <Waves>
+                <Wave Type="D3">
+                    <Start>Audio\Wep\gatling01.wav</Start>
+                </Wave>
+                <Wave Type="D3">
+                    <Start>Audio\Wep\gatling02.wav</Start>
+                </Wave>
+                <Wave Type="D3">
+                    <Start>Audio\Wep\gatling03.wav</Start>
+                </Wave>
+                <Wave Type="D3">
+                    <Start>Audio\Wep\gatling04.wav</Start>
+                </Wave>
+                <Wave Type="D3">
+                    <Start>Audio\Wep\gatling05.wav</Start>
+                </Wave>
+                <Wave Type="D3">
+                    <Start>Audio\Wep\gatling06.wav</Start>
+                </Wave>
+                <Wave Type="D3">
+                    <Start>Audio\Wep\gatling07.wav</Start>
+                </Wave>
+                <Wave Type="D3">
+                    <Start>Audio\Wep\gatling08.wav</Start>
+                </Wave>
+            </Waves>
+        </Sound>
+        <Sound>
+            <Id>
+                <TypeId>MyObjectBuilder_AudioDefinition</TypeId>
+                <SubtypeId>JSWepGatlingShotDist</SubtypeId>
+            </Id>
+            <Category>SHOT</Category>
+            <MaxDistance>800</MaxDistance>
+            <PreventSynchronization>0</PreventSynchronization>
+            <ArcadeFilter>JSDistantMuffle</ArcadeFilter>
+            <Volume>0.75</Volume>
+            <Waves>
+                <Wave Type="D3">
+                    <Start>Audio\Wep\gatling01.wav</Start>
+                </Wave>
+                <Wave Type="D3">
+                    <Start>Audio\Wep\gatling02.wav</Start>
+                </Wave>
+                <Wave Type="D3">
+                    <Start>Audio\Wep\gatling03.wav</Start>
+                </Wave>
+                <Wave Type="D3">
+                    <Start>Audio\Wep\gatling04.wav</Start>
+                </Wave>
+                <Wave Type="D3">
+                    <Start>Audio\Wep\gatling05.wav</Start>
+                </Wave>
+                <Wave Type="D3">
+                    <Start>Audio\Wep\gatling06.wav</Start>
+                </Wave>
+                <Wave Type="D3">
+                    <Start>Audio\Wep\gatling07.wav</Start>
+                </Wave>
+                <Wave Type="D3">
+                    <Start>Audio\Wep\gatling08.wav</Start>
+                </Wave>
+            </Waves>
+        </Sound>
+
+        <!-- ===================== Autocannon ===================== -->
         <Sound>
             <Id>
                 <TypeId>MyObjectBuilder_AudioDefinition</TypeId>
@@ -49,7 +142,7 @@
             <MaxDistance>200</MaxDistance>
             <PreventSynchronization>1</PreventSynchronization>
             <DistantSounds>
-                <DistantSound DistanceCrossfade="20" Distance="200" Sound="ArcWepAutocannonShotDistant" />
+                <DistantSound DistanceCrossfade="20" Distance="200" Sound="JSWepAutocannonShotDist" />
             </DistantSounds>
             <Volume>2</Volume>
             <Waves>
@@ -61,14 +154,32 @@
         <Sound>
             <Id>
                 <TypeId>MyObjectBuilder_AudioDefinition</TypeId>
+                <SubtypeId>JSWepAutocannonShotDist</SubtypeId>
+            </Id>
+            <Category>SHOT</Category>
+            <MaxDistance>800</MaxDistance>
+            <PreventSynchronization>1</PreventSynchronization>
+            <ArcadeFilter>JSDistantMuffle</ArcadeFilter>
+            <Volume>1</Volume>
+            <Waves>
+                <Wave Type="D3">
+                    <Start>Audio\Wep\autocannon.wav</Start>
+                </Wave>
+            </Waves>
+        </Sound>
+
+        <!-- ===================== Assault cannon (medium calibre) ===================== -->
+        <Sound>
+            <Id>
+                <TypeId>MyObjectBuilder_AudioDefinition</TypeId>
                 <SubtypeId>ArcWepMediumCalibreShot</SubtypeId>
             </Id>
             <Category>SHOT</Category>
             <MaxDistance>200</MaxDistance>
             <PreventSynchronization>0</PreventSynchronization>
             <DistantSounds>
-                <DistantSound Distance="150" Sound="WepMediumCalibreShotDistA" />
-                <DistantSound Distance="500" Sound="WepMediumCalibreShotDistB" />
+                <DistantSound Distance="150" Sound="JSWepMediumCalibreShotDistA" />
+                <DistantSound Distance="500" Sound="JSWepMediumCalibreShotDistB" />
             </DistantSounds>
             <Volume>3</Volume>
             <Waves>
@@ -80,14 +191,48 @@
         <Sound>
             <Id>
                 <TypeId>MyObjectBuilder_AudioDefinition</TypeId>
+                <SubtypeId>JSWepMediumCalibreShotDistA</SubtypeId>
+            </Id>
+            <Category>SHOT</Category>
+            <MaxDistance>700</MaxDistance>
+            <PreventSynchronization>0</PreventSynchronization>
+            <ArcadeFilter>JSDistantMuffle</ArcadeFilter>
+            <Volume>2</Volume>
+            <Waves>
+                <Wave Type="D3">
+                    <Start>Audio\Wep\assaultcannon.wav</Start>
+                </Wave>
+            </Waves>
+        </Sound>
+        <Sound>
+            <Id>
+                <TypeId>MyObjectBuilder_AudioDefinition</TypeId>
+                <SubtypeId>JSWepMediumCalibreShotDistB</SubtypeId>
+            </Id>
+            <Category>SHOT</Category>
+            <MaxDistance>1400</MaxDistance>
+            <PreventSynchronization>0</PreventSynchronization>
+            <ArcadeFilter>JSFarDistantMuffle</ArcadeFilter>
+            <Volume>1.5</Volume>
+            <Waves>
+                <Wave Type="D3">
+                    <Start>Audio\Wep\assaultcannon.wav</Start>
+                </Wave>
+            </Waves>
+        </Sound>
+
+        <!-- ===================== Artillery (large calibre) ===================== -->
+        <Sound>
+            <Id>
+                <TypeId>MyObjectBuilder_AudioDefinition</TypeId>
                 <SubtypeId>ArcWepLargeCalibreShot</SubtypeId>
             </Id>
             <Category>SHOT</Category>
             <MaxDistance>200</MaxDistance>
             <PreventSynchronization>0</PreventSynchronization>
             <DistantSounds>
-                <DistantSound Distance="150" Sound="ArcWepLargeCalibreShotDistA" />
-                <DistantSound Distance="800" Sound="ArcWepLargeCalibreShotDistB" />
+                <DistantSound Distance="150" Sound="JSWepLargeCalibreShotDistA" />
+                <DistantSound Distance="800" Sound="JSWepLargeCalibreShotDistB" />
             </DistantSounds>
             <Volume>3</Volume>
             <Waves>
@@ -99,23 +244,38 @@
         <Sound>
             <Id>
                 <TypeId>MyObjectBuilder_AudioDefinition</TypeId>
-                <SubtypeId>ArcHeavyShellFlightSound</SubtypeId>
+                <SubtypeId>JSWepLargeCalibreShotDistA</SubtypeId>
             </Id>
             <Category>SHOT</Category>
-            <MaxDistance>100</MaxDistance>
-            <PreventSynchronization>1</PreventSynchronization>
-            <UpdateDistance>250</UpdateDistance>
-            <DynamicMusicCategory>HeavyFight</DynamicMusicCategory>
-            <DynamicMusicAmount>15</DynamicMusicAmount>
+            <MaxDistance>1000</MaxDistance>
+            <PreventSynchronization>0</PreventSynchronization>
+            <ArcadeFilter>JSDistantMuffle</ArcadeFilter>
             <Volume>2</Volume>
             <Waves>
                 <Wave Type="D3">
-                    <Start>Audio\Wep\shell_flyby.wav</Start>
+                    <Start>Audio\Wep\artillery.wav</Start>
                 </Wave>
             </Waves>
-            <Loopable>true</Loopable>
-            <ArcadeFilter>FadeIn</ArcadeFilter>
         </Sound>
+        <Sound>
+            <Id>
+                <TypeId>MyObjectBuilder_AudioDefinition</TypeId>
+                <SubtypeId>JSWepLargeCalibreShotDistB</SubtypeId>
+            </Id>
+            <Category>SHOT</Category>
+            <MaxDistance>2000</MaxDistance>
+            <PreventSynchronization>0</PreventSynchronization>
+            <ArcadeFilter>JSFarDistantMuffle</ArcadeFilter>
+            <Volume>1.5</Volume>
+            <Waves>
+                <Wave Type="D3">
+                    <Start>Audio\Wep\artillery.wav</Start>
+                </Wave>
+            </Waves>
+        </Sound>
+
+
+        <!-- ===================== Rocket launchers ===================== -->
         <Sound>
             <Id>
                 <TypeId>MyObjectBuilder_AudioDefinition</TypeId>
@@ -125,7 +285,7 @@
             <MaxDistance>200</MaxDistance>
             <PreventSynchronization>2</PreventSynchronization>
             <DistantSounds>
-                <DistantSound DistanceCrossfade="10" Distance="200" Sound="WepShipSmallMissileShotDistA" />
+                <DistantSound DistanceCrossfade="10" Distance="200" Sound="JSWepRocketShotDist" />
             </DistantSounds>
             <DynamicMusicCategory>HeavyFight</DynamicMusicCategory>
             <DynamicMusicAmount>15</DynamicMusicAmount>
@@ -139,39 +299,52 @@
         <Sound>
             <Id>
                 <TypeId>MyObjectBuilder_AudioDefinition</TypeId>
-                <SubtypeId>ArcMissileFlightSound</SubtypeId>
+                <SubtypeId>JSWepRocketShotDist</SubtypeId>
             </Id>
             <Category>SHOT</Category>
-            <MaxDistance>100</MaxDistance>
-            <PreventSynchronization>1</PreventSynchronization>
-            <UpdateDistance>250</UpdateDistance>
-            <DynamicMusicCategory>HeavyFight</DynamicMusicCategory>
-            <DynamicMusicAmount>15</DynamicMusicAmount>
-            <Volume>0.4</Volume>
+            <MaxDistance>600</MaxDistance>
+            <PreventSynchronization>2</PreventSynchronization>
+            <ArcadeFilter>JSDistantMuffle</ArcadeFilter>
+            <Volume>1.5</Volume>
             <Waves>
-                <Wave Type="D2">
-                    <Start>Audio\Wep\rocket_flyby.wav</Start>
-                </Wave>
                 <Wave Type="D3">
-                    <Start>Audio\Wep\rocket_flyby.wav</Start>
+                    <Start>Audio\Wep\rocket.wav</Start>
                 </Wave>
             </Waves>
-            <Loopable>true</Loopable>
         </Sound>
+
+
+        <!-- ===================== Torpedo launchers ===================== -->
         <Sound>
             <Id>
                 <TypeId>MyObjectBuilder_AudioDefinition</TypeId>
-                <SubtypeId>ArcTorpdeo</SubtypeId>
+                <SubtypeId>ArcTorpedoLaunch</SubtypeId>
             </Id>
             <Category>SHOT</Category>
             <MaxDistance>200</MaxDistance>
             <PreventSynchronization>2</PreventSynchronization>
             <DistantSounds>
-                <DistantSound DistanceCrossfade="10" Distance="200" Sound="WepShipSmallMissileShotDistA" />
+                <DistantSound DistanceCrossfade="10" Distance="200" Sound="JSTorpedoLaunchDist" />
             </DistantSounds>
             <DynamicMusicCategory>HeavyFight</DynamicMusicCategory>
             <DynamicMusicAmount>15</DynamicMusicAmount>
             <Volume>3</Volume>
+            <Waves>
+                <Wave Type="D3">
+                    <Start>Audio\Wep\torpedo.wav</Start>
+                </Wave>
+            </Waves>
+        </Sound>
+        <Sound>
+            <Id>
+                <TypeId>MyObjectBuilder_AudioDefinition</TypeId>
+                <SubtypeId>JSTorpedoLaunchDist</SubtypeId>
+            </Id>
+            <Category>SHOT</Category>
+            <MaxDistance>800</MaxDistance>
+            <PreventSynchronization>2</PreventSynchronization>
+            <ArcadeFilter>JSDistantMuffle</ArcadeFilter>
+            <Volume>1.5</Volume>
             <Waves>
                 <Wave Type="D3">
                     <Start>Audio\Wep\torpedo.wav</Start>

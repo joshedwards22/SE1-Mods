@@ -12,6 +12,17 @@
             <StrictSearch>true</StrictSearch>
             <ItemIds>
                 <string>LargeGatlingTurret/Lidar</string>
+            </ItemIds>
+        </Category>
+        <Category xsi:type="MyObjectBuilder_GuiBlockCategoryDefinition">
+            <Id>
+                <TypeId>GuiBlockCategoryDefinition</TypeId>
+                <SubtypeId/>
+            </Id>
+            <DisplayName>DisplayName_Category_SmallBlocks</DisplayName>
+            <Name>Section1_Position1_SmallBlocks</Name>
+            <StrictSearch>true</StrictSearch>
+            <ItemIds>
                 <string>LargeGatlingTurret/LidarSmall</string>
             </ItemIds>
         </Category>

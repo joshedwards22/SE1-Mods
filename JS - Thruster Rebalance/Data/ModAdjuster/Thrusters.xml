@@ -11,7 +11,7 @@
                 <SubtypeId>LargeBlockLargeHydrogenThrust</SubtypeId>
             </Id>
             <ForceMagnitude>7200000</ForceMagnitude>
-            <MaxPowerConsumption>7</MaxPowerConsumption>
+            <MaxPowerConsumption>7.002</MaxPowerConsumption>
         </Definition>
 
         <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
@@ -20,7 +20,7 @@
                 <SubtypeId>LargeBlockLargeHydrogenThrustIndustrial</SubtypeId>
             </Id>
             <ForceMagnitude>7200000</ForceMagnitude>
-            <MaxPowerConsumption>7</MaxPowerConsumption>
+            <MaxPowerConsumption>7.002</MaxPowerConsumption>
         </Definition>
 
         <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
@@ -29,7 +29,7 @@
                 <SubtypeId>LargeBlockLargeHydrogenThrustReskin</SubtypeId>
             </Id>
             <ForceMagnitude>7200000</ForceMagnitude>
-            <MaxPowerConsumption>7</MaxPowerConsumption>
+            <MaxPowerConsumption>7.002</MaxPowerConsumption>
         </Definition>
 
         <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
@@ -38,7 +38,7 @@
                 <SubtypeId>LargeBlockSmallHydrogenThrust</SubtypeId>
             </Id>
             <ForceMagnitude>800000</ForceMagnitude>
-            <MaxPowerConsumption>0.859</MaxPowerConsumption>
+            <MaxPowerConsumption>0.88914</MaxPowerConsumption>
         </Definition>
 
         <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
@@ -47,7 +47,7 @@
                 <SubtypeId>LargeBlockSmallHydrogenThrustIndustrial</SubtypeId>
             </Id>
             <ForceMagnitude>800000</ForceMagnitude>
-            <MaxPowerConsumption>0.859</MaxPowerConsumption>
+            <MaxPowerConsumption>0.88914</MaxPowerConsumption>
         </Definition>
 
         <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
@@ -56,7 +56,7 @@
                 <SubtypeId>LargeBlockSmallHydrogenThrustReskin</SubtypeId>
             </Id>
             <ForceMagnitude>800000</ForceMagnitude>
-            <MaxPowerConsumption>0.859</MaxPowerConsumption>
+            <MaxPowerConsumption>0.88914</MaxPowerConsumption>
         </Definition>
 
         <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
@@ -65,7 +65,7 @@
                 <SubtypeId>SmallBlockLargeHydrogenThrust</SubtypeId>
             </Id>
             <ForceMagnitude>720000</ForceMagnitude>
-            <MaxPowerConsumption>0.8</MaxPowerConsumption>
+            <MaxPowerConsumption>0.80023</MaxPowerConsumption>
         </Definition>
 
         <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
@@ -74,7 +74,7 @@
                 <SubtypeId>SmallBlockLargeHydrogenThrustIndustrial</SubtypeId>
             </Id>
             <ForceMagnitude>720000</ForceMagnitude>
-            <MaxPowerConsumption>0.8</MaxPowerConsumption>
+            <MaxPowerConsumption>0.80023</MaxPowerConsumption>
         </Definition>
 
         <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
@@ -83,7 +83,7 @@
                 <SubtypeId>SmallBlockLargeHydrogenThrustReskin</SubtypeId>
             </Id>
             <ForceMagnitude>720000</ForceMagnitude>
-            <MaxPowerConsumption>0.8</MaxPowerConsumption>
+            <MaxPowerConsumption>0.80023</MaxPowerConsumption>
         </Definition>
 
         <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
@@ -92,7 +92,7 @@
                 <SubtypeId>SmallBlockSmallHydrogenThrust</SubtypeId>
             </Id>
             <ForceMagnitude>80000</ForceMagnitude>
-            <MaxPowerConsumption>0.1</MaxPowerConsumption>
+            <MaxPowerConsumption>0.10373</MaxPowerConsumption>
         </Definition>
 
         <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
@@ -101,7 +101,7 @@
                 <SubtypeId>SmallBlockSmallHydrogenThrustIndustrial</SubtypeId>
             </Id>
             <ForceMagnitude>80000</ForceMagnitude>
-            <MaxPowerConsumption>0.1</MaxPowerConsumption>
+            <MaxPowerConsumption>0.10373</MaxPowerConsumption>
         </Definition>
 
         <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
@@ -110,7 +110,7 @@
                 <SubtypeId>SmallBlockSmallHydrogenThrustReskin</SubtypeId>
             </Id>
             <ForceMagnitude>80000</ForceMagnitude>
-            <MaxPowerConsumption>0.1</MaxPowerConsumption>
+            <MaxPowerConsumption>0.10373</MaxPowerConsumption>
         </Definition>
 
         <!--HydrogenThrusters End-->
@@ -149,8 +149,8 @@
                 <TypeId>Thrust</TypeId>
                 <SubtypeId>LargeBlockSmallThrust</SubtypeId>
             </Id>
-            <ForceMagnitude>720000</ForceMagnitude>
-            <MaxPowerConsumption>5.538</MaxPowerConsumption>
+            <ForceMagnitude>360000</ForceMagnitude>
+            <MaxPowerConsumption>2.76923</MaxPowerConsumption>
         </Definition>
 
         <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
@@ -158,8 +158,8 @@
                 <TypeId>Thrust</TypeId>
                 <SubtypeId>LargeBlockSmallThrustSciFi</SubtypeId>
             </Id>
-            <ForceMagnitude>720000</ForceMagnitude>
-            <MaxPowerConsumption>5.538</MaxPowerConsumption>
+            <ForceMagnitude>360000</ForceMagnitude>
+            <MaxPowerConsumption>2.76923</MaxPowerConsumption>
         </Definition>
 
         <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
@@ -167,8 +167,8 @@
                 <TypeId>Thrust</TypeId>
                 <SubtypeId>LargeBlockSmallModularThruster</SubtypeId>
             </Id>
-            <ForceMagnitude>720000</ForceMagnitude>
-            <MaxPowerConsumption>5.538</MaxPowerConsumption>
+            <ForceMagnitude>360000</ForceMagnitude>
+            <MaxPowerConsumption>2.76923</MaxPowerConsumption>
         </Definition>
 
         <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
@@ -177,7 +177,7 @@
                 <SubtypeId>SmallBlockLargeThrust</SubtypeId>
             </Id>
             <ForceMagnitude>432000</ForceMagnitude>
-            <MaxPowerConsumption>3.456</MaxPowerConsumption>
+            <MaxPowerConsumption>3.32308</MaxPowerConsumption>
         </Definition>
 
         <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
@@ -186,7 +186,7 @@
                 <SubtypeId>SmallBlockLargeThrustSciFi</SubtypeId>
             </Id>
             <ForceMagnitude>432000</ForceMagnitude>
-            <MaxPowerConsumption>3.456</MaxPowerConsumption>
+            <MaxPowerConsumption>3.32308</MaxPowerConsumption>
         </Definition>
 
         <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
@@ -195,7 +195,7 @@
                 <SubtypeId>SmallBlockLargeModularThruster</SubtypeId>
             </Id>
             <ForceMagnitude>432000</ForceMagnitude>
-            <MaxPowerConsumption>3.456</MaxPowerConsumption>
+            <MaxPowerConsumption>3.32308</MaxPowerConsumption>
         </Definition>
 
         <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
@@ -203,8 +203,8 @@
                 <TypeId>Thrust</TypeId>
                 <SubtypeId>SmallBlockSmallThrust</SubtypeId>
             </Id>
-            <ForceMagnitude>72000</ForceMagnitude>
-            <MaxPowerConsumption>0.686</MaxPowerConsumption>
+            <ForceMagnitude>36000</ForceMagnitude>
+            <MaxPowerConsumption>0.32727</MaxPowerConsumption>
         </Definition>
 
         <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
@@ -212,8 +212,8 @@
                 <TypeId>Thrust</TypeId>
                 <SubtypeId>SmallBlockSmallThrustSciFi</SubtypeId>
             </Id>
-            <ForceMagnitude>72000</ForceMagnitude>
-            <MaxPowerConsumption>0.686</MaxPowerConsumption>
+            <ForceMagnitude>36000</ForceMagnitude>
+            <MaxPowerConsumption>0.32727</MaxPowerConsumption>
         </Definition>
 
         <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
@@ -221,8 +221,8 @@
                 <TypeId>Thrust</TypeId>
                 <SubtypeId>SmallBlockSmallModularThruster</SubtypeId>
             </Id>
-            <ForceMagnitude>72000</ForceMagnitude>
-            <MaxPowerConsumption>0.686</MaxPowerConsumption>
+            <ForceMagnitude>36000</ForceMagnitude>
+            <MaxPowerConsumption>0.32727</MaxPowerConsumption>
         </Definition>
 
         <!--IonThrusters End-->
@@ -271,7 +271,7 @@
                 <SubtypeId>SmallBlockLargeAtmosphericThrust</SubtypeId>
             </Id>
             <ForceMagnitude>648000</ForceMagnitude>
-            <MaxPowerConsumption>2.592</MaxPowerConsumption>
+            <MaxPowerConsumption>2.16</MaxPowerConsumption>
         </Definition>
 
         <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
@@ -280,7 +280,7 @@
                 <SubtypeId>SmallBlockLargeAtmosphericThrustSciFi</SubtypeId>
             </Id>
             <ForceMagnitude>648000</ForceMagnitude>
-            <MaxPowerConsumption>2.592</MaxPowerConsumption>
+            <MaxPowerConsumption>2.16</MaxPowerConsumption>
         </Definition>
 
         <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
@@ -289,7 +289,7 @@
                 <SubtypeId>SmallBlockSmallAtmosphericThrust</SubtypeId>
             </Id>
             <ForceMagnitude>72000</ForceMagnitude>
-            <MaxPowerConsumption>0.480</MaxPowerConsumption>
+            <MaxPowerConsumption>0.36</MaxPowerConsumption>
         </Definition>
 
         <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
@@ -298,7 +298,7 @@
                 <SubtypeId>SmallBlockSmallAtmosphericThrustSciFi</SubtypeId>
             </Id>
             <ForceMagnitude>72000</ForceMagnitude>
-            <MaxPowerConsumption>0.480</MaxPowerConsumption>
+            <MaxPowerConsumption>0.36</MaxPowerConsumption>
         </Definition>
 
         <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
@@ -333,8 +333,8 @@
                 <TypeId>Thrust</TypeId>
                 <SubtypeId>LargeBlockSmallFlatAtmosphericThrust</SubtypeId>
             </Id>
-            <ForceMagnitude>267000</ForceMagnitude>
-            <MaxPowerConsumption>0.889</MaxPowerConsumption>
+            <ForceMagnitude>266667</ForceMagnitude>
+            <MaxPowerConsumption>0.88889</MaxPowerConsumption>
         </Definition>
 
         <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
@@ -342,8 +342,8 @@
                 <TypeId>Thrust</TypeId>
                 <SubtypeId>LargeBlockSmallFlatAtmosphericThrustDShape</SubtypeId>
             </Id>
-            <ForceMagnitude>267000</ForceMagnitude>
-            <MaxPowerConsumption>0.889</MaxPowerConsumption>
+            <ForceMagnitude>266667</ForceMagnitude>
+            <MaxPowerConsumption>0.88889</MaxPowerConsumption>
         </Definition>
 
         <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
@@ -351,8 +351,8 @@
                 <TypeId>Thrust</TypeId>
                 <SubtypeId>LargeBlockSmallFlatAtmosphericThrustRound</SubtypeId>
             </Id>
-            <ForceMagnitude>267000</ForceMagnitude>
-            <MaxPowerConsumption>0.889</MaxPowerConsumption>
+            <ForceMagnitude>266667</ForceMagnitude>
+            <MaxPowerConsumption>0.88889</MaxPowerConsumption>
         </Definition>
 
         <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
@@ -361,7 +361,7 @@
                 <SubtypeId>SmallBlockLargeFlatAtmosphericThrust</SubtypeId>
             </Id>
             <ForceMagnitude>240000</ForceMagnitude>
-            <MaxPowerConsumption>.960</MaxPowerConsumption>
+            <MaxPowerConsumption>0.8</MaxPowerConsumption>
         </Definition>
 
         <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
@@ -370,7 +370,7 @@
                 <SubtypeId>SmallBlockLargeFlatAtmosphericThrustDShape</SubtypeId>
             </Id>
             <ForceMagnitude>240000</ForceMagnitude>
-            <MaxPowerConsumption>.960</MaxPowerConsumption>
+            <MaxPowerConsumption>0.8</MaxPowerConsumption>
         </Definition>
 
         <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
@@ -379,7 +379,7 @@
                 <SubtypeId>SmallBlockLargeFlatAtmosphericThrustRound</SubtypeId>
             </Id>
             <ForceMagnitude>240000</ForceMagnitude>
-            <MaxPowerConsumption>.960</MaxPowerConsumption>
+            <MaxPowerConsumption>0.8</MaxPowerConsumption>
         </Definition>
 
         <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
@@ -387,8 +387,8 @@
                 <TypeId>Thrust</TypeId>
                 <SubtypeId>SmallBlockSmallFlatAtmosphericThrust</SubtypeId>
             </Id>
-            <ForceMagnitude>26700</ForceMagnitude>
-            <MaxPowerConsumption>0.178</MaxPowerConsumption>
+            <ForceMagnitude>26667</ForceMagnitude>
+            <MaxPowerConsumption>0.13333</MaxPowerConsumption>
         </Definition>
 
         <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
@@ -396,8 +396,8 @@
                 <TypeId>Thrust</TypeId>
                 <SubtypeId>SmallBlockSmallFlatAtmosphericThrustDShape</SubtypeId>
             </Id>
-            <ForceMagnitude>26700</ForceMagnitude>
-            <MaxPowerConsumption>0.178</MaxPowerConsumption>
+            <ForceMagnitude>26667</ForceMagnitude>
+            <MaxPowerConsumption>0.13333</MaxPowerConsumption>
         </Definition>
 
         <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
@@ -405,8 +405,8 @@
                 <TypeId>Thrust</TypeId>
                 <SubtypeId>SmallBlockSmallFlatAtmosphericThrustRound</SubtypeId>
             </Id>
-            <ForceMagnitude>26700</ForceMagnitude>
-            <MaxPowerConsumption>0.178</MaxPowerConsumption>
+            <ForceMagnitude>26667</ForceMagnitude>
+            <MaxPowerConsumption>0.13333</MaxPowerConsumption>
         </Definition>
 
         <!--AtmoThrusters End-->
@@ -428,7 +428,7 @@
                 <SubtypeId>SmallBlockPrototechThruster</SubtypeId>
             </Id>
             <ForceMagnitude>1296000</ForceMagnitude>
-            <MaxPowerConsumption>5.6</MaxPowerConsumption>
+            <MaxPowerConsumption>5.53846</MaxPowerConsumption>
         </Definition>
 
         <!--Prototech Thrusters End-->

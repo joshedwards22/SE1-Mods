@@ -32,6 +32,9 @@
         <MountPoint Side="Right" StartX="0.2" StartY="0.2" EndX="0.8" EndY="0.8" />
       </MountPoints>
       <BlockPairName>ConveyorTubeElbow</BlockPairName>
+      <MirroringX>HalfY</MirroringX>
+      <MirroringY>MinusHalfX</MirroringY>
+      <MirroringZ>MinusHalfY</MirroringZ>
       <EdgeType>Light</EdgeType>
       <BuildTimeSeconds>7</BuildTimeSeconds>
       <DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
@@ -73,6 +76,8 @@
         <MountPoint Side="Right" StartX="0.2" StartY="0.2" EndX="0.8" EndY="0.8" />
       </MountPoints>
       <BlockPairName>ConveyorTubeCross</BlockPairName>
+      <MirroringY>Z</MirroringY>
+      <MirroringZ>Y</MirroringZ>
       <EdgeType>Light</EdgeType>
       <BuildTimeSeconds>7</BuildTimeSeconds>
       <DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
@@ -111,6 +116,9 @@
         <MountPoint Side="Left" StartX="0.15" StartY="0.15" EndX="0.85" EndY="0.85" />
       </MountPoints>
       <BlockPairName>ConveyorTubeElbowSmall</BlockPairName>
+      <MirroringX>MinusHalfY</MirroringX>
+      <MirroringY>MinusHalfX</MirroringY>
+      <MirroringZ>HalfY</MirroringZ>
       <EdgeType>Light</EdgeType>
       <BuildTimeSeconds>3</BuildTimeSeconds>
       <DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
@@ -150,6 +158,8 @@
         <MountPoint Side="Back" StartX="0.15" StartY="0.15" EndX="0.85" EndY="0.85" />
       </MountPoints>
       <BlockPairName>ConveyorTubeCrossSmall</BlockPairName>
+      <MirroringY>Z</MirroringY>
+      <MirroringZ>Y</MirroringZ>
       <EdgeType>Light</EdgeType>
       <BuildTimeSeconds>3</BuildTimeSeconds>
       <DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
@@ -198,6 +208,7 @@
         <MountPoint Side="Right" StartX="0.2" StartY="0.4" EndX="0.4" EndY="2.6" />
         <MountPoint Side="Right" StartX="2.6" StartY="0.4" EndX="2.8" EndY="2.6" />
       </MountPoints>
+      <AutorotateMode>OppositeDirections</AutorotateMode>
       <MirroringY>Z</MirroringY>
       <MirroringZ>Y</MirroringZ>
       <EmissiveColorPreset>Default</EmissiveColorPreset>
@@ -234,6 +245,8 @@
         <Model BuildPercentUpperBound="1.00" File="Models\Cubes\small\ConveyorTubeTMedium_BS2.mwm" />
       </BuildProgressModels>
       <BlockPairName>ConveyorTubeT</BlockPairName>
+      <MirroringY>Z</MirroringY>
+      <MirroringZ>Y</MirroringZ>
       <EdgeType>Light</EdgeType>
       <BuildTimeSeconds>6</BuildTimeSeconds>
       <MountPoints>
@@ -283,6 +296,9 @@
         <Model BuildPercentUpperBound="1.00" File="Models\Cubes\small\ConveyorTubeElbowMedium_BS2.mwm" />
       </BuildProgressModels>
       <BlockPairName>ConveyorTubeElbow</BlockPairName>
+      <MirroringX>HalfY</MirroringX>
+      <MirroringY>MinusHalfX</MirroringY>
+      <MirroringZ>MinusHalfY</MirroringZ>
       <EdgeType>Light</EdgeType>
       <BuildTimeSeconds>6</BuildTimeSeconds>
       <MountPoints>
@@ -332,6 +348,8 @@
         <Model BuildPercentUpperBound="1.00" File="Models\Cubes\small\ConveyorTubeCrossMedium_BS2.mwm" />
       </BuildProgressModels>
       <BlockPairName>ConveyorTubeCross</BlockPairName>
+      <MirroringY>Z</MirroringY>
+      <MirroringZ>Y</MirroringZ>
       <EdgeType>Light</EdgeType>
       <BuildTimeSeconds>6</BuildTimeSeconds>
       <MountPoints>
@@ -412,6 +430,8 @@
         <MountPoint Side="Front" StartX="0.35" StartY="2.65" EndX="2.65" EndY="2.75" />
       </MountPoints>
       <BlockPairName>Conveyor</BlockPairName>
+      <MirroringY>Z</MirroringY>
+      <MirroringZ>Y</MirroringZ>
       <EdgeType>Light</EdgeType>
       <BuildTimeSeconds>14</BuildTimeSeconds>
       <DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
@@ -799,7 +819,6 @@
         <MountPoint Side="Front" StartX="0.2" StartY="0.1" EndX="0.8" EndY="0.2" />
         <MountPoint Side="Front" StartX="0.2" StartY="0.8" EndX="0.8" EndY="0.9" />
       </MountPoints>
-      <CriticalComponent Subtype="Construction" Index="0" />
       <BuildProgressModels>
         <Model BuildPercentUpperBound="0.50" File="Models\Cubes\small\ConveyorTubeSmall_BS1.mwm" />
         <Model BuildPercentUpperBound="1.00" File="Models\Cubes\small\ConveyorTubeSmall_BS2.mwm" />
@@ -844,7 +863,6 @@
         <MountPoint Side="Front" StartX="0.2" StartY="0.1" EndX="0.8" EndY="0.2" />
         <MountPoint Side="Front" StartX="0.2" StartY="0.8" EndX="0.8" EndY="0.9" />
       </MountPoints>
-      <CriticalComponent Subtype="Construction" Index="0" />
       <BuildProgressModels>
         <Model BuildPercentUpperBound="0.50" File="Models\Cubes\small\ConveyorTubeSmall3x_BS1.mwm" />
         <Model BuildPercentUpperBound="1.00" File="Models\Cubes\small\ConveyorTubeSmall3x_BS2.mwm" />

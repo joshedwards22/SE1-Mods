@@ -9,7 +9,7 @@
       <DisplayName>Conveyor Pipe Elbow</DisplayName>
       <Icon>Textures\GUI\Icons\cubes\PipeElbow.dds</Icon>
       <Description>Description_ConveyorTube</Description>
-      <GuiVisible>true</GuiVisible>
+      <GuiVisible>false</GuiVisible>
       <CubeSize>Large</CubeSize>
       <BlockTopology>TriangleMesh</BlockTopology>
       <Size x="1" y="1" z="1" />
@@ -24,9 +24,13 @@
       <CriticalComponent Subtype="Motor" Index="0" />
       <BuildProgressModels>
         <Model BuildPercentUpperBound="0.33" File="Models\Cubes\large\PipeElbow_BS1.mwm" />
-        <Model BuildPercentUpperBound="1.00" File="Models\Cubes\large\PipeElbow_BS2.mwm" />
+        <Model BuildPercentUpperBound="0.66" File="Models\Cubes\large\PipeElbow_BS2.mwm" />
+        <Model BuildPercentUpperBound="1.00" File="Models\Cubes\large\PipeElbow_BS3.mwm" />
       </BuildProgressModels>
       <BlockPairName>PipeElbow</BlockPairName>
+      <MirroringX>HalfY</MirroringX>
+      <MirroringY>MinusHalfX</MirroringY>
+      <MirroringZ>MinusHalfY</MirroringZ>
       <EdgeType>Light</EdgeType>
       <BuildTimeSeconds>10</BuildTimeSeconds>
       <MountPoints>
@@ -186,8 +190,6 @@
         <MountPoint Side="Top" StartX="0.2" StartY="0.3" EndX="0.3" EndY="0.7" />
         <MountPoint Side="Top" StartX="0.7" StartY="0.3" EndX="0.8" EndY="0.7" />
       </MountPoints>
-      <DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
-      <DamagedSound>ParticleHeavyMech</DamagedSound>
       <EmissiveColorPreset>Default</EmissiveColorPreset>
       <DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
       <DamagedSound>ParticleHeavyMech</DamagedSound>
@@ -239,8 +241,6 @@
         <MountPoint Side="Top" StartX="0.2" StartY="0.3" EndX="0.3" EndY="0.7" />
         <MountPoint Side="Top" StartX="0.7" StartY="0.3" EndX="0.8" EndY="0.7" />
       </MountPoints>
-      <DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
-      <DamagedSound>ParticleHeavyMech</DamagedSound>
       <EmissiveColorPreset>Default</EmissiveColorPreset>
       <DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
       <DamagedSound>ParticleHeavyMech</DamagedSound>
@@ -292,8 +292,6 @@
         <MountPoint Side="Top" StartX="0.2" StartY="0.3" EndX="0.3" EndY="0.7" />
         <MountPoint Side="Top" StartX="0.7" StartY="0.3" EndX="0.8" EndY="0.7" />
       </MountPoints>
-      <DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
-      <DamagedSound>ParticleHeavyMech</DamagedSound>
       <EmissiveColorPreset>Default</EmissiveColorPreset>
       <DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
       <DamagedSound>ParticleHeavyMech</DamagedSound>
@@ -345,8 +343,6 @@
         <MountPoint Side="Top" StartX="0.2" StartY="0.3" EndX="0.3" EndY="0.7" />
         <MountPoint Side="Top" StartX="0.7" StartY="0.3" EndX="0.8" EndY="0.7" />
       </MountPoints>
-      <DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
-      <DamagedSound>ParticleHeavyMech</DamagedSound>
       <EmissiveColorPreset>Default</EmissiveColorPreset>
       <DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
       <DamagedSound>ParticleHeavyMech</DamagedSound>
@@ -398,8 +394,6 @@
         <MountPoint Side="Right" StartX="0.2" StartY="0.3" EndX="0.3" EndY="0.7" />
         <MountPoint Side="Right" StartX="0.7" StartY="0.3" EndX="0.8" EndY="0.7" />
       </MountPoints>
-      <DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
-      <DamagedSound>ParticleHeavyMech</DamagedSound>
       <EmissiveColorPreset>Default</EmissiveColorPreset>
       <DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
       <DamagedSound>ParticleHeavyMech</DamagedSound>

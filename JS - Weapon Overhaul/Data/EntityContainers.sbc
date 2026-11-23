@@ -5,37 +5,10 @@
         <Container>
             <Id>
                 <TypeId>LargeGatlingTurret</TypeId>
-                <SubtypeId></SubtypeId>
-            </Id>
-            <DefaultComponents>
-                <Component BuilderType="MyObjectBuilder_Inventory" SubtypeId="AmmoFilterLargeGatlingTurret" ForceCreate="true"/>
-            </DefaultComponents>
-        </Container>
-        <Container>
-            <Id>
-                <TypeId>LargeMissileTurret</TypeId>
-                <SubtypeId></SubtypeId>
-            </Id>
-            <DefaultComponents>
-                <Component BuilderType="MyObjectBuilder_Inventory" SubtypeId="AmmoFilterLargeRocketTurret" ForceCreate="true"/>
-            </DefaultComponents>
-        </Container>
-        <Container>
-            <Id>
-                <TypeId>LargeGatlingTurret</TypeId>
                 <SubtypeId>LargeAutocannonTurret</SubtypeId>
             </Id>
             <DefaultComponents>
-                <Component BuilderType="MyObjectBuilder_Inventory" SubtypeId="AmmoFilterSmallAutocannon" ForceCreate="true"/>
-            </DefaultComponents>
-        </Container>
-        <Container>
-            <Id>
-                <TypeId>LargeMissileTurret</TypeId>
-                <SubtypeId>CoilgunTurret</SubtypeId>
-            </Id>
-            <DefaultComponents>
-                <Component BuilderType="MyObjectBuilder_Inventory" SubtypeId="AmmoFilterCoilgun" ForceCreate="true"/>
+                <Component BuilderType="MyObjectBuilder_Inventory" SubtypeId="AmmoFilterLargeAutocannon" ForceCreate="true"/>
             </DefaultComponents>
         </Container>
         <Container>
@@ -44,16 +17,25 @@
                 <SubtypeId>RailgunTurret</SubtypeId>
             </Id>
             <DefaultComponents>
-                <Component BuilderType="MyObjectBuilder_Inventory" SubtypeId="AmmoFilterLargeRailgun" ForceCreate="true"/>
+                <Component BuilderType="MyObjectBuilder_Inventory" SubtypeId="AmmoFilterRailgunTurret" ForceCreate="true"/>
             </DefaultComponents>
         </Container>
         <Container>
             <Id>
-                <TypeId>SmallMissileLauncher</TypeId>
-                <SubtypeId>TorpedoLauncher</SubtypeId>
+                <TypeId>SmallMissileLauncherReload</TypeId>
+                <SubtypeId>SmallBlockLargeCalibreGun</SubtypeId>
             </Id>
             <DefaultComponents>
-                <Component BuilderType="MyObjectBuilder_Inventory" SubtypeId="AmmoFilterTorpedo" ForceCreate="true"/>
+                <Component BuilderType="MyObjectBuilder_Inventory" SubtypeId="AmmoFilterLargeArtilleryGun" ForceCreate="true"/>
+            </DefaultComponents>
+        </Container>
+        <Container>
+            <Id>
+                <TypeId>SmallMissileLauncherReload</TypeId>
+                <SubtypeId>SmallBlockLargeCalibreGunType2</SubtypeId>
+            </Id>
+            <DefaultComponents>
+                <Component BuilderType="MyObjectBuilder_Inventory" SubtypeId="AmmoFilterLargeArtilleryGun" ForceCreate="true"/>
             </DefaultComponents>
         </Container>
     </EntityContainers>

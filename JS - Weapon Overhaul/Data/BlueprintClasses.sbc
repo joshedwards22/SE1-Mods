@@ -2,10 +2,9 @@
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <BlueprintClassEntries>
-    <Entry Class="EliteConsumables" BlueprintSubtypeId="Torpedo" />
     <Entry Class="LargeBlocks" BlueprintSubtypeId="LargeGatlingTurret/LargeAutocannonTurret" />
-    <Entry Class="LargeBlocks" BlueprintSubtypeId="LargeMissileTurret/CoilgunTurret" />
     <Entry Class="LargeBlocks" BlueprintSubtypeId="LargeMissileTurret/RailgunTurret" />
-    <Entry Class="LargeBlocks" BlueprintSubtypeId="SmallMissileLauncher/TorpedoLauncher" />
+    <Entry Class="SmallBlocks" BlueprintSubtypeId="SmallMissileLauncherReload/SmallBlockLargeCalibreGun" />
+    <Entry Class="SmallBlocks" BlueprintSubtypeId="SmallMissileLauncherReload/SmallBlockLargeCalibreGunType2" />
   </BlueprintClassEntries>
 </Definitions>

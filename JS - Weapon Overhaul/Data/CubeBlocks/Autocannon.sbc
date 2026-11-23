@@ -8,15 +8,14 @@
                 <SubtypeId>LargeAutocannonTurret</SubtypeId>
             </Id>
             <DisplayName>DisplayName_Block_AutoCannonTurret</DisplayName>
-            <Description>Medium rate of fire auto loading cannon. Able to shred small targets and deal consistent damage to large targets.
-            
-Range: 1500m</Description>
+            <Description>Description_AutoCannonTurret</Description>
             <Icon>Textures\GUI\Icons\Cubes\LargeAutocannonTurret.dds</Icon>
             <CubeSize>Large</CubeSize>
+            <PlaceDecals>false</PlaceDecals>
             <BlockTopology>TriangleMesh</BlockTopology>
-            <Size x="1" y="3" z="1"/>
+            <Size x="3" y="3" z="3"/>
             <ModelOffset x="0" y="0" z="0" />
-            <Model>Models\Cubes\large\AutocannonTurret\LargeAutocannonTurret.mwm</Model>
+            <Model>Models\Cubes\large\AutocannonTurret\AutocannonTurret.mwm</Model>
             <UseModelIntersection>true</UseModelIntersection>
             <Components>
                 <Component Subtype="SteelPlate" Count="10" />
@@ -30,12 +29,12 @@ Range: 1500m</Description>
             </Components>
             <CriticalComponent Subtype="Computer" Index="0" />
             <MountPoints>
-                <MountPoint Side="Bottom" StartX="0" StartY="0" EndX="1" EndY="1" />
+                <MountPoint Side="Bottom" StartX="1" StartY="1" EndX="2" EndY="2" Default="true" />
             </MountPoints>
             <BuildProgressModels>
-                <Model BuildPercentUpperBound="0.33" File="Models\Cubes\large\AutocannonTurret\LargeAutocannonTurret_BS1.mwm"/>
-                <Model BuildPercentUpperBound="0.67" File="Models\Cubes\large\AutocannonTurret\LargeAutocannonTurret_BS2.mwm"/>
-                <Model BuildPercentUpperBound="1.00" File="Models\Cubes\large\AutocannonTurret\LargeAutocannonTurret_BS3.mwm"/>
+                <Model BuildPercentUpperBound="0.33" File="Models\Cubes\large\AutocannonTurret\AutocannonTurret_BS1.mwm"/>
+                <Model BuildPercentUpperBound="0.67" File="Models\Cubes\large\AutocannonTurret\AutocannonTurret_BS2.mwm"/>
+                <Model BuildPercentUpperBound="1.00" File="Models\Cubes\large\AutocannonTurret\AutocannonTurret_BS3.mwm"/>
             </BuildProgressModels>
             <VoxelPlacement>
                 <StaticMode>
@@ -56,19 +55,20 @@ Range: 1500m</Description>
             <BuildTimeSeconds>30</BuildTimeSeconds>
             <OverlayTexture>Textures\GUI\Screens\turret_overlay.dds</OverlayTexture>
             <WeaponDefinitionId Subtype="LargeAutocannonTurret" />
+            <EnabledTargetingOptions>LargeShips SmallShips Players Stations Asteroids Missiles Enemies</EnabledTargetingOptions>
             <HiddenTargetingOptions>Friends</HiddenTargetingOptions>
             <InventoryMaxVolume>0.384</InventoryMaxVolume>
             <DamageEffectName>Damage_WeapExpl_Damaged</DamageEffectName>
             <DamagedSound>ParticleWeapExpl</DamagedSound>
             <ResourceSinkGroup>Defense</ResourceSinkGroup>
-            <MinElevationDegrees>-43</MinElevationDegrees>
-            <MaxElevationDegrees>90</MaxElevationDegrees>
+            <MinElevationDegrees>-40</MinElevationDegrees>
+            <MaxElevationDegrees>85</MaxElevationDegrees>
             <MinAzimuthDegrees>-180</MinAzimuthDegrees>
             <MaxAzimuthDegrees>180</MaxAzimuthDegrees>
             <RotationSpeed>0.001</RotationSpeed>
-            <ElevationSpeed>0.001 </ElevationSpeed>
+            <ElevationSpeed>0.001</ElevationSpeed>
             <IdleRotation>false</IdleRotation>
-            <MaxRangeMeters>1500</MaxRangeMeters>
+            <MaxRangeMeters>800</MaxRangeMeters>
             <MinFov>0.1</MinFov>
             <MaxFov>1.04719755</MaxFov>
             <EmissiveColorPreset>Default</EmissiveColorPreset>
@@ -86,8 +86,8 @@ Range: 1500m</Description>
             <TargetingGroups>
                 <string>Weapons</string>
             </TargetingGroups>
+            <MuzzleProjectileDummyName>muzzle_projectile_001</MuzzleProjectileDummyName>
             <CameraDummyName>camera</CameraDummyName>
-            <DLC>Contact</DLC>
         </Definition>
         <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
             <Id>
@@ -95,16 +95,14 @@ Range: 1500m</Description>
                 <SubtypeId>AutoCannonTurret</SubtypeId>
             </Id>
             <DisplayName>DisplayName_Block_AutoCannonTurret</DisplayName>
-            <Icon>Textures\GUI\Icons\Cubes\AutocannonTurret.dds</Icon>
-            <Description>Medium rate of fire auto loading cannon. Able to shred small targets and deal consistent damage to large targets.
-            
-Range: 1500m</Description>
+            <Icon>Textures\GUI\Icons\Cubes\AutocannonTurret_icon.dds</Icon>
+            <Description>Description_AutoCannonTurret</Description>
             <CubeSize>Small</CubeSize>
             <PlaceDecals>false</PlaceDecals>
             <BlockTopology>TriangleMesh</BlockTopology>
             <Size x="5" y="4" z="5" />
             <ModelOffset x="0" y="0" z="0" />
-            <Model>Models\Cubes\small\AutocannonTurret\AutocannonTurret.mwm</Model>
+            <Model>Models\Cubes\small\AutocannonTurret\AutocannonTurret_Base.mwm</Model>
             <UseModelIntersection>true</UseModelIntersection>
             <Components>
                 <Component Subtype="SteelPlate" Count="10" />
@@ -118,15 +116,11 @@ Range: 1500m</Description>
             </Components>
             <CriticalComponent Subtype="Computer" Index="0" />
             <MountPoints>
-                <MountPoint Side="Bottom" StartX="0" StartY="0" EndX="5" EndY="5" Default="true" />
-                <MountPoint Side="Right" StartX="1" StartY="0" EndX="4" EndY="1" />
-                <MountPoint Side="Back" StartX="1" StartY="0" EndX="4" EndY="1" />
-                <MountPoint Side="Left" StartX="1" StartY="0" EndX="4" EndY="1" />
-                <MountPoint Side="Front" StartX="1" StartY="0" EndX="4" EndY="1" />
+                <MountPoint Side="Bottom" StartX="1.3" StartY="1.3" EndX="3.7" EndY="3.7" Default="true" />
             </MountPoints>
             <BuildProgressModels>
-                <Model BuildPercentUpperBound="0.43" File="Models\Cubes\small\AutocannonTurret\AutocannonTurret_BS1.mwm" />
-                <Model BuildPercentUpperBound="1.0" File="Models\Cubes\small\AutocannonTurret\AutocannonTurret_BS2.mwm" />
+                <Model BuildPercentUpperBound="0.43" File="Models\Cubes\small\AutocannonTurret\AutocannonTurret_Base_BS1.mwm" />
+                <Model BuildPercentUpperBound="1.0" File="Models\Cubes\small\AutocannonTurret\AutocannonTurret_Base_BS2.mwm" />
             </BuildProgressModels>
             <VoxelPlacement>
                 <StaticMode>
@@ -147,6 +141,7 @@ Range: 1500m</Description>
             <BuildTimeSeconds>26</BuildTimeSeconds>
             <OverlayTexture>Textures\GUI\Screens\turret_overlay.dds</OverlayTexture>
             <WeaponDefinitionId Subtype="AutocannonTurret" />
+            <EnabledTargetingOptions>LargeShips SmallShips Players Stations Asteroids Missiles Enemies</EnabledTargetingOptions>
             <HiddenTargetingOptions>Friends</HiddenTargetingOptions>
             <InventoryMaxVolume>0.072</InventoryMaxVolume>
             <DamageEffectName>Damage_WeapExpl_Damaged</DamageEffectName>
@@ -158,8 +153,8 @@ Range: 1500m</Description>
             <MaxAzimuthDegrees>180</MaxAzimuthDegrees>
             <RotationSpeed>0.001</RotationSpeed>
             <ElevationSpeed>0.001 </ElevationSpeed>
-            <IdleRotation>false</IdleRotation>
-            <MaxRangeMeters>1500</MaxRangeMeters>
+            <IdleRotation>true</IdleRotation>
+            <MaxRangeMeters>600</MaxRangeMeters>
             <MinFov>0.1</MinFov>
             <MaxFov>1.04719755</MaxFov>
             <EmissiveColorPreset>Default</EmissiveColorPreset>
@@ -180,85 +175,19 @@ Range: 1500m</Description>
                 <dictionary>
                     <item>
                         <Key>Base1</Key>
-                        <Value>MissileTurretBase1</Value>
+                        <Value>AutocannonTurret_Base1</Value>
                     </item>
                     <item>
                         <Key>Base2</Key>
-                        <Value>MissileTurretBase1/MissileTurretBarrels</Value>
+                        <Value>AutocannonTurret_Base1/AutocannonTurret_Barrel</Value>
                     </item>
                     <item>
                         <Key>Barrel</Key>
-                        <Value>MissileTurretBase1/MissileTurretBarrels</Value>
+                        <Value>AutocannonTurret_Base1/AutocannonTurret_Barrel</Value>
                     </item>
                 </dictionary>
             </SubpartPairing>
-            <CameraDummyName>camera</CameraDummyName>
-            <DLC>Contact</DLC>
-        </Definition>
-        <Definition xsi:type="MyObjectBuilder_WeaponBlockDefinition">
-            <Id>
-                <TypeId>SmallGatlingGun</TypeId>
-                <SubtypeId>SmallBlockAutocannon</SubtypeId>
-            </Id>
-            <DisplayName>DisplayName_Block_Autocannon</DisplayName>
-            <Icon>Textures\GUI\Icons\Cubes\AutoCannon.dds</Icon>
-            <Description>Medium rate of fire auto loading cannon. Able to shred small targets and deal consistent damage to large targets.
-            
-Range: 1500m</Description>
-            <CubeSize>Small</CubeSize>
-            <GuiVisible>false</GuiVisible>
-            <BlockTopology>TriangleMesh</BlockTopology>
-            <Size x="1" y="1" z="5" />
-            <ModelOffset x="0" y="0" z="0" />
-            <Model>Models\Cubes\small\Autocannon\Autocannon.mwm</Model>
-            <Components>
-                <Component Subtype="SteelPlate" Count="2" />
-                <Component Subtype="Construction" Count="2" />
-                <Component Subtype="MetalGrid" Count="2" />
-                <Component Subtype="SmallTube" Count="2" />
-                <Component Subtype="Motor" Count="1" />
-                <Component Subtype="Computer" Count="1" />
-                <Component Subtype="SteelPlate" Count="4" />
-            </Components>
-            <CriticalComponent Subtype="Computer" Index="0" />
-            <MountPoints>
-                <MountPoint Side="Left" StartX="4" StartY="0" EndX="5" EndY="1" />
-                <MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" />
-                <MountPoint Side="Bottom" StartX="0" StartY="4" EndX="1" EndY="5" />
-                <MountPoint Side="Right" StartX="0" StartY="0" EndX="1" EndY="1" />
-                <MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="1" Default="true" />
-            </MountPoints>
-            <BuildProgressModels>
-                <Model BuildPercentUpperBound="0.50" File="Models\Cubes\small\Autocannon\Autocannon_BS1.mwm" />
-                <Model BuildPercentUpperBound="1.00" File="Models\Cubes\small\Autocannon\Autocannon_BS2.mwm" />
-            </BuildProgressModels>
-            <MirroringY>Z</MirroringY>
-            <MirroringZ>Y</MirroringZ>
-            <BlockPairName>Autocannon</BlockPairName>
-            <Center x="0" y="0" z="4" />
-            <BuildTimeSeconds>14</BuildTimeSeconds>
-            <EdgeType>Light</EdgeType>
-            <WeaponDefinitionId Subtype="Autocannon" />
-            <ResourceSinkGroup>Defense</ResourceSinkGroup>
-            <InventoryMaxVolume>0.072</InventoryMaxVolume>
-            <DamageEffectName>Damage_WeapExpl_Damaged</DamageEffectName>
-            <DamagedSound>ParticleWeapExpl</DamagedSound>
-            <DestroyEffect>BlockDestroyedExplosion_Small</DestroyEffect>
-            <DestroySound>WepSmallWarheadExpl</DestroySound>
-            <PCU>80</PCU>
-            <TargetingGroups>
-                <string>Weapons</string>
-            </TargetingGroups>
-            <DestroyEffectOffset>
-                <X>0</X>
-                <Y>0</Y>
-                <Z>1</Z>
-            </DestroyEffectOffset>
-            <DamageEffectOffset>
-                <X>0</X>
-                <Y>0</Y>
-                <Z>1</Z>
-            </DamageEffectOffset>
+            <MuzzleProjectileDummyName>muzzle_projectile</MuzzleProjectileDummyName>
         </Definition>
     </CubeBlocks>
 </Definitions>

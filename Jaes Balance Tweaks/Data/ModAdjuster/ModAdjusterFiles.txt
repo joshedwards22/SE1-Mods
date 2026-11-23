@@ -2,4 +2,3 @@ Tools.xml
 Reactors.xml
 Prototech.xml
 Generators.xml
-Lights.xml

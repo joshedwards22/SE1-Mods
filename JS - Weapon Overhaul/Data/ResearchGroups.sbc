@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <ResearchGroups>
+        <ResearchGroup xsi:type="ResearchGroup">
+            <Id Type="MyObjectBuilder_ResearchGroupDefinition" Subtype="8" />
+            <Members>
+                <BlockId Type="MyObjectBuilder_LargeGatlingTurret" Subtype="" />
+                <BlockId Type="MyObjectBuilder_LargeGatlingTurret" Subtype="SmallGatlingTurret" />
+                <BlockId Type="MyObjectBuilder_LargeGatlingTurret" Subtype="LargeGatlingTurretReskin" />
+                <BlockId Type="MyObjectBuilder_LargeGatlingTurret" Subtype="SmallGatlingTurretReskin" />
+                <BlockId Type="MyObjectBuilder_LargeMissileTurret" Subtype="" />
+                <BlockId Type="MyObjectBuilder_LargeMissileTurret" Subtype="SmallMissileTurret" />
+                <BlockId Type="MyObjectBuilder_LargeMissileTurret" Subtype="LargeMissileTurretReskin" />
+                <BlockId Type="MyObjectBuilder_LargeMissileTurret" Subtype="SmallMissileTurretReskin" />
+                <BlockId Type="MyObjectBuilder_LargeMissileTurret" Subtype="LargeCalibreTurret" />
+                <BlockId Type="MyObjectBuilder_LargeMissileTurret" Subtype="LargeCalibreTurretType2" />
+                <BlockId Type="MyObjectBuilder_LargeMissileTurret" Subtype="RailgunTurret" />
+                <BlockId Type="MyObjectBuilder_LargeMissileTurret" Subtype="LargeBlockMediumCalibreTurret" />
+                <BlockId Type="MyObjectBuilder_LargeMissileTurret" Subtype="SmallBlockMediumCalibreTurret" />
+                <BlockId Type="MyObjectBuilder_LargeMissileTurret" Subtype="LargeBlockMediumCalibreTurretType2" />
+                <BlockId Type="MyObjectBuilder_LargeMissileTurret" Subtype="SmallBlockMediumCalibreTurretType2" />
+                <BlockId Type="MyObjectBuilder_LargeGatlingTurret" Subtype="LargeAutocannonTurret" />
+                <BlockId Type="MyObjectBuilder_LargeGatlingTurret" Subtype="AutoCannonTurret" />
+                <BlockId Type="MyObjectBuilder_LargeGatlingTurret" Subtype="AutoCannonTurretType2" />
+            </Members>
+        </ResearchGroup>
+        <ResearchGroup xsi:type="ResearchGroup">
+            <Id Type="MyObjectBuilder_ResearchGroupDefinition" Subtype="17" />
+            <Members>
+                <BlockId Type="MyObjectBuilder_SmallMissileLauncher" Subtype="LargeMissileLauncher" />
+                <BlockId Type="MyObjectBuilder_SmallMissileLauncher" Subtype="" />
+                <BlockId Type="MyObjectBuilder_SmallMissileLauncher" Subtype="SmallMissileLauncherWarfare2" />
+                <BlockId Type="MyObjectBuilder_SmallMissileLauncher" Subtype="LargeBlockLargeCalibreGun" />
+                <BlockId Type="MyObjectBuilder_SmallMissileLauncher" Subtype="LargeBlockLargeCalibreGunType2" />
+                <BlockId Type="MyObjectBuilder_SmallMissileLauncherReload" Subtype="SmallBlockLargeCalibreGun" />
+                <BlockId Type="MyObjectBuilder_SmallMissileLauncherReload" Subtype="SmallBlockLargeCalibreGunType2" />
+                <BlockId Type="MyObjectBuilder_SmallMissileLauncherReload" Subtype="SmallBlockMediumCalibreGun" />
+                <BlockId Type="MyObjectBuilder_SmallMissileLauncherReload" Subtype="SmallBlockMediumCalibreGunType2" />
+                <BlockId Type="MyObjectBuilder_SmallMissileLauncherReload" Subtype="LargeRailgun" />
+                <BlockId Type="MyObjectBuilder_SmallMissileLauncherReload" Subtype="SmallRailgun" />
+            </Members>
+        </ResearchGroup>
+    </ResearchGroups>
+</Definitions>

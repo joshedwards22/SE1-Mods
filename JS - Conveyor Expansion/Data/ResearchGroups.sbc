@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ResearchGroups>
+    <ResearchGroup xsi:type="ResearchGroup">
+      <Id Type="MyObjectBuilder_ResearchGroupDefinition" Subtype="25" />
+      <Members>
+        <!-- Vanilla Group 25 members (preserved so mod does not overwrite them) -->
+        <BlockId Type="MyObjectBuilder_Conveyor" Subtype="SmallBlockConveyor" />
+        <BlockId Type="MyObjectBuilder_Conveyor" Subtype="LargeBlockConveyor" />
+        <BlockId Type="MyObjectBuilder_ConveyorConnector" Subtype="ConveyorTube" />
+        <BlockId Type="MyObjectBuilder_ConveyorConnector" Subtype="ConveyorTube3X" />
+        <BlockId Type="MyObjectBuilder_ConveyorConnector" Subtype="ConveyorTubeDuct" />
+        <BlockId Type="MyObjectBuilder_ConveyorConnector" Subtype="ConveyorTubeDuct3X" />
+        <BlockId Type="MyObjectBuilder_ConveyorConnector" Subtype="ConveyorTubeDuctCurved" />
+        <BlockId Type="MyObjectBuilder_Conveyor" Subtype="ConveyorTubeDuctT" />
+        <BlockId Type="MyObjectBuilder_ConveyorConnector" Subtype="ConveyorTubeCurved" />
+        <BlockId Type="MyObjectBuilder_Conveyor" Subtype="ConveyorTubeT" />
+        <BlockId Type="MyObjectBuilder_ConveyorConnector" Subtype="ConveyorTubeSmall" />
+        <BlockId Type="MyObjectBuilder_ConveyorConnector" Subtype="ConveyorTubeSmall3X" />
+        <BlockId Type="MyObjectBuilder_ConveyorConnector" Subtype="ConveyorTubeDuctSmall" />
+        <BlockId Type="MyObjectBuilder_ConveyorConnector" Subtype="ConveyorTubeDuctSmall3X" />
+        <BlockId Type="MyObjectBuilder_ConveyorConnector" Subtype="ConveyorTubeDuctSmallCurved" />
+        <BlockId Type="MyObjectBuilder_Conveyor" Subtype="ConveyorTubeDuctSmallT" />
+        <BlockId Type="MyObjectBuilder_ConveyorConnector" Subtype="ConveyorTubeSmallCurved" />
+        <BlockId Type="MyObjectBuilder_Conveyor" Subtype="ConveyorTubeSmallT" />
+        <BlockId Type="MyObjectBuilder_ConveyorConnector" Subtype="ConveyorTubeMedium" />
+        <BlockId Type="MyObjectBuilder_ConveyorConnector" Subtype="ConveyorTubeCurvedMedium" />
+        <BlockId Type="MyObjectBuilder_ConveyorConnector" Subtype="ConveyorFrameMedium" />
+        <BlockId Type="MyObjectBuilder_Conveyor" Subtype="SmallShipConveyorHub" />
+        <BlockId Type="MyObjectBuilder_Conveyor" Subtype="SmallBlockConveyorConverter" />
+        <BlockId Type="MyObjectBuilder_Conveyor" Subtype="LargeBlockConveyorPipeJunction" />
+        <BlockId Type="MyObjectBuilder_Conveyor" Subtype="LargeBlockConveyorPipeIntersection" />
+        <BlockId Type="MyObjectBuilder_Conveyor" Subtype="LargeBlockConveyorPipeT" />
+        <BlockId Type="MyObjectBuilder_ConveyorConnector" Subtype="LargeBlockConveyorPipeSeamless" />
+        <BlockId Type="MyObjectBuilder_ConveyorConnector" Subtype="LargeBlockConveyorPipeFlange" />
+        <BlockId Type="MyObjectBuilder_ConveyorConnector" Subtype="LargeBlockConveyorPipeEnd" />
+        <BlockId Type="MyObjectBuilder_ConveyorConnector" Subtype="LargeBlockConveyorPipeSeamless3X" />
+        <BlockId Type="MyObjectBuilder_ConveyorConnector" Subtype="LargeBlockConveyorPipeFlange3X" />
+        <BlockId Type="MyObjectBuilder_ConveyorConnector" Subtype="LargeBlockConveyorPipeEnd3X" />
+        <BlockId Type="MyObjectBuilder_ConveyorConnector" Subtype="LargeBlockConveyorPipeCorner" />
+        <BlockId Type="MyObjectBuilder_CubeBlock" Subtype="LargeBlockConveyorPipeCap" />
+        <BlockId Type="MyObjectBuilder_CubeBlock" Subtype="LargeBlockConveyorCap" />
+        <BlockId Type="MyObjectBuilder_CubeBlock" Subtype="SmallBlockConveyorCapMedium" />
+        <BlockId Type="MyObjectBuilder_CubeBlock" Subtype="SmallBlockConveyorCap" />
+        <BlockId Type="MyObjectBuilder_Conveyor" Subtype="LargeBlockStructural_PlatformConveyor" />
+        <!-- JS - Conveyor Expansion new blocks -->
+        <BlockId Type="MyObjectBuilder_Conveyor" Subtype="LargeConveyorStraight" />
+        <BlockId Type="MyObjectBuilder_Conveyor" Subtype="LargeConveyorCurved" />
+        <BlockId Type="MyObjectBuilder_Conveyor" Subtype="LargeConveyorT" />
+        <BlockId Type="MyObjectBuilder_Conveyor" Subtype="LargeConveyorElbow" />
+        <BlockId Type="MyObjectBuilder_Conveyor" Subtype="LargeConveyorCross" />
+        <BlockId Type="MyObjectBuilder_Conveyor" Subtype="ConveyorTubeElbow" />
+        <BlockId Type="MyObjectBuilder_Conveyor" Subtype="ConveyorTubeCross" />
+        <BlockId Type="MyObjectBuilder_Conveyor" Subtype="ConveyorTubeDuctElbow" />
+        <BlockId Type="MyObjectBuilder_Conveyor" Subtype="ConveyorTubeDuctCross" />
+        <BlockId Type="MyObjectBuilder_Conveyor" Subtype="LargeBlockConveyorPipeElbow" />
+        <BlockId Type="MyObjectBuilder_Conveyor" Subtype="MediumBlockConveyor" />
+        <BlockId Type="MyObjectBuilder_ConveyorConnector" Subtype="ConveyorTubeMedium3X" />
+        <BlockId Type="MyObjectBuilder_Conveyor" Subtype="ConveyorTubeTMedium" />
+        <BlockId Type="MyObjectBuilder_Conveyor" Subtype="ConveyorTubeElbowMedium" />
+        <BlockId Type="MyObjectBuilder_Conveyor" Subtype="ConveyorTubeCrossMedium" />
+        <BlockId Type="MyObjectBuilder_Conveyor" Subtype="ConveyorTubeSmallElbow" />
+        <BlockId Type="MyObjectBuilder_Conveyor" Subtype="ConveyorTubeSmallCross" />
+        <BlockId Type="MyObjectBuilder_Conveyor" Subtype="ConveyorTubeDuctSmallElbow" />
+        <BlockId Type="MyObjectBuilder_Conveyor" Subtype="ConveyorTubeDuctSmallCross" />
+      </Members>
+    </ResearchGroup>
+  </ResearchGroups>
+</Definitions>

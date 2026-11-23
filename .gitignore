@@ -1,4 +1,14 @@
-.agent
 Mods.code-workspace
-Mod_BaseGame_Diffs*
-244850
+.claude/skills
+
+# Blender auto-backups and temp files
+*.blend1
+*.blend2
+*.blend@
+
+# Python cache
+__pycache__/
+*.pyc
+
+.reviews
+.plans

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    DPS ladder rebalance, applied by ModAdjusterV2 (workshop 3017795356) as field-level patches.
+    No SBC definitions are overridden. Gatling fire rate / reload changes live in Gatling.xml.
+
+    RATIONALE
+    Vanilla burst and reload values were set weapon by weapon, which produced odd results:
+      - Fixed gatlings and autocannons never pause to reload, so they out-damaged their turrets by 30-55%.
+      - Small turrets got longer reloads than large ones (gatling 6 s vs 4 s).
+      - The assault cannon reloaded 6 s after every shot, so the small gun and small turret did less DPS
+        than a gatling, breaking the "bigger caliber = more DPS" trend.
+    Goals:
+      1. Fixed guns and single-barrel turrets of a caliber do the same DPS.
+      2. DPS rises steadily with caliber: gatling < autocannon < assault cannon < artillery.
+      3. Keep Keen's design of double-barrel large turrets (assault cannon, artillery: burst of 2 per reload)
+         doing roughly double the DPS of their single-barrel versions.
+      4. Damage per round is unchanged here, so ammo cost per damage is unchanged.
+
+    Effective rate of fire = burst / ((burst - 1) / RPM + reload).
+    DPS vs large light armor (balance spreadsheet formula; cannons count full penetration pool + explosion):
+
+    Caliber          Fixed            Large turret       Small turret      Change
+    ===============  ===============  =================  ================  ==========================================
+    Gatling          1,050 -> 803     792 -> 806         703 -> 806        Gatling.xml: fixed 900 RPM, small turret 4 s reload
+    Autocannon       1,250 -> 1,000   800 -> 1,000       800 -> 1,000      Fixed 150 -> 120 RPM; turrets reload 4 -> 2 s
+    Assault cannon   700 -> 1,200     1,326 -> 2,191     700 -> 1,200      Reload 6 -> 3.5 s on all three
+    Artillery        1,458            2,745              (none)            Unchanged
+
+    Fixed bullet weapons (gatling, autocannon) ignore reloads in practice, so their fire rate is lowered instead.
+    JS - Weapon Overhaul's LargeAutocannonTurret weapon is patched by Data\Scripts\JS - Weapon Rebalance\OptionalModWeaponTuning.cs
+    instead, because ModAdjusterV2 throws KeyNotFoundException on missing WeaponDefinitions when Overhaul is not loaded.
+-->
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <Weapons>
+        <!-- ===== Autocannon: 1,000 DPS ===== -->
+        <!--
+            Fixed small-grid autocannon: 120 RPM x 500 dmg = 1,000 DPS (one shot every 30 ticks).
+            ModAdjuster only applies ProjectileAmmoData when AmmoMagazines is in the same entry, and rebuilds it,
+            so the vanilla sound and burst are included.
+        -->
+        <Weapon>
+            <Id>
+                <TypeId>WeaponDefinition</TypeId>
+                <SubtypeId>Autocannon</SubtypeId>
+            </Id>
+            <ProjectileAmmoData RateOfFire="120" ShootSoundName="WepShipAutocannonShot" ShotsInBurst="16" />
+            <AmmoMagazines>
+                <AmmoMagazine Subtype="AutocannonClip" />
+            </AmmoMagazines>
+        </Weapon>
+        <!-- Small-grid autocannon turret (also the Warfare 3 Type II): 16 shots in 6 s, then 2 s reload = 120 RPM effective -->
+        <Weapon>
+            <Id>
+                <TypeId>WeaponDefinition</TypeId>
+                <SubtypeId>AutocannonTurret</SubtypeId>
+            </Id>
+            <ReloadTime>2000</ReloadTime>
+        </Weapon>
+
+        <!-- ===== Assault cannon: reload 6 -> 3.5 s ===== -->
+        <!-- Fixed small-grid assault cannon (also the Warfare 3 Type II): 1 shot per 3.5 s = ~1,200 DPS -->
+        <Weapon>
+            <Id>
+                <TypeId>WeaponDefinition</TypeId>
+                <SubtypeId>SmallMediumCalibreGun</SubtypeId>
+            </Id>
+            <ReloadTime>3500</ReloadTime>
+        </Weapon>
+        <!-- Small-grid assault cannon turret (also the Warfare 3 Type II): 1 shot per 3.5 s = ~1,200 DPS -->
+        <Weapon>
+            <Id>
+                <TypeId>WeaponDefinition</TypeId>
+                <SubtypeId>SmallMediumCalibreTurret</SubtypeId>
+            </Id>
+            <ReloadTime>3500</ReloadTime>
+        </Weapon>
+        <!-- Large-grid assault cannon turret (also the Warfare 3 Type II): 2 shots per 3.5 s = ~2,191 DPS (double barrel) -->
+        <Weapon>
+            <Id>
+                <TypeId>WeaponDefinition</TypeId>
+                <SubtypeId>MediumCalibreTurret</SubtypeId>
+            </Id>
+            <ReloadTime>3500</ReloadTime>
+        </Weapon>
+    </Weapons>
+</Definitions>

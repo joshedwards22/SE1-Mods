@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Weapon accuracy (spread) rebalance, applied by ModAdjusterV2 (workshop 3017795356) as field-level patches.
+    No SBC definitions are overridden.
+
+    RATIONALE
+    1. One spread per caliber. Fixed guns, large-grid turrets and small-grid turrets of the same caliber all share
+       the same spread, for simplicity. Small-grid turrets are still balanced by their shorter range (75% of large).
+    2. Realistic ordering. Real guns get MORE accurate as they get bigger and slower-firing on stable mounts, so:
+       artillery > assault cannon = autocannon > gatling. Vanilla had this partly backwards: the artillery turret
+       (0.3 deg) was as loose as a GAU-8, and the assault cannon turret (0.35 / 0.5 deg) was looser than the autocannon.
+    3. Not fully realistic on purpose. Real big guns are 5-10x tighter still; at that accuracy artillery would one-shot
+       fighters from 3 km. Instead, each gun's miss radius at its max range (see Ranges.xml) lands at roughly 5-8 m:
+       large ships are reliably hit at max range, small ships only some of the time, so small ships stay viable.
+    4. The gatling is the loosest gun on purpose: rapid-fire point defense works by spreading rounds into a cloud
+       (real GAU-8 is ~0.29 deg). This also tempers how hard the point-defense changes hit small fighters.
+
+    Spread values are in degrees (max deviation from the aim line). DeviateShotAngleAiming is kept equal.
+
+    Caliber          Vanilla fixed / L turret / S turret     New (all)   Miss radius at max range
+    ===============  ======================================  ==========  ===============================
+    Gatling          0.15 / 0.225 / 0.225                    0.25        5.2 m @ 1,200 (S turret 3.9 m @ 900)
+    Autocannon       0.15 / 0.25 (Overhaul) / 0.25           0.2         5.6 m @ 1,600 (S turret 4.2 m @ 1,200)
+    Assault cannon   0.2 (S fixed) / 0.35 / 0.5              0.2         7.0 m @ 2,000 (S turret 5.2 m @ 1,500)
+    Artillery        0.15 (L fixed) / 0.3                    0.15        7.9 m @ 3,000
+
+    Unchanged: rockets (0.5, unguided area weapon), anti-personnel turret (0.15), railguns (0).
+    JS - Weapon Overhaul's LargeAutocannonTurret weapon is patched by Data\Scripts\JS - Weapon Rebalance\OptionalModWeaponTuning.cs
+    instead, because ModAdjusterV2 throws KeyNotFoundException on missing WeaponDefinitions when Overhaul is not loaded.
+-->
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <Weapons>
+        <!-- ===== Gatling: 0.25 ===== -->
+        <!-- Fixed small-grid gatling gun (vanilla definition) -->
+        <Weapon>
+            <Id>
+                <TypeId>WeaponDefinition</TypeId>
+                <SubtypeId>GatlingGun</SubtypeId>
+            </Id>
+            <DeviateShotAngle>0.25</DeviateShotAngle>
+            <DeviateShotAngleAiming>0.25</DeviateShotAngleAiming>
+        </Weapon>
+        <!-- Fixed small-grid gatling gun (Warfare 2 variant, also used by JS - Weapon Overhaul's SmallGatlingGun) -->
+        <Weapon>
+            <Id>
+                <TypeId>WeaponDefinition</TypeId>
+                <SubtypeId>GatlingGunWarfare</SubtypeId>
+            </Id>
+            <DeviateShotAngle>0.25</DeviateShotAngle>
+            <DeviateShotAngleAiming>0.25</DeviateShotAngleAiming>
+        </Weapon>
+        <!-- Large-grid gatling turret (also the Contact Pack reskin) -->
+        <Weapon>
+            <Id>
+                <TypeId>WeaponDefinition</TypeId>
+                <SubtypeId>LargeGatlingTurret</SubtypeId>
+            </Id>
+            <DeviateShotAngle>0.25</DeviateShotAngle>
+            <DeviateShotAngleAiming>0.25</DeviateShotAngleAiming>
+        </Weapon>
+        <!-- Small-grid gatling turret (also the Contact Pack reskin) -->
+        <Weapon>
+            <Id>
+                <TypeId>WeaponDefinition</TypeId>
+                <SubtypeId>SmallGatlingTurret</SubtypeId>
+            </Id>
+            <DeviateShotAngle>0.25</DeviateShotAngle>
+            <DeviateShotAngleAiming>0.25</DeviateShotAngleAiming>
+        </Weapon>
+
+        <!-- ===== Autocannon: 0.2 ===== -->
+        <!-- Fixed small-grid autocannon -->
+        <Weapon>
+            <Id>
+                <TypeId>WeaponDefinition</TypeId>
+                <SubtypeId>Autocannon</SubtypeId>
+            </Id>
+            <DeviateShotAngle>0.2</DeviateShotAngle>
+            <DeviateShotAngleAiming>0.2</DeviateShotAngleAiming>
+        </Weapon>
+        <!-- Small-grid autocannon turret (also the Warfare 3 Type II) -->
+        <Weapon>
+            <Id>
+                <TypeId>WeaponDefinition</TypeId>
+                <SubtypeId>AutocannonTurret</SubtypeId>
+            </Id>
+            <DeviateShotAngle>0.2</DeviateShotAngle>
+            <DeviateShotAngleAiming>0.2</DeviateShotAngleAiming>
+        </Weapon>
+
+        <!-- ===== Assault cannon: 0.2 ===== -->
+        <!-- Large-grid assault cannon turret (also the Warfare 3 Type II) -->
+        <Weapon>
+            <Id>
+                <TypeId>WeaponDefinition</TypeId>
+                <SubtypeId>MediumCalibreTurret</SubtypeId>
+            </Id>
+            <DeviateShotAngle>0.2</DeviateShotAngle>
+            <DeviateShotAngleAiming>0.2</DeviateShotAngleAiming>
+        </Weapon>
+        <!-- Small-grid assault cannon turret (also the Warfare 3 Type II) -->
+        <Weapon>
+            <Id>
+                <TypeId>WeaponDefinition</TypeId>
+                <SubtypeId>SmallMediumCalibreTurret</SubtypeId>
+            </Id>
+            <DeviateShotAngle>0.2</DeviateShotAngle>
+            <DeviateShotAngleAiming>0.2</DeviateShotAngleAiming>
+        </Weapon>
+        <!-- Fixed small-grid assault cannon -->
+        <Weapon>
+            <Id>
+                <TypeId>WeaponDefinition</TypeId>
+                <SubtypeId>SmallMediumCalibreGun</SubtypeId>
+            </Id>
+            <DeviateShotAngle>0.2</DeviateShotAngle>
+            <DeviateShotAngleAiming>0.2</DeviateShotAngleAiming>
+        </Weapon>
+
+        <!-- ===== Artillery: 0.15 ===== -->
+        <!-- Large-grid artillery turret (also the Warfare 3 Type II) -->
+        <Weapon>
+            <Id>
+                <TypeId>WeaponDefinition</TypeId>
+                <SubtypeId>LargeCalibreTurret</SubtypeId>
+            </Id>
+            <DeviateShotAngle>0.15</DeviateShotAngle>
+            <DeviateShotAngleAiming>0.15</DeviateShotAngleAiming>
+        </Weapon>
+        <!-- Fixed large-grid artillery -->
+        <Weapon>
+            <Id>
+                <TypeId>WeaponDefinition</TypeId>
+                <SubtypeId>LargeCalibreGun</SubtypeId>
+            </Id>
+            <DeviateShotAngle>0.15</DeviateShotAngle>
+            <DeviateShotAngleAiming>0.15</DeviateShotAngleAiming>
+        </Weapon>
+    </Weapons>
+</Definitions>

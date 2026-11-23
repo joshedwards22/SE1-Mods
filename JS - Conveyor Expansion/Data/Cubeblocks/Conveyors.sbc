@@ -30,6 +30,8 @@
         <Model BuildPercentUpperBound="1.00" File="Models\Cubes\large\ConveyorStraight_BS3.mwm" />
       </BuildProgressModels>
       <BlockPairName>ConveyorStraight</BlockPairName>
+      <MirroringY>Z</MirroringY>
+      <MirroringZ>Y</MirroringZ>
       <EdgeType>Light</EdgeType>
       <BuildTimeSeconds>20</BuildTimeSeconds>
       <DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
@@ -69,6 +71,8 @@
         <Model BuildPercentUpperBound="1.00" File="Models\Cubes\large\ConveyorCurved_BS3.mwm" />
       </BuildProgressModels>
       <BlockPairName>ConveyorCurved</BlockPairName>
+      <MirroringX>Y</MirroringX>
+      <MirroringY>X</MirroringY>
       <EdgeType>Light</EdgeType>
       <BuildTimeSeconds>20</BuildTimeSeconds>
       <DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
@@ -108,6 +112,8 @@
         <Model BuildPercentUpperBound="1.00" File="Models\Cubes\large\ConveyorT_BS3.mwm" />
       </BuildProgressModels>
       <BlockPairName>ConveyorT</BlockPairName>
+      <MirroringY>Z</MirroringY>
+      <MirroringZ>Y</MirroringZ>
       <EdgeType>Light</EdgeType>
       <BuildTimeSeconds>20</BuildTimeSeconds>
       <DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
@@ -147,6 +153,9 @@
         <Model BuildPercentUpperBound="1.00" File="Models\Cubes\large\ConveyorElbow_BS3.mwm" />
       </BuildProgressModels>
       <BlockPairName>ConveyorElbow</BlockPairName>
+      <MirroringX>HalfY</MirroringX>
+      <MirroringY>MinusHalfX</MirroringY>
+      <MirroringZ>MinusHalfY</MirroringZ>
       <EdgeType>Light</EdgeType>
       <BuildTimeSeconds>20</BuildTimeSeconds>
       <DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
@@ -186,45 +195,6 @@
         <Model BuildPercentUpperBound="1.00" File="Models\Cubes\large\ConveyorCross_BS3.mwm" />
       </BuildProgressModels>
       <BlockPairName>ConveyorCross</BlockPairName>
-      <EdgeType>Light</EdgeType>
-      <BuildTimeSeconds>20</BuildTimeSeconds>
-      <DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
-      <DamagedSound>ParticleHeavyMech</DamagedSound>
-      <EmissiveColorPreset>Default</EmissiveColorPreset>
-      <DestroyEffect>BlockDestroyed_Large</DestroyEffect>
-      <DestroySound>PoofExplosionCat3</DestroySound>
-      <PCU>10</PCU>
-      <IsAirTight>true</IsAirTight>
-    </Definition>
-    <Definition>
-      <Id>
-        <TypeId>Conveyor</TypeId>
-        <SubtypeId>LargeBlockConveyor</SubtypeId>
-      </Id>
-      <DisplayName>DisplayName_Block_Conveyor</DisplayName>
-      <Icon>Textures\GUI\Icons\cubes\conveyor.dds</Icon>
-      <Description>Description_ConveyorTube</Description>
-      <GuiVisible>false</GuiVisible>
-      <CubeSize>Large</CubeSize>
-      <BlockTopology>TriangleMesh</BlockTopology>
-      <Size x="1" y="1" z="1" />
-      <ModelOffset x="0" y="0" z="0" />
-      <Model>Models\Cubes\Large\conveyor.mwm</Model>
-      <Components>
-        <Component Subtype="InteriorPlate" Count="10" />
-        <Component Subtype="Construction" Count="20" />
-        <Component Subtype="SmallTube" Count="20" />
-        <Component Subtype="Motor" Count="6" />
-        <Component Subtype="Construction" Count="10" />
-        <Component Subtype="InteriorPlate" Count="10" />
-      </Components>
-      <CriticalComponent Subtype="Motor" Index="0" />
-      <BuildProgressModels>
-        <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Large\ConveyorConstruction_1.mwm" />
-        <Model BuildPercentUpperBound="0.66" File="Models\Cubes\Large\ConveyorConstruction_2.mwm" />
-        <Model BuildPercentUpperBound="1.00" File="Models\Cubes\Large\ConveyorConstruction_3.mwm" />
-      </BuildProgressModels>
-      <BlockPairName>Conveyor</BlockPairName>
       <MirroringY>Z</MirroringY>
       <MirroringZ>Y</MirroringZ>
       <EdgeType>Light</EdgeType>
@@ -331,7 +301,7 @@
         <MountPoint Side="Front" StartX="0.35" StartY="0.25" EndX="2.65" EndY="0.35" />
         <MountPoint Side="Front" StartX="0.35" StartY="2.65" EndX="2.65" EndY="2.75" />
       </MountPoints>
-      <BlockPairName>Conveyor</BlockPairName>
+      <BlockPairName>ConveyorHub</BlockPairName>
       <MirroringZ>X</MirroringZ>
       <EdgeType>Light</EdgeType>
       <BuildTimeSeconds>14</BuildTimeSeconds>

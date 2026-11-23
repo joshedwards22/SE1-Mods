@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Weapon range + projectile speed rebalance, applied by ModAdjusterV2 (workshop 3017795356) as field-level patches.
+    No SBC definitions are overridden.
+
+    RATIONALE
+    Real weapons outrange Space Engineers by roughly 2x-80x, so true realism is not possible. Instead:
+      1. Every weapon reaches further, keeping Keen's short-to-long order:
+         gatling < autocannon < rockets < homing < assault cannon < torpedoes < artillery = large railgun.
+      2. Everything is capped at 3 km. That is the default multiplayer sync distance (grids beyond it do not
+         exist for clients) and the game's own 3 km turret update distance. Beyond ~2-3 km small grids are
+         only a few pixels on screen anyway.
+      3. Gun and shell speeds are raised toward real muzzle velocities, chosen so the time a round takes to
+         reach max range stays close to vanilla (~1 s for guns, ~4 s for artillery). Weapons reach further
+         but hit about as often at max range as they do now, since turret AI aims assuming a straight course.
+      4. Missile and torpedo speeds are deliberately UNCHANGED so gatling point defense can still intercept them.
+         Their longer range comes from longer flight time instead, and seeker GuidanceRange is raised to match.
+         ModAdjusterV2 cannot patch missile Lifetime or GuidanceRange,
+         so that is set by Data\Scripts\JS - Weapon Rebalance\MissileTuning.cs.
+      5. Small-grid turrets keep Keen's ratio of 75% of the large-grid turret range.
+      6. Damage per hit and recoil are fixed numbers in the ammo definitions, not speed-based, so they are unchanged.
+
+    Weapon            Real-world equivalent                Real range                    Range (m)          Speed (m/s)
+    ================  ===================================  ============================  =================  ======================
+    Gatling           Phalanx CIWS / GAU-8                 1,486 / 1,220 m effective     800  -> 1,200      800  -> 1,100 (real ~1,100)
+    Anti-personnel    M134 Minigun / M2 .50 cal            1,000 max / 1,800 effective   600  -> 800        600  -> 850   (real ~850-890)
+    Autocannon        Mk44 Bushmaster II / Bofors 40 mm    3-5 km effective / 12.5 km    800  -> 1,600      800  -> 1,100 (real ~1,000-1,080)
+    Rockets           S-8 / Hydra 70                       2-4 km / 8 km effective       800  -> 1,300      unchanged (point defense)
+    Homing missiles   Stinger / Hellfire                   4.8 km / 0.5-11 km            800  -> 1,500      unchanged (point defense)
+    Torpedoes         Mk 54 torpedo                        9.1 km                        2,000 -> 2,700     unchanged (point defense)
+    Assault cannon    Bofors 57 mm / OTO Melara 76 mm      8.5 km effective / 16 km+     1,400 -> 2,000     500  -> 900   (real ~915-1,035)
+    Artillery         5-inch Mk 45                         24 km effective               2,000 -> 3,000     500  -> 800   (real ~760)
+    Railgun (large)   US Navy railgun                      ~160 km                       2,000 -> 3,000     2,000 -> 2,500 (real ~2,520)
+    Railgun (small)   US Navy railgun                      ~160 km                       1,400 -> 2,000     1,000 -> 1,500
+
+    Note: turrets only target within MaxRangeMeters, and rounds only fly MaxTrajectory, so both are raised together.
+    Vanilla artillery turrets only engaged at 800 m even though their shells flew 2,000 m.
+-->
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <!--
+        Ammo: MaxTrajectory = how far a round flies, DesiredSpeed = its speed.
+        Shells and railgun slugs start at full speed (no acceleration), so MissileInitialSpeed is set to match DesiredSpeed.
+    -->
+    <Ammos>
+        <!-- Gatling: 1,200 m at 1,100 m/s = 1.09 s to max range (vanilla 1.0 s) -->
+        <Ammo xsi:type="MyObjectBuilder_ProjectileAmmoDefinition">
+            <Id>
+                <TypeId>AmmoDefinition</TypeId>
+                <SubtypeId>LargeCaliber</SubtypeId>
+            </Id>
+            <BasicProperties>
+                <DesiredSpeed>1100</DesiredSpeed>
+                <MaxTrajectory>1200</MaxTrajectory>
+            </BasicProperties>
+        </Ammo>
+
+        <!-- Anti-personnel turret: 800 m (via RangeMultiplier 1.0 below) at 850 m/s = 0.94 s (vanilla 1.0 s) -->
+        <Ammo xsi:type="MyObjectBuilder_ProjectileAmmoDefinition">
+            <Id>
+                <TypeId>AmmoDefinition</TypeId>
+                <SubtypeId>AntiPersonnelTurretMunition</SubtypeId>
+            </Id>
+            <BasicProperties>
+                <DesiredSpeed>850</DesiredSpeed>
+            </BasicProperties>
+        </Ammo>
+
+        <!-- Autocannon: 1,600 m at 1,100 m/s = 1.45 s (vanilla 1.0 s; slightly harder to hit at max range is fair for doubling it) -->
+        <Ammo xsi:type="MyObjectBuilder_ProjectileAmmoDefinition">
+            <Id>
+                <TypeId>AmmoDefinition</TypeId>
+                <SubtypeId>AutocannonShell</SubtypeId>
+            </Id>
+            <BasicProperties>
+                <DesiredSpeed>1100</DesiredSpeed>
+                <MaxTrajectory>1600</MaxTrajectory>
+            </BasicProperties>
+        </Ammo>
+
+        <!-- Rockets (also used by hand-held launchers): speed unchanged, Lifetime 6 -> 7.5 s in MissileTuning.cs -->
+        <Ammo xsi:type="MyObjectBuilder_MissileAmmoDefinition">
+            <Id>
+                <TypeId>AmmoDefinition</TypeId>
+                <SubtypeId>Missile</SubtypeId>
+            </Id>
+            <BasicProperties>
+                <MaxTrajectory>1300</MaxTrajectory>
+            </BasicProperties>
+        </Ammo>
+
+        <!-- Homing missiles: speed unchanged, Lifetime 10 -> 12.5 s (extra margin for curving flight) and GuidanceRange 800 -> 1,500 in MissileTuning.cs -->
+        <Ammo xsi:type="MyObjectBuilder_MissileAmmoDefinition">
+            <Id>
+                <TypeId>AmmoDefinition</TypeId>
+                <SubtypeId>MissileHoming</SubtypeId>
+            </Id>
+            <BasicProperties>
+                <MaxTrajectory>1500</MaxTrajectory>
+            </BasicProperties>
+        </Ammo>
+
+        <!-- Torpedoes: speed unchanged. In MissileTuning.cs: Torpedo and Torpedo_Heavy lifetimes raised (the other two already fly far enough), GuidanceRange 2,000 -> 2,700 for all four. -->
+        <Ammo xsi:type="MyObjectBuilder_MissileAmmoDefinition">
+            <Id>
+                <TypeId>AmmoDefinition</TypeId>
+                <SubtypeId>Torpedo</SubtypeId>
+            </Id>
+            <BasicProperties>
+                <MaxTrajectory>2700</MaxTrajectory>
+            </BasicProperties>
+        </Ammo>
+        <Ammo xsi:type="MyObjectBuilder_MissileAmmoDefinition">
+            <Id>
+                <TypeId>AmmoDefinition</TypeId>
+                <SubtypeId>Torpedo_Heavy</SubtypeId>
+            </Id>
+            <BasicProperties>
+                <MaxTrajectory>2700</MaxTrajectory>
+            </BasicProperties>
+        </Ammo>
+        <Ammo xsi:type="MyObjectBuilder_MissileAmmoDefinition">
+            <Id>
+                <TypeId>AmmoDefinition</TypeId>
+                <SubtypeId>Torpedo_Seeking</SubtypeId>
+            </Id>
+            <BasicProperties>
+                <MaxTrajectory>2700</MaxTrajectory>
+            </BasicProperties>
+        </Ammo>
+        <Ammo xsi:type="MyObjectBuilder_MissileAmmoDefinition">
+            <Id>
+                <TypeId>AmmoDefinition</TypeId>
+                <SubtypeId>Torpedo_Piercing</SubtypeId>
+            </Id>
+            <BasicProperties>
+                <MaxTrajectory>2700</MaxTrajectory>
+            </BasicProperties>
+        </Ammo>
+
+        <!-- Assault cannon: 2,000 m at 900 m/s = 2.2 s (vanilla 2.8 s) -->
+        <Ammo xsi:type="MyObjectBuilder_MissileAmmoDefinition">
+            <Id>
+                <TypeId>AmmoDefinition</TypeId>
+                <SubtypeId>MediumCalibreShell</SubtypeId>
+            </Id>
+            <BasicProperties>
+                <DesiredSpeed>900</DesiredSpeed>
+                <MaxTrajectory>2000</MaxTrajectory>
+            </BasicProperties>
+            <MissileProperties>
+                <MissileInitialSpeed>900</MissileInitialSpeed>
+            </MissileProperties>
+        </Ammo>
+
+        <!-- Artillery: 3,000 m at 800 m/s = 3.75 s (vanilla 4.0 s) -->
+        <Ammo xsi:type="MyObjectBuilder_MissileAmmoDefinition">
+            <Id>
+                <TypeId>AmmoDefinition</TypeId>
+                <SubtypeId>LargeCalibreShell</SubtypeId>
+            </Id>
+            <BasicProperties>
+                <DesiredSpeed>800</DesiredSpeed>
+                <MaxTrajectory>3000</MaxTrajectory>
+            </BasicProperties>
+            <MissileProperties>
+                <MissileInitialSpeed>800</MissileInitialSpeed>
+            </MissileProperties>
+        </Ammo>
+
+        <!-- Large railgun: 3,000 m at 2,500 m/s = 1.2 s (vanilla 1.0 s) -->
+        <Ammo xsi:type="MyObjectBuilder_MissileAmmoDefinition">
+            <Id>
+                <TypeId>AmmoDefinition</TypeId>
+                <SubtypeId>LargeRailgunSlug</SubtypeId>
+            </Id>
+            <BasicProperties>
+                <DesiredSpeed>2500</DesiredSpeed>
+                <MaxTrajectory>3000</MaxTrajectory>
+            </BasicProperties>
+            <MissileProperties>
+                <MissileInitialSpeed>2500</MissileInitialSpeed>
+            </MissileProperties>
+        </Ammo>
+
+        <!-- Small railgun: 2,000 m at 1,500 m/s = 1.33 s (vanilla 1.4 s) -->
+        <Ammo xsi:type="MyObjectBuilder_MissileAmmoDefinition">
+            <Id>
+                <TypeId>AmmoDefinition</TypeId>
+                <SubtypeId>SmallRailgunSlug</SubtypeId>
+            </Id>
+            <BasicProperties>
+                <DesiredSpeed>1500</DesiredSpeed>
+                <MaxTrajectory>2000</MaxTrajectory>
+            </BasicProperties>
+            <MissileProperties>
+                <MissileInitialSpeed>1500</MissileInitialSpeed>
+            </MissileProperties>
+        </Ammo>
+    </Ammos>
+
+    <!-- Weapons -->
+    <Weapons>
+        <!-- Anti-personnel turret: vanilla 0.75 multiplier cut its 800 m ammo range to 600 m; 1.0 gives the full 800 m -->
+        <Weapon>
+            <Id>
+                <TypeId>WeaponDefinition</TypeId>
+                <SubtypeId>LargeInteriorTurret</SubtypeId>
+            </Id>
+            <RangeMultiplier>1</RangeMultiplier>
+        </Weapon>
+    </Weapons>
+
+    <!--
+        Turret targeting range (MaxRangeMeters). Small-grid turrets get 75% of the large-grid value, as in vanilla.
+        Entries for JS - Weapon Overhaul blocks just log "Failed to find" in ModAdjuster's log if that mod is not loaded.
+    -->
+    <CubeBlocks>
+        <!-- Gatling: 1,200 large / 900 small -->
+        <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+            <Id>
+                <TypeId>LargeGatlingTurret</TypeId>
+                <SubtypeId></SubtypeId>
+            </Id>
+            <MaxRangeMeters>1200</MaxRangeMeters>
+        </Definition>
+        <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+            <Id>
+                <TypeId>LargeGatlingTurret</TypeId>
+                <SubtypeId>LargeGatlingTurretReskin</SubtypeId>
+            </Id>
+            <MaxRangeMeters>1200</MaxRangeMeters>
+        </Definition>
+        <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+            <Id>
+                <TypeId>LargeGatlingTurret</TypeId>
+                <SubtypeId>SmallGatlingTurret</SubtypeId>
+            </Id>
+            <MaxRangeMeters>900</MaxRangeMeters>
+        </Definition>
+        <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+            <Id>
+                <TypeId>LargeGatlingTurret</TypeId>
+                <SubtypeId>SmallGatlingTurretReskin</SubtypeId>
+            </Id>
+            <MaxRangeMeters>900</MaxRangeMeters>
+        </Definition>
+
+        <!-- Anti-personnel turret: 800 -->
+        <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+            <Id>
+                <TypeId>InteriorTurret</TypeId>
+                <SubtypeId>LargeInteriorTurret</SubtypeId>
+            </Id>
+            <MaxRangeMeters>800</MaxRangeMeters>
+        </Definition>
+
+        <!-- Autocannon: 1,600 large (JS - Weapon Overhaul) / 1,200 small -->
+        <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+            <Id>
+                <TypeId>LargeGatlingTurret</TypeId>
+                <SubtypeId>LargeAutocannonTurret</SubtypeId>
+            </Id>
+            <MaxRangeMeters>1600</MaxRangeMeters>
+        </Definition>
+        <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+            <Id>
+                <TypeId>LargeGatlingTurret</TypeId>
+                <SubtypeId>AutoCannonTurret</SubtypeId>
+            </Id>
+            <MaxRangeMeters>1200</MaxRangeMeters>
+        </Definition>
+        <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+            <Id>
+                <TypeId>LargeGatlingTurret</TypeId>
+                <SubtypeId>AutoCannonTurretType2</SubtypeId>
+            </Id>
+            <MaxRangeMeters>1200</MaxRangeMeters>
+        </Definition>
+
+        <!-- Rocket turrets: 1,300 large / 1,000 small -->
+        <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+            <Id>
+                <TypeId>LargeMissileTurret</TypeId>
+                <SubtypeId></SubtypeId>
+            </Id>
+            <MaxRangeMeters>1300</MaxRangeMeters>
+        </Definition>
+        <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+            <Id>
+                <TypeId>LargeMissileTurret</TypeId>
+                <SubtypeId>LargeMissileTurretReskin</SubtypeId>
+            </Id>
+            <MaxRangeMeters>1300</MaxRangeMeters>
+        </Definition>
+        <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+            <Id>
+                <TypeId>LargeMissileTurret</TypeId>
+                <SubtypeId>SmallMissileTurret</SubtypeId>
+            </Id>
+            <MaxRangeMeters>1000</MaxRangeMeters>
+        </Definition>
+        <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+            <Id>
+                <TypeId>LargeMissileTurret</TypeId>
+                <SubtypeId>SmallMissileTurretReskin</SubtypeId>
+            </Id>
+            <MaxRangeMeters>1000</MaxRangeMeters>
+        </Definition>
+
+        <!-- Assault cannon turrets: 2,000 large / 1,500 small -->
+        <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+            <Id>
+                <TypeId>LargeMissileTurret</TypeId>
+                <SubtypeId>LargeBlockMediumCalibreTurret</SubtypeId>
+            </Id>
+            <MaxRangeMeters>2000</MaxRangeMeters>
+        </Definition>
+        <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+            <Id>
+                <TypeId>LargeMissileTurret</TypeId>
+                <SubtypeId>LargeBlockMediumCalibreTurretType2</SubtypeId>
+            </Id>
+            <MaxRangeMeters>2000</MaxRangeMeters>
+        </Definition>
+        <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+            <Id>
+                <TypeId>LargeMissileTurret</TypeId>
+                <SubtypeId>SmallBlockMediumCalibreTurret</SubtypeId>
+            </Id>
+            <MaxRangeMeters>1500</MaxRangeMeters>
+        </Definition>
+        <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+            <Id>
+                <TypeId>LargeMissileTurret</TypeId>
+                <SubtypeId>SmallBlockMediumCalibreTurretType2</SubtypeId>
+            </Id>
+            <MaxRangeMeters>1500</MaxRangeMeters>
+        </Definition>
+
+        <!-- Artillery turrets: 3,000 (vanilla only engaged at 800 despite 2,000 m shells) -->
+        <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+            <Id>
+                <TypeId>LargeMissileTurret</TypeId>
+                <SubtypeId>LargeCalibreTurret</SubtypeId>
+            </Id>
+            <MaxRangeMeters>3000</MaxRangeMeters>
+        </Definition>
+        <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+            <Id>
+                <TypeId>LargeMissileTurret</TypeId>
+                <SubtypeId>LargeCalibreTurretType2</SubtypeId>
+            </Id>
+            <MaxRangeMeters>3000</MaxRangeMeters>
+        </Definition>
+
+        <!-- Railgun turret (JS - Weapon Overhaul): 3,000 -->
+        <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+            <Id>
+                <TypeId>LargeMissileTurret</TypeId>
+                <SubtypeId>RailgunTurret</SubtypeId>
+            </Id>
+            <MaxRangeMeters>3000</MaxRangeMeters>
+        </Definition>
+
+        <!-- Custom turret controllers: raised so custom turrets can use artillery and railguns at full range -->
+        <Definition xsi:type="MyObjectBuilder_TurretControlBlockDefinition">
+            <Id>
+                <TypeId>TurretControlBlock</TypeId>
+                <SubtypeId>LargeTurretControlBlock</SubtypeId>
+            </Id>
+            <MaxRangeMeters>3000</MaxRangeMeters>
+        </Definition>
+        <Definition xsi:type="MyObjectBuilder_TurretControlBlockDefinition">
+            <Id>
+                <TypeId>TurretControlBlock</TypeId>
+                <SubtypeId>SmallTurretControlBlock</SubtypeId>
+            </Id>
+            <MaxRangeMeters>2000</MaxRangeMeters>
+        </Definition>
+    </CubeBlocks>
+</Definitions>

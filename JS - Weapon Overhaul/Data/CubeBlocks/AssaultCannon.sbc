@@ -9,9 +9,7 @@
             </Id>
             <DisplayName>DisplayName_Block_MediumCalibreTurret</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\MediumCalibreTurretLarge.dds</Icon>
-            <Description>Low rate of fire dual barrel cannon. Deals explosive damage devastating to small ships and effective against large ships.
-            
-Range: 2000m</Description>
+            <Description>Description_MediumCalibreTurret</Description>
             <CubeSize>Large</CubeSize>
             <GuiVisible>false</GuiVisible>
             <PlaceDecals>false</PlaceDecals>
@@ -42,6 +40,7 @@ Range: 2000m</Description>
                 <Model BuildPercentUpperBound="1.00" File="Models\Cubes\large\AssaultCannonTurret\MediumCalibreTurret_BS3.mwm" />
             </BuildProgressModels>
             <VoxelPlacement>
+                <!--Possible settings Both,InVoxel,OutsideVoxel,Volumetric. If volumetric set than MaxAllowed and MinAllowed will be used.-->
                 <StaticMode>
                     <PlacementMode>OutsideVoxel</PlacementMode>
                     <MaxAllowed>0.2</MaxAllowed>
@@ -70,8 +69,8 @@ Range: 2000m</Description>
             <MaxElevationDegrees>75</MaxElevationDegrees>
             <MinAzimuthDegrees>-180</MinAzimuthDegrees>
             <MaxAzimuthDegrees>180</MaxAzimuthDegrees>
-            <IdleRotation>false</IdleRotation>
-            <MaxRangeMeters>2000</MaxRangeMeters>
+            <IdleRotation>true</IdleRotation>
+            <MaxRangeMeters>800</MaxRangeMeters>
             <RotationSpeed>0.0004</RotationSpeed>
             <ElevationSpeed>0.0004 </ElevationSpeed>
             <EmissiveColorPreset>Default</EmissiveColorPreset>
@@ -91,25 +90,25 @@ Range: 2000m</Description>
             <TargetingGroups>
                 <string>Weapons</string>
             </TargetingGroups>
-            <CameraDummyName>camera</CameraDummyName>
+            <UpCameraOffset>1.0</UpCameraOffset>
+            <ForwardCameraOffset>0.5</ForwardCameraOffset>
         </Definition>
+
         <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
             <Id>
                 <TypeId>LargeMissileTurret</TypeId>
                 <SubtypeId>SmallBlockMediumCalibreTurret</SubtypeId>
             </Id>
             <DisplayName>DisplayName_Block_MediumCalibreTurret</DisplayName>
-            <Icon>Textures\GUI\Icons\Cubes\MediumCalibreTurret.dds</Icon>
-            <Description>Low rate of fire cannon. Deals explosive damage devastating to small ships and effective against large ships.
-            
-Range: 2000m</Description>
+            <Icon>Textures\GUI\Icons\Cubes\MediumCalibreTurret_Small.dds</Icon>
+            <Description>Description_MediumCalibreGun</Description>
             <CubeSize>Small</CubeSize>
             <GuiVisible>false</GuiVisible>
             <PlaceDecals>false</PlaceDecals>
             <BlockTopology>TriangleMesh</BlockTopology>
             <Size x="7" y="5" z="7" />
             <ModelOffset x="0" y="0" z="0" />
-            <Model>Models\Cubes\small\AssaultCannonTurret\MediumCalibreTurret.mwm</Model>
+            <Model>Models\Cubes\small\AssaultCannonTurret\MediumCalibreTurret_Base.mwm</Model>
             <UseModelIntersection>true</UseModelIntersection>
             <Components>
                 <Component Subtype="SteelPlate" Count="25" />
@@ -123,13 +122,14 @@ Range: 2000m</Description>
             </Components>
             <CriticalComponent Subtype="Computer" Index="0" />
             <MountPoints>
-                <MountPoint Side="Bottom" StartX="1" StartY="1" EndX="6" EndY="6" Default="true" />
+                <MountPoint Side="Bottom" StartX="2" StartY="2" EndX="5" EndY="5" Default="true" />
             </MountPoints>
             <BuildProgressModels>
-                <Model BuildPercentUpperBound="0.43" File="Models\Cubes\small\AssaultCannonTurret\MediumCalibreTurret_BS1.mwm" />
-                <Model BuildPercentUpperBound="1.0" File="Models\Cubes\small\AssaultCannonTurret\MediumCalibreTurret_BS2.mwm" />
+                <Model BuildPercentUpperBound="0.43" File="Models\Cubes\small\AssaultCannonTurret\MediumCalibreTurret_Base_BS1.mwm" />
+                <Model BuildPercentUpperBound="1.0" File="Models\Cubes\small\AssaultCannonTurret\MediumCalibreTurret_Base_BS2.mwm" />
             </BuildProgressModels>
             <VoxelPlacement>
+                <!--Possible settings Both,InVoxel,OutsideVoxel,Volumetric. If volumetric set than MaxAllowed and MinAllowed will be used.-->
                 <StaticMode>
                     <PlacementMode>OutsideVoxel</PlacementMode>
                     <MaxAllowed>0.2</MaxAllowed>
@@ -158,10 +158,10 @@ Range: 2000m</Description>
             <MaxElevationDegrees>50</MaxElevationDegrees>
             <MinAzimuthDegrees>-180</MinAzimuthDegrees>
             <MaxAzimuthDegrees>180</MaxAzimuthDegrees>
-            <IdleRotation>false</IdleRotation>
-            <MaxRangeMeters>2000</MaxRangeMeters>
-            <RotationSpeed>0.0004</RotationSpeed>
-            <ElevationSpeed>0.0004 </ElevationSpeed>
+            <IdleRotation>true</IdleRotation>
+            <MaxRangeMeters>600</MaxRangeMeters>
+            <RotationSpeed>0.0008</RotationSpeed>
+            <ElevationSpeed>0.0008 </ElevationSpeed>
             <EmissiveColorPreset>Default</EmissiveColorPreset>
             <MinFov>0.1</MinFov>
             <MaxFov>1.04719755</MaxFov>
@@ -179,8 +179,8 @@ Range: 2000m</Description>
             <TargetingGroups>
                 <string>Weapons</string>
             </TargetingGroups>
-            <CameraDummyName>camera</CameraDummyName>
-            <DLC>Contact</DLC>
+            <UpCameraOffset>0.5</UpCameraOffset>
+            <ForwardCameraOffset>0.6</ForwardCameraOffset>
         </Definition>
         <Definition xsi:type="MyObjectBuilder_WeaponBlockDefinition">
             <Id>
@@ -189,9 +189,7 @@ Range: 2000m</Description>
             </Id>
             <DisplayName>DisplayName_Block_MediumCalibreGun</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\MediumCaliberGun.dds</Icon>
-            <Description>Low rate of fire cannon. Deals explosive damage devastating to small ships and effective against large ships.
-            
-Range: 2000m</Description>
+            <Description>Description_MediumCalibreGun</Description>
             <CubeSize>Small</CubeSize>
             <GuiVisible>false</GuiVisible>
             <BlockTopology>TriangleMesh</BlockTopology>
@@ -225,13 +223,14 @@ Range: 2000m</Description>
             <BuildTimeSeconds>26</BuildTimeSeconds>
             <EdgeType>Light</EdgeType>
             <WeaponDefinitionId Subtype="SmallMediumCalibreGun" />
+            <LaserPointerEnabled>false</LaserPointerEnabled>
             <ResourceSinkGroup>Defense</ResourceSinkGroup>
             <InventoryMaxVolume>0.09</InventoryMaxVolume>
             <DamageEffectName>Damage_WeapExpl_Damaged</DamageEffectName>
             <DamagedSound>ParticleWeapExpl</DamagedSound>
             <DestroyEffect>BlockDestroyedExplosion_Large</DestroyEffect>
             <DestroySound>WepSmallWarheadExpl</DestroySound>
-            <PCU>80</PCU>
+            <PCU>70</PCU>
             <TargetingGroups>
                 <string>Weapons</string>
             </TargetingGroups>
