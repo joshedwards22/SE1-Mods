@@ -1,0 +1,27 @@
+A clean, lightweight economy tweak that removes Uranium and Platinum requirements from all heavy ammunition recipes—replacing them with Cobalt and Gold so late-game munitions stay craftable without Uranium or Platinum bottlenecks.
+
+[hr][/hr]
+
+[h2]Recipe Changes[/h2]
+Kinetic/armor-piercing Uranium costs are replaced with [b]Cobalt[/b], while guidance and propulsion Uranium/Platinum costs are replaced with [b]Gold[/b]. All other ingredients (Iron, Nickel, Silicon, Magnesium) remain vanilla:
+[list]
+[*][b]Homing Missile:[/b] -0.1 Uranium, -0.04 Platinum → [b]+0.32 Gold[/b]
+[*][b]Artillery Shell:[/b] -0.1 Uranium → [b]+3 Cobalt[/b]
+[*][b]Small Railgun Sabot:[/b] -0.2 Uranium → [b]+6 Cobalt[/b]
+[*][b]Large Railgun Sabot:[/b] -1 Uranium → [b]+30 Cobalt[/b]
+[*][b]Standard Torpedo:[/b] -1 Uranium, -1 Platinum → [b]+5 Gold[/b]
+[*][b]Light (Seeking) Torpedo:[/b] -1 Uranium, -2 Platinum → [b]+8 Gold[/b]
+[*][b]Heavy Torpedo:[/b] -2 Uranium, -1 Platinum → [b]+7 Gold[/b]
+[*][b]Armor-Piercing Torpedo:[/b] -3 Uranium, -1 Platinum → [b]+5 Gold, +60 Cobalt[/b]
+[/list]
+
+[hr][/hr]
+
+[h2]Compatibility & Details[/h2]
+[list]
+[*][b]Powered by ModAdjuster:[/b] Only patches blueprint [i]Prerequisites[/i] rather than overriding full definitions, preventing conflicts with mods that change weapon stats, ammo damage, or crafting times. [i](Requires ModAdjuster.)[/i]
+[*][b]Companion Mods:[/b] Pairs cleanly with [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3645546904]JS - Weapon Overhaul[/url] and [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3844940607]JS - Weapon Rebalance[/url].
+[*][b]Safe to Add or Remove:[/b] Does not add or remove items or blocks, so it can be added to or removed from existing saves safely.
+[/list]
+
+Please do not reupload this mod without permission.

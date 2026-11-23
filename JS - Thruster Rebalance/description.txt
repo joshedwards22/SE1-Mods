@@ -1,0 +1,59 @@
+A clean, mathematically consistent rebalance of all vanilla and DLC thrusters. No more erratic grid scaling, awkward thruster-size tradeoffs, or unpredictable efficiency jumps—every thruster family follows clear rules with a well-defined role in your fleet.
+
+[b]Want the exact numbers and vanilla comparisons?[/b] Check out the [url=https://docs.google.com/spreadsheets/d/1txOxJhj-2J56JJzNFP8Qeli5Sz7h7XR_/edit?usp=sharing]Full Thruster Rebalance Spreadsheet[/url].
+
+[hr][/hr]
+
+[h2]Why This Mod Exists[/h2]
+Vanilla Space Engineers thruster stats grew inconsistently over time, leading to some strange quirks when building ships:
+[list]
+[*][b]Erratic Grid Scaling:[/b] Large-to-Small Grid thrust multipliers jump wildly from [b]6.75x[/b] (Small Atmo) and [b]10.98x[/b] (Small H2) up to [b]15x[/b] (Large H2) and [b]24x–25x[/b] (Ion & Prototech).
+[*][b]Inconsistent Thrust-per-Footprint:[/b] A vanilla Small Grid Large Hydrogen thruster delivers only [b]0.54x[/b] the thrust per face block of 9 Small Hydrogen thrusters, while a Large Ion gives [b]>2x[/b] the thrust per face block of 6 Small Ions.
+[*][b]Unpredictable Efficiency Steps:[/b] Efficiency gains when upgrading from Small to Large thrusters—and efficiency losses when moving to Small Grid—follow no consistent progression across thruster types.
+[/list]
+
+[hr][/hr]
+
+[h2]Core Design Rules[/h2]
+[list]
+[*][b]Uniform 10:1 Grid Scaling:[/b] Every thruster family scales cleanly at exactly [b]10:1[/b] thrust from Large Grid to Small Grid.
+[*][b]Consistent Thrust Density:[/b]
+  [list]
+  [*][b]9:1[/b] (1.0x thrust-per-footprint) for 3x3 Hydrogen, Atmospheric, and Flat Atmospheric thrusters.
+  [*][b]12:1[/b] (2.0x thrust-per-footprint / 1.0x thrust-per-volume) for 3x2x4 Ion thrusters.
+  [/list]
+[*][b]Large Thrusters Earn Their Size:[/b] Upgrading from Small to Large thrusters gives a clean, predictable efficiency boost:
+  [list]
+  [*][b]Hydrogen:[/b] +0.20 kN/L (+14.3% LG / +16.7% SG)
+  [*][b]Ion:[/b] +20 kN/MW (+15.4% LG / +18.2% SG)
+  [*][b]Atmospheric:[/b] +100 kN/MW (+33.3% LG / +50.0% SG)
+  [/list]
+[*][b]Symmetric Efficiency Ladder:[/b] Moving down to Small Grid costs exactly one thruster-size step in efficiency:
+  [b]LG Large > LG Small = SG Large > SG Small[/b]
+  [list]
+  [*][b]Hydrogen:[/b] 1.60 > 1.40 = 1.40 > 1.20 kN/L
+  [*][b]Ion:[/b] 150 > 130 = 130 > 110 kN/MW
+  [*][b]Atmospheric:[/b] 400 > 300 = 300 > 200 kN/MW
+  [/list]
+[/list]
+
+[hr][/hr]
+
+[h2]Thruster Roles[/h2]
+[list]
+[*][b]Hydrogen — Raw Power Everywhere:[/b] Highest thrust density ([b]800 kN/block[/b] LG, [b]80 kN/block[/b] SG) and works in any environment, balanced by fuel tanks and conveyor piping.
+[*][b]Atmospheric — High-Efficiency Planetary Flight:[/b] Strong thrust density ([b]720 kN/block[/b] LG, [b]72 kN/block[/b] SG) with the highest electrical efficiency ([b]400 / 300 kN/MW[/b] LG; [b]300 / 200 kN/MW[/b] SG), limited to atmospheres. [b]Flat Atmospheric[/b] thrusters deliver [b]~37% (1/2.7)[/b] the thrust at identical efficiency for compact builds.
+[*][b]Ion — Reliable Space Electric Propulsion:[/b] Keeps the Large Grid Large Ion at its familiar vanilla [b]4,320 kN[/b] while giving Small Grid Small Ions a clean [b]327 kW[/b] draw—fitting comfortably under a single [b]500 kW[/b] Small Reactor.
+[*][b]Prototech — Endgame Electric Powerhouse:[/b] Exactly [b]3x[/b] Large Ion thrust ([b]12,960 kN[/b] LG, [b]1,296 kN[/b] SG; [b]2x[/b] thrust-per-footprint) at [b]1.8x[/b] Large Ion efficiency on both grids ([b]270 kN/MW[/b] LG, [b]234 kN/MW[/b] SG).
+[/list]
+
+[hr][/hr]
+
+[h2]Compatibility & Details[/h2]
+[list]
+[*][b]All DLC Variants Covered:[/b] Includes standard, Industrial, Sci-Fi, Warfare/Modular, Reskin, Flat Atmo (Standard, D-Shape, Round), and Prototech thrusters.
+[*][b]Powered by ModAdjuster:[/b] Only modifies thrust force and power/fuel consumption rather than overwriting whole block definitions, keeping it compatible with mods that change thruster visuals, flame effects, or build components. [i](Requires ModAdjuster.)[/i]
+[*][b]Safe to Add or Remove:[/b] Does not add or remove blocks, so it can be added to or removed from existing saves safely.
+[/list]
+
+Please do not reupload this mod without permission.

@@ -1,0 +1,32 @@
+A set of quality-of-life keybinds and chat commands to make building, inspecting, and editing ships in Creative Mode faster and easier. Includes armor x-ray, layer-by-layer grid slicing, block picking through hidden layers, and safe bulk block removal.
+
+[hr][/hr]
+
+[h2]Keybinds[/h2]
+Look at a grid while in Creative Mode (or with Creative Tools enabled):
+[list]
+[*][b]Ctrl + T — Armor X-Ray:[/b] Cycles transparency ([b]0% → 50% → 100%[/b]) on all armor, floor, structural, beam, rounded, and blast-door blocks across the targeted grid and its mechanically linked subgrids (rotors, pistons, hinges). Fully hidden blocks also hide armor edges and subparts.
+[*][b]Ctrl + J — Slice Mode:[/b] Enters cross-section slice mode along the nearest grid axis to your camera view (including mechanically linked subgrids). Press [b]Numpad +[/b] and [b]Numpad -[/b] to step layers invisible or visible from outside to inside. Press [b]Ctrl + J[/b] again (or run [b]/unhide[/b]) to exit and restore full visibility.
+[*][b]Ctrl + G — Block Picker (On Foot):[/b] Picks the visible block you are looking at—even [i]through[/i] hidden or sliced layers and onto subgrids—places it in [b]toolbar slot 9[/b], and activates build mode ready to place.
+[/list]
+
+[hr][/hr]
+
+[h2]Chat Commands[/h2]
+Look at a grid and enter in chat (messages are not broadcast to other players):
+[list]
+[*][b]/hide <name>[/b] — Sets all blocks whose display name contains [i]<name>[/i] to 100% transparency across the grid and its mechanical subgrids.
+[*][b]/unhide[/b] — Restores all hidden blocks to full visibility (or exits Slice Mode if active).
+[*][b]/remove <name>[/b] — Safely removes all blocks on the targeted grid whose display name contains [i]<name>[/i], skipping any block whose removal would split the grid. [i](Singleplayer or host/server only.)[/i]
+[/list]
+
+[hr][/hr]
+
+[h2]Compatibility & Details[/h2]
+[list]
+[*][b]Purely Visual Transparency:[/b] X-ray, hiding, and slice mode only apply local client-side dithering—nothing is written to your save or blueprints.
+[*][b]Creative Tools Only:[/b] Commands and keybinds only work when Creative Mode or Creative Tools (Admin) rights are enabled.
+[*][b]Safe to Add or Remove:[/b] Does not add or modify any blocks and requires no other mods.
+[/list]
+
+Please do not reupload this mod without permission.

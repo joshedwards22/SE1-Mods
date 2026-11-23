@@ -1,0 +1,46 @@
+A standalone visual, audio, and arsenal expansion for Space Engineers ship weapons. Remodels 12 vanilla weapons with cohesive, modernized designs, replaces weapon audio with deeper firing effects and distance-filtered falloff, and adds missing weapon roles—all balanced to vanilla stats with zero external dependencies.
+
+[b]Want rebalanced weapon ranges, velocities, accuracy, and DPS too?[/b] Pair this mod with [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3844940607]JS - Weapon Rebalance[/url]—it automatically detects and tunes the new weapons in this mod to match.
+
+[hr][/hr]
+
+[h2]New Weapons[/h2]
+All new blocks are tuned to vanilla stats, integrated into vanilla block variant groups and survival progression, and use standard vanilla ammunition:
+[list]
+[*][b]Large Grid Autocannon Turret:[/b] Fills the missing Large Grid counterpart to the Small Grid Autocannon Turret, built in the same modernized art style as the rebuilt Gatling and Rocket turrets. Uses a standard [b]3x3x3[/b] turret footprint with a [b]1x1[/b] center mount, fires standard [b]Autocannon Magazines[/b] at [b]150 RPM[/b] (16-round burst, 4 s reload) out to [b]800 m[/b], and includes custom build stages and icon.
+[*][b]Large Grid Railgun Turret:[/b] Heavy [b]5x3x5[/b] capital-ship turret firing [b]Large Railgun Sabots[/b] out to [b]2,000 m[/b] with [b]0°[/b] spread and a custom electrical muzzle flash effect. Draws [b]38 MW[/b] over [b]~59.2 s[/b] per shot—matching the vanilla fixed Large Railgun—without requiring any external framework.
+[*][b]Small Grid Fixed Artillery (Standard & Type II):[/b] Full-size [b]5x5x20[/b] Small Grid Artillery matching the exact physical footprint, component cost, and stats of the [b]1x1x4[/b] Large Grid Artillery. Fires standard [b]Artillery Shells[/b], with both standard and DLC Type II variants included.
+[/list]
+
+[hr][/hr]
+
+[h2]Visual & Model Overhaul[/h2]
+All 12 remodeled vanilla weapons keep their [b]exact vanilla footprints, mount points, and stats[/b] so existing ships upgrade seamlessly, with custom icons and full build stages:
+[list]
+[*][b]Completely Rebuilt Turrets:[/b] The vanilla [b]Large & Small Gatling Turrets[/b] and [b]Large & Small Rocket Turrets[/b] have been completely rebuilt to modernize their designs—giving them a clean, cohesive look shared with the new Large Grid Autocannon Turret.
+[*][b]Remodeled & Refined Weapons:[/b] Updated with Keen's newer art style, unified barrel proportions, modernized turret bases, and muzzle brakes on heavy cannons:
+  [list]
+  [*][b]Large Grid:[/b] Fixed Rocket Launcher, Assault Cannon Turret, Artillery Turret, and Fixed Artillery.
+  [*][b]Small Grid:[/b] Fixed Gatling Gun, Autocannon Turret, Fixed Assault Cannon, and Assault Cannon Turret.
+  [/list]
+[/list]
+
+[hr][/hr]
+
+[h2]Audio Overhaul[/h2]
+[list]
+[*][b]Custom Weapon Sounds:[/b] Deeper, punchier firing audio for [b]Gatlings[/b] (8 randomized shot variations for both fixed guns and turrets), [b]Autocannons[/b], [b]Assault Cannons[/b], [b]Artillery[/b], [b]Rocket Launchers[/b], and [b]Torpedo Launchers[/b].
+[*][b]Distance-Filtered Falloff:[/b] Multi-band distant audio cues with custom low-pass filters make weapons sound crisp up close and authentically muffled from afar (audible out to [b]1,400 m[/b] for Assault Cannons and [b]2,000 m[/b] for Artillery).
+[/list]
+
+[hr][/hr]
+
+[h2]Compatibility & Credits[/h2]
+[list]
+[*][b]Standalone — No Dependencies:[/b] Does not require Vanilla+ Framework, ModAdjuster, or any other mod. Built for the vanilla weapon system [i](not WeaponCore)[/i].
+[*][b]Companion Mods:[/b] Designed to pair seamlessly with [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3844940607]JS - Weapon Rebalance[/url] (for rebalanced ranges, velocities, accuracy, and DPS) and [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3719227413]JS - No Uranium Ammo[/url] (if you want Uranium removed from ammo recipes).
+[*][b]DLC Note:[/b] The Small Grid Fixed Artillery Type II variant requires the matching DLC; all other new and remodeled blocks are available without it.
+[*][b]Credits:[/b] Most remodeled assets are modifications of Keen Software House models. The Large Grid Railgun Turret model was created by the talented [url=https://steamcommunity.com/profiles/76561198997598432/myworkshopfiles/?appid=244850]50 корова[/url]—their work is incredible, and I highly recommend checking out their workshop!
+[/list]
+
+Please do not reupload this mod without permission.

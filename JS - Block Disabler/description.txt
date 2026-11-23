@@ -1,0 +1,39 @@
+A lightweight utility mod that cleanly disables any vanilla, DLC, or modded block—without editing or reuploading other mods. Works both as a dependency for mod packs and as a simple per-save config for players and server admins.
+
+[hr][/hr]
+
+[h2]Two Ways to Use It[/h2]
+Both methods are [b]additive[/b] and can be used together at the same time:
+[list]
+[*][b]In a Mod / Modpack:[/b] Place a [b]DisabledBlocks.txt[/b] file in your mod's [b]Data[/b] folder listing the blocks you want disabled, then add this mod as a dependency. Block Disabler automatically scans all loaded mods on startup.
+[*][b]Per-Save (World Storage):[/b] Add this mod to your save and it will automatically create a [b]DisabledBlocks.txt[/b] file in your world's storage folder (if one doesn't already exist):
+  [code]%APPDATA%\SpaceEngineers\Saves\<ID>\<SAVENAME>\Storage[/code]
+[/list]
+
+[h2]File Format[/h2]
+List one block per line using [b]TypeId/SubtypeId[/b] (with or without the [i]MyObjectBuilder_[/i] prefix). Lines starting with [b]//[/b] and inline [b]//[/b] comments are ignored:
+[code]
+// Example: disable vanilla railguns
+SmallMissileLauncherReload/LargeRailgun
+SmallMissileLauncherReload/SmallRailgun
+[/code]
+
+[hr][/hr]
+
+[h2]What It Does[/h2]
+[list]
+[*][b]Hides Blocks from Building & Progression:[/b] Disables each listed block definition and removes it from the G-menu and survival progression.
+[*][b]Cleans Up Variant Groups:[/b] Removes disabled blocks from block variant groups, promotes a remaining block cleanly if the primary was disabled, and hides variant groups that become empty.
+[*][b]Removes Blocks from Grids:[/b] Scans existing grids on world load, monitors newly spawned grids, and removes disabled blocks if they are added to any grid.
+[*][b]Multiplayer Sync:[/b] Automatically syncs the server's world-storage disable list to joining clients so every player's G-menu and variant groups stay in sync.
+[/list]
+
+[hr][/hr]
+
+[h2]Compatibility & Details[/h2]
+[list]
+[*][b]Standalone — No Dependencies:[/b] Works with vanilla, DLC, and modded blocks without overriding any [i].sbc[/i] files.
+[*][b]Safe to Remove:[/b] Does not add any blocks; removing the mod simply re-enables disabled blocks (blocks already removed from existing grids will not be restored).
+[/list]
+
+Please do not reupload this mod without permission.

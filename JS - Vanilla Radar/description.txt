@@ -1,0 +1,43 @@
+Adds a clean, vanilla-friendly HUD radar to Space Engineers so you don't have to spot distant ships by eyesight alone. Marks grids with color-coded target brackets, distance, and speed while flying or operating a turret—inspired by [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2957590632]WC Radar[/url] for WeaponCore, built natively for the vanilla weapon system.
+
+[hr][/hr]
+
+[h2]How It Works[/h2]
+[list]
+[*][b]Active While Controlling:[/b] Automatically displays whenever you are seated in a working cockpit/helm or controlling a turret or Custom Turret Controller.
+[*][b]HUD Target Brackets:[/b] Marks grids (5+ blocks total across subgrids) with color-coded boxes ([b]Red[/b] = Enemy, [b]White[/b] = Neutral/Unowned, [b]Blue[/b] = Friendly/Faction, [b]Green[/b] = Owned), faction/owner tag, grid name, distance (km), and speed (m/s).
+[*][b]Filter Modes (Ctrl + R):[/b] Cycles between [b]Show Enemies[/b] (default), [b]Show Enemies and Neutrals[/b], [b]Radar Off[/b], and [b]Show All[/b].
+[*][b]Smart Detection & Line of Sight:[/b] Base range is [b]2.5 km[/b] (vanilla targeting range) and extends up to the range of any working [b]LiDAR[/b] turret on your ship. Grids hidden behind planets or asteroids are not marked, mechanical subgrids merge into a single marker, and friendly docked ships are ignored.
+[/list]
+
+[hr][/hr]
+
+[h2]New Blocks[/h2]
+Both LiDAR blocks reuse the vanilla Laser Antenna models with animated rotating turret subparts and full build stages:
+[list]
+[*][b]Large Grid LiDAR (1x2x1):[/b] Extends radar range up to [b]15 km[/b] by default (matches default PC view distance).
+[*][b]Small Grid LiDAR (3x3x3):[/b] Extends radar range up to [b]10 km[/b] by default.
+[/list]
+
+[hr][/hr]
+
+[h2]Configuration[/h2]
+Loading a save with this mod automatically generates [b]VanillaRadarConfig.xml[/b] in your world's storage folder (and syncs server settings to clients in multiplayer):
+[code]%APPDATA%\SpaceEngineers\Saves\<ID>\<SAVENAME>\Storage[/code]
+[list]
+[*][b]MinRange:[/b] Base radar range without a LiDAR block (default [b]2,500 m[/b]).
+[*][b]MaxRange:[/b] Maximum radar range cap even with LiDAR blocks (default [b]15,000 m[/b]).
+[*][b]LargeLidarRange:[/b] Max range of the Large Grid LiDAR (default [b]15,000 m[/b]).
+[*][b]SmallLidarRange:[/b] Max range of the Small Grid LiDAR (default [b]10,000 m[/b]).
+[/list]
+
+[hr][/hr]
+
+[h2]Compatibility & Details[/h2]
+[list]
+[*][b]View & Sync Distance Limits:[/b] In singleplayer, detection is limited by your [b]View Distance[/b]. In multiplayer/dedicated servers, clients can only detect grids within the server's [b]Sync Distance[/b] (the mod will notify you if server Sync Distance is lower than your radar range).
+[*][b]Dependencies:[/b] Requires [b]Text HUD API[/b] for drawing HUD markers. Built for the vanilla weapon system [i](no WeaponCore required)[/i].
+[*][b]Credits:[/b] Inspired by [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2957590632]WC Radar[/url].
+[/list]
+
+Please do not reupload this mod without permission.

@@ -1,0 +1,50 @@
+A complete expansion and visual polish pass for Space Engineers conveyors. Fills in missing elbows, crosses, junctions, and airtight variants across every conveyor family while fixing vanilla port visuals and rotation quirks.
+
+[hr][/hr]
+
+[h2]Features & Fixes[/h2]
+[list]
+[*][b]Complete Shape Coverage:[/b] Adds 19 missing blocks so every conveyor family has a full set of shapes—including elbows, crosses, and medium-tube junctions.
+[*][b]Airtight Large Conveyors:[/b] Adds airtight Straight, Curved, T, Elbow, and Cross variants in the Conveyor Junction style so you can run airtight lines without capping unused ports.
+[*][b]Polished Visuals:[/b] Fixes conveyor ends to look like proper conveyor ports rather than hollow holes, and updates Small and Medium Conveyor Tubes to match the Large Conveyor Tube art style.
+[*][b]Free Rotation:[/b] Fixes vanilla rotation restrictions so conveyor blocks can be oriented freely in any direction.
+[/list]
+
+[hr][/hr]
+
+[h2]New Blocks (19 Total)[/h2]
+[list]
+[*][b]Airtight Large Conveyors (5):[/b]
+  [list]
+  [*]Large Conveyor Straight
+  [*]Large Curved Conveyor
+  [*]Large Conveyor T Junction
+  [*]Large Conveyor Elbow
+  [*]Large Conveyor Cross
+  [/list]
+[*][b]Conveyor Tubes (9):[/b]
+  [list]
+  [*]Large Tube Elbow, Large Tube Cross
+  [*]Medium Conveyor Junction [i](airtight)[/i], Medium Tube 3X, Medium Tube T, Medium Tube Elbow, Medium Tube Cross
+  [*]Small Tube Elbow, Small Tube Cross
+  [/list]
+[*][b]Reinforced Conveyor Ducts (4):[/b]
+  [list]
+  [*]Large Reinforced Tube Elbow, Large Reinforced Tube Cross
+  [*]Small Reinforced Tube Elbow, Small Reinforced Tube Cross
+  [/list]
+[*][b]Conveyor Pipes (1):[/b]
+  [list]
+  [*]Large Conveyor Pipe Elbow [i](requires Heavy Industry DLC)[/i]
+  [/list]
+[/list]
+
+[hr][/hr]
+
+[h2]Compatibility & Details[/h2]
+[list]
+[*][b]Full Vanilla Integration:[/b] All new blocks include custom build stages and icons and are grouped cleanly into vanilla block variant groups and survival research progression.
+[*][b]Standalone — No Dependencies:[/b] Requires no other mods. The [b]Heavy Industry DLC[/b] is required only for Conveyor Pipe blocks; all other blocks work without DLC.
+[/list]
+
+Please do not reupload this mod without permission.

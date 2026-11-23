@@ -1,0 +1,20 @@
+Adds airtight Large Grid stair blocks designed to match the vanilla Signal Pack corridor blocks, making multi-deck ship interiors cleaner and easier to pressurize.
+
+[hr][/hr]
+
+[h2]New Blocks[/h2]
+Both blocks use a [b]1x2x1[/b] Large Grid footprint, are fully airtight, and include custom icons and 3-stage build progress models:
+[list]
+[*][b]Corridor Stair Light:[/b] Enclosed stair corridor with a built-in customizable interior light, matching the vanilla Corridor Light block.
+[*][b]Corridor Stair Window:[/b] Enclosed stair corridor with side windows, matching the vanilla Corridor Double Window block.
+[/list]
+
+[hr][/hr]
+
+[h2]Compatibility & Details[/h2]
+[list]
+[*][b]Full Vanilla Integration:[/b] Grouped together in a dedicated [b]Corridor Stairs[/b] block variant group with full mirroring support and survival research progression.
+[*][b]DLC Required:[/b] Requires the [b]Signal Pack DLC[/b]. No other mods required.
+[/list]
+
+Please do not reupload this mod without permission.
