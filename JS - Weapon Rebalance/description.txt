@@ -11,6 +11,7 @@ Vanilla Space Engineers weapon stats were tuned one block at a time over the yea
 [*][b]Broken DPS Ladder & Fixed/Turret Gap:[/b] Fixed gatlings and autocannons never pause to reload—out-damaging their turrets by [b]30–56%[/b]—while the single-barrel Assault Cannon's 6 s reload left it dealing less sustained DPS ([b]700[/b]) than a Gatling ([b]792–1,050[/b]).
 [*][b]Backwards Accuracy:[/b] Artillery turrets ([b]0.30°[/b]) and Assault Cannon turrets ([b]0.35°–0.50°[/b]) had looser spread than Autocannons ([b]0.25°[/b]) and Gatlings ([b]0.225°[/b]).
 [*][b]Sluggish Point Defense:[/b] Vanilla Gatling turrets fired at [b]700 RPM[/b] with slow tracking and 10-tick update intervals, making missile and torpedo interception unreliable.
+[*][b]Wide Launch Arcs:[/b] Homing missiles and torpedoes turned at a fixed [b]6–25°/s[/b] while accelerating, so anything fired off-axis (like a vertical torpedo tube) swung out in a [b]500–1,150 m[/b] arc before tracking its target, and homing missiles could barely hit anything up close.
 [/list]
 
 [hr][/hr]
@@ -22,7 +23,12 @@ Vanilla Space Engineers weapon stats were tuned one block at a time over the yea
   [*]Every weapon reaches further up to the [b]3,000 m[/b] multiplayer sync and turret-update ceiling while keeping vanilla's short-to-long engagement order.
   [*]Turret targeting ranges match projectile ranges, with Small Grid turrets keeping vanilla's [b]75%[/b] ratio. Custom Turret Controllers are raised to [b]3,000 m[/b] (LG) / [b]2,000 m[/b] (SG).
   [*]Gun and shell velocities are raised toward real muzzle speeds so time-to-target stays close to vanilla ([b]~1 s[/b] for guns, [b]~3.8 s[/b] for artillery).
-  [*]Missile and torpedo speeds are [b]unchanged[/b] so point defense stays effective—extra range comes from extended flight time and seeker guidance range.
+  [*]Missile and torpedo top speeds and acceleration are [b]unchanged[/b] so point defense stays effective—extra range comes from extended flight time and seeker guidance range.
+  [/list]
+[*][b]Tight Missile & Torpedo Launch Turns:[/b] Homing missiles and torpedoes leave the launcher slowly and steer much harder, so they swing onto their target right after launch—even from vertical tubes or at targets 90° off the launcher—then build up to their normal top speed.
+  [list]
+  [*][b]Launch Speed:[/b] Homing Missile 100 → 30 m/s; all torpedoes → 10 m/s (they still inherit the launching ship's velocity).
+  [*][b]Turn Rate:[/b] Homing Missile 16 → 100°/s; Torpedo 14 → 45°/s; Heavy 6 → 25°/s; Light 25 → 70°/s; Armor-Piercing 12 → 40°/s.
   [/list]
 [*][b]Consistent DPS Ladder & Fixed/Turret Parity:[/b] Fixed guns and single-barrel turrets of the same caliber deal equal sustained DPS, while double-barrel Large Grid turrets keep ~2x single-barrel output. Ammo cost per damage stays vanilla across all weapons.
   [list]
@@ -43,7 +49,7 @@ Vanilla Space Engineers weapon stats were tuned one block at a time over the yea
 [list]
 [*][b]All DLC Variants & Tooltips Updated:[/b] Includes vanilla, Warfare 2, Warfare 3 (Type II), and Contact Pack reskins, and updates in-game block descriptions with the rebalanced range, rate of fire, and damage stats.
 [*][b]Optional JS - Weapon Overhaul Support:[/b] Automatically applies matching range, accuracy, reload, and tooltip tuning to [b]JS - Weapon Overhaul[/b] weapons (Large Autocannon Turret, Small Artillery, Railgun Turret) if loaded, and runs cleanly standalone without it.
-[*][b]Powered by ModAdjuster:[/b] Uses field-level [b]ModAdjusterV2[/b] patches (plus a lightweight world-load script for missile lifetime, seeker guidance range, and optional-mod detection) rather than overwriting full block definitions, keeping it compatible with mods that change weapon visuals, effects, or build components. [i](Requires ModAdjusterV2.)[/i]
+[*][b]Powered by ModAdjuster:[/b] Uses field-level [b]ModAdjusterV2[/b] patches (plus a lightweight world-load script for missile lifetime, launch speed, turn rate, seeker guidance range, and optional-mod detection) rather than overwriting full block definitions, keeping it compatible with mods that change weapon visuals, effects, or build components. [i](Requires ModAdjusterV2.)[/i]
 [*][b]Safe to Add or Remove:[/b] Does not add or remove blocks and restores runtime-tuned fields on unload, so it can be added to or removed from existing saves safely.
 [/list]
 

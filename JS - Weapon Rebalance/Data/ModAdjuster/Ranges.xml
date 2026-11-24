@@ -17,6 +17,8 @@
          Their longer range comes from longer flight time instead, and seeker GuidanceRange is raised to match.
          ModAdjusterV2 cannot patch missile Lifetime or GuidanceRange,
          so that is set by Data\Scripts\JS - Weapon Rebalance\MissileTuning.cs.
+         That script also gives homing missiles and torpedoes a tight launch turn: a slow start speed plus a
+         faster seeker turn rate (top speed and acceleration stay vanilla).
       5. Small-grid turrets keep Keen's ratio of 75% of the large-grid turret range.
       6. Damage per hit and recoil are fixed numbers in the ammo definitions, not speed-based, so they are unchanged.
 
@@ -90,7 +92,7 @@
             </BasicProperties>
         </Ammo>
 
-        <!-- Homing missiles: speed unchanged, Lifetime 10 -> 12.5 s (extra margin for curving flight) and GuidanceRange 800 -> 1,500 in MissileTuning.cs -->
+        <!-- Homing missiles: top speed unchanged. In MissileTuning.cs: Lifetime 10 -> 13.5 s (extra margin for curving flight), GuidanceRange 800 -> 1,500, and a tighter launch turn (initial speed 100 -> 30, turn rate 16 -> 100). -->
         <Ammo xsi:type="MyObjectBuilder_MissileAmmoDefinition">
             <Id>
                 <TypeId>AmmoDefinition</TypeId>
@@ -101,7 +103,7 @@
             </BasicProperties>
         </Ammo>
 
-        <!-- Torpedoes: speed unchanged. In MissileTuning.cs: Torpedo and Torpedo_Heavy lifetimes raised (the other two already fly far enough), GuidanceRange 2,000 -> 2,700 for all four. -->
+        <!-- Torpedoes: top speed unchanged. In MissileTuning.cs: Torpedo and Torpedo_Heavy lifetimes raised (the other two already fly far enough), GuidanceRange 2,000 -> 2,700 for all four, and a tighter launch turn (initial speed 10; turn rate Torpedo 14 -> 45, Heavy 6 -> 25, Seeking 25 -> 70, Piercing 12 -> 40). -->
         <Ammo xsi:type="MyObjectBuilder_MissileAmmoDefinition">
             <Id>
                 <TypeId>AmmoDefinition</TypeId>

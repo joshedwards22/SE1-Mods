@@ -1,0 +1,57 @@
+A lightweight, up-to-date lighting and atmosphere overhaul for Space Engineers. Sunlight is strong and white, planets get deeper sunsets, nights stay playable under a Milky Way sky, and the screen is free of lens clutter—all without overwriting the game's Environment settings, so it stays compatible with speed mods and future game updates.
+
+[hr][/hr]
+
+[h2]Why Not Just Use Space Just Got Real?[/h2]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1136188499]Space Just Got Real[/url] is a classic and the inspiration for this mod, but it was built for a much older version of the game and is no longer updated. This mod keeps its best ideas and fixes what has aged:
+[list]
+[*][b]Doesn't Roll Back Game Updates:[/b] SJGR ships a full copy of an old Environment file, so it quietly reverts settings Keen has retuned since (sun, bloom, shadows, LODs). This mod only sets the values it actually changes—everything else stays current vanilla.
+[*][b]No Performance Cost:[/b] SJGR also draws full-detail models into shadows at every quality level and nearly triples shadow distance on Low. This mod leaves shadows and LODs alone.
+[*][b]Smoother Skybox:[/b] The same Milky Way skybox, re-encoded with mipmaps so stars don't shimmer or flicker as you move.
+[*][b]Rebuilt Sun Flare:[/b] SJGR's sun flare was tuned for an older flare format. Ours is rebuilt from the current vanilla flare, so it keeps its intended brightness.
+[*][b]Playable Nights:[/b] SJGR's very low ambient light makes planet nights pitch black. Ambient light here is rebalanced for the darker Milky Way skybox, so nights stay dark but playable.
+[*][b]Realistic White Sun:[/b] A neutral white sun instead of a deep orange one.
+[*][b]Truly Clean Screen:[/b] Chromatic aberration is removed entirely and no vignette is added (SJGR adds one back).
+[*][b]Bloom Tuned for Today's Game:[/b] Emissive glow is reduced relative to the current game rather than a years-old baseline, so lights still read as lights.
+[/list]
+
+[hr][/hr]
+
+[h2]Sky & Sun[/h2]
+[list]
+[*][b]Milky Way Skybox:[/b] Replaces the default starfield with the Milky Way skybox from [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1136188499]Space Just Got Real[/url] (used with permission), re-encoded with mipmaps so stars no longer shimmer in motion.
+[*][b]Realistic White Sun:[/b] The sun disc and lens flare use a neutral sunlight white (~5800 K) instead of orange, matching how the sun looks from space.
+[*][b]Larger Sun Disc:[/b] Slightly larger sun disc and main glow.
+[*][b]Stronger Sunlight:[/b] Direct sunlight is noticeably stronger for harder, more dramatic light and shadow.
+[/list]
+
+[hr][/hr]
+
+[h2]Darkness & Atmosphere[/h2]
+[list]
+[*][b]Balanced Night Lighting:[/b] Ambient light is rebalanced for the darker Milky Way skybox, so nights and shadowed areas stay readable instead of going pitch black.
+[*][b]Deeper Sunsets:[/b] Less atmospheric fill light on planets for stronger sunsets and more depth.
+[*][b]Softer Night-Side Clouds:[/b] Clouds glow less on the dark side of planets.
+[/list]
+
+[hr][/hr]
+
+[h2]Post-Processing & HUD[/h2]
+[list]
+[*][b]Less Neon Glow:[/b] Emissive block parts (lights, indicators, panels) glow far less.
+[*][b]Clean Bloom:[/b] Bright halos no longer show the dirty-lens smudge pattern, with overall bloom kept at vanilla strength.
+[*][b]No Chromatic Aberration:[/b] Color fringing at the screen edges is removed.
+[*][b]Outline-Only Block Highlight:[/b] Highlighted blocks show a thin outline only, with no yellow fill.
+[/list]
+
+[hr][/hr]
+
+[h2]Compatibility & Details[/h2]
+[list]
+[*][b]Partial Override:[/b] Only the values listed above are changed. Ship speeds, shadows, LODs, ambient occlusion, fog, and everything else stay vanilla, so speed mods and other environment mods keep working and future game updates still come through.
+[*][b]Sun Flare Only:[/b] Only the Sun's lens flare is modified; lights, thrusters, and tool flares are untouched.
+[*][b]Safe to Add or Remove:[/b] Purely visual. Does not add or remove items or blocks, so it can be added to or removed from existing saves safely.
+[*][b]Credits:[/b] Milky Way skybox and inspiration from [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1136188499]Space Just Got Real[/url].
+[/list]
+
+Please do not reupload this mod without permission.

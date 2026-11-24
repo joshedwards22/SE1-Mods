@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <!--
+        JS - Lighting Overhaul
+
+        This is a PARTIAL environment definition. The game merges it into vanilla field by field
+        (MyEnvironmentDefinition.Merge -> MyMergeHelper), so anything not listed here keeps the vanilla
+        value (or whatever another mod sets): ship speeds, shadows, LODs, SSAO/HBAO, fog, particles, etc.
+
+        Rules for editing this file:
+        - Top-level fields and direct children of <SunProperties> / <PostProcessSettings> may be partial.
+          Verified in game with JS - Env Debug: omitted PostProcessSettings fields keep their vanilla values.
+        - Blocks nested one level deeper (<EnvironmentLight>, <PostProcessSettings><Data>) and
+          <PlanetProperties> are written out IN FULL (copied from vanilla, only our values changed),
+          because the standard serializer used for them may start from zeros.
+        - Vectors/colors (X/Y/Z/W) must always list every component.
+        - A value exactly equal to Keen's code default is ignored by the merge; use a tiny offset instead.
+
+        Values changed from vanilla are marked with  CHANGED: vanilla value -> reason.
+    -->
+    <Definition xsi:type="EnvironmentDefinition">
+        <Id>
+            <TypeId>EnvironmentDefinition</TypeId>
+            <SubtypeId>Default</SubtypeId>
+        </Id>
+
+        <PlanetProperties>
+            <AtmosphereIntensityMultiplier>17</AtmosphereIntensityMultiplier>
+            <AtmosphereIntensityAmbientMultiplier>1.9</AtmosphereIntensityAmbientMultiplier> <!-- CHANGED: 3 -> less atmospheric fill light, stronger sunsets and depth -->
+            <CloudsIntensityMultiplier>13</CloudsIntensityMultiplier> <!-- CHANGED: 15 -> clouds glow less on the night side -->
+        </PlanetProperties>
+
+        <SunProperties>
+            <SunIntensity>80</SunIntensity> <!-- CHANGED: 50 -> stronger direct sunlight, harder light/shadow contrast (150 and 100 clipped sunlit white hulls) -->
+            <EnvironmentLight>
+                <SunColor>
+                    <X>1</X>
+                    <Y>1</Y>
+                    <Z>1</Z>
+                </SunColor>
+
+                <SunDiffuseFactor>1.0</SunDiffuseFactor>
+                <SunGlossFactor>1.0</SunGlossFactor>
+
+                <AmbientDiffuseFactor>1.0</AmbientDiffuseFactor>
+                <AmbientSpecularFactor>2.4</AmbientSpecularFactor>
+                <GlassAmbient>0</GlassAmbient>
+                <AmbientForwardPass>0.0</AmbientForwardPass>
+                <AmbientGlobalMinimum>0</AmbientGlobalMinimum>
+                <AmbientGlobalDensity>0</AmbientGlobalDensity>
+                <AmbientGlobalMultiplier>0</AmbientGlobalMultiplier>
+
+                <SunDiscColor> <!-- CHANGED: 0.88 / 0.53 / 0.23 (orange) -> sunlight white, ~5800 K -->
+                    <X>0.99</X>
+                    <Y>0.95</Y>
+                    <Z>0.90</Z>
+                </SunDiscColor>
+                <SunDiscColor2>
+                    <X>1.0</X>
+                    <Y>1.0</Y>
+                    <Z>1.0</Z>
+                </SunDiscColor2>
+                <SunDiscInnerDot>0.999</SunDiscInnerDot> <!-- CHANGED: 0.9992 -> larger sun disc core -->
+                <SunDiscOuterDot>0.9987</SunDiscOuterDot> <!-- CHANGED: 0.99875 -> larger sun disc edge -->
+
+                <AODirLight>1</AODirLight>
+                <AOIndirectLight>1</AOIndirectLight>
+                <AOPointLight>0.7</AOPointLight>
+                <AOSpotLight>0.7</AOSpotLight>
+
+                <SkyboxBrightness>0.4</SkyboxBrightness> <!-- vanilla; tested 0.4-0.8, no visible effect in game -->
+                <EnvSkyboxBrightness>3</EnvSkyboxBrightness> <!-- CHANGED: 2 -> ambient light from the skybox, the main light at night. Tuned in game.
+                    Raised because the Milky Way sky is darker than vanilla's (average 0.022 vs 0.040), so the same setting gives less light:
+                    vanilla 2 x 0.040 = 0.081 | ours 3 x 0.022 = 0.066 (~80% of vanilla).
+                    Values of 0.15-0.3 made planet nights pitch black. Eye adaptation (Min/MaxEyeAdaptationLogBrightness) and
+                    HistogramSkyboxFactor were tested and had no visible effect, so they are left vanilla. -->
+                <ShadowFadeoutMultiplier>0.0</ShadowFadeoutMultiplier>
+                <EnvShadowFadeoutMultiplier>0</EnvShadowFadeoutMultiplier>
+                <EnvAtmosphereBrightness>1.0</EnvAtmosphereBrightness>
+
+                <AmbientRadius>50.0</AmbientRadius>
+                <AmbientLightsGatherRadius>15.0</AmbientLightsGatherRadius>
+                <SunDiscIntensity>3.8</SunDiscIntensity>
+            </EnvironmentLight>
+        </SunProperties>
+
+        <PostProcessSettings>
+            <Data>
+                <Contrast>1.0</Contrast>
+                <Brightness>1</Brightness>
+                <Saturation>1</Saturation>
+                <BrightnessFactorR>1</BrightnessFactorR>
+                <BrightnessFactorG>1</BrightnessFactorG>
+                <BrightnessFactorB>1</BrightnessFactorB>
+                <LightColor>
+                    <X>1</X>
+                    <Y>0.9</Y>
+                    <Z>0.5</Z>
+                </LightColor>
+                <DarkColor>
+                    <X>0.2</X>
+                    <Y>0.05</Y>
+                    <Z>0</Z>
+                </DarkColor>
+                <ConstantLuminance>0.1</ConstantLuminance>
+                <LuminanceExposure>0.0</LuminanceExposure>
+                <EyeAdaptationTau>0.4</EyeAdaptationTau>
+                <BloomExposure>5.04930735</BloomExposure>
+                <BloomLumaThreshold>5.0</BloomLumaThreshold>
+                <BloomMult>0.0055</BloomMult> <!-- CHANGED: 0.02 -> compensates for removing the dirt mask below. Final bloom = BloomMult * (dirt * ratio + 1 - ratio);
+                                                   Dirt.dds averages 0.035, so vanilla = 0.02 * 0.276 = 0.0055 and ours = 0.0055 * 0.99 (same strength, no smudges) -->
+                <BloomEmissiveness>50</BloomEmissiveness> <!-- CHANGED: 120 -> glowing block parts less neon (also dims the surfaces themselves) -->
+                <BloomDepthStrength>2.0</BloomDepthStrength>
+                <BloomDepthSlope>0.3</BloomDepthSlope>
+                <LogLumThreshold>-4</LogLumThreshold>
+                <EyeAdaptationSpeedUp>2</EyeAdaptationSpeedUp>
+                <EyeAdaptationSpeedDown>0.5</EyeAdaptationSpeedDown>
+                <WhitePoint>11.2</WhitePoint>
+                <BloomDirtRatio>0.01</BloomDirtRatio> <!-- CHANGED: 0.75 -> clean bloom, no dirty-lens smudges (dirt is a darkening mask, so BloomMult is lowered to match) -->
+                <GrainSize>0</GrainSize>
+                <GrainAmount>0.5</GrainAmount>
+                <GrainStrength>0.0</GrainStrength>
+                <ChromaticFactor>0.0001</ChromaticFactor> <!-- CHANGED: 0.02 -> chromatic aberration effectively off (not 0: merge would ignore it) -->
+                <Vibrance>0.2</Vibrance>
+                <VignetteStart>0</VignetteStart>
+                <VignetteLength>1.25</VignetteLength>
+            </Data>
+        </PostProcessSettings>
+
+        <EnvironmentTexture>Textures\BackgroundCube\Final\JS_LightingOverhaul_Sky.dds</EnvironmentTexture> <!-- CHANGED: Milky Way skybox, BC7 with mipmaps -->
+
+        <ContourHighlightColor> <!-- CHANGED: W 0.05 -> 0: outline-only block highlight, no fill -->
+            <X>1</X>
+            <Y>1</Y>
+            <Z>0</Z>
+            <W>0</W>
+        </ContourHighlightColor>
+        <ContourHighlightThickness>4</ContourHighlightThickness> <!-- CHANGED: 7.5 -> thinner highlight outline -->
+    </Definition>
+</Definitions>

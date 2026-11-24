@@ -10,3 +10,5 @@ To help debug issues the game logs can be found here C:\Users\joshe\AppData\Roam
 When adding or editing blocks in .sbc files, verify unique CubeSize|BlockPairName pairings, mirroring tags (<MirroringX/Y/Z>) for asymmetric shapes, and progression entries (ResearchBlocks.sbc / ResearchGroups.sbc).
 
 Source Blender (.blend) models live in the Models folder (do not edit unless asked), and Blender is installed at C:\Program Files\Blender Foundation\Blender 4.5\blender.exe. For parsing, visualizing, creating, modifying, or debugging .blend/SEUT files, use the seut-blend skill. I do not want LODs in the models.
+
+All mods should have a description.txt that is the steam workshop bbcode description for the mod. They should all follow the consistent layout.
