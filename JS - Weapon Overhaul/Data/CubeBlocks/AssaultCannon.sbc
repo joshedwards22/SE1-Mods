@@ -182,6 +182,181 @@
             <UpCameraOffset>0.5</UpCameraOffset>
             <ForwardCameraOffset>0.6</ForwardCameraOffset>
         </Definition>
+        <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+            <Id>
+                <TypeId>LargeMissileTurret</TypeId>
+                <SubtypeId>SmallBlockMediumCalibreTurretJS</SubtypeId>
+            </Id>
+            <DisplayName>Assault Cannon Turret Type III</DisplayName>
+            <Icon>Textures\GUI\Icons\Cubes\MediumCalibreTurret_Small_JS.dds</Icon>
+            <Description>Description_MediumCalibreGun</Description>
+            <CubeSize>Small</CubeSize>
+            <GuiVisible>false</GuiVisible>
+            <PlaceDecals>false</PlaceDecals>
+            <BlockTopology>TriangleMesh</BlockTopology>
+            <Size x="7" y="5" z="7" />
+            <ModelOffset x="0" y="0" z="0" />
+            <Model>Models\Cubes\small\AssaultCannonTurretJS\MediumCalibreTurret_Base.mwm</Model>
+            <UseModelIntersection>true</UseModelIntersection>
+            <Components>
+                <Component Subtype="SteelPlate" Count="25" />
+                <Component Subtype="Construction" Count="60" />
+                <Component Subtype="MetalGrid" Count="10" />
+                <Component Subtype="LargeTube" Count="6" />
+                <Component Subtype="Motor" Count="10" />
+                <Component Subtype="Computer" Count="20" />
+                <Component Subtype="Construction" Count="40" />
+                <Component Subtype="SteelPlate" Count="25" />
+            </Components>
+            <CriticalComponent Subtype="Computer" Index="0" />
+            <MountPoints>
+                <MountPoint Side="Bottom" StartX="2" StartY="2" EndX="5" EndY="5" Default="true" />
+            </MountPoints>
+            <BuildProgressModels>
+                <Model BuildPercentUpperBound="0.43" File="Models\Cubes\small\AssaultCannonTurretJS\MediumCalibreTurret_Base_BS1.mwm" />
+                <Model BuildPercentUpperBound="1.0" File="Models\Cubes\small\AssaultCannonTurretJS\MediumCalibreTurret_Base_BS2.mwm" />
+            </BuildProgressModels>
+            <VoxelPlacement>
+                <StaticMode>
+                    <PlacementMode>OutsideVoxel</PlacementMode>
+                    <MaxAllowed>0.2</MaxAllowed>
+                    <MinAllowed>0</MinAllowed>
+                </StaticMode>
+                <DynamicMode>
+                    <PlacementMode>OutsideVoxel</PlacementMode>
+                    <MaxAllowed>0.2</MaxAllowed>
+                    <MinAllowed>0.01</MinAllowed>
+                </DynamicMode>
+            </VoxelPlacement>
+            <BlockPairName>MediumCalibreTurretJS</BlockPairName>
+            <MirroringY>Z</MirroringY>
+            <MirroringZ>Y</MirroringZ>
+            <EdgeType>Light</EdgeType>
+            <BuildTimeSeconds>40</BuildTimeSeconds>
+            <OverlayTexture>Textures\GUI\Screens\turret_overlay.dds</OverlayTexture>
+            <WeaponDefinitionId Subtype="SmallMediumCalibreTurret" />
+            <EnabledTargetingOptions>LargeShips SmallShips Stations Enemies</EnabledTargetingOptions>
+            <HiddenTargetingOptions>Asteroids Missiles Friends</HiddenTargetingOptions>
+            <InventoryMaxVolume>0.09</InventoryMaxVolume>
+            <DamageEffectName>Damage_WeapExpl_Damaged</DamageEffectName>
+            <DamagedSound>ParticleWeapExpl</DamagedSound>
+            <ResourceSinkGroup>Defense</ResourceSinkGroup>
+            <MinElevationDegrees>-10</MinElevationDegrees>
+            <MaxElevationDegrees>50</MaxElevationDegrees>
+            <MinAzimuthDegrees>-180</MinAzimuthDegrees>
+            <MaxAzimuthDegrees>180</MaxAzimuthDegrees>
+            <IdleRotation>true</IdleRotation>
+            <MaxRangeMeters>600</MaxRangeMeters>
+            <RotationSpeed>0.0008</RotationSpeed>
+            <ElevationSpeed>0.0008 </ElevationSpeed>
+            <EmissiveColorPreset>Default</EmissiveColorPreset>
+            <MinFov>0.1</MinFov>
+            <MaxFov>1.04719755</MaxFov>
+            <DestroyEffect>BlockDestroyedExplosion_Large</DestroyEffect>
+            <DestroySound>WepSmallWarheadExpl</DestroySound>
+            <PCU>275</PCU>
+            <IsAirTight>false</IsAirTight>
+            <AmmoPullAmountPerTick>2</AmmoPullAmountPerTick>
+            <InventoryFillFactorMin>.25</InventoryFillFactorMin>
+            <InventoryFillFactorMax>.5</InventoryFillFactorMax>
+            <TieredUpdateTimes>
+                <unsignedInt>10</unsignedInt>
+                <unsignedInt>0</unsignedInt>
+            </TieredUpdateTimes>
+            <TargetingGroups>
+                <string>Weapons</string>
+            </TargetingGroups>
+            <UpCameraOffset>0.5</UpCameraOffset>
+            <ForwardCameraOffset>0.6</ForwardCameraOffset>
+        </Definition>
+        <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+            <Id>
+                <TypeId>LargeMissileTurret</TypeId>
+                <SubtypeId>SmallBlockMediumCalibreTurretContact</SubtypeId>
+            </Id>
+            <DisplayName>Assault Cannon Turret Type IV</DisplayName>
+            <Icon>Textures\GUI\Icons\Cubes\MediumCalibreTurret_Small_contact.dds</Icon>
+            <Description>Description_MediumCalibreGun</Description>
+            <CubeSize>Small</CubeSize>
+            <GuiVisible>false</GuiVisible>
+            <PlaceDecals>false</PlaceDecals>
+            <BlockTopology>TriangleMesh</BlockTopology>
+            <Size x="7" y="5" z="7" />
+            <ModelOffset x="0" y="0" z="0" />
+            <Model>Models\Cubes\small\AssaultCannonTurretContact\MediumCalibreTurret.mwm</Model>
+            <UseModelIntersection>true</UseModelIntersection>
+            <Components>
+                <Component Subtype="SteelPlate" Count="25" />
+                <Component Subtype="Construction" Count="60" />
+                <Component Subtype="MetalGrid" Count="10" />
+                <Component Subtype="LargeTube" Count="6" />
+                <Component Subtype="Motor" Count="10" />
+                <Component Subtype="Computer" Count="20" />
+                <Component Subtype="Construction" Count="40" />
+                <Component Subtype="SteelPlate" Count="25" />
+            </Components>
+            <CriticalComponent Subtype="Computer" Index="0" />
+            <MountPoints>
+                <MountPoint Side="Bottom" StartX="2" StartY="2" EndX="5" EndY="5" Default="true" />
+            </MountPoints>
+            <BuildProgressModels>
+                <Model BuildPercentUpperBound="0.43" File="Models\Cubes\small\AssaultCannonTurretContact\MediumCalibreTurret_BS1.mwm" />
+                <Model BuildPercentUpperBound="1.0" File="Models\Cubes\small\AssaultCannonTurretContact\MediumCalibreTurret_BS2.mwm" />
+            </BuildProgressModels>
+            <VoxelPlacement>
+                <StaticMode>
+                    <PlacementMode>OutsideVoxel</PlacementMode>
+                    <MaxAllowed>0.2</MaxAllowed>
+                    <MinAllowed>0</MinAllowed>
+                </StaticMode>
+                <DynamicMode>
+                    <PlacementMode>OutsideVoxel</PlacementMode>
+                    <MaxAllowed>0.2</MaxAllowed>
+                    <MinAllowed>0.01</MinAllowed>
+                </DynamicMode>
+            </VoxelPlacement>
+            <BlockPairName>MediumCalibreTurretContact</BlockPairName>
+            <MirroringY>Z</MirroringY>
+            <MirroringZ>Y</MirroringZ>
+            <EdgeType>Light</EdgeType>
+            <BuildTimeSeconds>40</BuildTimeSeconds>
+            <OverlayTexture>Textures\GUI\Screens\turret_overlay.dds</OverlayTexture>
+            <WeaponDefinitionId Subtype="SmallMediumCalibreTurret" />
+            <EnabledTargetingOptions>LargeShips SmallShips Stations Enemies</EnabledTargetingOptions>
+            <HiddenTargetingOptions>Asteroids Missiles Friends</HiddenTargetingOptions>
+            <InventoryMaxVolume>0.09</InventoryMaxVolume>
+            <DamageEffectName>Damage_WeapExpl_Damaged</DamageEffectName>
+            <DamagedSound>ParticleWeapExpl</DamagedSound>
+            <ResourceSinkGroup>Defense</ResourceSinkGroup>
+            <MinElevationDegrees>-10</MinElevationDegrees>
+            <MaxElevationDegrees>50</MaxElevationDegrees>
+            <MinAzimuthDegrees>-180</MinAzimuthDegrees>
+            <MaxAzimuthDegrees>180</MaxAzimuthDegrees>
+            <IdleRotation>true</IdleRotation>
+            <MaxRangeMeters>600</MaxRangeMeters>
+            <RotationSpeed>0.0008</RotationSpeed>
+            <ElevationSpeed>0.0008 </ElevationSpeed>
+            <EmissiveColorPreset>Default</EmissiveColorPreset>
+            <MinFov>0.1</MinFov>
+            <MaxFov>1.04719755</MaxFov>
+            <DestroyEffect>BlockDestroyedExplosion_Large</DestroyEffect>
+            <DestroySound>WepSmallWarheadExpl</DestroySound>
+            <PCU>275</PCU>
+            <IsAirTight>false</IsAirTight>
+            <AmmoPullAmountPerTick>2</AmmoPullAmountPerTick>
+            <InventoryFillFactorMin>.25</InventoryFillFactorMin>
+            <InventoryFillFactorMax>.5</InventoryFillFactorMax>
+            <TieredUpdateTimes>
+                <unsignedInt>10</unsignedInt>
+                <unsignedInt>0</unsignedInt>
+            </TieredUpdateTimes>
+            <TargetingGroups>
+                <string>Weapons</string>
+            </TargetingGroups>
+            <UpCameraOffset>0.5</UpCameraOffset>
+            <ForwardCameraOffset>0.6</ForwardCameraOffset>
+            <DLC>Contact</DLC>
+        </Definition>
         <Definition xsi:type="MyObjectBuilder_WeaponBlockDefinition">
             <Id>
                 <TypeId>SmallMissileLauncherReload</TypeId>

@@ -1,4 +1,4 @@
-A standalone visual, audio, and arsenal expansion for Space Engineers ship weapons. Remodels 12 vanilla weapons with cohesive, modernized designs, replaces weapon audio with deeper firing effects and distance-filtered falloff, and adds missing weapon roles—all balanced to vanilla stats with zero external dependencies.
+A standalone visual, audio, and arsenal expansion for Space Engineers ship weapons. Remodels 12 vanilla weapons with cohesive, modernized designs, replaces weapon audio with deeper firing effects and distance-filtered falloff, adds missing weapon roles, and expands the turret lineup with new visual variants—all balanced to vanilla stats with zero external dependencies.
 
 [b]Want rebalanced weapon ranges, velocities, accuracy, and DPS too?[/b] Pair this mod with [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3844940607]JS - Weapon Rebalance[/url]—it automatically detects and tunes the new weapons in this mod to match.
 
@@ -15,13 +15,32 @@ All new blocks are tuned to vanilla stats, integrated into vanilla block variant
 [hr][/hr]
 
 [h2]Visual & Model Overhaul[/h2]
-All 12 remodeled vanilla weapons keep their [b]exact vanilla footprints, mount points, and stats[/b] so existing ships upgrade seamlessly, with custom icons and full build stages:
+Remodeled vanilla weapons keep their [b]exact vanilla footprints, mount points, and stats[/b] so existing ships upgrade seamlessly, with custom icons and full build stages:
 [list]
 [*][b]Completely Rebuilt Turrets:[/b] The vanilla [b]Large & Small Gatling Turrets[/b] and [b]Large & Small Rocket Turrets[/b] have been completely rebuilt to modernize their designs—giving them a clean, cohesive look shared with the new Large Grid Autocannon Turret.
 [*][b]Remodeled & Refined Weapons:[/b] Updated with Keen's newer art style, unified barrel proportions, modernized turret bases, and muzzle brakes on heavy cannons:
   [list]
   [*][b]Large Grid:[/b] Fixed Rocket Launcher, Assault Cannon Turret, Artillery Turret, and Fixed Artillery.
   [*][b]Small Grid:[/b] Fixed Gatling Gun, Autocannon Turret, Fixed Assault Cannon, and Assault Cannon Turret.
+  [/list]
+[/list]
+
+[hr][/hr]
+
+[h2]Turret Variants[/h2]
+New cosmetic turret variants that sit alongside the vanilla and DLC Type II turrets. Every variant shares its base turret's [b]stats, footprint, mount points, and component cost[/b], and is integrated into the vanilla turret variant group and survival progression:
+[list]
+[*][b]Remodeled Variants (No DLC Required):[/b] Additional remodels that keep the vanilla turret available instead of replacing it:
+  [list]
+  [*][b]Autocannon Turret Type III[/b] (Small Grid)
+  [*][b]Assault Cannon Turret Type III[/b] (Small Grid)
+  [/list]
+[*][b]Contact-Styled Variants (Requires Contact Pack DLC):[/b] Built from Contact Pack weapon geometry to bring that styling to more of the turret lineup:
+  [list]
+  [*][b]Gatling Turret Type III[/b] (Large & Small Grid)
+  [*][b]Rocket Turret Type III[/b] (Large & Small Grid)
+  [*][b]Autocannon Turret Type II[/b] (Large Grid) and [b]Autocannon Turret Type IV[/b] (Small Grid)
+  [*][b]Assault Cannon Turret Type IV[/b] (Small Grid)
   [/list]
 [/list]
 
@@ -39,8 +58,8 @@ All 12 remodeled vanilla weapons keep their [b]exact vanilla footprints, mount p
 [list]
 [*][b]Standalone — No Dependencies:[/b] Does not require Vanilla+ Framework, ModAdjuster, or any other mod. Built for the vanilla weapon system [i](not WeaponCore)[/i].
 [*][b]Companion Mods:[/b] Designed to pair seamlessly with [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3844940607]JS - Weapon Rebalance[/url] (for rebalanced ranges, velocities, accuracy, and DPS) and [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3719227413]JS - No Uranium Ammo[/url] (if you want Uranium removed from ammo recipes).
-[*][b]DLC Note:[/b] The Small Grid Fixed Artillery Type II variant requires the matching DLC; all other new and remodeled blocks are available without it.
-[*][b]Credits:[/b] Most remodeled assets are modifications of Keen Software House models. The Large Grid Railgun Turret model was created by the talented [url=https://steamcommunity.com/profiles/76561198997598432/myworkshopfiles/?appid=244850]50 корова[/url]—their work is incredible, and I highly recommend checking out their workshop!
+[*][b]DLC Note:[/b] The Small Grid Fixed Artillery Type II variant and the Contact-styled turret variants require their matching DLC; all other new, remodeled, and variant blocks are available without it.
+[*][b]Credits:[/b] Most remodeled assets are modifications of Keen Software House models, and the Contact-styled turret variants use geometry from Keen's Contact Pack weapons. The Large Grid Railgun Turret model was created by the talented [url=https://steamcommunity.com/profiles/76561198997598432/myworkshopfiles/?appid=244850]50 корова[/url]—their work is incredible, and I highly recommend checking out their workshop!
 [/list]
 
 Please do not reupload this mod without permission.

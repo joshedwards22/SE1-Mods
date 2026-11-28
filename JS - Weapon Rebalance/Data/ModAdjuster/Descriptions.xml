@@ -32,6 +32,13 @@
             </Id>
             <Description>Fast-shooting turret that can be loaded through conveyors. Uses Gatling Ammo Boxes.&#xA;&#xA;Maximum Range: 1,200 m&#xA;Rate of Fire: 1,200 RPM&#xA;Damage: 54</Description>
         </Definition>
+        <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+            <Id>
+                <TypeId>LargeGatlingTurret</TypeId>
+                <SubtypeId>LargeGatlingTurretContact</SubtypeId>
+            </Id>
+            <Description>Fast-shooting turret that can be loaded through conveyors. Uses Gatling Ammo Boxes.&#xA;&#xA;Maximum Range: 1,200 m&#xA;Rate of Fire: 1,200 RPM&#xA;Damage: 54</Description>
+        </Definition>
         <!-- Small-grid gatling turrets: 900 m, 1,200 RPM, 54 dmg -->
         <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
             <Id>
@@ -44,6 +51,13 @@
             <Id>
                 <TypeId>LargeGatlingTurret</TypeId>
                 <SubtypeId>SmallGatlingTurretReskin</SubtypeId>
+            </Id>
+            <Description>Fast-shooting turret that can be loaded through conveyors. Uses Gatling Ammo Boxes.&#xA;&#xA;Maximum Range: 900 m&#xA;Rate of Fire: 1,200 RPM&#xA;Damage: 54</Description>
+        </Definition>
+        <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+            <Id>
+                <TypeId>LargeGatlingTurret</TypeId>
+                <SubtypeId>SmallGatlingTurretContact</SubtypeId>
             </Id>
             <Description>Fast-shooting turret that can be loaded through conveyors. Uses Gatling Ammo Boxes.&#xA;&#xA;Maximum Range: 900 m&#xA;Rate of Fire: 1,200 RPM&#xA;Damage: 54</Description>
         </Definition>
@@ -104,11 +118,32 @@
             </Id>
             <Description>Medium rate of fire, with a good punch in a small turret. Uses Autocannon Magazines.&#xA;&#xA;Maximum Range: 1,200 m&#xA;Rate of Fire: 150 RPM&#xA;Damage: 500</Description>
         </Definition>
+        <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+            <Id>
+                <TypeId>LargeGatlingTurret</TypeId>
+                <SubtypeId>AutoCannonTurretJS</SubtypeId>
+            </Id>
+            <Description>Medium rate of fire, with a good punch in a small turret. Uses Autocannon Magazines.&#xA;&#xA;Maximum Range: 1,200 m&#xA;Rate of Fire: 150 RPM&#xA;Damage: 500</Description>
+        </Definition>
+        <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+            <Id>
+                <TypeId>LargeGatlingTurret</TypeId>
+                <SubtypeId>AutoCannonTurretContact</SubtypeId>
+            </Id>
+            <Description>Medium rate of fire, with a good punch in a small turret. Uses Autocannon Magazines.&#xA;&#xA;Maximum Range: 1,200 m&#xA;Rate of Fire: 150 RPM&#xA;Damage: 500</Description>
+        </Definition>
         <!-- Large-grid autocannon turret (JS - Weapon Overhaul): 1,600 m, 150 RPM, 500 dmg -->
         <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
             <Id>
                 <TypeId>LargeGatlingTurret</TypeId>
                 <SubtypeId>LargeAutocannonTurret</SubtypeId>
+            </Id>
+            <Description>Medium rate of fire, with a good punch in a large turret. Uses Autocannon Magazines.&#xA;&#xA;Maximum Range: 1,600 m&#xA;Rate of Fire: 150 RPM&#xA;Damage: 500</Description>
+        </Definition>
+        <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+            <Id>
+                <TypeId>LargeGatlingTurret</TypeId>
+                <SubtypeId>LargeAutocannonTurretContact</SubtypeId>
             </Id>
             <Description>Medium rate of fire, with a good punch in a large turret. Uses Autocannon Magazines.&#xA;&#xA;Maximum Range: 1,600 m&#xA;Rate of Fire: 150 RPM&#xA;Damage: 500</Description>
         </Definition>
@@ -160,6 +195,13 @@
             </Id>
             <Description>Slow-shooting, explosive damage dealing, rocket launcher that can be loaded through conveyors. Uses Rockets and Homing Missiles.&#xA;&#xA;Maximum Range: 1,300 m&#xA;Rate of Fire: 90 RPM&#xA;Damage: 500 (Rocket) / 300 (Homing)</Description>
         </Definition>
+        <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+            <Id>
+                <TypeId>LargeMissileTurret</TypeId>
+                <SubtypeId>LargeMissileTurretContact</SubtypeId>
+            </Id>
+            <Description>Slow-shooting, explosive damage dealing, rocket launcher that can be loaded through conveyors. Uses Rockets and Homing Missiles.&#xA;&#xA;Maximum Range: 1,300 m&#xA;Rate of Fire: 90 RPM&#xA;Damage: 500 (Rocket) / 300 (Homing)</Description>
+        </Definition>
         <!-- Small-grid rocket turrets: 1,000 m, 90 RPM, 500 / 300 dmg -->
         <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
             <Id>
@@ -172,6 +214,13 @@
             <Id>
                 <TypeId>LargeMissileTurret</TypeId>
                 <SubtypeId>SmallMissileTurretReskin</SubtypeId>
+            </Id>
+            <Description>Slow-shooting, explosive damage dealing, rocket launcher that can be loaded through conveyors. Uses Rockets and Homing Missiles.&#xA;&#xA;Maximum Range: 1,000 m&#xA;Rate of Fire: 90 RPM&#xA;Damage: 500 (Rocket) / 300 (Homing)</Description>
+        </Definition>
+        <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+            <Id>
+                <TypeId>LargeMissileTurret</TypeId>
+                <SubtypeId>SmallMissileTurretContact</SubtypeId>
             </Id>
             <Description>Slow-shooting, explosive damage dealing, rocket launcher that can be loaded through conveyors. Uses Rockets and Homing Missiles.&#xA;&#xA;Maximum Range: 1,000 m&#xA;Rate of Fire: 90 RPM&#xA;Damage: 500 (Rocket) / 300 (Homing)</Description>
         </Definition>
@@ -219,6 +268,20 @@
             <Id>
                 <TypeId>LargeMissileTurret</TypeId>
                 <SubtypeId>SmallBlockMediumCalibreTurretType2</SubtypeId>
+            </Id>
+            <Description>Slower and bigger sibling of the Autocannon. Deals decent damage to armored targets. Uses Assault Cannon Shells.&#xA;&#xA;Maximum Range: 1,500 m&#xA;Rate of Fire: 17 RPM&#xA;Damage: 4,200</Description>
+        </Definition>
+        <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+            <Id>
+                <TypeId>LargeMissileTurret</TypeId>
+                <SubtypeId>SmallBlockMediumCalibreTurretJS</SubtypeId>
+            </Id>
+            <Description>Slower and bigger sibling of the Autocannon. Deals decent damage to armored targets. Uses Assault Cannon Shells.&#xA;&#xA;Maximum Range: 1,500 m&#xA;Rate of Fire: 17 RPM&#xA;Damage: 4,200</Description>
+        </Definition>
+        <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+            <Id>
+                <TypeId>LargeMissileTurret</TypeId>
+                <SubtypeId>SmallBlockMediumCalibreTurretContact</SubtypeId>
             </Id>
             <Description>Slower and bigger sibling of the Autocannon. Deals decent damage to armored targets. Uses Assault Cannon Shells.&#xA;&#xA;Maximum Range: 1,500 m&#xA;Rate of Fire: 17 RPM&#xA;Damage: 4,200</Description>
         </Definition>

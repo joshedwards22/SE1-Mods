@@ -12,13 +12,20 @@
                 <Block Type="MyObjectBuilder_LargeGatlingTurret" Subtype="SmallGatlingTurret" />
                 <Block Type="MyObjectBuilder_LargeGatlingTurret" Subtype="LargeGatlingTurretReskin" />
                 <Block Type="MyObjectBuilder_LargeGatlingTurret" Subtype="SmallGatlingTurretReskin" />
+                <Block Type="MyObjectBuilder_LargeGatlingTurret" Subtype="LargeGatlingTurretContact" />
+                <Block Type="MyObjectBuilder_LargeGatlingTurret" Subtype="SmallGatlingTurretContact" />
                 <Block Type="MyObjectBuilder_LargeGatlingTurret" Subtype="LargeAutocannonTurret" />
                 <Block Type="MyObjectBuilder_LargeGatlingTurret" Subtype="AutoCannonTurret" />
                 <Block Type="MyObjectBuilder_LargeGatlingTurret" Subtype="AutoCannonTurretType2" />
+                <Block Type="MyObjectBuilder_LargeGatlingTurret" Subtype="AutoCannonTurretJS" />
+                <Block Type="MyObjectBuilder_LargeGatlingTurret" Subtype="LargeAutocannonTurretContact" />
+                <Block Type="MyObjectBuilder_LargeGatlingTurret" Subtype="AutoCannonTurretContact" />
                 <Block Type="MyObjectBuilder_LargeMissileTurret" Subtype="LargeBlockMediumCalibreTurret" />
                 <Block Type="MyObjectBuilder_LargeMissileTurret" Subtype="SmallBlockMediumCalibreTurret" />
                 <Block Type="MyObjectBuilder_LargeMissileTurret" Subtype="LargeBlockMediumCalibreTurretType2" />
                 <Block Type="MyObjectBuilder_LargeMissileTurret" Subtype="SmallBlockMediumCalibreTurretType2" />
+                <Block Type="MyObjectBuilder_LargeMissileTurret" Subtype="SmallBlockMediumCalibreTurretJS" />
+                <Block Type="MyObjectBuilder_LargeMissileTurret" Subtype="SmallBlockMediumCalibreTurretContact" />
                 <Block Type="MyObjectBuilder_LargeMissileTurret" Subtype="LargeCalibreTurret" />
                 <Block Type="MyObjectBuilder_LargeMissileTurret" Subtype="LargeCalibreTurretType2" />
                 <Block Type="MyObjectBuilder_LargeMissileTurret" Subtype="RailgunTurret" />
@@ -26,6 +33,8 @@
                 <Block Type="MyObjectBuilder_LargeMissileTurret" Subtype="SmallMissileTurret" />
                 <Block Type="MyObjectBuilder_LargeMissileTurret" Subtype="LargeMissileTurretReskin" />
                 <Block Type="MyObjectBuilder_LargeMissileTurret" Subtype="SmallMissileTurretReskin" />
+                <Block Type="MyObjectBuilder_LargeMissileTurret" Subtype="LargeMissileTurretContact" />
+                <Block Type="MyObjectBuilder_LargeMissileTurret" Subtype="SmallMissileTurretContact" />
                 <Block Type="MyObjectBuilder_InteriorTurret" Subtype="LargeInteriorTurret" />
             </Blocks>
         </BlockVariantGroup>

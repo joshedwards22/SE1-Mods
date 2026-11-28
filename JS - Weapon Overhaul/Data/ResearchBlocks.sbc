@@ -9,6 +9,60 @@
             </UnlockedByGroups>
         </ResearchBlock>
         <ResearchBlock xsi:type="ResearchBlock">
+            <Id Type="MyObjectBuilder_LargeGatlingTurret" Subtype="LargeGatlingTurretContact" />
+            <UnlockedByGroups>
+                <GroupSubtype>4</GroupSubtype>
+            </UnlockedByGroups>
+        </ResearchBlock>
+        <ResearchBlock xsi:type="ResearchBlock">
+            <Id Type="MyObjectBuilder_LargeGatlingTurret" Subtype="SmallGatlingTurretContact" />
+            <UnlockedByGroups>
+                <GroupSubtype>4</GroupSubtype>
+            </UnlockedByGroups>
+        </ResearchBlock>
+        <ResearchBlock xsi:type="ResearchBlock">
+            <Id Type="MyObjectBuilder_LargeMissileTurret" Subtype="LargeMissileTurretContact" />
+            <UnlockedByGroups>
+                <GroupSubtype>4</GroupSubtype>
+            </UnlockedByGroups>
+        </ResearchBlock>
+        <ResearchBlock xsi:type="ResearchBlock">
+            <Id Type="MyObjectBuilder_LargeMissileTurret" Subtype="SmallMissileTurretContact" />
+            <UnlockedByGroups>
+                <GroupSubtype>4</GroupSubtype>
+            </UnlockedByGroups>
+        </ResearchBlock>
+        <ResearchBlock xsi:type="ResearchBlock">
+            <Id Type="MyObjectBuilder_LargeGatlingTurret" Subtype="LargeAutocannonTurretContact" />
+            <UnlockedByGroups>
+                <GroupSubtype>4</GroupSubtype>
+            </UnlockedByGroups>
+        </ResearchBlock>
+        <ResearchBlock xsi:type="ResearchBlock">
+            <Id Type="MyObjectBuilder_LargeGatlingTurret" Subtype="AutoCannonTurretJS" />
+            <UnlockedByGroups>
+                <GroupSubtype>4</GroupSubtype>
+            </UnlockedByGroups>
+        </ResearchBlock>
+        <ResearchBlock xsi:type="ResearchBlock">
+            <Id Type="MyObjectBuilder_LargeGatlingTurret" Subtype="AutoCannonTurretContact" />
+            <UnlockedByGroups>
+                <GroupSubtype>4</GroupSubtype>
+            </UnlockedByGroups>
+        </ResearchBlock>
+        <ResearchBlock xsi:type="ResearchBlock">
+            <Id Type="MyObjectBuilder_LargeMissileTurret" Subtype="SmallBlockMediumCalibreTurretJS" />
+            <UnlockedByGroups>
+                <GroupSubtype>4</GroupSubtype>
+            </UnlockedByGroups>
+        </ResearchBlock>
+        <ResearchBlock xsi:type="ResearchBlock">
+            <Id Type="MyObjectBuilder_LargeMissileTurret" Subtype="SmallBlockMediumCalibreTurretContact" />
+            <UnlockedByGroups>
+                <GroupSubtype>4</GroupSubtype>
+            </UnlockedByGroups>
+        </ResearchBlock>
+        <ResearchBlock xsi:type="ResearchBlock">
             <Id Type="MyObjectBuilder_LargeMissileTurret" Subtype="RailgunTurret" />
             <UnlockedByGroups>
                 <GroupSubtype>4</GroupSubtype>

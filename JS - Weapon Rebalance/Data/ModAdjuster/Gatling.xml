@@ -140,6 +140,18 @@
                 <unsignedInt>0</unsignedInt>
             </TieredUpdateTimes>
         </Definition>
+        <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+            <Id>
+                <TypeId>LargeGatlingTurret</TypeId>
+                <SubtypeId>LargeGatlingTurretContact</SubtypeId>
+            </Id>
+            <RotationSpeed>0.003</RotationSpeed>
+            <ElevationSpeed>0.003</ElevationSpeed>
+            <TieredUpdateTimes>
+                <unsignedInt>3</unsignedInt>
+                <unsignedInt>0</unsignedInt>
+            </TieredUpdateTimes>
+        </Definition>
 
         <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
             <Id>
@@ -158,6 +170,18 @@
             <Id>
                 <TypeId>LargeGatlingTurret</TypeId>
                 <SubtypeId>SmallGatlingTurretReskin</SubtypeId>
+            </Id>
+            <RotationSpeed>0.004</RotationSpeed>
+            <ElevationSpeed>0.004</ElevationSpeed>
+            <TieredUpdateTimes>
+                <unsignedInt>3</unsignedInt>
+                <unsignedInt>0</unsignedInt>
+            </TieredUpdateTimes>
+        </Definition>
+        <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+            <Id>
+                <TypeId>LargeGatlingTurret</TypeId>
+                <SubtypeId>SmallGatlingTurretContact</SubtypeId>
             </Id>
             <RotationSpeed>0.004</RotationSpeed>
             <ElevationSpeed>0.004</ElevationSpeed>

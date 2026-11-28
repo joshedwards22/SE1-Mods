@@ -13,6 +13,9 @@
             <ItemIds>
                 <string>LargeGatlingTurret/LargeAutocannonTurret</string>
                 <string>LargeMissileTurret/RailgunTurret</string>
+                <string>LargeGatlingTurret/LargeGatlingTurretContact</string>
+                <string>LargeMissileTurret/LargeMissileTurretContact</string>
+                <string>LargeGatlingTurret/LargeAutocannonTurretContact</string>
             </ItemIds>
         </Category>
         <Category xsi:type="MyObjectBuilder_GuiBlockCategoryDefinition">
@@ -26,6 +29,12 @@
             <ItemIds>
                 <string>SmallMissileLauncherReload/SmallBlockLargeCalibreGun</string>
                 <string>SmallMissileLauncherReload/SmallBlockLargeCalibreGunType2</string>
+                <string>LargeGatlingTurret/SmallGatlingTurretContact</string>
+                <string>LargeMissileTurret/SmallMissileTurretContact</string>
+                <string>LargeGatlingTurret/AutoCannonTurretJS</string>
+                <string>LargeGatlingTurret/AutoCannonTurretContact</string>
+                <string>LargeMissileTurret/SmallBlockMediumCalibreTurretJS</string>
+                <string>LargeMissileTurret/SmallBlockMediumCalibreTurretContact</string>
             </ItemIds>
         </Category>
         <Category xsi:type="MyObjectBuilder_GuiBlockCategoryDefinition">
@@ -41,6 +50,15 @@
                 <string>LargeMissileTurret/RailgunTurret</string>
                 <string>SmallMissileLauncherReload/SmallBlockLargeCalibreGun</string>
                 <string>SmallMissileLauncherReload/SmallBlockLargeCalibreGunType2</string>
+                <string>LargeGatlingTurret/LargeGatlingTurretContact</string>
+                <string>LargeGatlingTurret/SmallGatlingTurretContact</string>
+                <string>LargeMissileTurret/LargeMissileTurretContact</string>
+                <string>LargeMissileTurret/SmallMissileTurretContact</string>
+                <string>LargeGatlingTurret/LargeAutocannonTurretContact</string>
+                <string>LargeGatlingTurret/AutoCannonTurretJS</string>
+                <string>LargeGatlingTurret/AutoCannonTurretContact</string>
+                <string>LargeMissileTurret/SmallBlockMediumCalibreTurretJS</string>
+                <string>LargeMissileTurret/SmallBlockMediumCalibreTurretContact</string>
             </ItemIds>
         </Category>
         <Category xsi:type="MyObjectBuilder_GuiBlockCategoryDefinition">
@@ -56,6 +74,15 @@
                 <string>LargeMissileTurret/RailgunTurret</string>
                 <string>SmallMissileLauncherReload/SmallBlockLargeCalibreGun</string>
                 <string>SmallMissileLauncherReload/SmallBlockLargeCalibreGunType2</string>
+                <string>LargeGatlingTurret/LargeGatlingTurretContact</string>
+                <string>LargeGatlingTurret/SmallGatlingTurretContact</string>
+                <string>LargeMissileTurret/LargeMissileTurretContact</string>
+                <string>LargeMissileTurret/SmallMissileTurretContact</string>
+                <string>LargeGatlingTurret/LargeAutocannonTurretContact</string>
+                <string>LargeGatlingTurret/AutoCannonTurretJS</string>
+                <string>LargeGatlingTurret/AutoCannonTurretContact</string>
+                <string>LargeMissileTurret/SmallBlockMediumCalibreTurretJS</string>
+                <string>LargeMissileTurret/SmallBlockMediumCalibreTurretContact</string>
             </ItemIds>
         </Category>
         <Category xsi:type="MyObjectBuilder_GuiBlockCategoryDefinition">
@@ -85,6 +112,32 @@
             <DLC>CompleteEdition</DLC>
             <ItemIds>
                 <string>SmallMissileLauncherReload/SmallBlockLargeCalibreGunType2</string>
+                <string>LargeGatlingTurret/LargeGatlingTurretContact</string>
+                <string>LargeGatlingTurret/SmallGatlingTurretContact</string>
+                <string>LargeMissileTurret/LargeMissileTurretContact</string>
+                <string>LargeMissileTurret/SmallMissileTurretContact</string>
+                <string>LargeGatlingTurret/LargeAutocannonTurretContact</string>
+                <string>LargeGatlingTurret/AutoCannonTurretContact</string>
+                <string>LargeMissileTurret/SmallBlockMediumCalibreTurretContact</string>
+            </ItemIds>
+        </Category>
+        <Category xsi:type="MyObjectBuilder_GuiBlockCategoryDefinition">
+            <Id>
+                <TypeId>GuiBlockCategoryDefinition</TypeId>
+                <SubtypeId/>
+            </Id>
+            <DisplayName>DisplayName_Category_DLC_Contact</DisplayName>
+            <Name>Section2_DLC_Contact</Name>
+            <StrictSearch>true</StrictSearch>
+            <DLC>Contact</DLC>
+            <ItemIds>
+                <string>LargeGatlingTurret/LargeGatlingTurretContact</string>
+                <string>LargeGatlingTurret/SmallGatlingTurretContact</string>
+                <string>LargeMissileTurret/LargeMissileTurretContact</string>
+                <string>LargeMissileTurret/SmallMissileTurretContact</string>
+                <string>LargeGatlingTurret/LargeAutocannonTurretContact</string>
+                <string>LargeGatlingTurret/AutoCannonTurretContact</string>
+                <string>LargeMissileTurret/SmallBlockMediumCalibreTurretContact</string>
             </ItemIds>
         </Category>
         <Category xsi:type="MyObjectBuilder_GuiBlockCategoryDefinition">

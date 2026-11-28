@@ -54,7 +54,8 @@ namespace JSWeaponRebalance
         // Kept in sync with Accuracy.xml and DamageBalance.xml.
         private static readonly Dictionary<string, WeaponTuning> TUNINGS = new Dictionary<string, WeaponTuning>
         {
-            // JS - Weapon Overhaul: large-grid autocannon turret (0.2 deg spread, 2 s reload = 1,000 DPS)
+            // JS - Weapon Overhaul: large-grid autocannon turret (0.2 deg spread, 2 s reload = 1,000 DPS).
+            // Also covers its Contact-styled Type II variant (LargeAutocannonTurretContact), which shares this weapon.
             { "LargeAutocannonTurret", new WeaponTuning(0.2f, 0.2f, 2000) },
         };
 

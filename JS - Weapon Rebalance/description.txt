@@ -48,7 +48,7 @@ Vanilla Space Engineers weapon stats were tuned one block at a time over the yea
 [h2]Compatibility & Details[/h2]
 [list]
 [*][b]All DLC Variants & Tooltips Updated:[/b] Includes vanilla, Warfare 2, Warfare 3 (Type II), and Contact Pack reskins, and updates in-game block descriptions with the rebalanced range, rate of fire, and damage stats.
-[*][b]Optional JS - Weapon Overhaul Support:[/b] Automatically applies matching range, accuracy, reload, and tooltip tuning to [b]JS - Weapon Overhaul[/b] weapons (Large Autocannon Turret, Small Artillery, Railgun Turret) if loaded, and runs cleanly standalone without it.
+[*][b]Optional JS - Weapon Overhaul Support:[/b] Automatically applies matching range, accuracy, reload, and tooltip tuning to [b]JS - Weapon Overhaul[/b] weapons (Large Autocannon Turret, Small Artillery, Railgun Turret) and all of its Type II–IV turret variants (remodeled and Contact-styled) if loaded, and runs cleanly standalone without it.
 [*][b]Powered by ModAdjuster:[/b] Uses field-level [b]ModAdjusterV2[/b] patches (plus a lightweight world-load script for missile lifetime, launch speed, turn rate, seeker guidance range, and optional-mod detection) rather than overwriting full block definitions, keeping it compatible with mods that change weapon visuals, effects, or build components. [i](Requires ModAdjusterV2.)[/i]
 [*][b]Safe to Add or Remove:[/b] Does not add or remove blocks and restores runtime-tuned fields on unload, so it can be added to or removed from existing saves safely.
 [/list]

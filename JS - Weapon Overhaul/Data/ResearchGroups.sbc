@@ -23,6 +23,15 @@
                 <BlockId Type="MyObjectBuilder_LargeGatlingTurret" Subtype="LargeAutocannonTurret" />
                 <BlockId Type="MyObjectBuilder_LargeGatlingTurret" Subtype="AutoCannonTurret" />
                 <BlockId Type="MyObjectBuilder_LargeGatlingTurret" Subtype="AutoCannonTurretType2" />
+                <BlockId Type="MyObjectBuilder_LargeGatlingTurret" Subtype="LargeGatlingTurretContact" />
+                <BlockId Type="MyObjectBuilder_LargeGatlingTurret" Subtype="SmallGatlingTurretContact" />
+                <BlockId Type="MyObjectBuilder_LargeMissileTurret" Subtype="LargeMissileTurretContact" />
+                <BlockId Type="MyObjectBuilder_LargeMissileTurret" Subtype="SmallMissileTurretContact" />
+                <BlockId Type="MyObjectBuilder_LargeGatlingTurret" Subtype="LargeAutocannonTurretContact" />
+                <BlockId Type="MyObjectBuilder_LargeGatlingTurret" Subtype="AutoCannonTurretJS" />
+                <BlockId Type="MyObjectBuilder_LargeGatlingTurret" Subtype="AutoCannonTurretContact" />
+                <BlockId Type="MyObjectBuilder_LargeMissileTurret" Subtype="SmallBlockMediumCalibreTurretJS" />
+                <BlockId Type="MyObjectBuilder_LargeMissileTurret" Subtype="SmallBlockMediumCalibreTurretContact" />
             </Members>
         </ResearchGroup>
         <ResearchGroup xsi:type="ResearchGroup">

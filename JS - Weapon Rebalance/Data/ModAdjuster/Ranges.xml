@@ -237,6 +237,13 @@
         <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
             <Id>
                 <TypeId>LargeGatlingTurret</TypeId>
+                <SubtypeId>LargeGatlingTurretContact</SubtypeId>
+            </Id>
+            <MaxRangeMeters>1200</MaxRangeMeters>
+        </Definition>
+        <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+            <Id>
+                <TypeId>LargeGatlingTurret</TypeId>
                 <SubtypeId>SmallGatlingTurret</SubtypeId>
             </Id>
             <MaxRangeMeters>900</MaxRangeMeters>
@@ -245,6 +252,13 @@
             <Id>
                 <TypeId>LargeGatlingTurret</TypeId>
                 <SubtypeId>SmallGatlingTurretReskin</SubtypeId>
+            </Id>
+            <MaxRangeMeters>900</MaxRangeMeters>
+        </Definition>
+        <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+            <Id>
+                <TypeId>LargeGatlingTurret</TypeId>
+                <SubtypeId>SmallGatlingTurretContact</SubtypeId>
             </Id>
             <MaxRangeMeters>900</MaxRangeMeters>
         </Definition>
@@ -269,6 +283,13 @@
         <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
             <Id>
                 <TypeId>LargeGatlingTurret</TypeId>
+                <SubtypeId>LargeAutocannonTurretContact</SubtypeId>
+            </Id>
+            <MaxRangeMeters>1600</MaxRangeMeters>
+        </Definition>
+        <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+            <Id>
+                <TypeId>LargeGatlingTurret</TypeId>
                 <SubtypeId>AutoCannonTurret</SubtypeId>
             </Id>
             <MaxRangeMeters>1200</MaxRangeMeters>
@@ -277,6 +298,20 @@
             <Id>
                 <TypeId>LargeGatlingTurret</TypeId>
                 <SubtypeId>AutoCannonTurretType2</SubtypeId>
+            </Id>
+            <MaxRangeMeters>1200</MaxRangeMeters>
+        </Definition>
+        <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+            <Id>
+                <TypeId>LargeGatlingTurret</TypeId>
+                <SubtypeId>AutoCannonTurretJS</SubtypeId>
+            </Id>
+            <MaxRangeMeters>1200</MaxRangeMeters>
+        </Definition>
+        <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+            <Id>
+                <TypeId>LargeGatlingTurret</TypeId>
+                <SubtypeId>AutoCannonTurretContact</SubtypeId>
             </Id>
             <MaxRangeMeters>1200</MaxRangeMeters>
         </Definition>
@@ -299,6 +334,13 @@
         <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
             <Id>
                 <TypeId>LargeMissileTurret</TypeId>
+                <SubtypeId>LargeMissileTurretContact</SubtypeId>
+            </Id>
+            <MaxRangeMeters>1300</MaxRangeMeters>
+        </Definition>
+        <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+            <Id>
+                <TypeId>LargeMissileTurret</TypeId>
                 <SubtypeId>SmallMissileTurret</SubtypeId>
             </Id>
             <MaxRangeMeters>1000</MaxRangeMeters>
@@ -307,6 +349,13 @@
             <Id>
                 <TypeId>LargeMissileTurret</TypeId>
                 <SubtypeId>SmallMissileTurretReskin</SubtypeId>
+            </Id>
+            <MaxRangeMeters>1000</MaxRangeMeters>
+        </Definition>
+        <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+            <Id>
+                <TypeId>LargeMissileTurret</TypeId>
+                <SubtypeId>SmallMissileTurretContact</SubtypeId>
             </Id>
             <MaxRangeMeters>1000</MaxRangeMeters>
         </Definition>
@@ -337,6 +386,20 @@
             <Id>
                 <TypeId>LargeMissileTurret</TypeId>
                 <SubtypeId>SmallBlockMediumCalibreTurretType2</SubtypeId>
+            </Id>
+            <MaxRangeMeters>1500</MaxRangeMeters>
+        </Definition>
+        <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+            <Id>
+                <TypeId>LargeMissileTurret</TypeId>
+                <SubtypeId>SmallBlockMediumCalibreTurretJS</SubtypeId>
+            </Id>
+            <MaxRangeMeters>1500</MaxRangeMeters>
+        </Definition>
+        <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+            <Id>
+                <TypeId>LargeMissileTurret</TypeId>
+                <SubtypeId>SmallBlockMediumCalibreTurretContact</SubtypeId>
             </Id>
             <MaxRangeMeters>1500</MaxRangeMeters>
         </Definition>
